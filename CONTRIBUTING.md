@@ -1,11 +1,11 @@
-
-
-# Contributing to ws1-mobile-sdk-integration-samples
-
-The ws1-mobile-sdk-integration-samples project team welcomes contributions from the community. Before you start working with ws1-mobile-sdk-integration-samples, please
-read our [Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions to this repository must be
-signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on
-as an open-source patch.
+# Contributing to the Workspace ONE Mobile SDK integration samples
+The Workspace ONE Mobile SDK integration samples project team welcomes
+contributions from the community. Before you start working with the Workspace
+ONE Mobile SDK integration samples, please read our
+[Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions
+to this repository must be signed as described on that page. Your signature
+certifies that you wrote the patch or have the right to pass it on as an
+open-source patch.
 
 ## Contribution Flow
 
