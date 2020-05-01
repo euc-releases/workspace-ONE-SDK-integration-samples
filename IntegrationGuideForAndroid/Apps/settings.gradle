@@ -1,0 +1,27 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+include (
+    ':baseJava', ':baseKotlin',
+
+    ':clientJava', ':clientKotlin',
+
+    ':frameworkDelegateJava', ':frameworkDelegateKotlin',
+    ':frameworkExtendJava',   ':frameworkExtendKotlin',
+
+    ':brandStaticDelegateJava', ':brandStaticDelegateKotlin',
+    ':brandStaticExtendJava',   ':brandStaticExtendKotlin',
+
+    ':brandEnterpriseOnlyDelegateJava', ':brandEnterpriseOnlyDelegateKotlin',
+    ':brandEnterpriseOnlyExtendJava',   ':brandEnterpriseOnlyExtendKotlin',
+
+    ':brandEnterprisePriorityDelegateJava',
+    ':brandEnterprisePriorityDelegateKotlin',
+    ':brandEnterprisePriorityExtendJava',
+    ':brandEnterprisePriorityExtendKotlin',
+
+    ':brandDynamicDelegateJava', ':brandDynamicDelegateKotlin',
+    ':brandDynamicExtendJava',   ':brandDynamicExtendKotlin'
+)
+
+rootProject.name='Integration Guide'

@@ -1,0 +1,30 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+// This module's build.gradle file is mostly built from other gradle files.
+//
+// The plugins block has to be here because applying a plugins block from another gradle file isn't allowed.
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+// Start with the application.
+apply from: file("buildBase.gradle")
+//
+// Add the downloaded SDK as a repository, and apply all the dependencies of the
+// AirWatch Client SDK.
+apply from: file("downloadClient.gradle")
+apply from: file("integrateClient.gradle")
+
+android {
+    defaultConfig {
+        manifestPlaceholders = [applicationClass: "DynamicBrandAWApplication"]
+    }
+}
+
+//
+// And then all the dependencies for Framework integration.
+apply from: file("downloadFramework.gradle")
+apply from: file("integrateFramework.gradle")

@@ -1,0 +1,9 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+dependencies {
+    // WS1 Client SDK
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "androidx.multidex:multidex:2.0.0"
+    implementation(name: "AirWatchSDK-${airwatchVersion}", ext: 'aar')
+}

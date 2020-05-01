@@ -1,0 +1,98 @@
+# Build Instructions
+The code project in the Workspace ONE Integration Guide for Android repository
+can be built by following these instructions. For an introduction to the
+repository, see the [parent directory](..) readme file.
+
+# Directories
+The top-level directories in the repository are as follows.
+
+-   [Apps/](../Apps) has the demonstration applications' code, in an Android
+    Studio project. Sub-directories hold complete applications written either in
+    Java or in Kotlin. For a complete list of applications with links, see the
+    [applications](applications.md) file.
+
+-   [Secret/](../Secret) is set aside for your signing keystore and
+    configuration.
+
+-   [Download/](../Download) is set aside for your installation of the Workspace
+    ONE mobile software development kit.
+
+# Instructions
+Follow these instructions to build the applications in this project.
+
+1.  **Create an Android application signing keystore and configuration.**
+
+    See the Workspace ONE for Android Integration Preparation guide appendix in
+    case you need instructions. Use the following locations:
+
+    -   Keystore file:  
+        `/wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Secret/keystore`
+    
+    -   Signing configuration:  
+        `/wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Secret/keystore.gradle`
+    
+    See the [Secret](../Secret) readme file for a template and notes.
+
+    The build configuration of this repository is set up to use the files you
+    create at the above locations.
+
+2.  **Install a copy of the Workspace ONE Software Development Kit (SDK) for
+    Android under the Download/ directory.**
+    
+    See the Workspace ONE for Android Integration Preparation guide for how to
+    obtain a copy of the SDK for Android.
+
+    See the [Download](../Download) readme file for details of how to install
+    and specify the version.
+
+    The build configuration of this repository is set up to work with the SDK
+    you install there.
+
+3.  **Load the project into Android Studio**
+
+    Proceed as follows.
+
+    1.  Open Android Studio.
+    2.  Close any open projects, to avoid accidents.
+    3.  Open as an existing project this location:
+
+            `/wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Apps/`
+        
+        Note: Don't select any file under that directory.
+    
+    4.  Android Studio prompts you to Gradle Sync because it is unable to get
+        Gradle wrapper properties. Select OK and the project will synchronise
+        and configure its build. It might take a minute or two first time.
+
+    The applications in the repository should now appear in the Android Studio
+    project navigator. There are 24 at time of writing. The naming convention is
+    as follows, in alphabetic order.
+
+    -   `base*`  
+        Applications with no SDK integration, used as a base for other
+        applications.
+    -   `brand*`  
+        Demonstration applications for the Branding Integration Guide.
+    -   `client*`  
+        Applications for the Base Integration Guide that demonstrate Client
+        level integration.
+    -   `framework*`  
+        Applications for the Base Integration Guide that demonstrate Framework
+        level integration, either by delegation or by extension.
+
+     The [applications](applications.md) file has a complete list of the
+     applications.
+
+4.  **Test that the applications can be built**
+
+    After the synchronisation has finished, execute the Gradle task:  
+    Integration Guide, Tasks, build, assemble
+
+    Gradle tasks can be accessed from the Gradle assistant tab sidebar, which by
+    default is at the top right of the Android Studio window.
+
+    If the build doesn't run OK then check the first two steps, above, have been
+    completed.
+
+You are now ready to install or debug any of the demonstration applications on
+your developer device.
