@@ -115,3 +115,9 @@ development kit (SDK).
 
         -   Activity in Kotlin:
             [MainActivity.kt](../Apps/brandDynamicDelegateKotlin/src/main/java/com/example/integrationguide/MainActivity.kt)
+
+# License
+The Workspace ONE Mobile Software Development Kit Integration Samples are:  
+Copyright 2020 VMware, Inc.  
+And licensed under a two-clause BSD license.  
+SPDX-License-Identifier: BSD-2-Clause

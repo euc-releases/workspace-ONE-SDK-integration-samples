@@ -17,3 +17,9 @@ See also:
 
 -   The home page of the GIMP project:
     [https://www.gimp.org/](https://www.gimp.org/)
+
+# License
+The Workspace ONE Mobile Software Development Kit Integration Samples are:  
+Copyright 2020 VMware, Inc.  
+And licensed under a two-clause BSD license.  
+SPDX-License-Identifier: BSD-2-Clause

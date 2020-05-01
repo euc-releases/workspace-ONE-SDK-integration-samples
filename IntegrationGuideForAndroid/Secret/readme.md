@@ -59,3 +59,9 @@ For an example, see the
 [Apps/baseKotlin/buildBase.gradle](../Apps/baseKotlin/buildBase.gradle) file,
 which itself is applied from the base application's build.gradle file in the
 same directory.
+
+# License
+The Workspace ONE Mobile Software Development Kit Integration Samples are:  
+Copyright 2020 VMware, Inc.  
+And licensed under a two-clause BSD license.  
+SPDX-License-Identifier: BSD-2-Clause
