@@ -66,3 +66,9 @@ custom tool. In practice, those approaches have limitations, lead to more
 maintenance overhead than duplication, and don't result in a repository that is
 easy to understand for prospective application developers.  
 Duplication is managed by the maintainers of the repository.
+
+# License
+The Workspace ONE Mobile Software Development Kit Integration Samples are:  
+Copyright 2020 VMware, Inc.  
+And licensed under a two-clause BSD license.  
+SPDX-License-Identifier: BSD-2-Clause
