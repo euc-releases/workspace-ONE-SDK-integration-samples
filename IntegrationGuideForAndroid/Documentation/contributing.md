@@ -8,3 +8,10 @@ good idea to switch off case sensitivity in the Git configuration. See:
 
 >   An explanation of controlled code duplication and the `samers.py` script
 >   goes here.
+
+
+# License
+The Workspace ONE Mobile Software Development Kit Integration Samples are:  
+Copyright 2020 VMware, Inc.  
+And licensed under a two-clause BSD license.  
+SPDX-License-Identifier: BSD-2-Clause
