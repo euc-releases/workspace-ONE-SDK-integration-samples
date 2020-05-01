@@ -1,0 +1,37 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+android {
+    // Reference for the flavorDimension property is here
+    // https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:flavorDimensionList
+    // Next line uses the spread operator.
+    flavorDimensions("initialisation", *flavorDimensionList)
+
+    productFlavors {
+        delegate {
+            dimension "initialisation"
+            manifestPlaceholders = [applicationClass: "Application"]
+        }
+        extend {
+            dimension "initialisation"
+            manifestPlaceholders = [applicationClass: "AWApplication"]
+        }
+    }
+
+}
+
+
+
+// delegateJava
+// ------------
+// Compile configuration: delegateJavaCompile
+// build.gradle name: android.sourceSets.delegateJava
+// Java sources: [appFrameworkDelegate/src/delegateJava/java]
+// Manifest file: appFrameworkDelegate/src/delegateJava/AndroidManifest.xml
+// Android resources: [appFrameworkDelegate/src/delegateJava/res]
+// Assets: [appFrameworkDelegate/src/delegateJava/assets]
+// AIDL sources: [appFrameworkDelegate/src/delegateJava/aidl]
+// RenderScript sources: [appFrameworkDelegate/src/delegateJava/rs]
+// JNI sources: [appFrameworkDelegate/src/delegateJava/jni]
+// JNI libraries: [appFrameworkDelegate/src/delegateJava/jniLibs]
+// Java-style resources: [appFrameworkDelegate/src/delegateJava/resources]

@@ -1,0 +1,10 @@
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="app_name">Integration Guide</string>
+    <string name="app_label">WS1</string>
+    <string name="app_logo_content_description">Application logo</string>
+    <string name="enterprise_logo_content_description">Enterprise logo</string>
+</resources>

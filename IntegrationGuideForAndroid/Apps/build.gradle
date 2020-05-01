@@ -1,0 +1,48 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.71'
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    airwatchVersion = '19.10'
+
+    // The signing configuration, which is secret and must be created by each 
+    // user of the repository. It's stored outside the Android Studio project,
+    // hence rootDir.getParent().
+    keystoreGradle = new RelativePath(
+        true, "Secret", "keystore.gradle"
+    ).getFile(new File(rootDir.getParent()))
+
+    // Handy paths under the Download directory, which is where the SDK download
+    // can be copied to.
+    downloadRoot = new File(rootDir.getParent(), "Download")
+    downloadSDKVersion = new File(
+        downloadRoot, "Android SDK v${airwatchVersion}")
+}

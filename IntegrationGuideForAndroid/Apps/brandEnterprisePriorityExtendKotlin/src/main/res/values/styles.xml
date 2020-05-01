@@ -1,0 +1,29 @@
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <!--
+            Custom values like these would go here but this application uses
+            the vanilla.
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        -->
+    </style>
+
+    <style
+        tools:override="true"
+        name="SDKBaseTheme"
+        parent="SDKVisionBaseTheme"
+        >
+        <item name="awsdkSplashBrandingIcon">@mipmap/ic_splash</item>
+        <item name="awsdkLoginBrandingIcon">@mipmap/ic_login</item>
+        <item name="awsdkApplicationColorPrimary">@color/appLine</item>
+    </style>
+
+</resources>
