@@ -1,4 +1,4 @@
-Workspace ONE Mobile SDK integration samples
+Workspace ONE SDK integration samples
 Copyright (c) 2020 VMware, Inc.  All rights reserved				
 
 The BSD-2 license (the "License") set forth below applies to all parts of the Workspace ONE Mobile SDK integration samples project.  You may not use this file except in compliance with the License.
