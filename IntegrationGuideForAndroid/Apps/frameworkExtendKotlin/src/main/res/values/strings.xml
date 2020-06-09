@@ -4,5 +4,6 @@
 -->
 <resources>
     <string name="app_name">Integration Guide</string>
-    <string name="app_label">WS1</string>
+    <string name="app_label">App+WS1</string>
+    <string name="ui_placeholder">Application User Interface goes here!</string>
 </resources>

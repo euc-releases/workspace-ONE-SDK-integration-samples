@@ -71,13 +71,18 @@ class Rules:
     # operator.
     def _java_kt(*stubs):
         return [
-            f'**/{stub}.{extension}'
+            f'**/src/**/{stub}.{extension}'
             for stub in stubs
             for extension in ('java', 'kt')
         ]
 
-    # Patterns that match AndroidManifest.xml have /main/ to prevent matching
-    # intermediate manifests under the build directory.
+    # Some patterns have /**/src/**/ embedded. This is to prevent matching files
+    # of the same name in a build directory. For example:
+    #
+    # -   AndroidManifest.xml matching intermediate manifests under the build
+    #     directory.
+    # -   Java files generated for Kotlin files by some annotation processor or
+    #     other.
     simplePatterns = [
         # Deliberate failures.
         'nuffin', 'samers*',
@@ -107,8 +112,8 @@ class Rules:
         'brandStatic*/**/styles.xml', 'brandDynamic*/**/strings.xml',
 
         # Pre-Framework Android manifests.
-        'base*/**/main/AndroidManifest.xml',
-        'client*/**/main/AndroidManifest.xml',
+        'base*/**/src/**/AndroidManifest.xml',
+        'client*/**/src/**/AndroidManifest.xml',
 
         # MainActivity classes that aren't the same as the framework.
         'brandDynamic*Java/**/MainActivity.java',
@@ -134,17 +139,21 @@ class Rules:
         ],
 
         "framework manifests": [
-            'framework*/**/main/AndroidManifest.xml',
-            'brand*/**/main/AndroidManifest.xml'
+            'framework*/**/src/**/AndroidManifest.xml',
+            'brand*/**/src/**/AndroidManifest.xml'
         ],
-        "framework build.gradle files": [
+        "framework delegate build.gradle files": [
+            'frameworkDelegate*/**/build.gradle',
+            'brandStaticDelegate*/**/build.gradle'
+        ],
+        "framework extend build.gradle files": [
             'frameworkExtend*/**/build.gradle',
             'brandStaticExtend*/**/build.gradle'
         ],
         "base MainActivity.java files": [
-            'framework*/**/MainActivity.java',
-            'brandEnterprise*/**/MainActivity.java',
-            'brandStatic*/**/MainActivity.java'
+            'framework*/**/src/**/MainActivity.java',
+            'brandEnterprise*/**/src/**/MainActivity.java',
+            'brandStatic*/**/src/**/MainActivity.java'
         ],
         "base MainActivity.kt files": [
             'framework*/**/MainActivity.kt',
@@ -391,6 +400,20 @@ class DuplicatorJob:
         self._counting = counting
 
     @property
+    def find(self):
+        return self._find
+    @find.setter
+    def find(self, find):
+        self._find = find
+
+    @property
+    def gitModified(self):
+        return self._gitModified
+    @gitModified.setter
+    def gitModified(self, gitModified):
+        self._gitModified = gitModified
+
+    @property
     def insertNotices(self):
         return self._insertNotices
     @insertNotices.setter
@@ -441,9 +464,12 @@ class DuplicatorJob:
         self._noticesEditor = (
             NoticesEditor(self._noticesPath) if self.insertNotices else None)
 
+        if self.find:
+            return self._find_business()
+
         originalsChecked = 0
         edited = 0
-        for original in self.originals:
+        for original in self._specified_originals():
             originalsChecked += 1
             if self.insertNotices:
                 edited += self._notices_business(Path(original))
@@ -460,6 +486,38 @@ class DuplicatorJob:
 
         if self.insertNotices:
             print(f"Checked:{originalsChecked}. Edited:{edited}.")
+        return 0
+    
+    def _find_business(self):
+        modifiedPaths = tuple(path for path in self.git_ls_files('--modified'))
+        modifiedNames = frozenset(
+            modifiedPath.name for modifiedPath in modifiedPaths)
+        for modifiedName in modifiedNames:
+            print(modifiedName)
+            for path in self.git_ls_files(modifiedName, f'*/{modifiedName}'):
+                status = 'M' if path in modifiedPaths else ''
+                print(f'{status:<2}{path}')
+            print()
+        return 0
+    
+    def _specified_originals(self):
+        if self.gitModified:
+            yielded = None
+            for original in self.git_ls_files('--modified'):
+                if yielded is None:
+                    yielded = 0
+                if len(self.originals) <= 0 or original in self.originals:
+                    yielded += 1
+                    yield original
+            if yielded is None:
+                raise RuntimeError(
+                    "Command line switch -m or --modified given but"
+                    " no files are modified in Git.")
+            if yielded <= 0:
+                raise RuntimeError(
+                    "None of the specified original files are modified in Git.")
+        else:
+            yield from self.originals
     
     def _notices_business(self, path):
         if path.is_dir():
@@ -495,13 +553,13 @@ class DuplicatorJob:
 
         return 1 if overwritten else 0
 
-    def git_ls_files(self):
+    def git_ls_files(self, *switches):
         # See: https://git-scm.com/docs/git-ls-files  
         # -z switch specifies null-terminators instead of newlines, and verbatim
         # file names for unprintable values.
         with subprocess.Popen(
-            ('git', 'ls-files', '-z'), stdout=subprocess.PIPE, text=True
-            , cwd=self.top
+            ('git', 'ls-files', '-z', *switches)
+            ,stdout=subprocess.PIPE, text=True, cwd=self.top
         ) as gitProcess:
             with gitProcess.stdout as gitOutput:
                 name = []
@@ -523,10 +581,13 @@ class DuplicatorJob:
         ):
             matchCount += 1
             print(f'{original}\nMatches {description}:')
-            for pathLeft, path, differences in diff_each(
-                glob_each(self._topPath, patterns), originalPath
-            ):
-                self._ask_overwrite(pathLeft, path, differences)
+            try:
+                for pathLeft, path, differences in diff_each(
+                    glob_each(self._topPath, patterns), originalPath
+                ):
+                    self._ask_overwrite(pathLeft, path, differences)
+            except ValueError as error:
+                print(str(error))
 
         if matchCount <= 0:
             print(f'{original}\nNo matches.')
@@ -604,9 +665,20 @@ def main(commandLine):
         "Count the number of files that require notice insertion but don't"
         " edit any.")
     argumentParser.add_argument(
+        '-f', '--find', action='store_true', help=
+        "Find mode: List path and Git status of all files with the same name"
+        " as a modified file.")
+    argumentParser.add_argument(
         '-i', '--insert-notices', dest='insertNotices', action='store_true'
         , help=
-        "Insert notices into files that are in Git but don't have the notices.")
+        "Notice insertion mode: Insert notices into files that are in Git but"
+        " don't have the notices.")
+    argumentParser.add_argument(
+        '-m', '--modified', dest='gitModified', action='store_true', help=
+        "Check files that are modified according to Git. If no originals are"
+        " specified, then check all files that are modified. Otherwise, filter"
+        " the list of originals to include only modified files. Ignored in"
+        " notice insertion mode.")
     argumentParser.add_argument(
         '-n', '--notices', default=defaultNotices, type=str, help=
         f'Path to the notices file. Default: "{defaultNotices}"')
@@ -624,7 +696,7 @@ def main(commandLine):
         "Path of a file to check. Default is to check everything in the"
         " directory tree, or everything in Git.")
 
-    argumentParser.parse_args(commandLine[1:], DuplicatorJob())()
+    return argumentParser.parse_args(commandLine[1:], DuplicatorJob())()
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))

@@ -1,2 +1,5 @@
 # Ignore everything in a sub-directory but don't ignore files in this directory.
 /*/
+
+# But do ignore any zip files in this directory.
+*.zip

@@ -18,6 +18,7 @@ open class BaseActivity : Activity() {
 
     open fun generateUITexts():List<CharSequence> {
         return listOf(
+            resources.getString(R.string.ui_placeholder),
             wrappable(resources.getString(R.string.MODULE_NAME)),
             with(resources.configuration.uiMode) {
                 if ((this and Configuration.UI_MODE_NIGHT_MASK)

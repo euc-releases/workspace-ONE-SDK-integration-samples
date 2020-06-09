@@ -18,6 +18,7 @@ public class BaseActivity extends Activity {
     protected String[] generateUITexts() {
         final int uiMode = getResources().getConfiguration().uiMode;
         return new String[]{
+            getResources().getString(R.string.ui_placeholder),
             wrappable(getResources().getString(R.string.MODULE_NAME)),
             (uiMode & Configuration.UI_MODE_NIGHT_MASK) ==
                 Configuration.UI_MODE_NIGHT_YES ? "Dark mode" : "Not dark mode"

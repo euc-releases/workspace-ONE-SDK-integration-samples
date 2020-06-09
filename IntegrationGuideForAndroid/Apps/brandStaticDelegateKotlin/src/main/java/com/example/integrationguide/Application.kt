@@ -3,6 +3,7 @@
 
 package com.example.integrationguide
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatDelegate
 import com.airwatch.app.AWSDKApplication
@@ -26,6 +27,11 @@ open class Application:
 
     override fun getSystemService(name: String): Any? {
         return getAWSystemService(name, super.getSystemService(name))
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        attachBaseContext(this)
     }
 
     // Application-specific overrides.

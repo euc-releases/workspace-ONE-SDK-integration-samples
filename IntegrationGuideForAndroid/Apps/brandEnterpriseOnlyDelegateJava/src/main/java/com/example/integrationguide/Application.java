@@ -66,6 +66,12 @@ public class Application
         return this.getAWSystemService(name, super.getSystemService(name));
     }
 
+    @Override
+    public void attachBaseContext(@NotNull Context base) {
+        super.attachBaseContext(base);
+        attachBaseContext(this);
+    }
+
     // Application-specific overrides.
     @Override
     public void onPostCreate() {
@@ -80,6 +86,11 @@ public class Application
     }
 
     // Mechanistic AWSDKApplication abstract method overrides.
+    @Override
+    public void attachBaseContext(@NotNull android.app.Application application) {
+        awDelegate.attachBaseContext(application);
+    }
+
     @Nullable
     @Override
     public Object getAWSystemService(@NotNull String name, @Nullable Object systemService) {
