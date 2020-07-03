@@ -24,8 +24,17 @@ certifies that you wrote the patch or have the right to pass it on as an
 open-source patch. For more detailed information, refer to
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
-# License
-The Workspace ONE Software Development Kit Integration Samples are:  
-Copyright 2020 VMware, Inc.  
-And licensed under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause
+# Legal
+-   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
+    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
+-   Copyright © 2020 VMware, Inc. All rights reserved.
+-   This content is protected by U.S. and international copyright and
+    intellectual property laws. VMware products are covered by one
+    or more patents listed at
+    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
+    VMware is a registered trademark or trademark of VMware, Inc. and its
+    subsidiaries in the United States and other jurisdictions. All other marks
+    and names mentioned herein may be trademarks of their respective companies.
+-   The Workspace ONE Software Development Kit Integration Samples are
+    licensed under a two-clause BSD license.  
+    SPDX-License-Identifier: BSD-2-Clause
