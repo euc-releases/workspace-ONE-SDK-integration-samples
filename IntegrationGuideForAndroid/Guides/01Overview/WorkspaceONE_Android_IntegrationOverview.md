@@ -74,6 +74,15 @@ modifications to the application user interface.
 The Workspace ONE Privacy Module is independent of Client, Framework, and
 Networking integration.
 
+# Operational Data
+VMware collects a limited set of information from the Workspace ONE SDK to
+operate and support the SDK within third-party apps, such as notifying customers
+about feature removal or platform compatibility. This data is anonymized and
+analyzed in aggregate, and cannot be used to identify the application containing
+the SDK or end user. This data is sent to scapi.vmware.com. Please
+refer to [VMware's Privacy Notices](https://www.vmware.com/help/privacy.html)
+online for more information about VMware data collection and privacy policies.
+
 # Tasks and Documentation
 Integration of an Android application with the Workspace ONE platform includes a
 number of tasks for the application developer. Instructions for these tasks are
@@ -144,6 +153,33 @@ as part of the application whole. The guide also includes instructions for how
 to access branding resources in the enterprise management console that could be
 used to customize the application user interface.
 
+## Links
+The integration guides are available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples)
+
+-   in Portable Document Format (PDF), on the VMware website.  
+    [https://code.vmware.com/web/sdk/Native/airwatch-android](https://code.vmware.com/web/sdk/Native/airwatch-android)
+
+The VMware website also has links to other integration resources, including
+earlier versions of the Developer Guide documentation, other technical
+documentation, and the SDK itself. You will require a My Workspace One login in
+order to download the SDK. Speak with your Workspace ONE representative for
+access.
+
+The following tables lists the guides and gives links to their published
+locations in different formats.
+
+Document| Markdown | PDF
+--------|----------|----
+Integration Overview (this document) | [IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+Base Integration Guide | [BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+Branding Integration Guide | [Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+
+
+
 # Integration Paths Diagram
 The following diagram shows the tasks involved in integrating an Android
 application with the Workspace ONE platform. The document in the Integration
@@ -155,10 +191,20 @@ The Privacy Module is independent of the Client, Framework, Networking path.
 ![**Diagram 1:** Workspace ONE for Android Integration Paths](IntegrationPaths.svg)
 
 # Document Information
+## Published Locations
+This document is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+
 ## Revision History
-|         |
-|---------|
-|03jul2020|First publication, for 20.4 SDK for Android.
+|         |                                            |
+|---------|--------------------------------------------|
+|03jul2020|First publication, for 20.4 SDK for Android.|
+|22jul2020|Updated for 20.7 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

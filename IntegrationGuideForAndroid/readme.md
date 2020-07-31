@@ -15,8 +15,10 @@ The code in this repository can be used in the following ways.
     file.
 -   Load the project into an IDE, see the [build](Documentation/build.md) file.
 
-At this time, the integration guide documents themselves aren't in this
-repository but that might change in future.
+# Guide Documents
+The integration guide documents are also in this repository. See the
+[Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md](Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+file for example.
 
 # Contributions
 See the [backlog](Documentation/backlog.md) file.

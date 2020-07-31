@@ -32,17 +32,22 @@ To integrate at the **Framework level**, do the following tasks:
 Note that you don't add Client SDK initialization if you are integrating at the
 Framework level.
 
-The instructions for these tasks assume that the integration preparation tasks
-are already complete.
+## Integration Guides
+This document is part of the Workspace ONE Integration Guide for Android set.
 
-See also:
+See other guides in the set for
 
--   The separate Integration Overview, for an overview of integration levels and
-    the benefits of each.
--   The separate Integration Preparation guide for details of the tasks to be
-    completed before the tasks in this document.
--   The separate feature integration guides for the next steps that can be taken
-    after completing Framework integration.
+-   an overview of integration levels and the benefits of each.
+-   details of the integration preparation tasks, which must be done before the
+    tasks in this document.
+
+An overview that includes links to all the guides is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been tested with the following software
@@ -50,7 +55,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.4
+Workspace ONE SDK for Android                    | 20.7
 Workspace ONE management console                 | 20.4
 Android Studio integrated development environment| 4.0
 Gradle plugin for Android                        | 4.0.0
@@ -67,8 +72,11 @@ the framework features, which are covered by other guides.
 Adding the Client SDK is a Workspace ONE platform integration task for Android
 application developers. It applies to all levels of platform integration.
 
-The following instructions assume that the integration preparation tasks, see
-the Integration Preparation guide, are complete.
+**If you haven't installed your application via Workspace ONE** at least once,
+then do so now. If you don't, the application under development won't work when
+installed via the Android Debug Bridge (adb). Instructions for installing via
+Workspace ONE can be found in the [Integration Guides] document set, in the
+Integration Preparation guide.
 
 The first step will be to set up the build configuration and files. These
 instructions assume that your application has a typical project structure, as
@@ -125,31 +133,64 @@ First, update the build configuration and add the required library files.
 
     The location of this change is shown in the [Project Structure Diagram].
 
-2.  Copy the required library files.
+2.  Add the required libraries to the build.
 
-    The following library files are required.
+    In the application build.gradle file, in the `dependencies` block, add
+    references to the required libraries. (The library files will be copied in
+    the next step.) For example:
 
-    Library                                         | Example file name
-    ------------------------------------------------|------------------
-    Client SDK Library                              | `AirWatchSDK-20.4.aar`
-    Google JavaScript Object Notation (JSON) library| `gson-2.8.5.jar`
+        dependencies {
+            implementation fileTree(dir: 'libs', include: ['*.jar'])
+            implementation ...
+            implementation ...
 
-    The Client SDK library can be added as an AAR or a JAR file. Both are
-    included in the download.
+            // Following lines are added to integrate Workspace ONE at the Client level ...
 
-    The files are included in the SDK distribution, under the `Libs` directory.
-    See the [Software Development Kit Download Structure Diagram].
+            // Workspace ONE libraries that are part of the SDK.
+            implementation (name:'AirWatchSDK-20.7', ext:'aar')
+            implementation(name:"ws1-android-logger-1.0.0", ext:'aar')
+
+            // Third party libraries that are distributed with the SDK.
+            implementation 'com.google.code.gson:gson:2.4'
+
+            // Third party libraries that are hosted remotely.
+            implementation "androidx.multidex:multidex:2.0.0"
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+
+            ...
+        }
+
+    The location of this change is shown in the [Project Structure Diagram].
+
+3.  Copy the required library files.
+
+     The code snippet in the previous step indicates which libraries are:
+
+    -   Workspace ONE libraries that are part of the SDK.
+    -   Third party libraries that are distributed with the SDK.
+    -   Third party libraries that are hosted remotely.
+
+    The files that must be copied are those that are part of the SDK, or are
+    distributed with it.
+
+    All these files can be found in the SDK distribution, under one or other of
+    the `Libs` sub-directories or their `dependencies` sub-directories. See the
+    [Software Development Kit Download Structure Diagram].
     
     Copy the files into your project, under the application module
     sub-directory, in the `libs` sub-directory. The location is shown in the
     [Project Structure Diagram]. If the sub-directory doesn't exist, create it
     now.
 
+    The Client SDK library, `AirWatchSDK`, can be added as an AAR or a JAR file.
+    Both are included in the download.
+
     If you prefer, you can instead take the gson library from its default online
     location. The version distributed with the SDK isn't customized. It is
     included for convenience and completeness only.
 
-3.  Add the library files' location to the application build configuration.
+4.  Add the library files' location to the application build configuration.
 
     In the application build.gradle file, add a `repositories` block that
     specifies the location of the library file copies. For example:
@@ -161,30 +202,15 @@ First, update the build configuration and add the required library files.
         }
     
     The location of this change is shown in the [Project Structure Diagram].
-    
-4.  Add the libraries to the build.
-
-    In the application build.gradle file, in the `dependencies` block, add a
-    reference to the Workspace ONE Client SDK library. For example:
-
-        dependencies {
-            implementation fileTree(dir: 'libs', include: ['*.jar'])
-            implementation ...
-            implementation ...
-
-            // Next lines are added.
-            implementation 'com.google.code.gson:gson:2.8.5'
-            implementation "androidx.multidex:multidex:2.0.0"
-            implementation (name:'AirWatchSDK-20.4', ext:'aar')
-
-            ...
-        }
-
-    The location of this change is shown in the [Project Structure Diagram].
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
 with the next step, which is [Service Implementation].
+
+**If you haven't installed your application via Workspace ONE** at least once,
+then the application under development won't work when installed via the Android
+Debug Bridge (adb). Instructions for installing via Workspace ONE can be found
+in the [Integration Guides] document set, in the Integration Preparation guide.
 
 ### Service Implementation
 The Workspace ONE Client SDK runtime receives various essential notifications
@@ -306,7 +332,12 @@ Proceed as follows.
 This completes the required service implementation. Build the application to
 confirm that no mistakes have been made.
 
-### Next Steps [NextStepsClientSDKIntegration]
+**If you haven't installed your application via Workspace ONE** at least once,
+then the application under development won't work when installed via the Android
+Debug Bridge (adb). Instructions for installing via Workspace ONE can be found
+in the [Integration Guides] document set, in the Integration Preparation guide.
+
+### Next Steps
 After completing the above, continue with the next task, which could be either
 of the following.
 
@@ -435,53 +466,12 @@ the following categories.
     repository, and included via Gradle.
 
 Proceed as follows.
-
-1.  Copy the library files that are distributed with the SDK.
-
-    The following Workspace ONE library files are required.
-
-    Workspace ONE Library                                | Example file name
-    -----------------------------------------------------|------------------
-    Compliance Library                                   | `AWComplianceLibrary-2.3.3.aar`
-    Framework Library                                    | `AWFramework-20.4.aar`
-    Client Library                                       | `AirWatchSDK-20.4.aar`
-    Credentials Library                                  | `CredentialsExt-101.1.0.aar`
-    Simple Certificate Enrolment Protocol (SCEP) Library | `SCEPClient-1.0.10.aar`
-    Analytics Library                                    | `awApteligentBridge-1.0.0.jar`
-    User Interface Library                               | `VisionUx-1.1.2.aar`
-    Annotations Library                                  | `awannotations-1.0.jar`
-
-    The following third party library files are required.
-
-    Third Party Library                     | Example file name
-    ----------------------------------------|------------------
-    Google JavaScript Object Notation (JSON)| `gson-2.8.5.jar`
-    Moshi JSON                              | `moshi-1.8.0.jar`
-    Moshi adapters                          | `moshi-adapters-1.8.0.jar`
-    Okio for Input/Output                   | `okio-1.17.5.jar`
-    Zebra Crossing for QR codes             | `core-3.4.0.jar`
-
-    All required files are included in the SDK distribution, under one or other
-    of the `Libs` sub-directories or their `dependencies` sub-directories. See
-    the [Software Development Kit Download Structure Diagram].
-    
-    Copy the files into your project. Put the copies under the application
-    sub-directory, in the `libs` sub-directory. The location is shown in the
-    [Project Structure Diagram].
-
-    If you prefer, you can instead take these libraries from their default
-    online locations. The versions distributed with the SDK aren't customized.
-    They are included for convenience and completeness only.
-
-2.  Add the required libraries to the build.
-
-    The required libraries are those copied in the previous step, and the
-    remotely hosted libraries on which the framework depends.
+<p class="allow-page-break" />
+1.  Add the required libraries to the build.
 
     In the application build.gradle file, in the `dependencies` block, add
     references to the required libraries. For example:
-
-        def supportLibraryVersion = "28.0.0"
+    <p class="allow-page-break" />
 
         dependencies {
             def room_version = "2.2.4"
@@ -489,24 +479,43 @@ Proceed as follows.
             implementation fileTree(dir: 'libs', include: ['*.jar'])
             implementation ...
 
-            // Following lines are added.
-            // Integrate at Client level:
-            implementation 'com.google.code.gson:gson:2.8.5'
-            implementation "androidx.multidex:multidex:2.0.0"
-            implementation(name: 'AirWatchSDK-20.4', ext: 'aar')
+            // Following lines are added to integrate Workspace ONE at the Framework level ...
 
-            // Integrate at Framework level:
+            // Workspace ONE libraries that are part of the SDK.
+            implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
+            implementation(name:'SCEPClient-1.0.13', ext: 'aar')
+            implementation(name:'AWComplianceLibrary-2.3.4', ext: 'aar')
+            implementation(name:'AWFramework-20.7', ext: 'aar')
+            implementation(name:"AirWatchSDK-20.7", ext: "aar") 
+            implementation(name:'VisionUx-1.1.2', ext: 'aar')
+            implementation(name:'CredentialsExt-101.1.0', ext: 'aar')
+            implementation(name:"chameleon-android-1.0.14", ext:'aar')
+            implementation(name:"settings-1.0.17", ext:'aar')
+            implementation(name:"opdata-android-1.0.17", ext:'aar')
+            implementation(name:"attributesprovider-1.0.17", ext:'aar')
+            implementation(name:"ws1-android-logger-1.0.0", ext:'aar')
+            implementation(name:"encryptedpreferencesprovider-1.0.12", ext:'aar')
+            implementation(name:"httpprovider-1.0.11", ext:'aar')
+            implementation(name:"memoryprovider-1.0.11", ext:'aar')
+            implementation(name:"supercollider-1.0.7", ext:'aar')
+            // The following JAR file is included in the SDK but needn't be added
+            // as a specific dependency because it is covered by the
+            // `implementation fileTree( ... include: ['*.jar'])`, above, after
+            // copying.
+            // awannotations-1.0.jar
+
+            // Third party libraries that are distributed with the SDK.
             implementation 'com.squareup.moshi:moshi:1.8.0'
             implementation 'com.squareup.moshi:moshi-adapters:1.8.0'
             implementation 'com.squareup.okio:okio:1.17.2'
-            implementation 'com.google.zxing:core:3.4.0'
+            implementation 'com.google.zxing:core:3.3.3'
+            implementation 'com.google.code.gson:gson:2.4'
 
-            implementation(name: 'AWFramework-20.4', ext: 'aar')
-            implementation(name: 'SCEPClient-1.0.10', ext: 'aar')
-            implementation(name: 'AWComplianceLibrary-2.3.3', ext: 'aar')
-            implementation(name: 'VisionUx-1.1.2', ext: 'aar')
-            implementation(name: 'CredentialsExt-101.1.0', ext: 'aar')
-
+            // Third party libraries that are hosted remotely.
+            implementation 'androidx.security:security-crypto:1.0.0-rc02'
+            implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
+            implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+            kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
             implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
             implementation 'androidx.legacy:legacy-support-v13:1.0.0'
             implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -523,12 +532,9 @@ Proceed as follows.
             implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
             implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.71'
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0'
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0'
             implementation 'org.koin:koin-core:2.1.0'
             implementation 'org.koin:koin-android:2.1.0'
-            implementation 'org.koin:koin-java:2.0.1'
-            implementation 'net.zetetic:android-database-sqlcipher:4.2.0@aar'
+            implementation 'net.zetetic:android-database-sqlcipher:4.4.0@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
@@ -545,6 +551,29 @@ Proceed as follows.
     In principle, the SDK isn't supported with versions other than those given
     in the above. In practice however, problems are unlikely to be encountered
     with later versions.
+
+2.  Copy the required library files.
+
+    The code snippet in the previous step indicates which libraries are:
+
+    -   Workspace ONE libraries that are part of the SDK.
+    -   Third party libraries that are distributed with the SDK.
+    -   Third party libraries that are hosted remotely.
+
+    The files that must be copied are those that are part of the SDK, or are
+    distributed with it.
+
+    All these files can be found in the SDK distribution, under one or other of
+    the `Libs` sub-directories or their `dependencies` sub-directories. See the
+    [Software Development Kit Download Structure Diagram].
+    
+    Copy the files into your project. Put the copies under the application
+    sub-directory, in the `libs` sub-directory. The location is shown in the
+    [Project Structure Diagram].
+
+    If you prefer, you can instead take some of the third party libraries from
+    their default online locations. The versions distributed with the SDK aren't
+    customized. They are included for convenience and completeness only.
 
 3.  Add annotation processor support.
 
@@ -579,6 +608,9 @@ Proceed as follows.
             kotlinOptions {
                 jvmTarget = "1.8"
             }
+            packagingOptions {
+                pickFirst '**/*.so'
+            }
             // End of added blocks.
 
             defaultConfig {
@@ -604,7 +636,7 @@ following some additional steps. Early versions here means before 5.0 Android,
 which is API level 21. If your application won't support devices running early
 Android versions, skip the instructions in this section.
 
-To support early versions, change the build configuration to do the following:
+To support early versions, change the build configuration to:
 
 -   Enable Multidex explicitly.
 -   Use a support library for vector drawables.
@@ -911,7 +943,7 @@ Proceed as follows.
             android:name=".YourApplicationOrAWApplicationSubClass"
             android:label="@string/app_name"
             ...
-            tools:replace="android:label, android:allowBackup"
+            tools:replace="android:label, android:allowBackup, android:networkSecurityConfig"
             >
 
 3.  Set the launcher and main Activity to be from the Framework.
@@ -971,7 +1003,13 @@ After completing the above, you can proceed to:
 -   Integration of other framework features.
 
 See the respective documents in the Workspace ONE Integration Guide for Android
-set.
+set. An overview that includes links to all the guides in the set is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Appdendix: User Interface Screen Capture Images [User Interface Screen Capture Images]
 The following images show screens that are part of the Workspace ONE SDK user
@@ -987,10 +1025,20 @@ depending on the application state and the configuration in the management
 console.
 
 # Document Information
+## Published Locations
+This document is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+
 ## Revision History
-|         |
-|---------|
-|03jul2020|First publication, for 20.4 SDK for Android.
+|         |                                            |
+|---------|--------------------------------------------|
+|03jul2020|First publication, for 20.4 SDK for Android.|
+|31jul2020|Update for 20.7 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

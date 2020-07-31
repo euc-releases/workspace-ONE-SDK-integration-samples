@@ -14,12 +14,15 @@ The tasks detailed below should be done first, to prepare for integration of
 your Android application with the Workspace ONE platform. After completing these
 tasks, you will be ready to begin the integration.
 
-See also:
+## Integration Guides
+This document is part of the Workspace ONE Integration Guide for Android set. An
+overview that includes links to all the guides is available
 
--   The separate Integration Overview, for an overview of integration levels and
-    the benefits of each.
--   The separate Base Integration Guide for the next steps to take after the
-    tasks in this guide are complete.
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Prerequisites [prerequisite conditions]
 Before you begin, you will need the following.
@@ -67,6 +70,12 @@ Before you begin, you will need the following.
     own, or with an Android sample application, or start a new application from
     an Android Studio template, for example.
 
+    The instructions in the integration guide documents assume your application
+    uses AndroidX instead of the original support library. Instructions for
+    migrating from the support library to AndroidX can be found on the Android
+    developer website, for example here:  
+    [https://developer.android.com/jetpack/androidx/migrate](https://developer.android.com/jetpack/androidx/migrate)
+
 -   Developer device.
 
     You will need a physical Android device to to work on application
@@ -93,16 +102,20 @@ When the prerequisite conditions are met, you can start the first task, which is
 to [install your application via Workspace ONE].
 
 ## Compatibility
-Instructions in this document have been tested with the following software
-versions.
+Instructions in this document have been followed with the Workspace ONE Software
+Development Kit (SDK) for Android and other software, to confirm compatibility.
 
-Software                                           | Version
----------------------------------------------------|--------
-Workspace ONE software development kit for Android | 20.4
-Workspace ONE management console                   | 20.4
-Workspace ONE Intelligent Hub application          | 20.05
-Android Studio integrated development environment  | 4.0
-Gradle plugin for Android                          | 4.0.0
+The following table shows the software versions used for the instructions, and
+the minimum supported versions if different.
+
+Software                                           | Instructions | Supported |
+---------------------------------------------------|--------------|-----------|
+Workspace ONE software development kit for Android | 20.7         |           |
+Workspace ONE management console                   | 20.4         | 1811      |
+Workspace ONE Intelligent Hub application          | 20.06        | 19.07     |
+Android API level                                  | 29           | 19        |
+Android Studio integrated development environment  | 4.0          | 3.3       |
+Gradle plugin for Android                          | 4.0.0        | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -244,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.4 or whatever is the latest version.
+    -   Select an app version: 20.7 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -289,7 +302,14 @@ Workspace ONE platform. You are now ready to start either of the following.
 -   Client-level integration.
 -   Framework-level integration.
 
-See the Base Integration guide for instructions.
+See the Base Integration guide for instructions. The Base Integration Guide is
+available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
 # Appendix: How to generate a signed Android package file once [How to generate a signed Android package file once]
 You can generate a signed Android package file (APK) for your application by
@@ -475,11 +495,40 @@ The application that you uploaded can now be installed from Hub application.
 
 See also the [Troubleshooting] tips elsewhere in this document.
 
+# Appendix: How to run integrated applications on Huawei devices
+Additional preparation of some Huawei mobile devices is required in order to run
+applications that have integrated the Workspace ONE mobile software development
+kit.
+
+On some devices, an integrated application will crash when launched, if the
+anchor app, either Workspace ONE Intelligent Hub or Workspace ONE, isn't already
+running.
+
+The crash can be prevented by setting up Secondary Launch Management on the
+device. Proceed as follows.
+
+1.  On the device, launch the **Tablet Manager** or **Phone Manager** app.
+2.  Select the **Auto-Launch** option and **Secondary Launch Management**.
+3.  Enable for Secondary Launch whichever anchor app is installed, either
+    Workspace ONE Intelligent Hub or Workspace ONE.
+
+This completes the additional preparation.
+
 # Document Information
+## Published Locations
+This document is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+
 ## Revision History
-|         |
-|---------|
-|03jul2020|First publication, for 20.4 SDK for Android.
+|         |                                            |
+|---------|--------------------------------------------|
+|03jul2020|First publication, for 20.4 SDK for Android.|
+|31jul2020|Updated for 20.7 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

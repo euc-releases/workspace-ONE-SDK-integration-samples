@@ -89,18 +89,26 @@ integrate in your application, may be found under [Use Cases]. Compatibility of
 these features with each other is discussed under
 [Branding Feature Compatibility]. 
 
-The instructions for these tasks assume that the base integration tasks for the
-Framework integration level are already complete.
+Screen capture images, annotated to show the elements that can be branded in the
+Workspace ONE user interface, can be found in the [Splash Screen] and
+[Login Screen] images in the appendix to this document.
 
-See also:
+## Integration Guides
+This document is part of the Workspace ONE Integration Guide for Android set.
 
--   The [Splash Screen] and [Login Screen] images in the appendix to this
-    document. The images are annotated to show brand elements in the SDK user
-    interface.
--   The separate Base Integration guide, for details of the Framework-level
-    integration tasks.
--   The separate Integration Overview, for an introduction to SDK integration in
-    general.
+See other guides in the set for
+
+-   an introduction to SDK integration in general.
+-   details of the base integration tasks for the Framework integration level,
+    which must be done before the tasks in this document.
+
+An overview that includes links to all the guides is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been tested with the following software
@@ -108,7 +116,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.4
+Workspace ONE SDK for Android                    | 20.7
 Workspace ONE management console                 | 20.4
 Android Studio integrated development environment| 4.0
 
@@ -1017,10 +1025,20 @@ information, see the Android developer website.
 Save the file and the color will have been added to the application resources.
 
 # Document Information
+## Published Locations
+This document is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [https://github.com/vmware-samples/...Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [https://code.vmware.com/...Branding.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+
 ## Revision History
-|         |
-|---------|
-|03jul2020|First publication, for 20.4 SDK for Android.
+|         |                                            |
+|---------|--------------------------------------------|
+|03jul2020|First publication, for 20.4 SDK for Android.|
+|31jul2020|Update for 20.7 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

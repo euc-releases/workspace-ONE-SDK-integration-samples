@@ -6,4 +6,8 @@ repositories {
         dirs new RelativePath(false,
             'Libs', 'ClientSDK' ).getFile(downloadSDKVersion)
     }
+    flatDir {
+        dirs new RelativePath(false,
+            'Libs', 'ClientSDK', 'dependencies').getFile(downloadSDKVersion)
+    }
 }

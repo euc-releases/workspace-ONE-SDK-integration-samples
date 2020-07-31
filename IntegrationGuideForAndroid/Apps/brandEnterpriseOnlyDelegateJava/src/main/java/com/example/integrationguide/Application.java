@@ -32,6 +32,8 @@ import com.airwatch.sdk.configuration.SettingsExtension;
 import com.airwatch.sdk.context.awsdkcontext.SDKContextHelper;
 import com.airwatch.sdk.context.awsdkcontext.handlers.SDKBaseHandler;
 import com.airwatch.sdk.p2p.P2PChannel;
+import com.vmware.chameleon.Configuration;
+import com.vmware.chameleon.function.FunctionFactory;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +42,7 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Future;
 
 public class Application
         extends android.app.Application
@@ -403,4 +406,59 @@ public class Application
         awDelegate.onSDKException(code, errorMessage);
     }
 
+    @Override
+    public void initializeLogger() {
+        awDelegate.initializeLogger();
+    }
+
+    @Override
+    public void chameleonContextCreate(@NotNull Context context) {
+        awDelegate.chameleonContextCreate(context);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> emitEvent(@NotNull String s1, @NotNull String s2, boolean b) {
+        return awDelegate.emitEvent(s1, s2, b);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> evaluateScript(@NotNull String s) {
+        return awDelegate.evaluateScript(s);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> hasEvent(@NotNull String s) {
+        return awDelegate.hasEvent(s);
+    }
+
+    @Override
+    public void registerFunction(@NotNull String s, @NotNull FunctionFactory functionFactory) {
+        awDelegate.registerFunction(s, functionFactory);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> setResourcePathMapping(@NotNull String s, @NotNull String s1) {
+        return  awDelegate.setResourcePathMapping(s, s1);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> setStoragePathMapping(@NotNull String s, @NotNull String s1) {
+        return awDelegate.setStoragePathMapping(s, s1);
+    }
+
+    @NotNull
+    @Override
+    public Future<Boolean> startChameleonContext(@NotNull Configuration configuration) {
+        return awDelegate.startChameleonContext(configuration);
+    }
+
+    @Override
+    public void stopChameleonContext() {
+        awDelegate.stopChameleonContext();
+    }
 }
