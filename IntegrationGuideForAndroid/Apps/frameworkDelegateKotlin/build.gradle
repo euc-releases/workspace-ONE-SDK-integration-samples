@@ -13,19 +13,29 @@ plugins {
 
 // Start with the application.
 apply from: file("buildBase.gradle")
-//
-// Add the downloaded SDK as a repository, and apply all the dependencies of the
-// AirWatch Client SDK.
-apply from: file("downloadClient.gradle")
-apply from: file("integrateClient.gradle")
+
+
+def integrateFramework = secretFile("integrateFramework.gradle")
+
+if (integrateFramework.exists()) {
+    apply from: integrateFramework
+}
+else {
+    // Add the downloaded SDK as a repository, and apply all the dependencies of the
+    // AirWatch Client SDK.
+    apply from: file("integrateClient.gradle")
+    //
+    // And then do the same for Framework integration.
+    apply from: file("integrateFramework.gradle")
+}
+
+def properties = new Properties()
+file("application.properties").withInputStream {properties.load(it)}
 
 android {
     defaultConfig {
-        manifestPlaceholders = [applicationClass: "Application"]
+        manifestPlaceholders = [
+            applicationClass: properties.getProperty('applicationClass')
+        ]
     }
 }
-
-//
-// And then all the dependencies for Framework integration.
-apply from: file("downloadFramework.gradle")
-apply from: file("integrateFramework.gradle")

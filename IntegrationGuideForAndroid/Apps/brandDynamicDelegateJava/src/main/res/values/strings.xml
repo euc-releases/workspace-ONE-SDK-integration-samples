@@ -8,4 +8,7 @@
     <string name="app_logo_content_description">Application logo</string>
     <string name="enterprise_logo_content_description">Enterprise logo</string>
     <string name="ui_placeholder">Application User Interface goes here!</string>
+    <string name="sdk_state">SDK state: %1$s</string>
+    <string name="sdk_configuration_unavailable"
+        >"SDK configuration unavailable."</string>
 </resources>

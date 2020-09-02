@@ -9,9 +9,12 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.airwatch.sdk.SDKManager
+import com.airwatch.sdk.context.SDKContext
 import com.airwatch.sdk.context.SDKContextManager
 
 class MainActivity : BaseActivity() {
@@ -31,7 +34,7 @@ class MainActivity : BaseActivity() {
             Context.NOTIFICATION_SERVICE) as NotificationManager
         manager.createNotificationChannel(channel)
 
-        findViewById<View>(R.id.imageViewAppLogo)?.setOnClickListener {
+        findViewById<View>(R.id.toggleView).setOnClickListener {
             val notification = NotificationCompat.Builder(this, channelID)
                 .setSmallIcon(R.drawable.brand_logo_onecolour)
                 .setContentTitle("Tapped")
@@ -42,8 +45,7 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        val sdkContext = SDKContextManager.getSDKContext()
-        toastHere("SDK state:${sdkContext.currentState.name}.")
+        toastHere(configureStatus())
 
         BrandingManager.getInstance(this).defaultBrandingManager
             .brandLoadingScreenLogo {
@@ -51,6 +53,47 @@ class MainActivity : BaseActivity() {
                     .setImageBitmap(it)
             }
 
+    }
+
+    private fun configureStatus():String {
+        val sdkContext = SDKContextManager.getSDKContext()
+        val sdkManager = SDKManager.init(applicationContext)
+        val status = getString(
+            R.string.sdk_state, sdkContext.currentState.name)
+
+        findViewById<TextView>(R.id.textViewConfiguration).let {
+            it.text = status
+            it.setOnClickListener { statusToggle() }
+        }
+
+        val message = listOf(
+            if (sdkContext.currentState == SDKContext.State.IDLE)
+                getString(R.string.sdk_configuration_unavailable)
+            else
+                sdkContext.sdkConfiguration.toString(),
+            mapOf(
+                "c" to sdkContext.currentState.value,
+                "n" to sdkContext.currentState.name,
+                "I" to SDKContext.State.INITIALIZED.value,
+                "C" to SDKContext.State.CONFIGURED.value
+            ).toString()
+        ).joinToString(separator = "\n")
+
+        // Dump the message into the textView that is inside the scrolling
+        // portion.
+        findViewById<TextView>(R.id.textViewScrolling).text = message
+
+        return status
+    }
+
+    fun statusToggle() {
+        val visible = findViewById<View>(R.id.scrollView).let { scrollView ->
+            (scrollView.visibility == View.VISIBLE).also {
+                scrollView.visibility = if (it) View.GONE else View.VISIBLE
+            }
+        }
+        findViewById<View>(R.id.toggleView).visibility =
+            if (visible) View.VISIBLE else View.GONE
     }
 
     private fun toastHere(message: String) { runOnUiThread {

@@ -6,4 +6,7 @@
     <string name="app_name">Integration Guide</string>
     <string name="app_label">App+WS1</string>
     <string name="ui_placeholder">Application User Interface goes here!</string>
+    <string name="status_placeholder">Awaiting status …</string>
+    <string name="status_ok">Workspace ONE console version: %1$s</string>
+    <string name="status_ng">Workspace ONE failed.</string>
 </resources>

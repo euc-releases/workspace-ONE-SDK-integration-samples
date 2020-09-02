@@ -89,8 +89,7 @@ class Rules:
 
         # Files that should be the same everywhere.
         '**/proguard-rules.pro', '**/buildBase.gradle',
-        '**/downloadClient.gradle', '**/integrateClient.gradle',
-        '**/downloadFramework.gradle', '**/integrateFramework.gradle',
+        '**/integrateClient.gradle', '**/integrateFramework.gradle',
         *_java_kt(
             'AirWatchSDKIntentService', 'BaseActivity', 'Application',
             'AWApplication', 'BrandingManager', 'BitmapBrandingManager'
@@ -100,16 +99,20 @@ class Rules:
         # '**/DynamicBrandApplication.java', '**/DynamicBrandApplication.kt',
 
         # build.gradle files that aren't the same as the framework.
-        # Pre-framework builds have different dependencies. Branding builds set
-        # different ApplicationClass values.
+        # Pre-framework builds have different dependencies.
         'base*/build.gradle', 'client*/build.gradle',
-        'brandDynamicDelegate*/build.gradle',
-        'brandDynamicExtend*/build.gradle',
-        'brandEnterprise*Delegate*/**/build.gradle',
-        'brandEnterprise*Extend*/**/build.gradle',
+
+        # application.properties files that set applicationClass values
+        # different to any framework builds.
+        'brandDynamicDelegate*/**/application.properties',
+        'brandDynamicExtend*/**/application.properties',
+        'brandEnterprise*Delegate*/**/application.properties',
+        'brandEnterprise*Extend*/**/application.properties',
 
         # XML files that can have a simple pattern.
-        'brandStatic*/**/styles.xml', 'brandDynamic*/**/strings.xml',
+        'brandStatic*/**/styles.xml',
+        'brandDynamic*/**/strings.xml', 'brandDynamic*/**/activity_main.xml',
+        'base*/**/strings.xml', 'client*/**/strings.xml',
 
         # Pre-Framework Android manifests.
         'base*/**/src/**/AndroidManifest.xml',
@@ -128,8 +131,6 @@ class Rules:
         ],
 
         "unbranded strings.xml files": [
-            'base*/**/strings.xml',
-            'client*/**/strings.xml',
             'framework*/**/strings.xml',
             'brandEnterpriseOnly*/**/strings.xml'
         ],
@@ -138,17 +139,31 @@ class Rules:
             'brandEnterprisePriority*/**/strings.xml'
         ],
 
+        "unbranded layout": [
+            'client*/**/activity_main.xml',
+            'framework*/**/activity_main.xml',
+            'brandEnterpriseOnly*/**/activity_main.xml'
+        ],
+        "single logo layout": [
+            'brandEnterprisePriority*/**/activity_main.xml',
+            'brandStatic*/**/activity_main.xml'
+        ],
+
         "framework manifests": [
             'framework*/**/src/**/AndroidManifest.xml',
             'brand*/**/src/**/AndroidManifest.xml'
         ],
-        "framework delegate build.gradle files": [
-            'frameworkDelegate*/**/build.gradle',
-            'brandStaticDelegate*/**/build.gradle'
+        "framework build.gradle files": [
+            'framework*/**/build.gradle',
+            'brand*/**/build.gradle'
         ],
-        "framework extend build.gradle files": [
-            'frameworkExtend*/**/build.gradle',
-            'brandStaticExtend*/**/build.gradle'
+        "framework delegate application.properties files": [
+            'frameworkDelegate*/**/application.properties',
+            'brandStaticDelegate*/**/application.properties'
+        ],
+        "framework extend application.properties files": [
+            'frameworkExtend*/**/application.properties',
+            'brandStaticExtend*/**/application.properties'
         ],
         "base MainActivity.java files": [
             'framework*/**/src/**/MainActivity.java',

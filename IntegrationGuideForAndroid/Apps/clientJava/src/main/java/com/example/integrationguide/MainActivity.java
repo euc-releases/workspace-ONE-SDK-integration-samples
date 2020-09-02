@@ -3,11 +3,14 @@
 
 package com.example.integrationguide;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airwatch.sdk.SDKManager;
+
+import org.json.JSONObject;
 
 public class MainActivity extends BaseActivity {
     SDKManager sdkManager = null;
@@ -17,36 +20,73 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         configureTextView();
+        configureStatus();
 
         startSDK();
     }
 
+    private void configureStatus() {
+        final TextView textView = (TextView) findViewById(
+            R.id.textViewConfiguration);
+        textView.setText(R.string.status_placeholder);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { statusToggle(); }
+        });
+    }
+
+    private void statusToggle() {
+        final View view = findViewById(R.id.scrollView);
+        final boolean visible = (view.getVisibility() == View.VISIBLE);
+        view.setVisibility(visible ? View.GONE : View.VISIBLE);
+        findViewById(R.id.toggleView).setVisibility(
+            visible ? View.VISIBLE : View.GONE);
+    }
+
     private void startSDK() { new Thread(new Runnable() {
-        @Override
-        public void run() {
-            try {
-                final SDKManager initSDKManager = SDKManager.init(
-                    MainActivity.this);
-                sdkManager = initSDKManager;
-                toastHere(
-                    "Workspace ONE console version:"
-                    + initSDKManager.getConsoleVersion());
+            @Override
+            public void run() {
+                try {
+                    final SDKManager initSDKManager = SDKManager.init(
+                        MainActivity.this);
+                    sdkManager = initSDKManager;
+                    final String message = getString(
+                        R.string.status_ok,
+                        Float.toString(initSDKManager.getConsoleVersion())
+                    );
+                    toastHere(message);
+                    showStatus(message,
+                        (new JSONObject(
+                            initSDKManager.getSDKProfileJSONString())
+                        ).toString(4)
+                    );
+                } catch (Exception exception) {
+                    sdkManager = null;
+                    final String message = getString(R.string.status_ng);
+                    toastHere(message);
+                    showStatus(message, exception.toString());
+                }
             }
-            catch (Exception exception) {
-                sdkManager = null;
-                toastHere(
-                    "Workspace ONE failed " + exception + ".");
-            }
-        }
     }).start(); }
 
-    private void toastHere(final String message) {
-        final Activity activity = this;
+    private void showStatus(
+        final String shortMessage, final String longMessage
+    ) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+                ((TextView) findViewById(R.id.textViewConfiguration))
+                    .setText(shortMessage);
+                ((TextView) findViewById(R.id.textViewScrolling))
+                    .setText(longMessage);
             }
         });
     }
+
+    private void toastHere(final String message) { runOnUiThread(new Runnable() {
+        @Override
+        public void run() { Toast.makeText(
+            MainActivity.this, message, Toast.LENGTH_LONG
+        ).show(); }
+    }); }
 }

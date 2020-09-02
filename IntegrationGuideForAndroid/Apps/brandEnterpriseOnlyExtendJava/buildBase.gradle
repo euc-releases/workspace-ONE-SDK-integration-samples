@@ -25,7 +25,10 @@ android {
     }
 }
 
-apply from: keystoreGradle
+// The signing configuration, which is secret and must be created by each user
+// of the repository. For a template, see the readme file in this directory:  
+// `workspace-one-sdk-integration-samples/IntegrationGuideForAndroid/Secret`
+apply from: secretFile("keystore.gradle")
 
 dependencies {
     // AndroidX native.

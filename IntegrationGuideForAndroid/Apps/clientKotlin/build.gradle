@@ -12,7 +12,13 @@ plugins {
 
 apply from: file("buildBase.gradle")
 
-// Add the downloaded SDK as a repository, and apply all the dependencies of the
-// AirWatch Client SDK.
-apply from: file("downloadClient.gradle")
-apply from: file("integrateClient.gradle")
+def integrateClient = secretFile("integrateClient.gradle")
+
+if (integrateClient.exists()) {
+    apply from: integrateClient
+}
+else {
+    // Add the downloaded SDK as a repository, and apply all the dependencies of
+    // the AirWatch Client SDK.
+    apply from: file("integrateClient.gradle")
+}

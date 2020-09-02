@@ -1,6 +1,11 @@
 // Copyright 2020 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
+repositories {
+    flatDir { dirs sdkVersionDir('Libs', 'ClientSDK') }
+    flatDir { dirs sdkVersionDir('Libs', 'ClientSDK', 'dependencies') }
+}
+
 dependencies {
 
     // Following lines are added to integrate Workspace ONE at the Client level ...

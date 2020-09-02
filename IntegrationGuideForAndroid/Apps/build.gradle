@@ -33,16 +33,22 @@ task clean(type: Delete) {
 ext {
     airwatchVersion = '20.7'
 
-    // The signing configuration, which is secret and must be created by each 
-    // user of the repository. It's stored outside the Android Studio project,
-    // hence rootDir.getParent().
-    keystoreGradle = new RelativePath(
-        true, "Secret", "keystore.gradle"
-    ).getFile(new File(rootDir.getParent()))
+    // Utility method to generate a path for a file in the directory for
+    // secrets. Secrets are stored outside the Android Studio project, hence
+    // `rootDir.getParent()`.
+    secretFile = {
+        String[] segments -> new RelativePath(true, "Secret", *segments)
+            .getFile(new File(rootDir.getParent()))
+    }
 
-    // Handy paths under the Download directory, which is where the SDK download
-    // can be copied to.
-    downloadRoot = new File(rootDir.getParent(), "Download")
-    downloadSDKVersion = new File(
-        downloadRoot, "Android SDK v${airwatchVersion}")
+    // Utility methods to generate paths for files or directories under where
+    // the current selected version of the SDK was downloaded.
+    sdkVersionPath = {
+        boolean endsWithFile, String[] segments -> new RelativePath(
+            endsWithFile,
+            "Download", "Android SDK v${airwatchVersion}", *segments
+        ).getFile(new File(rootDir.getParent()))
+    }
+    sdkVersionFile = { String[] segments -> sdkVersionPath(true, segments) }
+    sdkVersionDir = { String[] segments -> sdkVersionPath(false, segments) }
 }

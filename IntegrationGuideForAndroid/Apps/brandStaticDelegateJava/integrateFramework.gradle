@@ -1,6 +1,12 @@
 // Copyright 2020 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
+
+repositories {
+    flatDir { dirs sdkVersionDir('Libs', 'AWFramework') }
+    flatDir { dirs sdkVersionDir('Libs', 'AWFramework', 'dependencies') }
+}
+
 android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -34,11 +40,8 @@ dependencies {
     implementation(name:"httpprovider-1.0.11", ext:'aar')
     implementation(name:"memoryprovider-1.0.11", ext:'aar')
     implementation(name:"supercollider-1.0.7", ext:'aar')
-    implementation files(
-        new RelativePath(false,
-            'Libs', 'AWFramework', 'dependencies', 'awannotations-1.0.jar'
-        ).getFile(downloadSDKVersion)
-    )
+    implementation files( sdkVersionFile(
+            'Libs', 'AWFramework', 'dependencies', 'awannotations-1.0.jar'))
 
     // Third party libraries that are distributed with the SDK.
     implementation 'com.squareup.moshi:moshi:1.8.0'
