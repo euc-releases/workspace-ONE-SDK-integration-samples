@@ -116,7 +116,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.7
+Workspace ONE SDK for Android                    | 20.8
 Workspace ONE management console                 | 20.4
 Android Studio integrated development environment| 4.0
 
@@ -1039,6 +1039,7 @@ This document is available
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Update for 20.7 SDK for Android.            |
+|31aug2020|Update for 20.8 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

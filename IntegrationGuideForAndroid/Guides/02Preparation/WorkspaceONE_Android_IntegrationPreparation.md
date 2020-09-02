@@ -110,7 +110,7 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 20.7         |           |
+Workspace ONE software development kit for Android | 20.8         |           |
 Workspace ONE management console                   | 20.4         | 1811      |
 Workspace ONE Intelligent Hub application          | 20.06        | 19.07     |
 Android API level                                  | 29           | 19        |
@@ -257,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.7 or whatever is the latest version.
+    -   Select an app version: 20.8 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -529,6 +529,7 @@ This document is available
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Updated for 20.7 SDK for Android.           |
+|31aug2020|Updated for 20.8 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
