@@ -57,8 +57,8 @@ Software                                         | Version
 -------------------------------------------------|--------
 Workspace ONE SDK for Android                    | 20.8
 Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.0
-Gradle plugin for Android                        | 4.0.0
+Android Studio integrated development environment| 4.0.1
+Gradle plugin for Android                        | 4.0.1
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -1040,6 +1040,7 @@ This document is available
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Update for 20.7 SDK for Android.            |
 |30aug2020|Update for 20.8 SDK for Android.            |
+|03sep2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

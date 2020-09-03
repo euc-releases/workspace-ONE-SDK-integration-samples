@@ -112,10 +112,10 @@ Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
 Workspace ONE software development kit for Android | 20.8         |           |
 Workspace ONE management console                   | 20.4         | 1811      |
-Workspace ONE Intelligent Hub application          | 20.06        | 19.07     |
+Workspace ONE Intelligent Hub application          | 20.07        | 19.07     |
 Android API level                                  | 29           | 19        |
-Android Studio integrated development environment  | 4.0          | 3.3       |
-Gradle plugin for Android                          | 4.0.0        | 3.3       |
+Android Studio integrated development environment  | 4.0.1        | 3.3       |
+Gradle plugin for Android                          | 4.0.1        | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -246,7 +246,7 @@ example as follows.
 
 2.  Select the Download option.
 
-    This will open the MyWorkspaceONE portal.
+    This will open the My Workspace ONE portal.
     
     As the warning on the page says: You must have a MyVMware username and
     password in able to sign in and complete your download.  
@@ -530,6 +530,7 @@ This document is available
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Updated for 20.7 SDK for Android.           |
 |31aug2020|Updated for 20.8 SDK for Android.           |
+|03sep2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

@@ -12,7 +12,7 @@ dependencies {
 
     // Workspace ONE libraries that are part of the SDK.
     implementation(name: "AirWatchSDK-${airwatchVersion}", ext: 'aar')
-    implementation(name:"ws1-android-logger-1.0.0", ext:'aar')
+    implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
 
     // Third party libraries that are distributed with the SDK.
     implementation 'com.google.code.gson:gson:2.8.5'
