@@ -46,9 +46,10 @@ class BrandingManager implements com.airwatch.login.branding.BrandingManager
     }
 
     // Property, also used for delegation.
-    private com.airwatch.login.branding.BrandingManager defaultBrandingManager;
-    public com.airwatch.login.branding.BrandingManager
-    getDefaultBrandingManager() { return this.defaultBrandingManager; }
+    private DefaultBrandingManager defaultBrandingManager;
+    public DefaultBrandingManager getDefaultBrandingManager() {
+        return this.defaultBrandingManager;
+    }
 
     // Delegated methods.
     @Override

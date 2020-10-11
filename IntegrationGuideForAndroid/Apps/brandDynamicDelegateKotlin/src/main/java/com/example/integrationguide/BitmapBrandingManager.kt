@@ -9,8 +9,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import com.airwatch.login.branding.BrandingCallBack
 import com.airwatch.login.branding.DefaultBrandingManager
-import com.airwatch.sdk.context.SDKContextManager
-import com.airwatch.sdk.context.awsdkcontext.SDKDataModelImpl
 import com.airwatch.simplifiedenrollment.views.AWNextActionView
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -24,30 +22,14 @@ open class BitmapBrandingManager private constructor (
 ) : com.airwatch.login.branding.BrandingManager by defaultBrandingManager
 {
     companion object {
-        // Helper function.
-        fun createDefaultBrandingManager(
-            application: android.app.Application
-        ): DefaultBrandingManager
-        {
-            return BrandingManager.createDefaultBrandingManager(application)
-        }
-
         // Singleton business.
         private var instance: BitmapBrandingManager? = null
-        fun getInstance(
-            application: android.app.Application
-        ):BitmapBrandingManager
+        fun getInstance(brandingManager: BrandingManager):BitmapBrandingManager
         {
             return instance ?:
-            BitmapBrandingManager(createDefaultBrandingManager(application)).also {
+            BitmapBrandingManager(brandingManager.defaultBrandingManager).also {
                 instance = it
             }
-        }
-        fun getInstance(activity: android.app.Activity):BitmapBrandingManager {
-            return getInstance(activity.application)
-        }
-        fun getInstance():BitmapBrandingManager? {
-            return instance
         }
     }
 

@@ -50,16 +50,17 @@ public class MainActivity extends BaseActivity {
                     final SDKManager initSDKManager = SDKManager.init(
                         MainActivity.this);
                     sdkManager = initSDKManager;
-                    final String message = getString(
+                    final String shortMessage = getString(
                         R.string.status_ok,
                         Float.toString(initSDKManager.getConsoleVersion())
                     );
-                    toastHere(message);
-                    showStatus(message,
-                        (new JSONObject(
-                            initSDKManager.getSDKProfileJSONString())
-                        ).toString(4)
-                    );
+                    toastHere(shortMessage);
+                    final String sdkProfileJSON =
+                        initSDKManager.getSDKProfileJSONString();
+                    final String longMessage = sdkProfileJSON == null
+                        ? getString(R.string.null_sdk_profile_json)
+                        : (new JSONObject(sdkProfileJSON)).toString(4);
+                    showStatus(shortMessage, longMessage);
                 } catch (Exception exception) {
                     sdkManager = null;
                     final String message = getString(R.string.status_ng);

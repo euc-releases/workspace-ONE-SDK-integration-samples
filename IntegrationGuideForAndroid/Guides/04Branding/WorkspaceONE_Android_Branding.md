@@ -105,7 +105,7 @@ See other guides in the set for
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
@@ -116,9 +116,9 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.8
+Workspace ONE SDK for Android                    | 20.9
 Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.0.1
+Android Studio integrated development environment| 4.0.2
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -653,9 +653,10 @@ In Java, the code could look like this:
             this.defaultBrandingManager = defaultBrandingManager;
         }
 
-        private com.airwatch.login.branding.BrandingManager defaultBrandingManager;
-        public com.airwatch.login.branding.BrandingManager
-        getDefaultBrandingManager() { return this.defaultBrandingManager; }
+        private DefaultBrandingManager defaultBrandingManager;
+        public DefaultBrandingManager getDefaultBrandingManager() {
+            return this.defaultBrandingManager;
+        }
 
         @Override
         public void applyBranding(android.app.Activity activity) {
@@ -1029,18 +1030,20 @@ Save the file and the color will have been added to the application resources.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
+    [https://github.com/vmware-samples/...Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...Branding.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
 
 ## Revision History
-|         |                                            |
+|Date     |Revision                                    |
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Update for 20.7 SDK for Android.            |
 |31aug2020|Update for 20.8 SDK for Android.            |
 |03sep2020|Post-release update.                        |
+|01oct2020|Update for 20.9 SDK for Android.            |
+|11oct2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

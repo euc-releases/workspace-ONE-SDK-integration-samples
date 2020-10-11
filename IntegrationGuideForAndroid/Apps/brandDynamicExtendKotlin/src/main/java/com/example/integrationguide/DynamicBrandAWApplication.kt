@@ -5,7 +5,9 @@ package com.example.integrationguide
 
 class DynamicBrandAWApplication: AWApplication() {
     override fun getBrandingManager(): com.airwatch.login.branding.BrandingManager {
-        return BitmapBrandingManager.getInstance(this)
+        return BrandingManager.getInstance(this).let {
+            BitmapBrandingManager.getInstance(it)
+        }
     }
 
     override fun getNotificationIcon(): Int {

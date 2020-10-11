@@ -19,7 +19,7 @@ This document is part of the Workspace ONE Integration Guide for Android set. An
 overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 20.8         |           |
-Workspace ONE management console                   | 20.4         | 1811      |
-Workspace ONE Intelligent Hub application          | 20.07        | 19.07     |
+Workspace ONE software development kit for Android | 20.9         |           |
+Workspace ONE management console                   | 20.4         | 1903      |
+Workspace ONE Intelligent Hub application          | 20.08        | 19.07     |
 Android API level                                  | 29           | 19        |
-Android Studio integrated development environment  | 4.0.1        | 3.3       |
-Gradle plugin for Android                          | 4.0.1        | 3.3       |
+Android Studio integrated development environment  | 4.0.2        | 3.3       |
+Gradle plugin for Android                          | 4.0.2        | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -257,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.8 or whatever is the latest version.
+    -   Select an app version: 20.9 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -306,7 +306,7 @@ See the Base Integration guide for instructions. The Base Integration Guide is
 available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
@@ -519,18 +519,20 @@ This completes the additional preparation.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
+    [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
-|         |                                            |
+|Date     |Revision                                    |
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Updated for 20.7 SDK for Android.           |
 |31aug2020|Updated for 20.8 SDK for Android.           |
 |03sep2020|Post-release update.                        |
+|01oct2020|Updated for 20.9 SDK for Android.           |
+|11oct2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

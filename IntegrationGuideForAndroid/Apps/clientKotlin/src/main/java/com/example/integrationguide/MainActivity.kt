@@ -45,19 +45,23 @@ class MainActivity : BaseActivity() {
         try {
             val initSDKManager = SDKManager.init(this)
             sdkManager = initSDKManager
-            val message = getString(
-                R.string.status_ok, initSDKManager.consoleVersion.toString())
-            toastHere(message)
-            showStatus(
-                message,
-                JSONObject(initSDKManager.sdkProfileJSONString).toString(4)
-            )
+            getString(
+                R.string.status_ok, initSDKManager.consoleVersion.toString()
+            ).let {
+                toastHere(it)
+                showStatus(
+                    it, initSDKManager.sdkProfileJSONString?.run {
+                        JSONObject(this).toString(4)
+                    } ?: getString(R.string.null_sdk_profile_json)
+                )
+            }
         }
         catch (exception: Exception) {
             sdkManager = null
-            val message = getString(R.string.status_ng)
-            toastHere(message)
-            showStatus(message, exception.toString())
+            getString(R.string.status_ng).let {
+                toastHere(it)
+                showStatus(it, exception.toString())
+            }
         }
     }}
 

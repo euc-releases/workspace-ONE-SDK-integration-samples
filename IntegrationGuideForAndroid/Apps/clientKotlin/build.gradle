@@ -15,6 +15,7 @@ apply from: file("buildBase.gradle")
 def integrateClient = secretFile("integrateClient.gradle")
 
 if (integrateClient.exists()) {
+    println("Override integrateClient '${integrateClient}'.")
     apply from: integrateClient
 }
 else {

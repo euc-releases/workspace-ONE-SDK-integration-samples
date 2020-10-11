@@ -9,8 +9,9 @@ applications are in sub-directories, each holding a complete application written
 either in Java or in Kotlin, as follows.
 
 # Base Application
-The base applications have no SDK integration. The code is used as a base for
-other applications.
+The base applications have no integration with the Workspace ONE for Android
+software development kit (SDK). The code is used as a base for other
+applications.
 
 -   [Apps/baseJava](../Apps/baseJava)
 -   [Apps/baseKotlin](../Apps/baseKotlin)
@@ -35,29 +36,101 @@ Guide.
 These applications are all integrated to the Framework level, either by
 delegation or by extension.
 
--   Enterprise branding support only:
-    -   [Apps/brandEnterpriseOnlyDelegateJava](../Apps/brandEnterpriseOnlyDelegateJava)
-    -   [Apps/brandEnterpriseOnlyDelegateKotlin](../Apps/brandEnterpriseOnlyDelegateKotlin)
-    -   [Apps/brandEnterpriseOnlyExtendJava](../Apps/brandEnterpriseOnlyExtendJava)
-    -   [Apps/brandEnterpriseOnlyExtendKotlin](../Apps/brandEnterpriseOnlyExtendKotlin)
+## Enterprise branding support only
+Demonstration apps for support of enterprise branding.
 
--   Static application branding:
-    -   [Apps/brandStaticDelegateJava](../Apps/brandStaticDelegateJava)
-    -   [Apps/brandStaticDelegateKotlin](../Apps/brandStaticDelegateKotlin)
-    -   [Apps/brandStaticExtendJava](../Apps/brandStaticExtendJava)
-    -   [Apps/brandStaticExtendKotlin](../Apps/brandStaticExtendKotlin)
+-   [Apps/brandEnterpriseOnlyDelegateJava](../Apps/brandEnterpriseOnlyDelegateJava)
+-   [Apps/brandEnterpriseOnlyDelegateKotlin](../Apps/brandEnterpriseOnlyDelegateKotlin)
+-   [Apps/brandEnterpriseOnlyExtendJava](../Apps/brandEnterpriseOnlyExtendJava)
+-   [Apps/brandEnterpriseOnlyExtendKotlin](../Apps/brandEnterpriseOnlyExtendKotlin)
 
--   Static application branding with optional override to enterprise branding:
-    -   [Apps/brandEnterprisePriorityDelegateJava](../Apps/brandEnterprisePriorityDelegateJava)
-    -   [Apps/brandEnterprisePriorityDelegateKotlin](../Apps/brandEnterprisePriorityDelegateKotlin)
-    -   [Apps/brandEnterprisePriorityExtendJava](../Apps/brandEnterprisePriorityExtendJava)
-    -   [Apps/brandEnterprisePriorityExtendKotlin](../Apps/brandEnterprisePriorityExtendKotlin)
+Branding resources from the management console appear in the SDK user interface,
+as follows.
 
--   Dynamic branding:
-    -   [Apps/brandDynamicDelegateJava](../Apps/brandDynamicDelegateJava)
-    -   [Apps/brandDynamicDelegateKotlin](../Apps/brandDynamicDelegateKotlin)
-    -   [Apps/brandDynamicExtendJava](../Apps/brandDynamicExtendJava)
-    -   [Apps/brandDynamicExtendKotlin](../Apps/brandDynamicExtendKotlin)
+-   On the SDK splash screen that is displayed when the application starts
+    cold:
+    -   Logo will be a branding image.
+    -   Color of the progress bar will be from the brand palette.
+
+-   On the SDK login screen that is displayed when, for example, the end
+    user sets a passcode after registration:
+    -   Logo will be a branding image.
+    -   Background color of, for example, the Next and Confirm navigation
+        controls will be from the brand palette.
+
+## Static application branding
+Demonstration apps for support of static branding.
+
+-   [Apps/brandStaticDelegateJava](../Apps/brandStaticDelegateJava)
+-   [Apps/brandStaticDelegateKotlin](../Apps/brandStaticDelegateKotlin)
+-   [Apps/brandStaticExtendJava](../Apps/brandStaticExtendJava)
+-   [Apps/brandStaticExtendKotlin](../Apps/brandStaticExtendKotlin)
+
+Resources from the app appear in the SDK user interface, as follows.
+
+-   On the SDK splash screen that is displayed when the application starts
+    cold:
+    -   Logo will be an app drawable.
+    -   Color of the progress bar will be an app color.
+    -   Background color will be an app color, unless in dark mode.
+
+-   On the SDK login screen that is displayed when, for example, the end
+    user sets a passcode after registration:
+    -   Logo will be an app drawable.
+    -   Background color will be an app color.
+
+A drawable from the app resources also appears in the app user interface.
+
+## Static application branding with optional override to enterprise branding
+Demonstration apps for support of static branding overridden by enterprise
+branding.
+
+-   [Apps/brandEnterprisePriorityDelegateJava](../Apps/brandEnterprisePriorityDelegateJava)
+-   [Apps/brandEnterprisePriorityDelegateKotlin](../Apps/brandEnterprisePriorityDelegateKotlin)
+-   [Apps/brandEnterprisePriorityExtendJava](../Apps/brandEnterprisePriorityExtendJava)
+-   [Apps/brandEnterprisePriorityExtendKotlin](../Apps/brandEnterprisePriorityExtendKotlin)
+
+Resources from the app and the management console appear in the SDK and app user
+interface, as described in the preceding sections. In case both the console and
+app specify a resource, the console specification has priority.
+
+## Dynamic branding
+Demonstration apps for dynamic branding.
+
+-   [Apps/brandDynamicDelegateJava](../Apps/brandDynamicDelegateJava)
+-   [Apps/brandDynamicDelegateKotlin](../Apps/brandDynamicDelegateKotlin)
+-   [Apps/brandDynamicExtendJava](../Apps/brandDynamicExtendJava)
+-   [Apps/brandDynamicExtendKotlin](../Apps/brandDynamicExtendKotlin)
+
+Dynamically generated resources appear in the SDK user interface, as follows.
+
+-   On the SDK splash screen that is displayed when the application starts cold:
+    -   Logo will be an image generated at run time from the following texts:
+        -   The word "Loading".
+        -   The current date and time.
+        -   A hexadecimal representation of the Primary Color in the enterprise
+            brand palette if one is set, or the word "null" if unset or
+            unavailable.
+    -   Color of the progress bar will be red.
+
+-   On the SDK login screen that is displayed when, for example, the end user
+    sets a passcode after registration:
+    -   Logo will be an image generated at run time from the following texts:
+        -   The word "Input".
+        -   The current date and time.
+        -   A hexadecimal representation of the Primary Color in the enterprise
+            brand palette if one is set, or the word "null" if unset or
+            unavailable.
+    -   Background color of, for example, the Next and Confirm navigation
+        controls will be red.
+
+The app user interface has the following elements.
+
+-   A drawable from the app resources is displayed in the upper half of the
+    screen. When the image is tapped, an Android notification is posted. The
+    notification icon will be an app drawable.
+-   An enterprise branding image is displayed in the lower half of the screen,
+    if configured in the management console.
 
 # Duplication
 A lot of the code in the project is duplicated between applications. In theory,

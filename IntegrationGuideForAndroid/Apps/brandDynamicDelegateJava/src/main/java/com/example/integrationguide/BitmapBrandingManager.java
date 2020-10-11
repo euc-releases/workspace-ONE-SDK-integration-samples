@@ -10,12 +10,8 @@ import android.graphics.Paint;
 
 import com.airwatch.login.branding.BrandingCallBack;
 import com.airwatch.login.branding.DefaultBrandingManager;
-import com.airwatch.sdk.context.SDKContextManager;
-import com.airwatch.sdk.context.awsdkcontext.SDKDataModelImpl;
 import com.airwatch.simplifiedenrollment.views.AWInputField;
 import com.airwatch.simplifiedenrollment.views.AWNextActionView;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -28,31 +24,16 @@ import java.util.Date;
 class BitmapBrandingManager
     implements com.airwatch.login.branding.BrandingManager
 {
-    // Helper function.
-    @NotNull
-    static DefaultBrandingManager createDefaultBrandingManager(
-        android.app.Application application
-    ) {
-        return BrandingManager.createDefaultBrandingManager(application);
-    }
-
     // Singleton business.
     private static BitmapBrandingManager instance = null;
     public static BitmapBrandingManager getInstance(
-            android.app.Application application
+        BrandingManager brandingManager
     ) {
         if (instance == null) {
             instance = new BitmapBrandingManager(
-                createDefaultBrandingManager(application));
+                brandingManager.getDefaultBrandingManager()
+            );
         }
-        return instance;
-    }
-    public static BitmapBrandingManager getInstance(
-        @NotNull android.app.Activity activity
-    ) {
-        return getInstance(activity.getApplication());
-    }
-    public static BitmapBrandingManager getInstance() {
         return instance;
     }
 
@@ -67,9 +48,8 @@ class BitmapBrandingManager
     }
 
     // Property, also used for delegation.
-    private com.airwatch.login.branding.BrandingManager defaultBrandingManager;
-    public com.airwatch.login.branding.BrandingManager
-    getDefaultBrandingManager() {
+    private DefaultBrandingManager defaultBrandingManager;
+    public DefaultBrandingManager getDefaultBrandingManager() {
         return this.defaultBrandingManager;
     }
 

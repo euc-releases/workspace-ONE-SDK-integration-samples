@@ -9,7 +9,8 @@ public class DynamicBrandApplication extends Application {
     @NotNull
     @Override
     public com.airwatch.login.branding.BrandingManager getBrandingManager() {
-        return BitmapBrandingManager.getInstance(this);
+        return BitmapBrandingManager.getInstance(
+            BrandingManager.getInstance(this));
     }
 
     @Override

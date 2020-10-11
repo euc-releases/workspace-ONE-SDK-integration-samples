@@ -44,7 +44,7 @@ See other guides in the set for
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
@@ -55,10 +55,10 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.8
+Workspace ONE SDK for Android                    | 20.9
 Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.0.1
-Gradle plugin for Android                        | 4.0.1
+Android Studio integrated development environment| 4.0.2
+Gradle plugin for Android                        | 4.0.2
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -122,12 +122,12 @@ First, update the build configuration and add the required library files.
                 ...
             }
             dependencies {
-                classpath 'com.android.tools.build:gradle:4.0.0'
+                classpath 'com.android.tools.build:gradle:4.0.2'
                 ...
             }
         }
     
-    In this example, the Gradle Android plugin version is 4.0.0
+    In this example, the Gradle Android plugin version is 4.0.2
 
     Ensure that the plugin version is at least 3.4.2
 
@@ -147,7 +147,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-20.8', ext:'aar')
+            implementation (name:'AirWatchSDK-20.9', ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
 
             // Third party libraries that are distributed with the SDK.
@@ -157,6 +157,11 @@ First, update the build configuration and add the required library files.
             implementation "androidx.multidex:multidex:2.0.0"
             implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
             implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+            implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
+            implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+            annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
+                exclude group:'com.google.guava', module:'guava'
+            }
 
             ...
         }
@@ -484,14 +489,14 @@ Proceed as follows.
             // Workspace ONE libraries that are part of the SDK.
             implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.13', ext: 'aar')
-            implementation(name:'AWComplianceLibrary-2.3.4', ext: 'aar')
-            implementation(name:'AWFramework-20.8', ext: 'aar')
-            implementation(name:"AirWatchSDK-20.8", ext: "aar") 
-            implementation(name:'VisionUx-1.1.2', ext: 'aar')
+            implementation(name:'AWComplianceLibrary-2.3.5', ext: 'aar')
+            implementation(name:'AWFramework-20.9', ext: 'aar')
+            implementation(name:"AirWatchSDK-20.9", ext: "aar") 
+            implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-101.1.0', ext: 'aar')
             implementation(name:"chameleon-android-1.0.16-ndk-r21c", ext:'aar')
             implementation(name:"settings-1.0.17-ndk-r21c", ext:'aar')
-            implementation(name:"opdata-android-1.2.0-ndk-r21c", ext:'aar')
+            implementation(name:"opdata-android-1.3.2", ext:'aar')
             implementation(name:"attributesprovider-1.0.17", ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
             implementation(name:"encryptedpreferencesprovider-1.0.12", ext:'aar')
@@ -521,7 +526,7 @@ Proceed as follows.
             implementation 'androidx.appcompat:appcompat:1.1.0'
             implementation 'androidx.cardview:cardview:1.0.0'
             implementation 'androidx.recyclerview:recyclerview:1.1.0'
-            implementation 'com.google.android.material:material:1.0.0'
+            implementation 'com.google.android.material:material:1.1.0'
             implementation 'androidx.appcompat:appcompat:1.1.0'
             implementation('androidx.legacy:legacy-preference-v14:1.0.0') {
                 exclude group: 'androidx.legacy', module: 'legacy-support-v4'
@@ -1006,7 +1011,7 @@ See the respective documents in the Workspace ONE Integration Guide for Android
 set. An overview that includes links to all the guides in the set is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
@@ -1029,18 +1034,20 @@ console.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/master/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
 ## Revision History
-|         |                                            |
+|Date     |Revision                                    |
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |31jul2020|Update for 20.7 SDK for Android.            |
 |30aug2020|Update for 20.8 SDK for Android.            |
 |03sep2020|Post-release update.                        |
+|01oct2020|Update for 20.9 SDK for Android.            |
+|11oct2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

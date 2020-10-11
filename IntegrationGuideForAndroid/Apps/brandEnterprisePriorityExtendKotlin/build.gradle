@@ -14,10 +14,10 @@ plugins {
 // Start with the application.
 apply from: file("buildBase.gradle")
 
-
 def integrateFramework = secretFile("integrateFramework.gradle")
 
 if (integrateFramework.exists()) {
+    println("Override integrateFramework '${integrateFramework}'.")
     apply from: integrateFramework
 }
 else {
