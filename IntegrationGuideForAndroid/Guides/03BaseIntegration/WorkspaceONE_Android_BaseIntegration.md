@@ -55,10 +55,10 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.9
+Workspace ONE SDK for Android                    | 20.10
 Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.0.2
-Gradle plugin for Android                        | 4.0.2
+Android Studio integrated development environment| 4.1
+Gradle plugin for Android                        | 4.1
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -147,7 +147,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-20.9', ext:'aar')
+            implementation (name:'AirWatchSDK-20.10', ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
 
             // Third party libraries that are distributed with the SDK.
@@ -490,14 +490,14 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.13', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.5', ext: 'aar')
-            implementation(name:'AWFramework-20.9', ext: 'aar')
-            implementation(name:"AirWatchSDK-20.9", ext: "aar") 
+            implementation(name:'AWFramework-20.10', ext: 'aar')
+            implementation(name:"AirWatchSDK-20.10", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
-            implementation(name:'CredentialsExt-101.1.0', ext: 'aar')
+            implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
             implementation(name:"chameleon-android-1.0.16-ndk-r21c", ext:'aar')
             implementation(name:"settings-1.0.17-ndk-r21c", ext:'aar')
             implementation(name:"opdata-android-1.3.2", ext:'aar')
-            implementation(name:"attributesprovider-1.0.17", ext:'aar')
+            implementation(name:"attributesprovider-1.0.17-ndk-r21c", ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
             implementation(name:"encryptedpreferencesprovider-1.0.12", ext:'aar')
             implementation(name:"httpprovider-1.0.11", ext:'aar')
@@ -1048,6 +1048,8 @@ This document is available
 |03sep2020|Post-release update.                        |
 |01oct2020|Update for 20.9 SDK for Android.            |
 |11oct2020|Post-release update.                        |
+|03nov2020|Update for 20.10 SDK for Android.           |
+|06nov2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

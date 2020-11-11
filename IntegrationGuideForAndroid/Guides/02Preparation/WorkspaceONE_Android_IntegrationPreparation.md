@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 20.9         |           |
-Workspace ONE management console                   | 20.4         | 1903      |
-Workspace ONE Intelligent Hub application          | 20.08        | 19.07     |
+Workspace ONE software development kit for Android | 20.10        |           |
+Workspace ONE management console                   | 20.4         | 1904      |
+Workspace ONE Intelligent Hub application          | 20.09        | 19.07     |
 Android API level                                  | 29           | 19        |
-Android Studio integrated development environment  | 4.0.2        | 3.3       |
-Gradle plugin for Android                          | 4.0.2        | 3.3       |
+Android Studio integrated development environment  | 4.1          | 3.3       |
+Gradle plugin for Android                          | 4.1          | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -257,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.9 or whatever is the latest version.
+    -   Select an app version: 20.10 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -533,6 +533,8 @@ This document is available
 |03sep2020|Post-release update.                        |
 |01oct2020|Updated for 20.9 SDK for Android.           |
 |11oct2020|Post-release update.                        |
+|03nov2020|Updated for 20.10 SDK for Android.          |
+|06nov2020|Post-release update.                        |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

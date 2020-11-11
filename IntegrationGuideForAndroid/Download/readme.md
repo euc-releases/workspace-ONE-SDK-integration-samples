@@ -17,10 +17,10 @@ SDK from this directory. Follow these instructions.
 
     Leave the sub-directories as they are in the download.
 
-    For example, if you are using the 19.10 version, you will have a structure
+    For example, if you are using the 20.10 version, you will have a structure
     like this:
 
-        IntegrationGuideForAndroid/Download/Android SDK v19.10/
+        IntegrationGuideForAndroid/Download/Android SDK v20.10/
         |
         +-- Documentation/...
         |
@@ -47,7 +47,7 @@ SDK from this directory. Follow these instructions.
     Look for this code:
 
         ext {
-            airwatchVersion = '19.10'
+            airwatchVersion = '20.10'
 
             ...
         }
@@ -60,44 +60,46 @@ the SDK from this directory.
 
 ## Project Build
 The project build.gradle file, [Apps/build.gradle](../Apps/build.gradle),
-defines the following `ext` variables.
+defines the following `ext` variables and methods.
 
--   `airwatchVersion` which you update to the required version.
--   `downloadRoot` set automatically to the path to this directory.
--   `downloadSDKVersion` set automatically to the path of the sub-directory for
-    the required version.
+-   `airwatchVersion` variable which you update to the required version.
+-   `sdkVersionFile` and `sdkVersionDir` methods which return paths under the
+    SDK download directory for the airwatchVersion.
 
 In case this has been copied and pasted far away from the original project, the
 definitions are like this:
 
     ext {
-        airwatchVersion = '19.10'
-        downloadRoot = new File(rootDir.getParent(), "Download")
-        downloadSDKVersion = new File(
-            downloadRoot, "Android SDK v${airwatchVersion}")
+        airwatchVersion = '20.10'
+        sdkVersionPath = {
+            boolean endsWithFile, String[] segments -> new RelativePath(
+                endsWithFile,
+                "Download", "Android SDK v${airwatchVersion}", *segments
+            ).getFile(new File(rootDir.getParent()))
+        }
+        sdkVersionFile = { String[] segments -> sdkVersionPath(true, segments) }
+        sdkVersionDir = { String[] segments -> sdkVersionPath(false, segments) }
     }
 
 ## Application Builds
 Repository declarations can be based on the above variables, like this:
 
     repositories {
-        flatDir {
-            dirs new RelativePath(false,
-                'Libs', 'ClientSDK' ).getFile(downloadSDKVersion)
-        }
+        flatDir { dirs sdkVersionDir('Libs', 'ClientSDK') }
+        flatDir { dirs sdkVersionDir('Libs', 'ClientSDK', 'dependencies') }
     }
 
 See the following files for examples of repository declarations.
 
--   [downloadClient.gradle](../Apps/clientKotlin/downloadClient.gradle)
--   [downloadFramework.gradle](../Apps/frameworkExtendKotlin/downloadFramework.gradle)
+-   [integrateClient.gradle](../Apps/clientKotlin/integrateClient.gradle)
+-   [integrateFramework.gradle](../Apps/frameworkExtendKotlin/integrateFramework.gradle)
 
 Those files are applied as script plugins by the build.gradle files for the
 integrated applications in this repository, either directly or indirectly.
 
 Code to apply is like this:
 
-    apply from: file("downloadFramework.gradle")
+    apply from: file("integrateFramework.gradle")
 
 See the
 [Apps/frameworkExtendKotlin/build.gradle](../Apps/frameworkExtendKotlin/build.gradle)

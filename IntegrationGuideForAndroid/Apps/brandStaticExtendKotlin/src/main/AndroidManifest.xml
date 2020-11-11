@@ -41,7 +41,10 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <service android:name=".AirWatchSDKIntentService" />
+        <service
+            android:name=".AirWatchSDKIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            />
         <activity
             android:name="com.airwatch.login.ui.activity.SDKSplashActivity"
             android:label="@string/app_label"

@@ -39,8 +39,8 @@ Follow these instructions to build the applications in this project.
 2.  **Install a copy of the Workspace ONE Software Development Kit (SDK) for
     Android under the Download/ directory.**
     
-    See the Workspace ONE for Android Integration Preparation guide for how to
-    obtain a copy of the SDK for Android.
+    See the [Workspace ONE for Android Integration Preparation guide](../Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) for how to obtain the SDK
+    for Android.
 
     See the [Download](../Download) readme file for details of how to install
     and specify the version.

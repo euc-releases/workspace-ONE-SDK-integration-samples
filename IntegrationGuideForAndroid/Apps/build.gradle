@@ -12,7 +12,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -31,7 +31,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    airwatchVersion = '20.9'
+    airwatchVersion = '20.10'
 
     // Utility method to generate a path for a file in the directory for
     // secrets. Secrets are stored outside the Android Studio project, hence

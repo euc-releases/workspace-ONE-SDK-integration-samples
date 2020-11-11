@@ -16,22 +16,52 @@ applications.
 -   [Apps/baseJava](../Apps/baseJava)
 -   [Apps/baseKotlin](../Apps/baseKotlin)
 
+The user interface is a single text that appears in the centre of the screen. If
+you tap the text, it cycles between
+
+-   Fixed message.
+-   Module name of the application, "base Kotlin" for example.
+-   Dark mode message.
+
+The user interface appears in dark mode if the device is in dark mode, and vice
+versa.
+
 # Base Integration Guide
-The following applications are demonstrations for the Base Integration Guide.
+The following applications are demonstrations for the
+[Base Integration Guide](../Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md).
 
--   Client level integration:
-    -   [Apps/clientJava](../Apps/clientJava)
-    -   [Apps/clientKotlin](../Apps/clientKotlin)
+## Client level integration
+Demonstration apps for client level integration.
 
--   Framework level integration, either by delegation or by extension:
-    -   [Apps/frameworkDelegateJava](../Apps/frameworkDelegateJava)
-    -   [Apps/frameworkDelegateKotlin](../Apps/frameworkDelegateKotlin)
-    -   [Apps/frameworkExtendJava](../Apps/frameworkExtendJava)
-    -   [Apps/frameworkExtendKotlin](../Apps/frameworkExtendKotlin)
+-   [Apps/clientJava](../Apps/clientJava)
+-   [Apps/clientKotlin](../Apps/clientKotlin)
+
+The user interface displays the console version. Tapping the console version
+message toggles a display of the SDK profile that was retrieved from the
+console.
+
+The console version is also displayed in an Android toast message when the SDK
+has been initialized.
+
+## Framework level integration
+Demonstration apps for framework level integration, either by delegation or by
+extension.
+
+-   [Apps/frameworkDelegateJava](../Apps/frameworkDelegateJava)
+-   [Apps/frameworkDelegateKotlin](../Apps/frameworkDelegateKotlin)
+-   [Apps/frameworkExtendJava](../Apps/frameworkExtendJava)
+-   [Apps/frameworkExtendKotlin](../Apps/frameworkExtendKotlin)
+
+The user interface is the same as the Client level integration demonstration
+apps except as follows.
+
+-   SDK status is displayed instead of the console version.
+-   The SDK profile has a plain text layout instead of JavaScript Object
+    Notation (JSON).
 
 # Branding Integration Guide
-The following applications are demonstrations for the Branding Integration
-Guide.
+The following applications are demonstrations for the 
+[Branding Integration Guide](../Guides/04Branding/WorkspaceONE_Android_Branding.md).
 
 These applications are all integrated to the Framework level, either by
 delegation or by extension.
@@ -44,8 +74,8 @@ Demonstration apps for support of enterprise branding.
 -   [Apps/brandEnterpriseOnlyExtendJava](../Apps/brandEnterpriseOnlyExtendJava)
 -   [Apps/brandEnterpriseOnlyExtendKotlin](../Apps/brandEnterpriseOnlyExtendKotlin)
 
-Branding resources from the management console appear in the SDK user interface,
-as follows.
+Branding resources from the management console, if configured, will appear in
+the SDK user interface, as follows.
 
 -   On the SDK splash screen that is displayed when the application starts
     cold:
@@ -57,6 +87,10 @@ as follows.
     -   Logo will be a branding image.
     -   Background color of, for example, the Next and Confirm navigation
         controls will be from the brand palette.
+
+If any of the above branding resources don't appear, check the configuration in
+the management console. Instructions can be found in the appendix to the
+Branding Integration Guide.
 
 ## Static application branding
 Demonstration apps for support of static branding.
@@ -77,7 +111,7 @@ Resources from the app appear in the SDK user interface, as follows.
 -   On the SDK login screen that is displayed when, for example, the end
     user sets a passcode after registration:
     -   Logo will be an app drawable.
-    -   Background color will be an app color.
+    -   Background color will be an app color, unless in dark mode.
 
 A drawable from the app resources also appears in the app user interface.
 
@@ -124,10 +158,16 @@ Dynamically generated resources appear in the SDK user interface, as follows.
     -   Background color of, for example, the Next and Confirm navigation
         controls will be red.
 
+-   When the SDK posts a notification, the small icon that is displayed in the
+    device status bar will be an app drawable.
+    
+    In some deployments, power cycling the mobile device will cause the SDK to
+    post a notification, that the application requires authentication.
+
 The app user interface has the following elements.
 
--   A drawable from the app resources is displayed in the upper half of the
-    screen. When the image is tapped, an Android notification is posted. The
+-   An image from the app drawable resources is displayed in the upper half of
+    the screen. When the image is tapped, an Android notification is posted. The
     notification icon will be an app drawable.
 -   An enterprise branding image is displayed in the lower half of the screen,
     if configured in the management console.
@@ -138,7 +178,8 @@ code could be, for example, pulled in from common directories by Gradle or a
 custom tool. In practice, those approaches have limitations, lead to more
 maintenance overhead than duplication, and don't result in a repository that is
 easy to understand for prospective application developers.  
-Duplication is managed by the maintainers of the repository.
+Duplication is managed by the maintainers of the repository. See also the
+[samers.md](samers.md) file.
 
 # License
 Copyright 2020 VMware, Inc. All rights reserved.  
