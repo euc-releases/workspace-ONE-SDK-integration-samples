@@ -42,7 +42,7 @@ Differences represents a difference that must be resolved.
 # Baling out
 You can terminate the script safely and at any time by pressing Ctrl-C.
 
-# Apply a file update
+# Apply a file update from a path
 One way to resolve a difference is to copy a file over other files that are
 supposed have the same contents. This is a typical case during the updating
 procedure for a new version of the Workspace ONE software development kit for
@@ -101,6 +101,18 @@ was specified on the command line. The second set are from a file that should
 have the same contents. Check that the first set is what's required and key
 return to overwrite. If the first set aren't what's required then type n and
 return. The overwrite of that file will then be skipped.
+
+# Apply a file update based on Git
+Applying a file update based on Git is a shortcut to applying a file update from
+a path, see above. The shortcut can be used in the case that in any set of files
+that should be duplicates, only one file has changed.
+
+The shortcut selects the updated file path by inspecting the Git status. Run it
+as follows.
+
+    python3 ./samers.py -v -m
+
+The rest of the processing is the same as above.
 
 # Other tasks
 Other tasks are TBD at this time, sorry.

@@ -22,8 +22,9 @@ Follow these instructions to build the applications in this project.
 
 1.  **Create an Android application signing keystore and configuration.**
 
-    See the Workspace ONE for Android Integration Preparation guide appendix in
-    case you need instructions. Use the following locations:
+    See the
+    [Workspace ONE for Android Integration Preparation guide appendices](../Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#appendix-how-to-generate-a-signed-android-package-file-once-how-to-generate-a-signed-android-package-file-once)
+    in case you need instructions. Use the following locations:
 
     -   Keystore file:  
         `/wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Secret/keystore`

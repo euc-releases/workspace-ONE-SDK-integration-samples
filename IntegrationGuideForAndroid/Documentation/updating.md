@@ -28,10 +28,27 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
 2.  **Build and run the base applications.**
 
     The base applications don't integrate the SDK so updating to a new version
-    shouldn't make any difference. This step is just to be sure. There are two
-    base applications, `baseJava` and `baseKotlin`. Run both on a developer
-    device as a test before proceeding.
+    shouldn't make any difference. However, this is a good time to update to the
+    latest versions of native code such as new Kotlin language plugins and
+    AndroidX libraries.
+    
+    There are two base applications, `baseJava` and `baseKotlin`. Check for
+    changes highlighted in the build.gradle file of each. Run both on a
+    developer device as a test before proceeding.
 
+    If there any native changes to the dependencies, update the
+    `buildBase.gradle` files accordingly.
+    
+    -   There are many copies of the file in the project, all of which should be
+        identical when the update is finished.
+    
+    -   Start by updating one of the `buildBase.gradle` files in either of the
+        base app modules, then build and run it as a test.
+
+    -   When the first copy has been updated, use the samers.py script to apply
+        the updates to all the other copies. See the [samers.md](samers.md) file
+        for instructions.
+    
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
@@ -119,7 +136,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     the same way as updates to the client and framework application code, by
     making the change in one app and then applying it with the samers.py script.
 
-    Build and run each of the framework apps as a test before proceeding.
+    Build and run each of the branding apps as a test before proceeding.
 
     See the [applications.md](applications.md) file for a description of the app
     user interface.

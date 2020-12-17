@@ -116,9 +116,9 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.10
-Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.1
+Workspace ONE SDK for Android                    | 20.11
+Workspace ONE management console                 | 20.11
+Android Studio integrated development environment| 4.1.1
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -1046,6 +1046,7 @@ This document is available
 |11oct2020|Post-release update.                        |
 |03nov2020|Update for 20.10 SDK for Android.           |
 |06nov2020|Post-release update.                        |
+|15dec2020|Update for 20.11 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

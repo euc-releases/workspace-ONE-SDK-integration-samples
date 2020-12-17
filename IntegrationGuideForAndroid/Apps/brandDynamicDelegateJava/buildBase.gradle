@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: BSD-2-Clause
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.2"
 
     defaultConfig {
@@ -33,7 +33,7 @@ apply from: secretFile("keystore.gradle")
 dependencies {
     // AndroidX native.
     def appcompat_version = "1.2.0"
-    def constraintLayout_version = "2.0.1"
+    def constraintLayout_version = "2.0.4"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

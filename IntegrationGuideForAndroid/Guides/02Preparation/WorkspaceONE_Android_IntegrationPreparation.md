@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 20.10        |           |
-Workspace ONE management console                   | 20.4         | 1904      |
-Workspace ONE Intelligent Hub application          | 20.09        | 19.07     |
+Workspace ONE software development kit for Android | 20.11        |           |
+Workspace ONE management console                   | 20.11        | 1907      |
+Workspace ONE Intelligent Hub application          | 20.10        | 19.07     |
 Android API level                                  | 29           | 19        |
-Android Studio integrated development environment  | 4.1          | 3.3       |
-Gradle plugin for Android                          | 4.1          | 3.3       |
+Android Studio integrated development environment  | 4.1.1        | 3.3       |
+Gradle plugin for Android                          | 4.1.1        | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -257,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.10 or whatever is the latest version.
+    -   Select an app version: 20.11 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -339,7 +339,10 @@ definitive information, see the Android developer website.
 6.  Make a note of the Destination Folder so that the APK file can be located
     after.
 
-7.  Select a build variant, debug is fine.
+7.  Select the release build variant.
+
+    If you select debug, the app might be flagged as a test-only build and cause
+    installation by Hub to fail.
 
 8.  Select Signature Version V2 (Full APK Signature).
 
@@ -374,6 +377,12 @@ website.
         android {
             signingConfigs {
                 debug {
+                    storeFile file('/path/to/your/keystore')
+                    storePassword 'password123'
+                    keyPassword 'password456'
+                    keyAlias = 'key0'
+                }
+                release {
                     storeFile file('/path/to/your/keystore')
                     storePassword 'password123'
                     keyPassword 'password456'
@@ -415,7 +424,7 @@ the Android developer website.
 
 The tool comes with Android Studio. The command line is like this:
 
-    /path/to/Android/sdk/build-tools/version/apksigner verify --verbose /path/to/App-debug.apk
+    /path/to/Android/sdk/build-tools/version/apksigner verify --verbose /path/to/App-release.apk
 
 The top of the output should be like this:
 
@@ -443,53 +452,58 @@ For context of when these instructions would be followed, see the
 
     This opens a list of applications.
 
-2.  Select: Add Application.
+3.  Select: Add Application.
 
     This opens the Add Application dialog.
 
-3.  Select the group of the end user that you are using for development.
+4.  Select the group of the end user that you are using for development.
 
-4.  Click Upload, which opens the Add dialog.
+5.  Click Upload, which opens the Add dialog.
 
-5.  On the Add dialog: select Local File, then click Choose file.
+6.  On the Add dialog: select Local File, then click Choose file.
 
     This opens a file chooser dialog.
 
-6.  Locate and select your signed APK file, then click Save.
+7.  Locate and select your signed APK file, then click Save.
 
     The file will be uploaded and progress will be indicated on the screen.
 
     When the upload finishes, the Add dialog closes and you return to the Add
     Application dialog. The file name will have been filled in.
 
-7.  On the Add Application dialog, click Continue.
+8.  On the Add Application dialog, click Continue.
 
     This opens the next step, which is the Edit Application dialog.
 
-8.  Append your user name to the application name, if you like, and click Save &
+9.  Append your user name to the application name, if you like, and click Save &
     Assign.
 
     Appending your user name will make clear, to anybody with access to the
     console, that you are responsible for this application.
 
-    After you click, the Update Assignment dialog will open.
+    After you click, the Assignment Distribution dialog will open.
 
-9.  Add an assignment to the required group.
+10. Set the assignment name and group, then click Create.
 
-    In the Update Assignment dialog, click Add Assignment. On the dialog that
-    appears, select the same group as before, then click Add. There is no need
-    to add or enable any other items, like DLP, at this time.
+    In the Assignment Distribution dialog
     
-    This returns you to the Update Assignment dialog. The assignment that you
-    just added should now appear.
+    -   set a Name that includes your user name.
+    -   add the same group as before in the Assignment Groups.
+    
+    There is no need to add or enable any other items, like restrictions, at
+    this time.
 
-10.  Click Save And Publish.
+    Click Create and a dialog will open in which you can review the new
+    assignment.
 
-    This opens the Preview Assigned Devices screen, which you can ignore.
+11. On the assignment review dialog, click Save.
 
-11. Click Publish.
+    This opens the Preview Assigned Devices dialog.
 
-    This finalizes the addition and returns you to the application list.
+12. Click Publish.
+
+    This finalizes the addition and returns you to the Applications part of the
+    dashboard. The detail view of the app you just added will be open.
 
 The application that you uploaded can now be installed from Hub application.
 
@@ -535,6 +549,7 @@ This document is available
 |11oct2020|Post-release update.                        |
 |03nov2020|Updated for 20.10 SDK for Android.          |
 |06nov2020|Post-release update.                        |
+|15dec2020|Updated for 20.11 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

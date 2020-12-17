@@ -55,10 +55,10 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.10
-Workspace ONE management console                 | 20.4
-Android Studio integrated development environment| 4.1
-Gradle plugin for Android                        | 4.1
+Workspace ONE SDK for Android                    | 20.11
+Workspace ONE management console                 | 20.11
+Android Studio integrated development environment| 4.1.1
+Gradle plugin for Android                        | 4.1.1
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -104,6 +104,7 @@ The following diagram illustrates the directory structure of the SDK download.
 Files from within the above structure are copied under your application project
 in the following instructions.
 
+<p class="always-page-break" />
 ## Instructions
 Proceed as follows.
 
@@ -122,12 +123,12 @@ First, update the build configuration and add the required library files.
                 ...
             }
             dependencies {
-                classpath 'com.android.tools.build:gradle:4.0.2'
+                classpath 'com.android.tools.build:gradle:4.1.1'
                 ...
             }
         }
     
-    In this example, the Gradle Android plugin version is 4.0.2
+    In this example, the Gradle Android plugin version is 4.1.1
 
     Ensure that the plugin version is at least 3.4.2
 
@@ -147,7 +148,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-20.10', ext:'aar')
+            implementation (name:'AirWatchSDK-20.11', ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
 
             // Third party libraries that are distributed with the SDK.
@@ -488,20 +489,21 @@ Proceed as follows.
 
             // Workspace ONE libraries that are part of the SDK.
             implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
-            implementation(name:'SCEPClient-1.0.13', ext: 'aar')
-            implementation(name:'AWComplianceLibrary-2.3.5', ext: 'aar')
-            implementation(name:'AWFramework-20.10', ext: 'aar')
-            implementation(name:"AirWatchSDK-20.10", ext: "aar") 
+            implementation(name:'SCEPClient-1.0.14', ext: 'aar')
+            implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
+            implementation(name:'AWFramework-20.11', ext: 'aar')
+            implementation(name:"AirWatchSDK-20.11", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-            implementation(name:"chameleon-android-1.0.16-ndk-r21c", ext:'aar')
-            implementation(name:"settings-1.0.17-ndk-r21c", ext:'aar')
-            implementation(name:"opdata-android-1.3.2", ext:'aar')
-            implementation(name:"attributesprovider-1.0.17-ndk-r21c", ext:'aar')
+            implementation(name:"chameleon-android-1.1.1.8--20201116T093924Z", ext:'aar')
+            implementation(name:"module-settings-1.2.0.1--20201125T150536Z", ext:'aar')
+            implementation(name:"settings-1.3.1.6--20201125T115318Z", ext:'aar')
+            implementation(name:"opdata-android-1.5.0.3--20201125T162310Z", ext:'aar')
+            implementation(name:"attributesprovider-1.3.1.6--20201125T115318Z", ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
-            implementation(name:"encryptedpreferencesprovider-1.0.12", ext:'aar')
-            implementation(name:"httpprovider-1.0.11", ext:'aar')
-            implementation(name:"memoryprovider-1.0.11", ext:'aar')
+            implementation(name:"encryptedpreferencesprovider-1.3.1.6--20201125T115318Z", ext:'aar')
+            implementation(name:"httpprovider-1.3.1.6--20201125T115318Z", ext:'aar')
+            implementation(name:"memoryprovider-1.3.1.6--20201125T115318Z", ext:'aar')
             implementation(name:"supercollider-1.0.7-ndk-r21c", ext:'aar')
             // The following JAR file is included in the SDK but needn't be added
             // as a specific dependency because it is covered by the
@@ -539,7 +541,7 @@ Proceed as follows.
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
             implementation 'org.koin:koin-core:2.1.0'
             implementation 'org.koin:koin-android:2.1.0'
-            implementation 'net.zetetic:android-database-sqlcipher:4.4.0@aar'
+            implementation 'net.zetetic:android-database-sqlcipher:4.4.1@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
@@ -603,7 +605,7 @@ Proceed as follows.
 
         ...
         android {
-            compileSdkVersion 28
+            compileSdkVersion 30
 
             // Following blocks are added.
             compileOptions {
@@ -1050,6 +1052,7 @@ This document is available
 |11oct2020|Post-release update.                        |
 |03nov2020|Update for 20.10 SDK for Android.           |
 |06nov2020|Post-release update.                        |
+|15dec2020|Update for 20.11 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

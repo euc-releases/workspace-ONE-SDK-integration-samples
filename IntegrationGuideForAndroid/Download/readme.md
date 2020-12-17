@@ -17,10 +17,10 @@ SDK from this directory. Follow these instructions.
 
     Leave the sub-directories as they are in the download.
 
-    For example, if you are using the 20.10 version, you will have a structure
+    For example, if you are using the 20.11 version, you will have a structure
     like this:
 
-        IntegrationGuideForAndroid/Download/Android SDK v20.10/
+        IntegrationGuideForAndroid/Download/Android SDK v20.11/
         |
         +-- Documentation/...
         |
@@ -47,7 +47,7 @@ SDK from this directory. Follow these instructions.
     Look for this code:
 
         ext {
-            airwatchVersion = '20.10'
+            airwatchVersion = '20.11'
 
             ...
         }
@@ -70,7 +70,7 @@ In case this has been copied and pasted far away from the original project, the
 definitions are like this:
 
     ext {
-        airwatchVersion = '20.10'
+        airwatchVersion = '20.11'
         sdkVersionPath = {
             boolean endsWithFile, String[] segments -> new RelativePath(
                 endsWithFile,
