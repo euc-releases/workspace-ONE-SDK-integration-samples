@@ -1,4 +1,4 @@
-# Copyright 2020 VMware, Inc.
+# Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Run with Python 3.7
@@ -11,9 +11,17 @@
 # Reference: https://docs.python.org/3/library/argparse.html
 import argparse
 #
+# Date module.
+# https://docs.python.org/3/library/datetime.html
+import datetime
+#
 # Sequence comparison module.
 # https://docs.python.org/3/library/difflib.html#difflib.context_diff
 from difflib import context_diff
+#
+# Enumeration class module.
+# https://docs.python.org/3/library/enum.html
+import enum
 #
 # Module for old school paths. Only used to get commonpath(), which doesn't have
 # an equivalent in OO paths.
@@ -23,6 +31,10 @@ import os.path
 # Module for OO path handling.
 # https://docs.python.org/3/library/pathlib.html
 from pathlib import Path
+#
+# Regular expressions module.
+# https://docs.python.org/3/library/re.html
+import re
 #
 # Module for file and directory handling.
 # https://docs.python.org/3.5/library/shutil.html
@@ -253,6 +265,11 @@ def diff_each(paths, pathLeft=None):
         
         yield pathLeft, path, differences if len(differences) > 0 else None
 
+class NoticesState(enum.Enum):
+    EXEMPT = enum.auto()
+    NEEDED = enum.auto()
+    CORRECT_DATE = enum.auto()
+    INCORRECT_DATE = enum.auto()
 
 class NoticesEditor:
     _leader_suffixes_map = {
@@ -262,36 +279,109 @@ class NoticesEditor:
 
     _exempt_suffixes = ['.png']
 
+    @classmethod
+    def exemptPath(cls, path):
+        return (cls._effective_suffix(Path(path)) in cls._exempt_suffixes)
+
     _custom_suffixes_map = {'.xml': 'xml_editor'}
+
+    # Regular expression for a copyright year in a notice. Has a capture group
+    # for the year digits.
+    _copyrightYear = re.compile(r'copyright\s+(\d{1,4})', re.IGNORECASE)
     
-    def __init__(self, noticesPath):
-        self._noticesPath = Path(noticesPath)
-        with self._noticesPath.open() as noticesFile: self._noticesLines = [
-            line.strip() for line in noticesFile.readlines()]
+    def __init__(self, noticesPath, date):
+        with Path(noticesPath).open() as noticesFile: self._noticesLines = [
+            date.strftime(line.strip()) for line in noticesFile.readlines()]
         self._noticesXML = "\n".join((
             "<!--", *["    " + line for line in self._noticesLines], "-->\n"))
 
     def check(self, path):
         path = Path(path)
-        suffix = self._effective_suffix(path)
-
-        if suffix in self._exempt_suffixes:
-            return True, None
+        if self.exemptPath(path):
+            return NoticesState.EXEMPT, None
 
         linesFound = 0
+        dateMatch = NoticesState.CORRECT_DATE
         with path.open('r') as file:
             for line in file:
                 try:
-                    if line.find(self._noticesLines[linesFound]) >= 0:
+                    needle = self._noticesLines[linesFound]
+                    if line.find(needle) >= 0:
                         linesFound += 1
-                        # print(linesFound, line)
+                        continue
+
+                    if self._copyrightYear.search(needle) is None:
+                        continue
+                    if self._copyrightYear.search(line) is None:
+                        continue
+
+                    # By now, the lines both match the copyright year pattern
+                    # but don't match each other. Conclusion is that the year is
+                    # different.
+                    dateMatch = NoticesState.INCORRECT_DATE
+                    linesFound += 1
+
                 except IndexError:
                     # By now, linesFound is one more than the index of the last
                     # line in the notices. That happens to be the same as the
                     # number of lines in the notices.
-                    return True, linesFound
+                    return dateMatch, linesFound
 
-        return False, linesFound
+        # Read the whole file and didn't find the notice. Conclusion is that
+        # it's missing.
+        return NoticesState.NEEDED, linesFound
+
+    def update(self, originalPath):
+        editedPath = None
+        originalPath = Path(originalPath)
+
+        linesFound = 0
+        linesRequired = len(self._noticesLines)
+        with self._editing_file(originalPath) as editedFile, \
+            originalPath.open('rt') as originalFile \
+        :
+            editedPath = Path(editedFile.name)
+            for line in originalFile:
+                if linesFound >= linesRequired:
+                    editedFile.write(line)
+                    continue
+
+                needle = self._noticesLines[linesFound]
+                if line.find(needle) >= 0:
+                    editedFile.write(line)
+                    linesFound += 1
+                    continue
+
+                needleMatch = self._copyrightYear.search(needle)
+                lineMatch = (
+                    None if needleMatch is None
+                    else self._copyrightYear.search(line))
+
+                if lineMatch is None:
+                    editedFile.write(line)
+                    continue
+
+                # By now, the lines both match the copyright year pattern but
+                # don't match each other. Conclusion is that the year is
+                # different.
+
+                # Write the part of the original line before the year ...
+                editedFile.write(line[:lineMatch.start(1)])
+                #
+                # ... The year from the notice ...
+                editedFile.write(needleMatch.group(1))
+                #
+                # ... The part of the original line after the year.
+                editedFile.write(line[lineMatch.end(1):])
+                linesFound += 1
+
+        if linesFound != linesRequired:
+            raise RuntimeError(
+                'Notice update failed to find required number of lines.'
+                , f'Required:{linesRequired}. Found:{linesFound}.'
+                , f'Path "{originalPath}"')
+
+        return editedPath, self._editor_differences(originalPath, editedPath)
 
     @staticmethod
     def _effective_suffix(path):
@@ -316,10 +406,7 @@ class NoticesEditor:
                 commentLead = key
                 break
 
-        with NamedTemporaryFile(
-                mode='wt', delete=False
-                , prefix=originalPath.stem + '_', suffix=originalPath.suffix
-            ) as editedFile, \
+        with self._editing_file(originalPath) as editedFile, \
             originalPath.open('rt') as originalFile \
         :
             editedPath = Path(editedFile.name)
@@ -330,6 +417,15 @@ class NoticesEditor:
 
         return editedPath, self._editor_differences(originalPath, editedPath)
     
+    @staticmethod
+    def _editing_file(originalPath):
+        return NamedTemporaryFile(
+            mode='wt',
+            delete=False,
+            prefix=originalPath.stem + '_' ,
+            suffix=originalPath.suffix
+        )
+
     # Simple editor that inserts the notices at the start of the file.
     #
     # Each notice line is prefixed by a specified leader and a space.  
@@ -476,8 +572,7 @@ class DuplicatorJob:
 
     def __call__(self):
         self._rules = Rules(self._topPath)
-        self._noticesEditor = (
-            NoticesEditor(self._noticesPath) if self.insertNotices else None)
+        self._noticesEditors = {} if self.insertNotices else None
 
         if self.find:
             return self._find_business()
@@ -493,9 +588,21 @@ class DuplicatorJob:
 
         if originalsChecked == 0:
             if self.insertNotices:
+                printDot =(
+                    len(self.originals) == 0
+                    and self.counting
+                    and not self.verbose
+                )
                 for path in self.git_ls_files():
                     originalsChecked += 1
-                    edited += self._notices_business(path)
+                    editedNow = self._notices_business(path)
+                    edited += editedNow
+                    if printDot:
+                        print(
+                            "." if editedNow == 0 else "+" * editedNow,
+                            end='', flush=True)
+                if printDot:
+                    print(tuple(self._noticesEditors.keys()))
             else:
                 self.diff_all()
 
@@ -536,31 +643,53 @@ class DuplicatorJob:
     
     def _notices_business(self, path):
         if path.is_dir():
-            return
-        
-        noticeOK, linesFound = self._noticesEditor.check(path)
-
-        if noticeOK:
-            if self.verbose:
-                if linesFound is None:
-                    print(
-                        f'No notice insertion for suffix "{path.suffix}",'
-                        f' skipping "{path}"')
-                else:
-                    print(f'Notice lines {linesFound} in "{path}"')
             return 0
+        
+        if NoticesEditor.exemptPath(path):
+            noticesEditor = None
+            state = NoticesState.EXEMPT
+        else:
+            modifiedDate = self.git_modified_date(path)
+            try:
+                noticesEditor = self._noticesEditors[modifiedDate.year]
+            except KeyError:
+                noticesEditor = NoticesEditor(self._noticesPath, modifiedDate)
+                self._noticesEditors[modifiedDate.year] = noticesEditor
+            state, linesFound = noticesEditor.check(path)
 
+        change = None
+        if state is NoticesState.CORRECT_DATE:
+            if self.verbose:
+                print(f'Notice lines {linesFound} in "{path}"')
+        elif state is NoticesState.EXEMPT:
+            if self.verbose:
+                print(
+                    f'No notice insertion for suffix "{path.suffix}",'
+                    f' skipping "{path}"')
+        elif state is NoticesState.INCORRECT_DATE:
+            change = f'Copyright notices with incorrect date in file "{path}"'
+        elif state is NoticesState.NEEDED:
+            change =f'No copyright notices in file "{path}"'
+        else:
+            raise NotImplementedError(f'Unknown NoticesState {state}.')
+
+        if change is None:
+            return 0
         if self.verbose or not self.counting:
-            print(f'No copyright notices in file "{path}"')
+            print(change)
         if self.counting:
             return 1
 
-        editedPath, differences = self._noticesEditor.insert(path)
+        if state is NoticesState.INCORRECT_DATE:
+            editedPath, differences = noticesEditor.update(path)
+        elif state is NoticesState.NEEDED:
+            editedPath, differences = noticesEditor.insert(path)
+
         overwritten = self._ask_overwrite(editedPath, path, differences)
 
         if overwritten:
-            noticeOK, linesFound = self._noticesEditor.check(path)
-            if noticeOK:
+            state, linesFound = noticesEditor.check(path)
+            if state:
                 if self.verbose:
                     print('Overwritten file OK.')
             else:
@@ -587,6 +716,20 @@ class DuplicatorJob:
                         name = []
                     else:
                         name.append(readChar)
+
+    def git_modified_date(self, path):
+        # Get the date of the last commit.
+        with subprocess.Popen((
+            'git', 'log', '--max-count=1', '--pretty=format:%cd'
+            , '--date=format:%Y %m %d', path
+        ), stdout=subprocess.PIPE, text=True, cwd=self.top) as gitProcess:
+            with gitProcess.stdout as gitOutput:
+                # The line will be year, month, day separated by spaces. Put
+                # them into a tuple, then spread the tuple into the date()
+                # constructor.
+                components = tuple(
+                    int(piece) for piece in gitOutput.readline().split())
+                return datetime.date(*components)
 
     def process_original(self, original):
         originalPath = Path(original)

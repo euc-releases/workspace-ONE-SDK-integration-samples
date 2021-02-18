@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 20.11        |           |
-Workspace ONE management console                   | 20.11        | 1907      |
-Workspace ONE Intelligent Hub application          | 20.10        | 19.07     |
+Workspace ONE software development kit for Android | 21.1         |           |
+Workspace ONE management console                   | 2101         | 1909      |
+Workspace ONE Intelligent Hub application          | 21.01        | 19.11     |
 Android API level                                  | 29           | 19        |
-Android Studio integrated development environment  | 4.1.1        | 3.3       |
-Gradle plugin for Android                          | 4.1.1        | 3.3       |
+Android Studio integrated development environment  | 4.1.2        | 3.3       |
+Gradle plugin for Android                          | 4.1.2        | 3.3       |
 
 # Task: Install application via Workspace ONE [install your application via Workspace ONE]
 Installing the application via Workspace ONE is a platform integration task for
@@ -257,7 +257,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 20.11 or whatever is the latest version.
+    -   Select an app version: 21.1 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -382,11 +382,10 @@ website.
                     keyPassword 'password456'
                     keyAlias = 'key0'
                 }
+            }
+            buildTypes {
                 release {
-                    storeFile file('/path/to/your/keystore')
-                    storePassword 'password123'
-                    keyPassword 'password456'
-                    keyAlias = 'key0'
+                    signingConfig signingConfigs.debug
                 }
             }
         }
@@ -403,7 +402,7 @@ website.
 
         android {
             // Existing configuration such as ...
-            compileSdkVersion 28
+            compileSdkVersion 30
             defaultConfig {
                 // ...
             }
@@ -550,11 +549,12 @@ This document is available
 |03nov2020|Updated for 20.10 SDK for Android.          |
 |06nov2020|Post-release update.                        |
 |15dec2020|Updated for 20.11 SDK for Android.          |
+|18feb2021|Updated for 21.1 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2020 VMware, Inc. All rights reserved.
+-   Copyright © 2021 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

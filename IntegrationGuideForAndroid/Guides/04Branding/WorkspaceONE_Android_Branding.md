@@ -116,9 +116,9 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.11
-Workspace ONE management console                 | 20.11
-Android Studio integrated development environment| 4.1.1
+Workspace ONE SDK for Android                    | 21.1
+Workspace ONE management console                 | 2101
+Android Studio integrated development environment| 4.1.2
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -1047,11 +1047,12 @@ This document is available
 |03nov2020|Update for 20.10 SDK for Android.           |
 |06nov2020|Post-release update.                        |
 |15dec2020|Update for 20.11 SDK for Android.           |
+|18feb2021|Update for 21.1 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2020 VMware, Inc. All rights reserved.
+-   Copyright © 2021 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

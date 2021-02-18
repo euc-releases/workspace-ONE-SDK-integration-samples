@@ -1,13 +1,12 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.example.integrationguide"
-        minSdkVersion 26
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

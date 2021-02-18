@@ -55,10 +55,10 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 20.11
-Workspace ONE management console                 | 20.11
-Android Studio integrated development environment| 4.1.1
-Gradle plugin for Android                        | 4.1.1
+Workspace ONE SDK for Android                    | 21.1
+Workspace ONE management console                 | 2101
+Android Studio integrated development environment| 4.1.2
+Gradle plugin for Android                        | 4.1.2
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -134,9 +134,37 @@ First, update the build configuration and add the required library files.
 
     The location of this change is shown in the [Project Structure Diagram].
 
-2.  Add the required libraries to the build.
 
-    In the application build.gradle file, in the `dependencies` block, add
+2.  Add the required packaging and compile options.
+
+    In the application build.gradle file, in the `android` block, add the Java
+    version compatibility declarations shown in the following snippet.
+
+        ...
+        android {
+            compileSdkVersion 30
+
+            // Following blocks are added.
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+            // End of added blocks.
+
+            defaultConfig {
+                ...
+            }
+            buildTypes {
+                ...
+            }
+        }
+
+3.  Add the required libraries to the build.
+
+    Still in the application build.gradle file, in the `dependencies` block, add
     references to the required libraries. (The library files will be copied in
     the next step.) For example:
 
@@ -148,8 +176,10 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-20.11', ext:'aar')
+            implementation (name:'AirWatchSDK-21.1', ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
+            implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
 
             // Third party libraries that are distributed with the SDK.
             implementation 'com.google.code.gson:gson:2.4'
@@ -163,13 +193,14 @@ First, update the build configuration and add the required library files.
             annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
                 exclude group:'com.google.guava', module:'guava'
             }
-
+            implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
+            implementation("androidx.recyclerview:recyclerview:1.1.0")
             ...
         }
 
     The location of this change is shown in the [Project Structure Diagram].
 
-3.  Copy the required library files.
+4.  Copy the required library files.
 
      The code snippet in the previous step indicates which libraries are:
 
@@ -196,7 +227,7 @@ First, update the build configuration and add the required library files.
     location. The version distributed with the SDK isn't customized. It is
     included for convenience and completeness only.
 
-4.  Add the library files' location to the application build configuration.
+5.  Add the library files' location to the application build configuration.
 
     In the application build.gradle file, add a `repositories` block that
     specifies the location of the library file copies. For example:
@@ -212,6 +243,9 @@ First, update the build configuration and add the required library files.
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
 with the next step, which is [Service Implementation].
+
+In case you encounter an error, check the [Early Version Support Build Error]
+first.
 
 **If you haven't installed your application via Workspace ONE** at least once,
 then the application under development won't work when installed via the Android
@@ -489,22 +523,25 @@ Proceed as follows.
 
             // Workspace ONE libraries that are part of the SDK.
             implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
-            implementation(name:'SCEPClient-1.0.14', ext: 'aar')
+            implementation(name:'SCEPClient-1.0.15', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-20.11', ext: 'aar')
-            implementation(name:"AirWatchSDK-20.11", ext: "aar") 
+            implementation(name:'AWFramework-21.1', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.1", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
             implementation(name:"chameleon-android-1.1.1.8--20201116T093924Z", ext:'aar')
             implementation(name:"module-settings-1.2.0.1--20201125T150536Z", ext:'aar')
-            implementation(name:"settings-1.3.1.6--20201125T115318Z", ext:'aar')
-            implementation(name:"opdata-android-1.5.0.3--20201125T162310Z", ext:'aar')
-            implementation(name:"attributesprovider-1.3.1.6--20201125T115318Z", ext:'aar')
+            implementation(name:"settings-1.3.1.7--20201201T114153Z", ext:'aar')
+            implementation(name:"opdata-android-1.5.0.4--20201201T152231Z", ext:'aar')
+            implementation(name:"attributesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
-            implementation(name:"encryptedpreferencesprovider-1.3.1.6--20201125T115318Z", ext:'aar')
-            implementation(name:"httpprovider-1.3.1.6--20201125T115318Z", ext:'aar')
-            implementation(name:"memoryprovider-1.3.1.6--20201125T115318Z", ext:'aar')
+            implementation(name:"encryptedpreferencesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
+            implementation(name:"httpprovider-1.3.1.7--20201201T114153Z", ext:'aar')
+            implementation(name:"memoryprovider-1.3.1.7--20201201T114153Z", ext:'aar')
             implementation(name:"supercollider-1.0.7-ndk-r21c", ext:'aar')
+            implementation(name:"work-hour-access-sdk-android-1.0.0", ext:'aar')
+            implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
             // The following JAR file is included in the SDK but needn't be added
             // as a specific dependency because it is covered by the
             // `implementation fileTree( ... include: ['*.jar'])`, above, after
@@ -512,6 +549,11 @@ Proceed as follows.
             // awannotations-1.0.jar
 
             // Third party libraries that are distributed with the SDK.
+            implementation("com.squareup.moshi:moshi-kotlin:1.8.0"){
+                exclude group: 'com.squareup.okio', module: 'okio'
+                exclude group: 'com.squareup.moshi', module: 'moshi'
+            }
+            kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
             implementation 'com.squareup.moshi:moshi:1.8.0'
             implementation 'com.squareup.moshi:moshi-adapters:1.8.0'
             implementation 'com.squareup.okio:okio:1.17.2'
@@ -541,7 +583,7 @@ Proceed as follows.
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
             implementation 'org.koin:koin-core:2.1.0'
             implementation 'org.koin:koin-android:2.1.0'
-            implementation 'net.zetetic:android-database-sqlcipher:4.4.1@aar'
+            implementation 'net.zetetic:android-database-sqlcipher:4.4.2@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
@@ -601,24 +643,17 @@ Proceed as follows.
 4.  Add the required packaging and compile options.
 
     Still in the application build.gradle file, in the `android` block, add the
-    Java version compatibility declarations shown in the following snippet.
+    packaging option shown in the following snippet.
 
         ...
         android {
             compileSdkVersion 30
 
-            // Following blocks are added.
-            compileOptions {
-                sourceCompatibility JavaVersion.VERSION_1_8
-                targetCompatibility JavaVersion.VERSION_1_8
-            }
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+            // Following block is added.
             packagingOptions {
                 pickFirst '**/*.so'
             }
-            // End of added blocks.
+            // End of added block.
 
             defaultConfig {
                 ...
@@ -631,74 +666,15 @@ Proceed as follows.
 
     The above assumes that support for earlier Android operating system versions
     and processor architectures isn't required in the application. If support is
-    required, also follow the instructions under [Early Version Support].
+    required, also follow the instructions in the
+    [Appendix: Early Version Support].
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
 with the next task, which is to [Initialize the Framework].
 
-## Early Version Support
-The Workspace ONE SDK can be integrated with early versions of Android, by
-following some additional steps. Early versions here means before 5.0 Android,
-which is API level 21. If your application won't support devices running early
-Android versions, skip the instructions in this section.
-
-To support early versions, change the build configuration to:
-
--   Enable Multidex explicitly.
--   Use a support library for vector drawables.
-
-To make the changes, proceed as follows.
-
-1.  Configure the build.
-
-    In the application build.gradle file, in the `android` block, within the
-    `defaultConfig` block, add the required settings, for example:
-
-        ...
-        android {
-            ...
-            defaultConfig {
-                ...
-                multiDexEnabled true
-                vectorDrawables.useSupportLibrary = true
-                ...
-            }
-            ...
-        }
-        ...
-
-2.  Add the required libraries, if not already present.
-
-    A library is required for Multidex support. It can be included in the
-    application build.gradle file, in the `dependencies` block, for example as
-    follows:
-
-        dependencies {
-            ...
-            implementation 'com.android.support:multidex:1.0.3'
-            ...
-        }
-
-    **Note**: At time of writing, the Multidex library is a dependency of the
-    Workspace ONE Framework anyway, regardless of the multiDexEnabled setting.
-    This means that the above change is included in the Add Framework task,
-    above, and won't need to be made in order to add early Android version
-    support.
-
-For background, see these pages on the Android developer website.
-
--   Multidex:  
-    [https://developer.android.com/...multidex#mdex-on-l](https://developer.android.com/studio/build/multidex#mdex-on-l)
--   Vector Drawables:  
-    [https://developer.android.com/...vector-drawable-resources#vector-drawables-backward-solution](https://developer.android.com/guide/topics/graphics/vector-drawable-resources#vector-drawables-backward-solution)
-
-(Some PDF viewers incorrectly escape the hash anchor marker in the above links.
-If that happens, edit the link in the browser address bar.)
-
-This concludes the required changes to support early Android versions. Build the
-application to confirm that no mistakes have been made. Then continue with the
-next task, [Initialize the Framework].
+In case you encounter an error, check the [Early Version Support Build Error]
+first.
 
 # Task: Initialize Framework [Initialize the Framework]
 Framework initialization is a Workspace ONE platform integration task for
@@ -1001,7 +977,7 @@ Build and run the application to confirm that no mistakes have been made.
 
 The Workspace ONE splash screen should be shown at launch, Other SDK screens
 might also be shown depending on the configuration in the management console.
-See the [User Interface Screen Capture Images] in the appendix to this document.
+See the [Appendix: User Interface Screen Capture Images].
 
 After completing the above, you can proceed to:
 
@@ -1018,7 +994,118 @@ set. An overview that includes links to all the guides in the set is available
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
-# Appdendix: User Interface Screen Capture Images [User Interface Screen Capture Images]
+
+# Appendix: Early Version Support
+The Workspace ONE SDK can be integrated with early versions of Android, by
+following some additional steps. Early versions here means before 5.0 Android,
+which is API level 21. If your application won't support devices running early
+Android versions, skip the instructions in this section.
+
+To support early versions, change the build configuration to:
+
+-   Enable Multidex explicitly.
+-   Use a support library for vector drawables.
+
+To make the changes, proceed as follows.
+
+1.  Configure the build.
+
+    In the application build.gradle file, in the `android` block, within the
+    `defaultConfig` block, add the required settings, for example:
+
+        ...
+        android {
+            ...
+            defaultConfig {
+                ...
+                multiDexEnabled true
+                vectorDrawables.useSupportLibrary = true
+                ...
+            }
+            ...
+        }
+        ...
+
+2.  Add the required libraries, if not already present.
+
+    A library is required for Multidex support. It can be included in the
+    application build.gradle file, in the `dependencies` block, for example as
+    follows:
+
+        dependencies {
+            ...
+            implementation 'com.android.support:multidex:2.0.0'
+            ...
+        }
+
+    **Note**: At time of writing, the Multidex library is a dependency of the
+    Workspace ONE Client SDK anyway, regardless of the multiDexEnabled setting.
+    This means that the above change is included in the Add Client SDK task,
+    above, and won't need to be made in order to add early Android version
+    support.
+
+This concludes the required changes to support early Android versions. Build the
+application to confirm that no mistakes have been made.
+
+In case the above changes don't seem to work, you can instead try the changes in
+the [Alternative Early Version Support] section, below.
+
+All you being well, continue with other integration tasks.
+
+## Alternative Early Version Support
+The following code snippet shows an alternative approach to early version
+support to the above build configuration change. The alternative is to specify a
+conditional minimum SDK version, dependent on the build type.
+
+Use this approach in case the first approach doesn't work or isn't suitable for
+your app.
+
+    ext {
+        minSdkVersion = 19
+    }
+    android {
+        defaultConfig {
+            minSdkVersion getMinSDK()
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.debug
+        }
+    }
+    def getMinSDK() {
+        if (gradle.startParameter.taskNames.toString().contains("Debug")) {
+            return 21
+        } else {
+            return minSdkVersion
+        }
+    }
+
+## Early Version Support Build Error
+If early version support is required but hasn't been implemented, error messages
+like the following will be shown at build time.
+
+    Caused by: com.android.tools.r8.utils.AbortException: Error: null, 
+    Cannot fit requested classes in the main-dex file (# methods: 66121 > 65536)
+    Caused by: java.lang.RuntimeException:
+    com.android.builder.dexing.DexArchiveMergerException: Error while merging dex archives
+
+To resolve the error, make the build configuration changes at the start of this
+[Appendix: Early Version Support].
+
+## Background Reading for Early Version Support
+For background, see these pages on the Android developer website.
+
+-   Multidex:  
+    [https://developer.android.com/...multidex#mdex-on-l](https://developer.android.com/studio/build/multidex#mdex-on-l)
+-   Vector Drawables:  
+    [https://developer.android.com/...vector-drawable-resources#vector-drawables-backward-solution](https://developer.android.com/guide/topics/graphics/vector-drawable-resources#vector-drawables-backward-solution)
+
+(Some PDF viewers incorrectly escape the hash anchor marker in the above links.
+If that happens, edit the link in the browser address bar.)
+
+# Appendix: User Interface Screen Capture Images
 The following images show screens that are part of the Workspace ONE SDK user
 interface.
 
@@ -1053,11 +1140,12 @@ This document is available
 |03nov2020|Update for 20.10 SDK for Android.           |
 |06nov2020|Post-release update.                        |
 |15dec2020|Update for 20.11 SDK for Android.           |
+|18feb2021|Update for 21.1 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2020 VMware, Inc. All rights reserved.
+-   Copyright © 2021 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

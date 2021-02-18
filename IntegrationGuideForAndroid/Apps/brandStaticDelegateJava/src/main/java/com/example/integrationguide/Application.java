@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide;
@@ -258,6 +258,11 @@ public class Application
         return awDelegate.getSettingsFetchThresholdTimeInMillis();
     }
 
+    @Override
+    public int getFeatureConfigFetchTimeMillis() {
+        return awDelegate.getFeatureConfigFetchTimeMillis();
+    }
+
     @NonNull
     @Override
     public List<SDKBaseHandler> getAppExtraSteps(SDKContextHelper.AWContextCallBack chainCallBack) {
@@ -460,5 +465,10 @@ public class Application
     @Override
     public void stopChameleonContext() {
         awDelegate.stopChameleonContext();
+    }
+
+    @Override
+    public void initializeFeatureModule() {
+        awDelegate.initializeFeatureModule();
     }
 }

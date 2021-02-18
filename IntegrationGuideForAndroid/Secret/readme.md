@@ -22,6 +22,13 @@ The keystore.gradle could look like this:
                 keyAlias = 'key0'
             }
         }
+
+        buildTypes {
+            release {
+                signingConfig signingConfigs.debug
+            }
+        }
+
     }
 
 # Notes
@@ -61,7 +68,7 @@ which itself is applied from the base application's build.gradle file in the
 same directory.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause
