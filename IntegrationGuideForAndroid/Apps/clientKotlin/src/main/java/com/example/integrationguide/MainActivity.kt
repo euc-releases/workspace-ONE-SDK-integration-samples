@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide
@@ -50,9 +50,15 @@ class MainActivity : BaseActivity() {
             ).let {
                 toastHere(it)
                 showStatus(
-                    it, initSDKManager.sdkProfileJSONString?.run {
-                        JSONObject(this).toString(4)
-                    } ?: getString(R.string.null_sdk_profile_json)
+                    it, listOf(
+                        "deviceUid: ", initSDKManager.deviceUid,
+                        "\ndeviceSerialId: ", initSDKManager.deviceSerialId,
+                        "\n", initSDKManager.sdkProfileJSONString?.run {
+                            JSONObject(this).toString(4)
+                        } ?: getString(R.string.null_sdk_profile_json)
+                    ).map {
+                        it?.run { if (it.isEmpty()) "empty" else it } ?: "null"
+                    }.joinToString(separator = "")
                 )
             }
         }

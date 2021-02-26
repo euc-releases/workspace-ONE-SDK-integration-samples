@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide;
@@ -57,9 +57,15 @@ public class MainActivity extends BaseActivity {
                     toastHere(shortMessage);
                     final String sdkProfileJSON =
                         initSDKManager.getSDKProfileJSONString();
-                    final String longMessage = sdkProfileJSON == null
-                        ? getString(R.string.null_sdk_profile_json)
-                        : (new JSONObject(sdkProfileJSON)).toString(4);
+                    final String profileMessage = sdkProfileJSON == null
+                            ? getString(R.string.null_sdk_profile_json)
+                            : (new JSONObject(sdkProfileJSON)).toString(4);
+                    final String longMessage = messages(
+                            "deviceUid: ", initSDKManager.getDeviceUid(),
+                            "\ndeviceSerialId: ",
+                            initSDKManager.getDeviceSerialId(),
+                            "\n", profileMessage
+                    );
                     showStatus(shortMessage, longMessage);
                 } catch (Exception exception) {
                     sdkManager = null;
@@ -69,6 +75,16 @@ public class MainActivity extends BaseActivity {
                 }
             }
     }).start(); }
+
+    private String messages(final String... parts) {
+        final StringBuilder message = new StringBuilder();
+        for (String part: parts) {
+            message.append(
+                    part == null ? "null" : part.isEmpty() ? "empty" : part
+            );
+        }
+        return message.toString();
+    }
 
     private void showStatus(
         final String shortMessage, final String longMessage
