@@ -471,4 +471,9 @@ public class Application
     public void initializeFeatureModule() {
         awDelegate.initializeFeatureModule();
     }
+
+    @Override
+    public void initialiseOperationalData() {
+        awDelegate.initialiseOperationalData();
+    }
 }

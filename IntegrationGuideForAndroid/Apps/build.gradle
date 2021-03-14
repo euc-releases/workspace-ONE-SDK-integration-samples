@@ -31,7 +31,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    airwatchVersion = '21.1'
+    airwatchVersion = '21.2'
 
     // Utility method to generate a path for a file in the directory for
     // secrets. Secrets are stored outside the Android Studio project, hence

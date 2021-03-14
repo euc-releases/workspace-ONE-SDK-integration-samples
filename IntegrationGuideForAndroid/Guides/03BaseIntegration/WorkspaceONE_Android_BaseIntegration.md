@@ -55,7 +55,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.1
+Workspace ONE SDK for Android                    | 21.2
 Workspace ONE management console                 | 2101
 Android Studio integrated development environment| 4.1.2
 Gradle plugin for Android                        | 4.1.2
@@ -130,7 +130,7 @@ First, update the build configuration and add the required library files.
     
     In this example, the Gradle Android plugin version is 4.1.1
 
-    Ensure that the plugin version is at least 3.4.2
+    Ensure that the plugin version is at least 4.0.1
 
     The location of this change is shown in the [Project Structure Diagram].
 
@@ -176,7 +176,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.1', ext:'aar')
+            implementation (name:'AirWatchSDK-21.2', ext:'aar')
             implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
             implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
@@ -525,8 +525,8 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.15', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.1', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.1", ext: "aar") 
+            implementation(name:'AWFramework-21.2', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.2", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
             implementation(name:"chameleon-android-1.1.1.8--20201116T093924Z", ext:'aar')
@@ -1141,6 +1141,7 @@ This document is available
 |06nov2020|Post-release update.                        |
 |15dec2020|Update for 20.11 SDK for Android.           |
 |18feb2021|Update for 21.1 SDK for Android.            |
+|10mar2021|Update for 21.2 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
