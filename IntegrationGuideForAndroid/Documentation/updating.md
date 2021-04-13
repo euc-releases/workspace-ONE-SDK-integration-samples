@@ -13,19 +13,7 @@ first.
 Follow these instructions to update the applications in this project to a new
 version of the Workspace ONE Software Development Kit (SDK) for Android.
 
-1.  **Install the new SDK for Android under the Download/ directory and select
-    it.**
-    
-    See the [Workspace ONE for Android Integration Preparation guide](../Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) for how to obtain the SDK
-    for Android.
-
-    See the [Download](../Download) readme file for details of how to
-    **install** and **select** the version.
-
-    The build configuration of this repository is set up to work with the SDK
-    you install there.
-
-2.  **Build and run the base applications.**
+1.  **Build and run the base applications.**
 
     The base applications don't integrate the SDK so updating to a new version
     shouldn't make any difference. However, this is a good time to update to the
@@ -52,7 +40,24 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
-3.  **Update, build and run the client applications.**
+2.  **Update the Workspace ONE Intelligent Hub app.**
+
+    Now is a good time to update to the latest version of Hub on your developer
+    device. You can update using the Play Store, for example.
+
+3.  **Install the new SDK for Android under the Download/ directory and select
+    it.**
+    
+    See the [Workspace ONE for Android Integration Preparation guide](../Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) for how to obtain the SDK
+    for Android.
+
+    See the [Download](../Download) readme file for details of how to
+    **install** and **select** the version.
+
+    The build configuration of this repository is set up to work with the SDK
+    you install there.
+
+4.  **Update, build and run the client applications.**
 
     There are two client applications: `clientJava` and `clientKotlin`. They
     integrate the SDK at the client level.
@@ -85,7 +90,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
-4.  **Update, build and run the framework applications.**
+5.  **Update, build and run the framework applications.**
 
     There are several framework applications. Their names all start with
     `framework`. They integrate the SDK at the framework level, either by
@@ -119,7 +124,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
-5.  **Update, build and run the branding applications.**
+6.  **Update, build and run the branding applications.**
 
     There are a number of branding demonstration applications. Their names all
     start with `brand`. They integrate the SDK at the framework level, and
@@ -144,7 +149,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
 The update is now ready for commit.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

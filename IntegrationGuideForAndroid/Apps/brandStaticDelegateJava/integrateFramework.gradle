@@ -19,8 +19,8 @@ dependencies {
     // Following lines are added to integrate Workspace ONE at the Framework level ...
 
     // Workspace ONE libraries that are part of the SDK.
-    implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
-    implementation(name:'SCEPClient-1.0.15', ext: 'aar')
+    implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
+    implementation(name:'SCEPClient-1.0.16', ext: 'aar')
     implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
     implementation(name:"AWFramework-${airwatchVersion}", ext: 'aar')
     implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
@@ -30,7 +30,6 @@ dependencies {
     implementation(name:"settings-1.3.1.7--20201201T114153Z", ext:'aar')
     implementation(name:"opdata-android-1.5.0.4--20201201T152231Z", ext:'aar')
     implementation(name:"attributesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
-    implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
     implementation(name:"encryptedpreferencesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
     implementation(name:"httpprovider-1.3.1.7--20201201T114153Z", ext:'aar')
     implementation(name:"memoryprovider-1.3.1.7--20201201T114153Z", ext:'aar')

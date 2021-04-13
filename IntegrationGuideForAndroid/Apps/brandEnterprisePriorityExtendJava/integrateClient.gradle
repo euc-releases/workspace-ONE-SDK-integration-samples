@@ -25,7 +25,7 @@ dependencies {
 
     // Workspace ONE libraries that are part of the SDK.
     implementation(name: "AirWatchSDK-${airwatchVersion}", ext: 'aar')
-    implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
+    implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
     implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
     implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')
 

@@ -55,10 +55,10 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.2
-Workspace ONE management console                 | 2101
-Android Studio integrated development environment| 4.1.2
-Gradle plugin for Android                        | 4.1.2
+Workspace ONE SDK for Android                    | 21.3
+Workspace ONE management console                 | 2102
+Android Studio integrated development environment| 4.1.3
+Gradle plugin for Android                        | 4.1.3
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -176,8 +176,8 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.2', ext:'aar')
-            implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
+            implementation (name:'AirWatchSDK-21.3', ext:'aar')
+            implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
             implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
 
@@ -522,11 +522,11 @@ Proceed as follows.
             // Following lines are added to integrate Workspace ONE at the Framework level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation(name:'ws1-sdk-oauth-api-lib-1.1.0', ext:'aar')
-            implementation(name:'SCEPClient-1.0.15', ext: 'aar')
+            implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
+            implementation(name:'SCEPClient-1.0.16', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.2', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.2", ext: "aar") 
+            implementation(name:'AWFramework-21.3', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.3", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
             implementation(name:"chameleon-android-1.1.1.8--20201116T093924Z", ext:'aar')
@@ -534,7 +534,7 @@ Proceed as follows.
             implementation(name:"settings-1.3.1.7--20201201T114153Z", ext:'aar')
             implementation(name:"opdata-android-1.5.0.4--20201201T152231Z", ext:'aar')
             implementation(name:"attributesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
-            implementation(name:"ws1-android-logger-1.1.0", ext:'aar')
+            implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"encryptedpreferencesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
             implementation(name:"httpprovider-1.3.1.7--20201201T114153Z", ext:'aar')
             implementation(name:"memoryprovider-1.3.1.7--20201201T114153Z", ext:'aar')
@@ -1142,6 +1142,7 @@ This document is available
 |15dec2020|Update for 20.11 SDK for Android.           |
 |18feb2021|Update for 21.1 SDK for Android.            |
 |10mar2021|Update for 21.2 SDK for Android.            |
+|07apr2021|Update for 21.3 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
