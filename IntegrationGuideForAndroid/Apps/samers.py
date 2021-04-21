@@ -102,6 +102,7 @@ class Rules:
         # Files that should be the same everywhere.
         '**/proguard-rules.pro', '**/buildBase.gradle',
         '**/integrateClient.gradle', '**/integrateFramework.gradle',
+        '**/publicMavenClient.gradle', '**/publicMavenFramework.gradle',
         *_java_kt(
             'AirWatchSDKIntentService', 'BaseActivity', 'Application',
             'AWApplication', 'BrandingManager', 'BitmapBrandingManager'
@@ -165,9 +166,13 @@ class Rules:
             'framework*/**/src/**/AndroidManifest.xml',
             'brand*/**/src/**/AndroidManifest.xml'
         ],
-        "framework build.gradle files": [
+        "download framework build.gradle files": [
             'framework*/**/build.gradle',
-            'brand*/**/build.gradle'
+            'brandDynamic*/**/build.gradle',
+            'brandEnterprise*/**/build.gradle'
+        ],
+        "public Maven framework build.gradle files": [
+            'brandStatic*/**/build.gradle'
         ],
         "framework delegate application.properties files": [
             'frameworkDelegate*/**/application.properties',

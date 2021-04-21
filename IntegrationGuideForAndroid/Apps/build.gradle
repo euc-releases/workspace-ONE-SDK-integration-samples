@@ -30,6 +30,15 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+task printUserHomeDir {
+    doLast {
+        // "The Gradle user home directory. This directory is used to cache
+        // downloaded resources, compiled build scripts and so on."
+        // https://docs.gradle.org/current/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:gradleUserHomeDir
+        println project.gradle.gradleUserHomeDir
+    }
+}
+
 ext {
     airwatchVersion = '21.3'
 
@@ -39,6 +48,18 @@ ext {
     secretFile = {
         String[] segments -> new RelativePath(true, "Secret", *segments)
             .getFile(new File(rootDir.getParent()))
+    }
+
+    secretProperties = { String[] segments ->
+        def path = secretFile(*segments)
+        if (!path.exists()) {
+            return null
+        }
+
+        // TOTH: https://stackoverflow.com/a/37101792/7657675
+        def properties = new Properties()
+        file(path).withInputStream {properties.load(it)}
+        return properties
     }
 
     // Utility methods to generate paths for files or directories under where

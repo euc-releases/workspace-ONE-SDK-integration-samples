@@ -1,4 +1,4 @@
-# Copyright 2020 VMware, Inc.
+# Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Run with Python 3.7
@@ -23,6 +23,10 @@ from pathlib import Path
 # https://docs.python.org/3.5/library/shutil.html#shutil.rmtree
 import shutil
 #
+# Module for spawning a process to run a command.
+# https://docs.python.org/3/library/subprocess.html
+import subprocess
+#
 # Module for shell return code.
 # https://docs.python.org/3/library/sys.html
 import sys
@@ -36,6 +40,7 @@ class Cleaner:
     def __init__(self):
         self._dryRun = False
 
+    # Command line properties.
     @property
     def dryRun(self):
         return self._dryRun
@@ -43,18 +48,68 @@ class Cleaner:
     def dryRun(self, dryRun):
         self._dryRun = dryRun
 
+    @property
+    def cache(self):
+        return self._cache
+    @cache.setter
+    def cache(self, cache):
+        self._cache = cache
+
+    # End of command line properties.
+
     @staticmethod
     def project_deletes(projectPath):
         for glob in (
-            "*.iml", ".idea", "build", ".gradle", "gradle", "gradlew", "gradlew.bat"
+            "*.iml", ".idea", "build", ".gradle", "gradle", "gradlew"
+            , "gradlew.bat"
         ):
             for path in projectPath.rglob(glob):
                 yield path
 
+    @classmethod
+    def cache_deletes(cls, projectPath):
+        for sub0 in (
+            Path(cls.gradle_user_home_dir(projectPath), 'caches').iterdir()
+        ):
+            if not sub0.name.startswith('modules-'):
+                continue
+            for sub1 in sub0.iterdir():
+                if sub1.name.startswith('files-'):
+                    for sub2 in sub1.iterdir():
+                        if sub2.name.startswith('com.airwatch.'):
+                            yield sub2
+                elif sub1.name.startswith ('metadata-'):
+                    yield sub1
+
+    @staticmethod
+    def gradle_user_home_dir(projectPath):
+        # Run a task defined in the project build.gradle file that prints the
+        # user home directory. It'll be ~/.gradle/ on macOS, unless customised
+        # somewhere.
+        with subprocess.Popen(
+            ('./gradlew', 'printUserHomeDir', '--console=plain', '--quiet')
+            ,stdout=subprocess.PIPE, text=True, cwd=projectPath
+        ) as gradleProcess:
+            with gradleProcess.stdout as gradleOutput:
+                lines = gradleOutput.readlines()
+                if len(lines) == 1:
+                    return lines[0].splitlines()[0]
+                else:
+                    lines[:0] = [
+                        'Unexpected number of lines in Gradle output.',
+                        f'Expected:1, actual:{len(lines)}. Output:'
+                    ]
+                    raise RuntimeError('\n'.join(lines))
+
     def __call__(self):
         root = Path(__file__).parent
         count = 0
-        for deletion in sorted(self.project_deletes(root)):
+        if self.cache:
+            deletions = self.cache_deletes(root)
+        else:
+            deletions = self.project_deletes(root)
+
+        for deletion in sorted(deletions):
             if deletion.is_file():
                 print(f'unlink "{deletion}".')
                 if not self.dryRun:
@@ -66,7 +121,7 @@ class Cleaner:
                     shutil.rmtree(deletion)
                 count += 1
             else:
-                print("Don't know how to delete", deletion)
+                print("Don't " f'know how to delete "{deletion}".')
         print(f'Deleted:{count}.')
         if self.dryRun:
             print("Dry run, didn't delete.")
@@ -75,6 +130,12 @@ def main(commandLine):
     argumentParser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=textwrap.dedent(__doc__))
+    argumentParser.add_argument(
+        '-c', '--cache', action='store_true', help=
+        "Delete Gradle cached downloads of VMware Workspace ONE mobile SDK"
+        " dependencies and all the Gradle cache metadata. Useful for forcing"
+        " download or testing secret override properties.  Default is to delete"
+        " Gradle build files instead.")
     argumentParser.add_argument(
         '-d', '--dry-run', dest='dryRun', action='store_true', help=
         "Print deletions that would be made but don't delete anything.")

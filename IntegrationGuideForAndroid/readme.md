@@ -8,6 +8,9 @@ documents.
 The code is organised as a project that can be built, for example with an
 integrated development environment (IDE) such as Android Studio.
 
+By integrating the software development kit you accept the
+[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf).
+
 # How to use the repository code
 The code in this repository can be used in the following ways.
 
@@ -24,7 +27,7 @@ file for example.
 See the [backlog](Documentation/backlog.md) file.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause
