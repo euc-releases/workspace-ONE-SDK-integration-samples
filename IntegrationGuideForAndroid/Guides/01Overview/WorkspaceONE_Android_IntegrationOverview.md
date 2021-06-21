@@ -19,7 +19,7 @@ This document is part of the Workspace ONE Integration Guide for Android set.
 [Operational Data](#operational-data)  
 [Tasks and Documentation](#tasks-and-documentation)  
 [Integration Guide Structure](#integration-guide-structure)  
-[Integration Preparation Guide](#integration-preparation-guide)
+[Integration Preparation Guide](#integration-preparation-guide)  
 [Base Integration Guide](#base-integration-guide)  
 [Branding Integration Guide](#branding-integration-guide)  
 [Links](#links)  

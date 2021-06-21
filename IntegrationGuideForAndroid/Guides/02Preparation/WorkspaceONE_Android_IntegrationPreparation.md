@@ -7,7 +7,28 @@ prepare for integration.
 This document is part of the Workspace ONE Integration Guide for Android set.
 
 # Table of Contents
-{{TOC}}
+[Introduction](#introduction)  
+[Integration Guides](#integration-guides)  
+[Prerequisites](#prerequisites)  
+[Compatibility](# ompatibility)  
+[Task: Install application via Workspace ONE](#task:-install-application-via-workspace-one)  
+[Installation Order](#installation-order)  
+[Instructions](#instructions)  
+[Troubleshooting](#troubleshooting)  
+[Task: Obtain software development kit](#task:-obtain-software-development-kit)  
+[SDK Download](#sdk-download)  
+[SDK Contents](#sdk-contents)  
+[Software Development Kit Download Structure Diagram](#software-development-kit-download-structure-diagram)
+[Next Steps](#next-steps)  
+[Appendix: How to generate a signed Android package file once](#appendix:-how-to-generate-a-signed-android-package-file-once)  
+[Appendix: How to generate a signed Android package every build](#appendix:-how-to-generate-a-signed-android-package-every-build)  
+[Appendix: How to verify that an Android package file is signed](#appendix:-how-to-verify-that-an-android-package-file-is-signed)  
+[Appendix: How to upload an Android application to the management console](#appendix:-how-to-upload-an-android-application-to-the-management-console)  
+[Appendix: How to run integrated applications on Huawei devices](#appendix:-how-to-run-integrated-applications-on-huawei-devices)  
+[Document Information](#document-information)  
+[Published Locations](#published-locations)  
+[Revision History](#revision-history)  
+[Legal](#legal)  
 
 # Introduction
 The tasks detailed below should be done first, to prepare for integration of
@@ -237,7 +258,7 @@ Obtaining the Workspace ONE software development kit (SDK) is a platform
 integration task for Android application developers. It applies to all levels of
 platform integration.
 
-## Download
+## SDK Download
 The Workspace ONE mobile SDK for Android can be downloaded from VMware, for
 example as follows.
 
@@ -273,7 +294,7 @@ example as follows.
 
 The SDK download will begin.
 
-## Contents
+## SDK Contents
 Unpack the download and you will see that the SDK has the following principal
 software components.
 
