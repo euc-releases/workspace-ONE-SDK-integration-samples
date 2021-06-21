@@ -417,7 +417,7 @@ of the following.
     integration.
 -   [Add the Framework], otherwise.
 
-# ***Task***Initialize Client SDK
+# ***Task*** Initialize Client SDK
 Client SDK initialization is a Workspace ONE platform integration task for
 Android application developers. It applies only to Client-level integration, not
 to Framework integration.
