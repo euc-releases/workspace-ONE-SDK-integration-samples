@@ -52,7 +52,7 @@ networking.
 
 To integrate at the **Client level**, do the following tasks:
 
-1.  [Add the Client SDK].
+1.  [Client Only Path Task: Add Client SDK](#client-only-path-task:-add-client-sdk).
 2.  [Initialize the Client SDK].
 
 To integrate at the **Framework level**, do the following tasks:
