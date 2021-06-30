@@ -8,8 +8,9 @@ documents.
 The code is organised as a project that can be built, for example with an
 integrated development environment (IDE) such as Android Studio.
 
-By integrating the software development kit you accept the
-[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf).
+By integrating or downloading the software development kit (SDK) you accept the
+[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf)
+This applies however you obtain the software.
 
 # How to use the repository code
 The code in this repository can be used in the following ways.

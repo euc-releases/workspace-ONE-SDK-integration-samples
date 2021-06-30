@@ -55,7 +55,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.3
+Workspace ONE SDK for Android                    | 21.5.1
 Workspace ONE management console                 | 2102
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
@@ -123,7 +123,7 @@ First, update the build configuration and add the required library files.
                 ...
             }
             dependencies {
-                classpath 'com.android.tools.build:gradle:4.1.1'
+                classpath 'com.android.tools.build:gradle:4.1.2'
                 ...
             }
         }
@@ -176,18 +176,18 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.3', ext:'aar')
+            implementation (name:'AirWatchSDK-21.5.1', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
+            implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
 
             // Third party libraries that are distributed with the SDK.
             implementation 'com.google.code.gson:gson:2.4'
 
             // Third party libraries that are hosted remotely.
             implementation "androidx.multidex:multidex:2.0.0"
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
             implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
             implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
             annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
@@ -311,16 +311,25 @@ Proceed as follows.
             override fun onAnchorAppUpgrade(context: Context, isUpgrade: Boolean) { }
         }
 
-2.  Declare the permission.
+2.  Declare the permission and interaction filter.
 
     In the Android manifest file, inside the `manifest` block but outside the
-    `application` block, add a declaration like the following.
+    `application` block, add declarations like the following.
 
         <?xml version="1.0" encoding="utf-8"?>
         <manifest ...>
 
-        <!-- Next line is added -->
+        <!-- Following declarations are added -->
         <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+
+        <!-- Following tag applies to compileSdkVersion 30 or later. -->
+        <queries>
+            <intent>
+                <action android:name="com.airwatch.p2p.intent.action.PULL_DATA" />
+            </intent>
+        </queries>
+
+        <!-- End of added declarations.>
 
         <application ...>
         ...
@@ -525,23 +534,25 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.16', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.3', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.3", ext: "aar") 
+            implementation(name:'AWFramework-21.5.1', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.5.1", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-            implementation(name:"chameleon-android-1.1.1.8--20201116T093924Z", ext:'aar')
-            implementation(name:"module-settings-1.2.0.1--20201125T150536Z", ext:'aar')
-            implementation(name:"settings-1.3.1.7--20201201T114153Z", ext:'aar')
-            implementation(name:"opdata-android-1.5.0.4--20201201T152231Z", ext:'aar')
-            implementation(name:"attributesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
+            implementation(name:"chameleon-android-1.2.2.2", ext:'aar')
+            implementation(name:"module-settings-1.2.4.2--20210108T183724Z", ext:'aar')
+            implementation(name:"settings-1.4.1.1", ext:'aar')
+            implementation(name:"opdata-android-1.6.2.3", ext:'aar'){
+                exclude group:'com.vmware.xsw.settings', module:'settings'
+            }
+            implementation(name:"attributesprovider-1.4.0.1", ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"encryptedpreferencesprovider-1.3.1.7--20201201T114153Z", ext:'aar')
-            implementation(name:"httpprovider-1.3.1.7--20201201T114153Z", ext:'aar')
-            implementation(name:"memoryprovider-1.3.1.7--20201201T114153Z", ext:'aar')
-            implementation(name:"supercollider-1.0.7-ndk-r21c", ext:'aar')
-            implementation(name:"work-hour-access-sdk-android-1.0.0", ext:'aar')
-            implementation(name:"FeatureModule-android-2.0.0", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-1.1", ext:'aar')  
+            implementation(name:"encryptedpreferencesprovider-1.4.0.1", ext:'aar')
+            implementation(name:"httpprovider-1.4.0.1", ext:'aar')
+            implementation(name:"memoryprovider-1.4.0.1", ext:'aar')
+            implementation(name:"supercollider-1.2.0.1", ext:'aar')
+            implementation(name:"work-hour-access-sdk-android-1.0.2.2", ext:'aar')
+            implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
             // The following JAR file is included in the SDK but needn't be added
             // as a specific dependency because it is covered by the
             // `implementation fileTree( ... include: ['*.jar'])`, above, after
@@ -561,7 +572,7 @@ Proceed as follows.
             implementation 'com.google.code.gson:gson:2.4'
 
             // Third party libraries that are hosted remotely.
-            implementation 'androidx.security:security-crypto:1.0.0-rc02'
+            implementation 'androidx.security:security-crypto:1.1.0-alpha03'
             implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
             implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
             kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
@@ -583,7 +594,7 @@ Proceed as follows.
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
             implementation 'org.koin:koin-core:2.1.0'
             implementation 'org.koin:koin-android:2.1.0'
-            implementation 'net.zetetic:android-database-sqlcipher:4.4.2@aar'
+            implementation 'net.zetetic:android-database-sqlcipher:4.4.3@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
@@ -1143,6 +1154,7 @@ This document is available
 |18feb2021|Update for 21.1 SDK for Android.            |
 |10mar2021|Update for 21.2 SDK for Android.            |
 |07apr2021|Update for 21.3 SDK for Android.            |
+|17jun2021|Update for 21.5.1 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

@@ -19,6 +19,8 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     shouldn't make any difference. However, this is a good time to update to the
     latest versions of native code such as new Kotlin language plugins and
     AndroidX libraries.
+
+    First, check for changes highlighted in the project build.gradle file.
     
     There are two base applications, `baseJava` and `baseKotlin`. Check for
     changes highlighted in the build.gradle file of each. Run both on a

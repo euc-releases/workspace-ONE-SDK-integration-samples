@@ -116,7 +116,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.3
+Workspace ONE SDK for Android                    | 21.5.1
 Workspace ONE management console                 | 2102
 Android Studio integrated development environment| 4.1.3
 
@@ -1050,6 +1050,7 @@ This document is available
 |18feb2021|Update for 21.1 SDK for Android.            |
 |10mar2021|Update for 21.2 SDK for Android.            |
 |07apr2021|Update for 21.3 SDK for Android.            |
+|17jun2021|Update for 21.5.1 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

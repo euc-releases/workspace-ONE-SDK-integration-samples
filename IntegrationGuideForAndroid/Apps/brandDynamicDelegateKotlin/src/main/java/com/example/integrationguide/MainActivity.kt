@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide
@@ -27,21 +27,27 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         configureTextView()
 
-        val channel = NotificationChannel(
-            channelID, "Channel", NotificationManager.IMPORTANCE_DEFAULT)
-            .also { it.description = "Diagnostic channel" }
-        val manager = applicationContext.getSystemService(
-            Context.NOTIFICATION_SERVICE) as NotificationManager
-        manager.createNotificationChannel(channel)
+        if (
+            android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O
+        ) {
+            val channel = NotificationChannel(
+                channelID, "Channel", NotificationManager.IMPORTANCE_DEFAULT
+            )
+                .also { it.description = "Diagnostic channel" }
+            val manager = applicationContext.getSystemService(
+                Context.NOTIFICATION_SERVICE
+            ) as NotificationManager
+            manager.createNotificationChannel(channel)
 
-        findViewById<View>(R.id.toggleView).setOnClickListener {
-            val notification = NotificationCompat.Builder(this, channelID)
-                .setSmallIcon(R.drawable.brand_logo_onecolour)
-                .setContentTitle("Tapped")
-                .setContentText("App Logo was tapped.")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            with(NotificationManagerCompat.from(this)) {
-                notify(1, notification.build())
+            findViewById<View>(R.id.toggleView).setOnClickListener {
+                val notification = NotificationCompat.Builder(this, channelID)
+                    .setSmallIcon(R.drawable.brand_logo_onecolour)
+                    .setContentTitle("Tapped")
+                    .setContentText("App Logo was tapped.")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                with(NotificationManagerCompat.from(this)) {
+                    notify(1, notification.build())
+                }
             }
         }
 

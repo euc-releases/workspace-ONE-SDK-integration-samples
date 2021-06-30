@@ -114,11 +114,53 @@ as follows.
 
 The rest of the processing is the same as above.
 
+# Update copyright notices
+The samers script can be used to update copyright notices in files under
+revision control by Git. The script will check the year in the copyright notice
+in the file against the last modified date in the Git log output.
+
+First, commit any required modifications to the local Git repository. Then run
+the update as follows.
+
+    python3 ./samers.py -n ../Resources/copyrightnotices.txt -i -v 
+
+For each file in which the copyright notice date is different to the last
+modified year, the script will show the differences, and prompt you to
+overwrite. The prompt looks like this for each file:
+
+    Copyright notices with incorrect date in file "brandDynamicDelegateJava/src/main/AndroidManifest.xml"
+        Different "brandDynamicDelegateJava/src/main/AndroidManifest.xml"
+    *** brandDynamicDelegateJava/src/main/AndroidManifest.xml
+    --- Edited
+    ***************
+    *** 1,6 ****
+    <?xml version="1.0" encoding="utf-8"?>
+    <!--
+    !     Copyright 2020 VMware, Inc.
+        SPDX-License-Identifier: BSD-2-Clause
+    -->
+    <manifest
+    --- 1,6 ----
+    <?xml version="1.0" encoding="utf-8"?>
+    <!--
+    !     Copyright 2021 VMware, Inc.
+        SPDX-License-Identifier: BSD-2-Clause
+    -->
+    <manifest
+
+        Overwrite? (Y/n/?)
+
+In the differences portion, the first set of lines will be the current contents,
+and the second set are the proposed replacement. Check that the second set is
+what's required and key return to overwrite. If the second set isn't what's
+required then type n and return. The overwrite of that file will then be
+skipped.
+
 # Other tasks
 Other tasks are TBD at this time, sorry.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

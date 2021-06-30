@@ -53,7 +53,8 @@ class MainActivity : BaseActivity() {
                     it, listOf(
                         "deviceUid: ", initSDKManager.deviceUid,
                         "\ndeviceSerialId: ", initSDKManager.deviceSerialId,
-                        "\n", initSDKManager.sdkProfileJSONString?.run {
+                        "\n\ncustomSettings: ", initSDKManager.customSettings,
+                        "\n\n", initSDKManager.sdkProfileJSONString?.run {
                             JSONObject(this).toString(4)
                         } ?: getString(R.string.null_sdk_profile_json)
                     ).map {

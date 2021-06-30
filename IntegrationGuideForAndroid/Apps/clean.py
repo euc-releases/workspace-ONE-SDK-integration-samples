@@ -55,6 +55,13 @@ class Cleaner:
     def cache(self, cache):
         self._cache = cache
 
+    @property
+    def userHomeDir(self):
+        return self._userHomeDir
+    @userHomeDir.setter
+    def userHomeDir(self, userHomeDir):
+        self._userHomeDir = userHomeDir
+
     # End of command line properties.
 
     @staticmethod
@@ -67,10 +74,10 @@ class Cleaner:
                 yield path
 
     @classmethod
-    def cache_deletes(cls, projectPath):
-        for sub0 in (
-            Path(cls.gradle_user_home_dir(projectPath), 'caches').iterdir()
-        ):
+    def cache_deletes(cls, projectPath, userHomeDir=None):
+        if userHomeDir is None:
+            userHomeDir = cls.gradle_user_home_dir(projectPath)
+        for sub0 in (Path(userHomeDir, 'caches').iterdir()):
             if not sub0.name.startswith('modules-'):
                 continue
             for sub1 in sub0.iterdir():
@@ -105,7 +112,7 @@ class Cleaner:
         root = Path(__file__).parent
         count = 0
         if self.cache:
-            deletions = self.cache_deletes(root)
+            deletions = self.cache_deletes(root, self.userHomeDir)
         else:
             deletions = self.project_deletes(root)
 
@@ -139,6 +146,12 @@ def main(commandLine):
     argumentParser.add_argument(
         '-d', '--dry-run', dest='dryRun', action='store_true', help=
         "Print deletions that would be made but don't delete anything.")
+    argumentParser.add_argument(
+        '-u', '--user-home-dir', dest='userHomeDir', type=str, help=
+        "Set the Gradle user home directory. Default is to run a Gradle task,"
+        " printUserHomeDir, that prints the required value. Use this option if"
+        " there isn't a gradlew executable in the project directory. A typical"
+        " value is ~/.gradle")
 
     argumentParser.parse_args(commandLine[1:], Cleaner())()
     return 0

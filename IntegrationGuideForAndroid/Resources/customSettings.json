@@ -1,0 +1,16 @@
+{
+    "fixedString": "Fixed String",
+    "DeviceIMEI": "{DeviceIMEI}",
+    "DeviceAssetNumber": "{DeviceAssetNumber}",
+    "DeviceWLANMac": "{DeviceWLANMac}",
+    "DeviceUuId": "{DeviceUuId}",
+    "DeviceUid": "{DeviceUid}",
+    "DeviceSerialNumber": "{DeviceSerialNumber}",
+    "DeviceFriendlyName": "{DeviceFriendlyName}",
+    "DevicePlatform": "{DevicePlatform}",
+    "DeviceModel": "{DeviceModel}",
+    "DeviceOperatingSystem": "{DeviceOperatingSystem}",
+    "DeviceReportedName": "{DeviceReportedName}",
+    "GroupIdentifier": "{GroupIdentifier}",
+    "fixed1": 1
+}

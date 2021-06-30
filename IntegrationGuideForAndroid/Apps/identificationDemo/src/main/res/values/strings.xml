@@ -1,0 +1,14 @@
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="app_name">Identification Demo</string>
+    <string name="app_label">WS1 ID</string>
+    <string name="ui_placeholder">Application User Interface goes here!</string>
+    <string name="status_placeholder">Awaiting status …</string>
+    <string name="status_ok">Workspace ONE OK</string>
+    <string name="console_version">Console version: %1$s</string>
+    <string name="status_ng">Workspace ONE failed</string>
+    <string name="null_sdk_profile_json">sdkProfileJSONString null</string>
+</resources>

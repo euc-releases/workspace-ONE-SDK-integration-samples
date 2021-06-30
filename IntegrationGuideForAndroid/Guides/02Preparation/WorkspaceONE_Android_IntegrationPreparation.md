@@ -110,10 +110,10 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 21.3         |           |
-Workspace ONE management console                   | 2102         | 1909      |
-Workspace ONE Intelligent Hub application          | 21.03        | 20.01     |
-Android API level                                  | 29           | 19        |
+Workspace ONE software development kit for Android | 21.5.1       |           |
+Workspace ONE management console                   | 2102         | 2001      |
+Workspace ONE Intelligent Hub application          | 21.04        | 20.04     |
+Android API level                                  | 30           | 19        |
 Android Studio integrated development environment  | 4.1.3        | 4.0.1     |
 Gradle plugin for Android                          | 4.1.3        | 4.0.1     |
 
@@ -201,7 +201,13 @@ Proceed as follows.
 4.  Install your application from Hub.
 
     Your application can now be installed from the Hub on the device. Find it in
-    the App Catalog section and select to install it.
+    the App Catalog section, or in the  and select to install it.
+
+    **Warning**: If the App Catalog opens in the browser instead of in Hub,
+    don't install your app from there. If you do, then the application under
+    development won't work later when installed via the Android Debug Bridge
+    (adb). Instead, follow the instructions in the 
+    [Appendix: How to push installation of an application from the console].
 
     In case of difficulties, see the [Troubleshooting] tips.
 
@@ -215,6 +221,13 @@ document, if needed.
 You can now proceed to the next task: [Obtain software development kit].
 
 ## Troubleshooting
+In case the **App Catalog section doesn't appear** in the Hub app on your
+device, try navigating in Hub to This Device, Managed Apps instead.
+
+In case your **application doesn't appear** in the Hub, try pushing installation
+from the UEM console. For instructions, see the
+[Appendix: How to push installation of an application from the console].
+
 In case **installation doesn't start** immediately, try any of the following:
 
 -   Open the Hub application and select This Device, Managed Apps, and then your
@@ -257,7 +270,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 21.3 or whatever is the latest version.
+    -   Select an app version: 21.5 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -508,6 +521,56 @@ The application that you uploaded can now be installed from Hub application.
 
 See also the [Troubleshooting] tips elsewhere in this document.
 
+# Appendix: How to push installation of an application from the console
+You can push installation of an app from the Workspace ONE management console by
+following these instructions. These are provided here for application developer
+convenience and aren't intended to replace the system administrator user guides
+for the Workspace ONE product.
+
+Push installation will sometimes work when installing an app from the Hub on the
+device doesn't work.
+
+1.  Open the Workspace ONE management console in a web browser and log in.
+
+    This opens a dashboard.
+
+2.  From the dashboard, navigate to: Devices and select the List View.
+
+    This opens a list of enrolled devices.
+
+3.  Select the latest enrollment of your developer device.
+
+    This opens a detailed view of the selected device.
+
+4.  Select the Apps tab.
+
+    This opens a list of the apps that are assigned to the device.
+
+5.  Select the circle on the row of the app you wish to install.
+
+    Buttons for install and other actions will appear as shown in the following
+    screen capture.
+
+    ![**Screen capture 1:** Push Install](ScreenCapture_PushInstall.png)
+
+    (In this screen capture, the selected application is named App+WS1.)
+
+    Buttons for other actions might appear next to the install button. Ignore
+    them.
+
+6.  Click the install button, and click OK to confirm if prompted.
+
+    A message confirming successful save of the request to install will appear.
+
+7.  On your developer device, launch the Hub app.
+
+    If installation hasn't started automatically, navigate to the App Catalog
+    section and select to install it.
+
+The application that you pushed should now install on the device.
+
+If it doesn't see the other [Troubleshooting] tips elsewhere in this document.
+
 # Appendix: How to run integrated applications on Huawei devices
 Additional preparation of some Huawei mobile devices is required in order to run
 applications that have integrated the Workspace ONE mobile software development
@@ -552,6 +615,7 @@ This document is available
 |18feb2021|Updated for 21.1 SDK for Android.           |
 |10mar2021|Updated for 21.2 SDK for Android.           |
 |07apr2021|Updated for 21.3 SDK for Android.           |
+|17jun2021|Update for 21.5.1 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

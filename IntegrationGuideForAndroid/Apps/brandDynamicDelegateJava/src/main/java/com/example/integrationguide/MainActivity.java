@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide;
@@ -6,6 +6,7 @@ package com.example.integrationguide;
 import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,13 +31,17 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         configureTextView();
 
-        final NotificationChannel channel = new NotificationChannel(
-            channelID, "Channel", NotificationManager.IMPORTANCE_DEFAULT);
-        channel.setDescription("Diagnostic channel");
-        final NotificationManager manager = getApplicationContext()
-            .getSystemService(NotificationManager.class);
-        assert manager != null;
-        manager.createNotificationChannel(channel);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            final NotificationChannel channel = new NotificationChannel(
+                    channelID,
+                    "Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Diagnostic channel");
+            final NotificationManager manager = getApplicationContext()
+                    .getSystemService(NotificationManager.class);
+            assert manager != null;
+            manager.createNotificationChannel(channel);
+        }
 
         findViewById(R.id.toggleView).setOnClickListener(
             new View.OnClickListener() {

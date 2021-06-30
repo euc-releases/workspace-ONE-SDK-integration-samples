@@ -107,6 +107,13 @@ class Rules:
             'AirWatchSDKIntentService', 'BaseActivity', 'Application',
             'AWApplication', 'BrandingManager', 'BitmapBrandingManager'
         ),
+        # User interface tests are written in Kotlin, even for Java sample
+        # applications. The CamelSpaced String extension is required by the test
+        # code, and used by the Kotlin sample code, but isn't used by the Java
+        # sample code. The CamelSpaced.kt file will be in the main/ source for a
+        # Kotlin sample app but in the androidTest/ source for a Java sample
+        # app.
+        '**/CamelSpaced.kt', '**/BaseActivityTest.kt',
 
         # Commented out because there's only one of each.
         # '**/DynamicBrandApplication.java', '**/DynamicBrandApplication.kt',

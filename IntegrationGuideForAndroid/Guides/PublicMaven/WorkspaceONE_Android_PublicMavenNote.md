@@ -5,9 +5,9 @@ utilized directly from a public Maven repository. Direct utilization from the
 repository is an alternative to downloading the software development kit from
 the My Workspace ONE website.
 
-By integrating the software development kit (SDK) you accept the
-[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf). This applies however you obtain and 
-integrate the software.
+By integrating or downloading the software development kit (SDK) you accept the
+[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf)
+This applies however you obtain the software.
 
 # Table of Contents
 {{TOC}}

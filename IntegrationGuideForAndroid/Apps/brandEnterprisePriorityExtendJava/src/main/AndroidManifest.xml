@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2020 VMware, Inc.
+    Copyright 2021 VMware, Inc.
     SPDX-License-Identifier: BSD-2-Clause
 -->
 <manifest
@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_roundicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        tools:ignore="MissingClass"
         android:name=".${applicationClass}"
         tools:replace="android:label, android:allowBackup"
         >

@@ -1,0 +1,60 @@
+
+task testNoAppUninstall {
+    group("verification")
+    description(
+        "Same as testDebugUnitTest but without uninstalling the app after.")
+    dependsOn(
+        project.path + ':installDebug',
+        project.path + ':installDebugAndroidTest'
+    )
+    def testPackage = android.defaultConfig.applicationId + ".test"
+    def testRunner = android.defaultConfig.testInstrumentationRunner
+    doFirst {
+        // TOTH the exec object: https://stackoverflow.com/a/38273215/7657675
+        exec {
+            executable 'adb'
+            args(
+                'shell', 'am', 'instrument', '-e', 'disableAnalytics', 'true',
+                '-w', testPackage + '/' + testRunner
+            )
+        }
+    }
+    doLast {
+        exec {
+            executable 'adb'
+            args 'uninstall', testPackage
+        }
+        println("${project.path} Uninstalled test package: $testPackage")
+    }
+    // The following could also be used to uninstall the test package, and
+    // prints a nicer message.
+    //
+    //     finalizedBy project.path + ':uninstallDebugAndroidTest'
+    //
+    // However, there seemed to be a timing issue that the uninstall would
+    // occasionally still be in progress when the next installDebugAndroidTest
+    // dependency was being evaluated. The outcome was that the test package
+    // wasn't installed and the instrumented tests then couldn't run.
+
+    // For the disableAnalytics business, see:
+    // https://developer.android.com/training/testing/espresso/setup#analytics
+
+    // If you get error messages like these:
+    //
+    //     INSTRUMENTATION_STATUS: Error=Unable to find instrumentation info for: ComponentInfo ...
+    //
+    //     android.util.AndroidException: INSTRUMENTATION_FAILED: ...
+    //
+    // Run this:
+    //
+    //     ./gradlew :frameworkExtendKotlin:installDebugAndroidTest
+    //     adb shell pm list instrumentation
+    //
+    // The output of the adb should include a line like the fist one below. Copy
+    // the indicated segment and paste it after the -w above.
+    //
+    //     instrumentation:com.example.integrationguide.test/androidx.test.runner.AndroidJUnitRunner (target=com.example.integrationguide)
+    //                     <-- Copy all this ------------------------------------------------------>
+    //
+    // TOTH: https://stackoverflow.com/a/23394559/7657675
+}

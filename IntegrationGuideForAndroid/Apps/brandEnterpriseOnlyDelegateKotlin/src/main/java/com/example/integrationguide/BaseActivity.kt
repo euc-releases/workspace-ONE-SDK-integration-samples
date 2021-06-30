@@ -1,4 +1,4 @@
-// Copyright 2020 VMware, Inc.
+// Copyright 2021 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide
@@ -12,24 +12,18 @@ import android.widget.TextView
 @SuppressLint("Registered")
 open class BaseActivity : Activity() {
 
-    private val capsRegex = Regex("[A-Z]")
-
     private val uiTexts by lazy {generateUITexts()}
 
     open fun generateUITexts():List<CharSequence> {
         return listOf(
             resources.getString(R.string.ui_placeholder),
-            wrappable(resources.getString(R.string.MODULE_NAME)),
+            resources.getString(R.string.MODULE_NAME).camelSpaced(),
             with(resources.configuration.uiMode) {
                 if ((this and Configuration.UI_MODE_NIGHT_MASK)
                     == Configuration.UI_MODE_NIGHT_YES
                 ) "Dark mode" else "Not dark mode"
             }
         )
-    }
-
-    private fun wrappable(camelCased: String): String {
-        return capsRegex.replace(camelCased) {" " + it.value}
     }
 
     protected fun configureTextView(textViewID: Int = R.id.textViewIntegration) {
