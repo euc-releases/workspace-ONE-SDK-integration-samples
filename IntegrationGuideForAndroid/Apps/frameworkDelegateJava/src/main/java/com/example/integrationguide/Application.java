@@ -476,4 +476,7 @@ public class Application
     public void initialiseOperationalData() {
         awDelegate.initialiseOperationalData();
     }
+
+    @Override
+    public void initializeWorkHourAccessControl() { awDelegate.initializeWorkHourAccessControl(); }
 }

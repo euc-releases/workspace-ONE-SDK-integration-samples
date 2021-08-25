@@ -55,8 +55,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.5.1
-Workspace ONE management console                 | 2102
+Workspace ONE SDK for Android                    | 21.7
+Workspace ONE management console                 | 2105
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -176,7 +176,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.5.1', ext:'aar')
+            implementation (name:'AirWatchSDK-21.7', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
             implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
@@ -534,23 +534,23 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.16', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.5.1', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.5.1", ext: "aar") 
+            implementation(name:'AWFramework-21.7', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.7", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-            implementation(name:"chameleon-android-1.2.2.2", ext:'aar')
-            implementation(name:"module-settings-1.2.4.2--20210108T183724Z", ext:'aar')
-            implementation(name:"settings-1.4.1.1", ext:'aar')
-            implementation(name:"opdata-android-1.6.2.3", ext:'aar'){
+            implementation(name:"chameleon-android-1.3.0.210817224752", ext:'aar')
+            implementation(name:"module-settings-1.2.5.210818200916", ext:'aar')
+            implementation(name:"settings-1.4.3.4", ext:'aar')
+            implementation(name:"opdata-android-1.7.0.210819180047", ext:'aar'){
                 exclude group:'com.vmware.xsw.settings', module:'settings'
             }
-            implementation(name:"attributesprovider-1.4.0.1", ext:'aar')
+            implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"encryptedpreferencesprovider-1.4.0.1", ext:'aar')
-            implementation(name:"httpprovider-1.4.0.1", ext:'aar')
-            implementation(name:"memoryprovider-1.4.0.1", ext:'aar')
+            implementation(name:"encryptedpreferencesprovider-1.4.3.4", ext:'aar')
+            implementation(name:"httpprovider-1.4.3.4", ext:'aar')
+            implementation(name:"memoryprovider-1.4.3.4", ext:'aar')
             implementation(name:"supercollider-1.2.0.1", ext:'aar')
-            implementation(name:"work-hour-access-sdk-android-1.0.2.2", ext:'aar')
+            implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
             implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
             // The following JAR file is included in the SDK but needn't be added
@@ -1061,7 +1061,7 @@ application to confirm that no mistakes have been made.
 In case the above changes don't seem to work, you can instead try the changes in
 the [Alternative Early Version Support] section, below.
 
-All you being well, continue with other integration tasks.
+All being well, continue with other integration tasks.
 
 ## Alternative Early Version Support
 The following code snippet shows an alternative approach to early version
@@ -1129,6 +1129,37 @@ integrated to the Framework level. The login screen might be shown afterwards,
 depending on the application state and the configuration in the management
 console.
 
+# Appendix: Troubleshooting
+
+## Empty Response from AirWatch MDM Service
+Occasionally, one may encounter the message "Empty Response from Airwatch MDM Service" 
+in the adb log during app integration into Workspace ONE. This error message is triggered 
+when the app was not installed via Intelligent Hub. 
+
+To resolve this error, it is recommended to upload the APK to the UEM once, then install the 
+app through Intelligent Hub. 
+
+For detailed instructions please refer to the Integration Preperation Guide, specifically 
+
+Appendix: How to upload an Android application to the management console 
+- as Markdown: [Preperation Guide - Appendix: How to upload an Android application to the management console](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#appendix-how-to-upload-an-android-application-to-the-management-console-how-to-upload-an-android-application-to-the-management-console) 
+- as PDF: [Preperation Guide - Appendix: How to upload an Android application to the management console](https://vdc-download.vmware.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=15) 
+
+and 
+
+Task: Install application via Workspace ONE 
+- as Markdown: [Preparation Guide - Task: Install application via Workspace ONE](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-install-application-via-workspace-one-install-your-application-via-workspace-one) 
+- as PDF: [Preparation Guide - Task: Install application via Workspace ONE](https://vdc-download.vmware.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=5) 
+
+Once the APK has been uploaded to the UEM and installed via Workspace ONE, the app can then 
+be subsequently side-loaded by the ABD provided the side load is signed by the same developer 
+key as the original upload. To ensure your APK is signed on every build please refer to the 
+Preperation Guide, specifically 
+
+Appendix: How to generate a signed Android package every build 
+- as Markdown [Preparation Guide - How to generate a signed Android package every build](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#appendix-how-to-generate-a-signed-android-package-every-build-how-to-generate-a-signed-android-package-every-build) 
+- as PDF: [Preparation Guide - How to generate a signed Android package every build](https://vdc-download.vmware.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=13) 
+
 # Document Information
 ## Published Locations
 This document is available
@@ -1155,6 +1186,9 @@ This document is available
 |10mar2021|Update for 21.2 SDK for Android.            |
 |07apr2021|Update for 21.3 SDK for Android.            |
 |17jun2021|Update for 21.5.1 SDK for Android.          |
+|13jul2021|Update for 21.6 SDK for Android.            |
+|29jul2021|Update for 21.6.1 SDK for Android.          |
+|18aug2021|Update for 21.7 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
