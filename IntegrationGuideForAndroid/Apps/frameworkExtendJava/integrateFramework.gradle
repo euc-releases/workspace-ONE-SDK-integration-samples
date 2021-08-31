@@ -25,16 +25,16 @@ dependencies {
     implementation(name:"AWFramework-${airwatchVersion}", ext: 'aar')
     implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
     implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-    implementation(name:"chameleon-android-1.2.2.2", ext:'aar')
-    implementation(name:"module-settings-1.2.4.2--20210108T183724Z", ext:'aar')
-    implementation(name:"settings-1.4.1.1", ext:'aar')
-    implementation(name:"opdata-android-1.6.2.3", ext:'aar'){
+    implementation(name:"chameleon-android-1.3.0.210817224752", ext:'aar')
+    implementation(name:"module-settings-1.2.5.210818200916", ext:'aar')
+    implementation(name:"settings-1.4.3.4", ext:'aar')
+    implementation(name:"opdata-android-1.7.0.210819180047", ext:'aar'){
         exclude group:'com.vmware.xsw.settings', module:'settings'
     }
-    implementation(name:"attributesprovider-1.4.0.1", ext:'aar')
-    implementation(name:"encryptedpreferencesprovider-1.4.0.1", ext:'aar')
-    implementation(name:"httpprovider-1.4.0.1", ext:'aar')
-    implementation(name:"memoryprovider-1.4.0.1", ext:'aar')
+    implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
+    implementation(name:"encryptedpreferencesprovider-1.4.3.4", ext:'aar')
+    implementation(name:"httpprovider-1.4.3.4", ext:'aar')
+    implementation(name:"memoryprovider-1.4.3.4", ext:'aar')
     implementation(name:"supercollider-1.2.0.1", ext:'aar')
     implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
     implementation files( sdkVersionFile(
