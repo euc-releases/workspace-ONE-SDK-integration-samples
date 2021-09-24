@@ -13,8 +13,8 @@ android {
         applicationId "com.vmware.workspaceone_example_identification"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,8 +38,8 @@ apply from: secretFile("keystore.gradle")
 
 dependencies {
     // AndroidX native.
-    def appcompat_version = "1.3.0"
-    def constraintLayout_version = "2.0.4"
+    def appcompat_version = "1.3.1"
+    def constraintLayout_version = "2.1.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -54,12 +54,12 @@ dependencies {
         "androidx.constraintlayout:constraintlayout:$constraintLayout_version")
 
     // Libraries for running automated tests.
-    androidTestImplementation 'androidx.test:core:1.3.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
 }
 
 // Workspace ONE integration additions start here.
@@ -95,7 +95,7 @@ dependencies {
 // By integrating this software you accept the VMware Workspace ONE Software
 // Development Kit License Agreement that is posted here:  
 // https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-    implementation "com.airwatch.android:AirWatchSDK:21.5"
+    implementation "com.airwatch.android:AirWatchSDK:21.7"
 }
 
 // Test task in a separate file.

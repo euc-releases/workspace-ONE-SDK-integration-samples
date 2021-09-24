@@ -80,6 +80,12 @@ Follow these instructions to build the applications in this project.
     -   `framework*`  
         Applications for the Base Integration Guide that demonstrate Framework
         level integration, either by delegation or by extension.
+    -   `identificationDemo`  
+        Application that demonstrates device identification and custom settings
+        features of Workspace ONE.
+    -   `privacy*`  
+        Demonstration application for the Privacy Agreement Module Integration
+        Guide.
 
      The [applications](applications.md) file has a complete list of the
      applications.
@@ -99,7 +105,7 @@ You are now ready to install or debug any of the demonstration applications on
 your developer device.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

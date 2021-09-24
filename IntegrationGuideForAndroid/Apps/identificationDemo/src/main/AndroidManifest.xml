@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2020 VMware, Inc.
+    Copyright 2021 VMware, Inc.
     SPDX-License-Identifier: BSD-2-Clause
 -->
 <manifest
@@ -21,7 +21,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,6 +33,7 @@
         <receiver
             android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
             android:permission="com.airwatch.sdk.BROADCAST"
+            android:exported="true"
             >
             <intent-filter>
                 <action android:name=".airwatchsdk.BROADCAST" />

@@ -16,12 +16,12 @@ applications.
 -   [Apps/baseJava](../Apps/baseJava)
 -   [Apps/baseKotlin](../Apps/baseKotlin)
 
-The user interface is a single text that appears in the centre of the screen. If
-you tap the text, it cycles between
+The user interface is a single text that appears in the centre of the screen.
+When you tap the text, it cycles between
 
--   Fixed message.
--   Module name of the application, "base Kotlin" for example.
--   Dark mode message.
+-   fixed message.
+-   module name of the application, "base Kotlin" for example.
+-   dark mode message.
 
 The user interface appears in dark mode if the device is in dark mode, and vice
 versa.
@@ -172,6 +172,62 @@ The app user interface has the following elements.
 -   An enterprise branding image is displayed in the lower half of the screen,
     if configured in the management console.
 
+# Privacy Agreement Integration Guide
+The following application is a demonstration for the
+[Privacy Agreement Module Integration Guide](../Guides/05Privacy/WorkspaceONE_Android_Privacy.md).
+
+-   [Apps/privacyKotlin](../Apps/privacyKotlin)
+
+When the app is launched after a fresh install a privacy agreement is displayed
+that the user must accept. The agreement isn't displayed on subsequent launches.
+After the agreement has been accepted the app user interface opens.
+
+The app user interface displays the following options.
+
+-   Review the privacy agreement.
+-   Revert the privacy agreement.
+
+When the agreement is reverted, the review option changes to an accept option.
+
+Note that this app doesn't integrate the core SDK, neither at the client nor
+framework level.
+
+# Additional Sample Applications
+The following applications are additional demonstrations that aren't associated
+with particular integration guides.
+
+## Identification and Custom Settings
+The following application demonstrates device identification and custom settings
+features of the Workspace ONE platform.
+
+-   [Apps/identificationDemo](../Apps/identificationDemo)
+
+The app integrates the SDK at the client level.
+
+The app utilizes Workspace ONE custom settings to receive device identification
+values from the management console. To configure the settings in the console,
+proceed as follows.
+
+1.  Log in to your Workspace ONE Unified Endpoint Manager (UEM) console and
+    select the organization group (OG) for your end user.
+
+2.  Navigate to Groups & Settings, All Settings, Settings.
+
+3.  Select Custom Settings: Enabled.
+
+    This will make a Custom Settings text field appear.
+
+4.  Paste into the Custom Settings text field the contents of the file:
+    [Resources/customSettings.json](../Resources/customSettings.json)
+
+The following screen capture shows the location in the UEM user interface.
+
+![**Screen Capture:** Custom Settings in the Workspace ONE management console](ScreenCapture_UEM_CustomSettings.png)
+
+The app user interface is a static display of the custom settings values and
+other settings and information retrieved from the console and device. Note that
+the  custom settings have instantiated template values.
+
 # Duplication
 A lot of the code in the project is duplicated between applications. In theory,
 code could be, for example, pulled in from common directories by Gradle or a
@@ -182,7 +238,7 @@ Duplication is managed by the maintainers of the repository. See also the
 [samers.md](samers.md) file.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

@@ -289,7 +289,12 @@ class NoticesEditor:
         "//": ['.gradle', '.java', '.kt']
     }
 
-    _exempt_suffixes = ['.png']
+    _exempt_suffixes = [
+        '.png', # Exempt because it's a binary format.
+        '.md'   # Exempt here because Markdown files have a different copyright
+                # notice.
+    ]
+
 
     @classmethod
     def exemptPath(cls, path):

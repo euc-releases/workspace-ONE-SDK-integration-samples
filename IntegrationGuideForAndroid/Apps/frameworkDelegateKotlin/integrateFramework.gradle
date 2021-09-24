@@ -20,15 +20,15 @@ dependencies {
 
     // Workspace ONE libraries that are part of the SDK.
     implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
-    implementation(name:'SCEPClient-1.0.16', ext: 'aar')
+    implementation(name:'SCEPClient-1.0.17', ext: 'aar')
     implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
     implementation(name:"AWFramework-${airwatchVersion}", ext: 'aar')
     implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
-    implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-    implementation(name:"chameleon-android-1.3.0.210817224752", ext:'aar')
-    implementation(name:"module-settings-1.2.5.210818200916", ext:'aar')
+    implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
+    implementation(name:"chameleon-android-1.3.0.210830205322", ext:'aar')
+    implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
     implementation(name:"settings-1.4.3.4", ext:'aar')
-    implementation(name:"opdata-android-1.7.0.210819180047", ext:'aar'){
+    implementation(name:"opdata-android-1.7.0.210830212442", ext:'aar'){
         exclude group:'com.vmware.xsw.settings', module:'settings'
     }
     implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
@@ -39,6 +39,9 @@ dependencies {
     implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
     implementation files( sdkVersionFile(
             'Libs', 'AWFramework', 'dependencies', 'awannotations-1.0.jar'))
+    implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar') {
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
 
     // Third party libraries that are distributed with the SDK.
     implementation("com.squareup.moshi:moshi-kotlin:1.8.0"){

@@ -23,7 +23,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     First, check for changes highlighted in the project build.gradle file.
     
     There are two base applications, `baseJava` and `baseKotlin`. Check for
-    changes highlighted in the build.gradle file of each. Run both on a
+    changes highlighted in the build.gradle file of each. Run at least one on a
     developer device as a test before proceeding.
 
     If there any native changes to the dependencies, update the
@@ -87,7 +87,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     make the change in one app module and then apply to the others using the
     samers.py script.
     
-    Build and run both of the client apps as a test before proceeding.
+    Build and run at least one of the client apps as a test before proceeding.
 
     See the [applications.md](applications.md) file for a description of the app
     user interface.
@@ -121,7 +121,8 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     make the change in one app module and then apply to the others using the
     samers.py script.
     
-    Build and run each of the framework apps as a test before proceeding.
+    Build and run at least one of the framework apps as a test before
+    proceeding.
 
     See the [applications.md](applications.md) file for a description of the app
     user interface.
@@ -143,12 +144,66 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     the same way as updates to the client and framework application code, by
     making the change in one app and then applying it with the samers.py script.
 
-    Build and run each of the branding apps as a test before proceeding.
+    Build and run at least one of the branding apps as a test before proceeding.
 
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
-The update is now ready for commit.
+7.  **Update, build and run the privacy agreement applications.**
+
+    There is one privacy agreement application: `privacyKotlin`. It integrates
+    the Workspace ONE Privacy Agreement Module, not the other parts of the
+    Workspace ONE SDK.
+
+    If the new SDK introduces any changes to the dependencies for privacy
+    agreement integration, update the `integratePrivacy.gradle` file
+    accordingly.
+
+    Build and run the app as a test before proceeding.
+
+    See the [applications.md](applications.md) file for a description of the app
+    user interface.
+
+8.  **Update, build and run the additional sample applications.**
+
+    There is one additional sample application: `identificationDemo`. It
+    integrates the SDK at the client level.
+
+    This app has a standalone build configuration and doesn't have a copy of the
+    `integrateClient.gradle` file. Make the same changes to this app's build
+    configuration and code that you made to the `clientKotlin` app.
+
+    Build and run the app as a test before proceeding.
+
+    See the [applications.md](applications.md) file for a description of the app
+    user interface and how to configure the management console.
+
+9.  **Run the automated tests.**
+
+    The sample applications each have a copy of the same automated test suite.
+    See for example the
+    [BaseActivityTest.kt](../Apps/frameworkDelegateKotlin/src/androidTest/java/com/example/integrationguide/BaseActivityTest.kt)
+    file. See also in the build Gradle files the `testNoAppUninstall` task.
+
+    The suite is quite basic, testing only that the app launches and that its
+    user interface is interactive. This is enough to verify that each app builds
+    and doesn't crash during SDK initialization.
+
+    You can run the test suite in all the apps one after another with the
+    [gradleach.py](../Apps/gradleach.py) Python script. For example, as follows.
+
+        cd /wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Apps
+
+        # Print the usage as a reminder first.
+        python3 ./gradleach.py -h
+
+        # Go for real.
+        python3 ./gradleach.py
+
+    If any test fails, the script will terminate early with an error message
+    from Gradle. Fix any issues before running the tests again.
+
+When the test passes in all the apps, the update is ready for commit.
 
 # License
 Copyright 2021 VMware, Inc. All rights reserved.  

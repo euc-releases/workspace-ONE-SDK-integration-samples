@@ -7,7 +7,7 @@ The project build configuration has been set up to facilitate inclusion of the
 SDK from this directory. Follow these instructions.
 
 1.  Unzip the SDK download under this directory.
-2.  Set the `airwatchVersion` ext variable in the
+2.  Set the `airwatchVersion` and `privacyVersion` ext variables in the
     [Apps/build.gradle](../Apps/build.gradle) file.
 
 # Detailed Instructions
@@ -17,10 +17,10 @@ SDK from this directory. Follow these instructions.
 
     Leave the sub-directories as they are in the download.
 
-    For example, if you are using the 20.11 version, you will have a structure
+    For example, if you are using the 21.7 version, you will have a structure
     like this:
 
-        IntegrationGuideForAndroid/Download/Android SDK v20.11/
+        IntegrationGuideForAndroid/Download/Android SDK v21.7/
         |
         +-- Documentation/...
         |
@@ -36,18 +36,29 @@ SDK from this directory. Follow these instructions.
         |
         +-- Sample Code/...
 
-2.  Set the version in the build configuration.
+2.  Check the version of the privacy agreements module.
+
+    The required version number appears as a suffix to the .aar file in the
+    Libs/AWPrivacy/ sub-directory.
+    
+    For example, the path in the 21.7 SDK download is:  
+    `IntegrationGuideForAndroid/Download/Android SDK v21.7/Libs/AWPrivacy/AWPrivacy-21.5.1.aar`  
+    The privacy agreements module has 21.5.1 as its version number.
+
+3.  Set the versions in the build configuration.
 
     The project build.gradle file, [Apps/build.gradle](../Apps/build.gradle),
-    defines an `ext` variable, `airwatchVersion` with the version.
+    defines `ext` variables, `airwatchVersion` and `privacyVersion`, with the
+    versions.
 
-    Update the value of that variable if you are using a different version to
-    the one in the revision controlled file.
+    Update the values of the variables if you are using different versions to
+    those in the revision controlled file.
 
-    Look for this code:
+    Look for code like the following.
 
         ext {
-            airwatchVersion = '20.11'
+            airwatchVersion = '21.7'
+            privacyVersion = '21.5.1'
 
             ...
         }
@@ -70,7 +81,7 @@ In case this has been copied and pasted far away from the original project, the
 definitions are like this:
 
     ext {
-        airwatchVersion = '20.11'
+        airwatchVersion = '21.7'
         sdkVersionPath = {
             boolean endsWithFile, String[] segments -> new RelativePath(
                 endsWithFile,
@@ -106,7 +117,7 @@ See the
 file for an example of applying the script plugins.
 
 # License
-Copyright 2020 VMware, Inc. All rights reserved.  
+Copyright 2021 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

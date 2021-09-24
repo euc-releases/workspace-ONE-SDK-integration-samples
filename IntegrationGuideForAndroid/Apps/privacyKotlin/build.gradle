@@ -1,0 +1,21 @@
+// Copyright 2020 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: file("buildBase.gradle")
+
+def integratePrivacy = secretFile("integratePrivacy.gradle")
+
+if (integratePrivacy.exists()) {
+    println("Override integratePrivacy '${integratePrivacy}'.")
+    apply from: integratePrivacy
+}
+else {
+    // Add the downloaded SDK as a repository, and apply all the dependencies of the
+    // Workspace ONE Privacy Module.
+    apply from: file("integratePrivacy.gradle")
+}

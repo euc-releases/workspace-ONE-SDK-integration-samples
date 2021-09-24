@@ -116,8 +116,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.7
-Workspace ONE management console                 | 2105
+Workspace ONE SDK for Android                    | 21.8
+Workspace ONE management console                 | 2107
 Android Studio integrated development environment| 4.1.3
 
 # Use Cases
@@ -922,12 +922,14 @@ For context of when these instructions would be followed, see
 
     For example:
     
-    -   Upload an image to the Android Background Image Medium slot.
+    -   Upload an image to the Android Background Image Medium slot. It is
+        recommended to use a small image file, no more than 100kb in size.
     
         The image that you upload will appear on the SDK splash screen that is
         displayed when the application starts cold.
 
-    -   Upload an image to the Android Company Logo Phone slot.
+    -   Upload an image to the Android Company Logo Phone slot. It is
+        recommended to use a small image file, no more than 100kb in size.
     
         The image that you upload will appear on the SDK login screen that is
         displayed when, for example, the end user sets a passcode after
@@ -951,7 +953,7 @@ the management console. Configuration of brand images would be accessed by
 scrolling down in the same location.
 
 ![**Screen capture 1:** Console User Interface](ScreenCapture_Console.png)
-
+        
 # Appendix: Branding elements on the splash screen [Splash Screen]
 The following screen capture shows brand elements in the SDK splash screen.
 
@@ -1054,6 +1056,7 @@ This document is available
 |13jul2021|Update for 21.6 SDK for Android.            |
 |29jul2021|Update for 21.6.1 SDK for Android.          |
 |18aug2021|Update for 21.7 SDK for Android.            |
+|15sep2021|Update for 21.8 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

@@ -23,6 +23,8 @@ include (
     ':brandDynamicDelegateJava', ':brandDynamicDelegateKotlin',
     ':brandDynamicExtendJava',   ':brandDynamicExtendKotlin',
 
+    ':privacyKotlin',
+    
     ':identificationDemo'
 )
 

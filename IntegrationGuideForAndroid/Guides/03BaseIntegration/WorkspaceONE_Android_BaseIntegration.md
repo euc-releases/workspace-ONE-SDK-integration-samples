@@ -55,8 +55,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.7
-Workspace ONE management console                 | 2105
+Workspace ONE SDK for Android                    | 21.8
+Workspace ONE management console                 | 2107
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -176,7 +176,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.7', ext:'aar')
+            implementation (name:'AirWatchSDK-21.8', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
             implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
@@ -532,16 +532,16 @@ Proceed as follows.
 
             // Workspace ONE libraries that are part of the SDK.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
-            implementation(name:'SCEPClient-1.0.16', ext: 'aar')
+            implementation(name:'SCEPClient-1.0.17', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.7', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.7", ext: "aar") 
+            implementation(name:'AWFramework-21.8', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.8", ext: "aar") 
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
-            implementation(name:'CredentialsExt-102.1.0', ext: 'aar')
-            implementation(name:"chameleon-android-1.3.0.210817224752", ext:'aar')
-            implementation(name:"module-settings-1.2.5.210818200916", ext:'aar')
+            implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
+            implementation(name:"chameleon-android-1.3.0.210830205322", ext:'aar')
+            implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
             implementation(name:"settings-1.4.3.4", ext:'aar')
-            implementation(name:"opdata-android-1.7.0.210819180047", ext:'aar'){
+            implementation(name:"opdata-android-1.7.0.210830212442", ext:'aar'){
                 exclude group:'com.vmware.xsw.settings', module:'settings'
             }
             implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
@@ -552,7 +552,12 @@ Proceed as follows.
             implementation(name:"supercollider-1.2.0.1", ext:'aar')
             implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
+            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')
+            implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar'){
+                 exclude group:'androidx.appcompat', module:'appcompat'
+            }
+            implementation(name:"openssl_fips-1.0.2za", ext:'aar')
+
             // The following JAR file is included in the SDK but needn't be added
             // as a specific dependency because it is covered by the
             // `implementation fileTree( ... include: ['*.jar'])`, above, after
@@ -599,6 +604,7 @@ Proceed as follows.
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
             kapt "androidx.room:room-compiler:$room_version"
+
         }
     
     Your application might already require different versions of some of the
@@ -1189,6 +1195,7 @@ This document is available
 |13jul2021|Update for 21.6 SDK for Android.            |
 |29jul2021|Update for 21.6.1 SDK for Android.          |
 |18aug2021|Update for 21.7 SDK for Android.            |
+|15sep2021|Update for 21.8 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="privacy_applicationName">Integration Guide Sample App</string>
+    <string name="privacy_content_browsingHistory_title"
+        >Browsing history</string>
+    <string name="privacy_content_browsingHistory_summary"
+        >The app will log which sites you browse. The record will be uploaded to
+        the management console.</string>
+    <string name="privacy_dataSharing_description">
+        Help improve the Sample application and add new features.
+        \n\n
+        The developers would like to collect additional information about your
+        usage of Sample application. This is optional for you.
+    </string>
+    <!--
+    TOTH for line breaks in string resources:
+    https://stackoverflow.com/questions/5460256/string-resource-new-line-n-not-possible#5460289
+    -->
+</resources>

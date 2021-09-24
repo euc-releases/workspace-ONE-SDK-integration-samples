@@ -1,0 +1,12 @@
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="app_name">Integration Guide</string>
+    <string name="app_label">App+WS1</string>
+    <string name="privacy_review">Review privacy agreement</string>
+    <string name="privacy_accept">Accept privacy agreement</string>
+    <string name="privacy_revert">Revert privacy agreement</string>
+    <string name="ui_placeholder">Application User Interface goes here!</string>
+</resources>

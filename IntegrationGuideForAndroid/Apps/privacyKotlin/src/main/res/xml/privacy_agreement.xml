@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2020 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<privacyAgreement rejectShow="false" dataSharingShow="false">
+    <applicationName>XML Sample App</applicationName>
+    <dataCollection>
+        <defaultItems />
+        <remove contentType="APP_DATA_DIAGNOSTICS" />
+        <item>
+            <icon resource="drawable/privacy_placeholder_2" />
+            <title>Browsing XML History</title>
+            <summary>
+                The app will log which sites you browse. The record will
+                be uploaded to the management console.
+            </summary>
+        </item>
+        <item contentType="APP_DATA_NOTIFICATIONS" />
+    </dataCollection>
+    <appPermissions>
+        <title>Sample App Permissions</title>
+        <item>
+            <icon contentType="PERMISSION_CAMERA" />
+            <title>Camera</title>
+            <summary>Required for taking XML sample photos.</summary>
+        </item>
+        <item>
+            <icon contentType="PERMISSION_PHONE" />
+            <title>Phone</title>
+            <summary
+                >Placing sample calls and sending XML text messages.</summary>
+        </item>
+        <item>
+            <icon contentType="PERMISSION_LOCATION_SERVICES" />
+            <title>Location</title>
+            <summary>Sampling GPS, XML or another location service.</summary>
+        </item>
+        <item>
+            <icon contentType="PERMISSION_NETWORK" />
+            <title>Network</title>
+            <summary>Connect to sample services on the XML internet.</summary>
+        </item>
+        <item>
+            <icon resource="privacy_placeholder_1" />
+            <title>AN Other Permission</title>
+            <summary
+                >Another XML permission with a custom icon goes here.</summary>
+        </item>
+    </appPermissions>
+    <enterprisePolicy>
+        <link>example.com</link>
+        <description>
+            Tap here to read your company's privacy policy.
+            (Opens example.com in this sample.)
+        </description>
+    </enterprisePolicy>
+</privacyAgreement>
