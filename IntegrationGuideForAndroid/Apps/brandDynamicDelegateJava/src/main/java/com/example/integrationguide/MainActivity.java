@@ -63,11 +63,10 @@ public class MainActivity extends BaseActivity {
 
         toastHere(configureStatus());
 
-        BrandingManager.getInstance(this).getDefaultBrandingManager()
-            .brandLoadingScreenLogo( bitmap -> {
-                ((ImageView)findViewById(R.id.imageViewEnterpriseLogo))
-                    .setImageBitmap(bitmap);
-            });
+        ImageView enterpriseLogoImageView = findViewById(R.id.imageViewEnterpriseLogo);
+        enterpriseLogoImageView.post(() -> BrandingManager.getInstance(MainActivity.this).getDefaultBrandingManager()
+                .brandLoadingScreenLogo(bitmap -> enterpriseLogoImageView.setImageBitmap(bitmap),
+                        enterpriseLogoImageView.getWidth(), enterpriseLogoImageView.getHeight()));
     }
 
     private void toastHere(final String message) {

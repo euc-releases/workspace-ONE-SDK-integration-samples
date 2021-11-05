@@ -55,8 +55,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.8
-Workspace ONE management console                 | 2107
+Workspace ONE SDK for Android                    | 21.10
+Workspace ONE management console                 | 2109
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -176,10 +176,10 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.8', ext:'aar')
+            implementation (name:'AirWatchSDK-21.10', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')  
+            implementation(name:"FeatureModule-android:2.0.2", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
 
             // Third party libraries that are distributed with the SDK.
             implementation 'com.google.code.gson:gson:2.4'
@@ -534,14 +534,14 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.17', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.8', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.8", ext: "aar") 
+            implementation(name:'AWFramework-21.10', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.10", ext: "aar")
             implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
-            implementation(name:"chameleon-android-1.3.0.210830205322", ext:'aar')
+            implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
             implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
             implementation(name:"settings-1.4.3.4", ext:'aar')
-            implementation(name:"opdata-android-1.7.0.210830212442", ext:'aar'){
+            implementation(name:"opdata-android-1.7.1.210929135455", ext:'aar'){
                 exclude group:'com.vmware.xsw.settings', module:'settings'
             }
             implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
@@ -550,10 +550,10 @@ Proceed as follows.
             implementation(name:"httpprovider-1.4.3.4", ext:'aar')
             implementation(name:"memoryprovider-1.4.3.4", ext:'aar')
             implementation(name:"supercollider-1.2.0.1", ext:'aar')
-            implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
-            implementation(name:"FeatureModule-android-2.0.1", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-1.2", ext:'aar')
-            implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar'){
+            implementation(name:"work-hour-access-sdk-android-1.0.4.0", ext:'aar')
+            implementation(name:"FeatureModule-android-2.0.2", ext:'aar')
+            implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
+            implementation(name:"xsw-crypto-android-2.0.0.210924132218", ext:'aar'){
                  exclude group:'androidx.appcompat', module:'appcompat'
             }
             implementation(name:"openssl_fips-1.0.2za", ext:'aar')
@@ -597,8 +597,8 @@ Proceed as follows.
             implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
             implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.71'
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
-            implementation 'org.koin:koin-core:2.1.0'
-            implementation 'org.koin:koin-android:2.1.0'
+            implementation 'io.insert-koin:koin-core:2.1.6'
+            implementation 'io.insert-koin:koin-android:2.1.6'
             implementation 'net.zetetic:android-database-sqlcipher:4.4.3@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
@@ -1196,6 +1196,7 @@ This document is available
 |29jul2021|Update for 21.6.1 SDK for Android.          |
 |18aug2021|Update for 21.7 SDK for Android.            |
 |15sep2021|Update for 21.8 SDK for Android.            |
+|26oct2021|Update for 21.10 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

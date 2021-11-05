@@ -3,6 +3,9 @@
 
 package com.example.integrationguide;
 
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -87,8 +90,14 @@ class BitmapBrandingManager
         };
     }
 
-    private Bitmap makeBitmap(String title) {
-        Bitmap bitmap = Bitmap.createBitmap(600, 600, Bitmap.Config.ARGB_8888);
+    private Bitmap makeBitmap(String title, int viewWidth, int viewHeight) {
+        // The returned bitmap is always square.
+        // The length of the sides will be the minimum of the specified width and height, but no more than 600 pixels,
+        // and no less than 80 pixels, (80 <= bitmapDimension <= 600)
+        int specifiedSize = min(min(viewWidth, viewHeight), 600);
+        int bitmapDimension = max(specifiedSize, 80);
+
+        Bitmap bitmap = Bitmap.createBitmap(bitmapDimension, bitmapDimension, Bitmap.Config.ARGB_8888);
 
         float height = (float)bitmap.getHeight();
         float width = (float)bitmap.getWidth();
@@ -96,25 +105,27 @@ class BitmapBrandingManager
 
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.LTGRAY);
+        paint.setAntiAlias(true);
         canvas.drawRect(0F, 0F, width, height, paint);
 
         paint.setColor(Color.BLACK);
-        paint.setTextSize(height / 4F);
+        paint.setTextSize(height / 4.5F);
         float x = width / 2F;
-        float y = paint.getTextSize();
+        float y = getTextHeight(paint);
         canvas.drawText(title, x, y, paint);
-        paint.setTextSize(height / 7F);
+        paint.setTextSize(height / 8F);
 
         loadBrand();
+        float subStringHeight = getTextHeight(paint);
         for (String brandMessage : brandMessages) {
-            y += paint.getTextSize() * 1.5F;
+            y += subStringHeight * 1.5F;
             canvas.drawText(brandMessage, x, y, paint);
         }
 
         if (primaryColorInt != null) {
             paint.setColor(primaryColorInt);
             paint.setStyle(Paint.Style.STROKE);
-            float margin = 10F;
+            float margin = min(10F, bitmapDimension/15f);
             paint.setStrokeWidth(margin / 2F);
             canvas.drawRect(
                 margin, margin, width - margin, height - margin, paint);
@@ -123,9 +134,28 @@ class BitmapBrandingManager
         return bitmap;
     }
 
+    private Bitmap makeBitmap(String title) {
+        return makeBitmap(title, 600, 600);
+    }
+
+    private float getTextHeight(Paint paint){
+        Paint.FontMetrics fm = paint.getFontMetrics();
+        return fm.descent - fm.ascent;
+    }
+
+    @Override
+    public void brandLoadingScreenLogo(BrandingCallBack callback, int maxWidth, int maxHeight) {
+        callback.onComplete(makeBitmap("Loading", maxWidth, maxHeight));
+    }
+
     @Override
     public void brandLoadingScreenLogo(BrandingCallBack callback) {
         callback.onComplete(makeBitmap("Loading"));
+    }
+
+    @Override
+    public void brandInputScreenLogo(BrandingCallBack callback, int maxWidth, int maxHeight) {
+        callback.onComplete(makeBitmap("Input", maxWidth, maxHeight));
     }
 
     @Override

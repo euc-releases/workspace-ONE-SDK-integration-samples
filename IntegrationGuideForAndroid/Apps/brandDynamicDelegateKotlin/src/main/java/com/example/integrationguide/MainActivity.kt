@@ -53,11 +53,12 @@ class MainActivity : BaseActivity() {
 
         toastHere(configureStatus())
 
-        BrandingManager.getInstance(this).defaultBrandingManager
-            .brandLoadingScreenLogo {
-                findViewById<ImageView>(R.id.imageViewEnterpriseLogo)
-                    .setImageBitmap(it)
-            }
+        val enterpriseLogoImageView = findViewById<ImageView>(R.id.imageViewEnterpriseLogo)
+        enterpriseLogoImageView.post {
+            BrandingManager.getInstance(this).defaultBrandingManager.brandLoadingScreenLogo({ bitmap ->
+                enterpriseLogoImageView.setImageBitmap(bitmap)
+            }, enterpriseLogoImageView.width, enterpriseLogoImageView.height)
+        }
 
     }
 

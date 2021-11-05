@@ -15,6 +15,7 @@ android {
 
 dependencies {
     def room_version = "2.3.0"
+    def provider_version = "1.4.3.4"
 
     // Following lines are added to integrate Workspace ONE at the Framework level ...
 
@@ -25,23 +26,27 @@ dependencies {
     implementation(name:"AWFramework-${airwatchVersion}", ext: 'aar')
     implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
     implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
-    implementation(name:"chameleon-android-1.3.0.210830205322", ext:'aar')
+    implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
     implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
     implementation(name:"settings-1.4.3.4", ext:'aar')
-    implementation(name:"opdata-android-1.7.0.210830212442", ext:'aar'){
+    implementation(name:"opdata-android-1.7.1.210929135455", ext:'aar'){
         exclude group:'com.vmware.xsw.settings', module:'settings'
     }
-    implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
-    implementation(name:"encryptedpreferencesprovider-1.4.3.4", ext:'aar')
-    implementation(name:"httpprovider-1.4.3.4", ext:'aar')
-    implementation(name:"memoryprovider-1.4.3.4", ext:'aar')
+    implementation(name:"attributesprovider-${provider_version}", ext:'aar')
+    implementation(name:"encryptedpreferencesprovider-${provider_version}", ext:'aar')
+    implementation(name:"httpprovider-${provider_version}", ext:'aar')
+    implementation(name:"memoryprovider-${provider_version}", ext:'aar')
+    implementation(name:"sharedpreferencesprovider-${provider_version}", ext:'aar')
     implementation(name:"supercollider-1.2.0.1", ext:'aar')
-    implementation(name:"work-hour-access-sdk-android-1.0.3.0", ext:'aar')
+    implementation(name:"work-hour-access-sdk-android-1.0.4.0", ext:'aar')
     implementation files( sdkVersionFile(
             'Libs', 'AWFramework', 'dependencies', 'awannotations-1.0.jar'))
-    implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar') {
+    implementation(name:"xsw-crypto-android-2.0.0.210924132218", ext:'aar') {
         exclude group: 'androidx.appcompat', module: 'appcompat'
     }
+    implementation(name:"FeatureModule-android-2.0.2", ext:'aar')
+    implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
+    implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
 
     // Third party libraries that are distributed with the SDK.
     implementation("com.squareup.moshi:moshi-kotlin:1.8.0"){
@@ -75,8 +80,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     // implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.71'
     // implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
-    implementation 'org.koin:koin-core:2.1.0'
-    implementation 'org.koin:koin-android:2.1.0'
+    implementation 'io.insert-koin:koin-core:2.1.6'
+    implementation 'io.insert-koin:koin-android:2.1.6'
     implementation 'net.zetetic:android-database-sqlcipher:4.4.3@aar'
     implementation 'androidx.work:work-runtime-ktx:2.5.0'
     implementation 'androidx.biometric:biometric:1.1.0'

@@ -116,8 +116,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.8
-Workspace ONE management console                 | 2107
+Workspace ONE SDK for Android                    | 21.10
+Workspace ONE management console                 | 2109
 Android Studio integrated development environment| 4.1.3
 
 # Use Cases
@@ -772,12 +772,25 @@ methods in your BrandingManager implementation.
 
     Provides the image that the SDK will show on the splash screen.
 
-    Your method will receive as a parameter a callback object. The callback 
-    object will have an onComplete method that you invoke to provide the Bitmap.
+    Your method will receive as parameters a callback object and required
+    dimensions, width and height in pixels. The callback object will have an
+    onComplete method that you call to provide your Bitmap.
+    
+    There is also a method with the same name that receives only the callback
+    object. The SDK will fall back to this method if your class doesn't
+    implement the first method signature.
+    
     For example, as shown in these snippets.
 
     Java code:
 
+        // Preferred, with dimensions.
+        @Override
+        public void brandLoadingScreenLogo(BrandingCallBack callBack, int width, int height) {
+            callback.onComplete( yourBitmapReturningFunction(width, height) );
+        }
+
+        // Fallback, without dimensions.
         @Override
         public void brandLoadingScreenLogo(BrandingCallBack callback) {
             callback.onComplete( yourBitmapReturningFunction() );
@@ -785,6 +798,12 @@ methods in your BrandingManager implementation.
 
     Kotlin code:
 
+        // Preferred, with dimensions.
+        override fun brandLoadingScreenLogo(callback: BrandingCallBack?, width: Int, height: Int) {
+            callback?.onComplete( yourBitmapReturningFunction(width, height) )
+        }
+
+        // Fallback, without dimensions.
         override fun brandLoadingScreenLogo(callback: BrandingCallBack?) {
             callback?.onComplete( yourBitmapReturningFunction() )
         }
@@ -860,14 +879,32 @@ One use of UEM resources could be to show the splash screen logo in an Activity
 in the application, for example. The following snippets illustrate how that
 could be coded, in the onCreate method.
 
+The UEM resources can contain multiple branding images, of different sizes.
+DefaultBrandingManager will select the most suitable image resource based on the
+display characteristics of the device. Also, if a width and height are specified
+and the most suitable resource is too big, DefaultBrandingManager will scale it
+down to fit within the specified dimensions and preserve aspect ratio.
+
 Java:
 
+    // With specified width and height.
+    BrandingManager.getInstance(this).getDefaultBrandingManager().brandLoadingScreenLogo( bitmap -> {
+        ((ImageView)findViewById(R.id.imageViewEnterpriseLogo)).setImageBitmap(bitmap);
+    }, width, height);
+
+    // Without specified width and height.
     BrandingManager.getInstance(this).getDefaultBrandingManager().brandLoadingScreenLogo( bitmap -> {
         ((ImageView)findViewById(R.id.imageViewEnterpriseLogo)).setImageBitmap(bitmap);
     });
 
 Kotlin:
 
+    // With specified width and height.
+     BrandingManager.getInstance(this).defaultBrandingManager.brandLoadingScreenLogo({
+            findViewById<ImageView>(R.id.imageViewEnterpriseLogo).setImageBitmap(it)
+     }, width, height)
+
+    // Without specified width and height.
     BrandingManager.getInstance(this).defaultBrandingManager.brandLoadingScreenLogo {
         findViewById<ImageView>(R.id.imageViewEnterpriseLogo).setImageBitmap(it)
     }
@@ -876,6 +913,7 @@ Another use of UEM resources could be to apply the primary color to some user
 interface elements. The color can be accessed via the getPrimaryColor method.
 The method returns null if a primary color isn't configured in the UEM.
 
+<p class="always-page-break" />
 ## Next steps [ImplementDynamicBrandingNextSteps]
 This completes initial implementation of dynamic branding.
 
@@ -922,17 +960,17 @@ For context of when these instructions would be followed, see
 
     For example:
     
-    -   Upload an image to the Android Background Image Medium slot. It is
-        recommended to use a small image file, no more than 100kb in size.
+    -   Upload images to all the Android Background Image slots. It is
+        recommended to use small image files, no more than 100kb in size.
     
-        The image that you upload will appear on the SDK splash screen that is
-        displayed when the application starts cold.
+        One of the images that you upload will appear on the SDK splash screen
+        that is displayed when the application starts cold.
 
-    -   Upload an image to the Android Company Logo Phone slot. It is
-        recommended to use a small image file, no more than 100kb in size.
+    -   Upload images to all the Android Company Logo Phone and Tablet slots. It
+        is recommended to use small image files, no more than 100kb in size.
     
-        The image that you upload will appear on the SDK login screen that is
-        displayed when, for example, the end user sets a passcode after
+        One of the images that you upload will appear on the SDK login screen
+        that is displayed when, for example, the end user sets a passcode after
         registration.
 
     -   Set the Primary Color value.
@@ -1057,6 +1095,7 @@ This document is available
 |29jul2021|Update for 21.6.1 SDK for Android.          |
 |18aug2021|Update for 21.7 SDK for Android.            |
 |15sep2021|Update for 21.8 SDK for Android.            |
+|26oct2021|Update for 21.10 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

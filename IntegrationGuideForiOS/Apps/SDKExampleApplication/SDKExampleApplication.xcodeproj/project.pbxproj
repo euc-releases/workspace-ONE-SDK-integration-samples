@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A1FE6CC26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1FE6CB26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift */; };
+		0A2DD10B26E7343D0007D3CE /* CertificateInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DD10926E7343C0007D3CE /* CertificateInfoTableViewController.swift */; };
+		0A2DD10C26E7343D0007D3CE /* StoredCertificatesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DD10A26E7343C0007D3CE /* StoredCertificatesListController.swift */; };
+		0A2DD11726E9CD7B0007D3CE /* WorkspaceOneLogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DD11626E9CD7B0007D3CE /* WorkspaceOneLogsViewController.swift */; };
+		0A4EAC4726F85781001C07E7 /* PDF_Extension_check.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A4EAC4626F85781001C07E7 /* PDF_Extension_check.pdf */; };
+		0AC40DF726D4C260003F5688 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40DF626D4C260003F5688 /* AlertHelper.swift */; };
+		0AC40DFA26D4C2BB003F5688 /* AWSDKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40DF826D4C2BA003F5688 /* AWSDKHelper.swift */; };
+		0AC40DFB26D4C2BB003F5688 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40DF926D4C2BB003F5688 /* NotificationHelper.swift */; };
+		0AC40E1126D8EA4C003F5688 /* AWSDKHelper+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40E1026D8EA4C003F5688 /* AWSDKHelper+Delegate.swift */; };
+		0AC40E1626DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40E1526DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift */; };
+		0ADFBD8026F06CD800F64529 /* EnterpriseBrandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFBD7F26F06CD800F64529 /* EnterpriseBrandingViewController.swift */; };
+		0AF60A8326F8550B00B78C6C /* DocumentInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF60A8226F8550B00B78C6C /* DocumentInteractionViewController.swift */; };
+		B518D5C41F856EA000108DAC /* CryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B518D5C31F856EA000108DAC /* CryptionViewController.swift */; };
+		B590C9B41F74377900D0ABE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B21F74377900D0ABE8 /* AppDelegate.swift */; };
+		B590C9B51F74377900D0ABE8 /* SDKUseCasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */; };
+		B590C9B71F74378D00D0ABE8 /* LocalAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B61F74378D00D0ABE8 /* LocalAuthViewController.swift */; };
+		B590C9B91F74379A00D0ABE8 /* GeneralInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B81F74379A00D0ABE8 /* GeneralInformationViewController.swift */; };
+		B590C9BB1F7437A400D0ABE8 /* TunnelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9BA1F7437A400D0ABE8 /* TunnelingViewController.swift */; };
+		B590C9C01F7437B100D0ABE8 /* IntegratedAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9BD1F7437B100D0ABE8 /* IntegratedAuthenticationViewController.swift */; };
+		B590C9C11F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9BE1F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift */; };
+		B590C9C31F7437BE00D0ABE8 /* CustomSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9C21F7437BE00D0ABE8 /* CustomSettingsViewController.swift */; };
+		B590C9C51F7437C700D0ABE8 /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9C41F7437C700D0ABE8 /* LoggingViewController.swift */; };
+		B590C9C71F7437D300D0ABE8 /* DataLossPreventionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9C61F7437D300D0ABE8 /* DataLossPreventionViewController.swift */; };
+		B590C9CA1F7437E500D0ABE8 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9C81F7437E500D0ABE8 /* TutorialViewController.swift */; };
+		B590C9CB1F7437E500D0ABE8 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9C91F7437E500D0ABE8 /* WalkThroughViewController.swift */; };
+		B590C9CF1F74380500D0ABE8 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9CC1F74380500D0ABE8 /* AlertHandler.swift */; };
+		B590C9D01F74380500D0ABE8 /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9CD1F74380500D0ABE8 /* GeneralUtils.swift */; };
+		B590C9D11F74380500D0ABE8 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9CE1F74380500D0ABE8 /* LoadingIndicatorView.swift */; };
+		B590CA071F74392F00D0ABE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B590CA051F74392F00D0ABE8 /* Main.storyboard */; };
+		B590CA091F7439B500D0ABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590CA081F7439B500D0ABE8 /* Assets.xcassets */; };
+		B590CA151F743A7900D0ABE8 /* AWSDKDefaults.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B590CA111F743A7900D0ABE8 /* AWSDKDefaults.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92E98D811F6B202F0084445B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A1FE6CB26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceCompromisedStatusViewController.swift; path = SDKExampleApplication/Sources/DeviceCompromisedStatusViewController.swift; sourceTree = "<group>"; };
+		0A2DD10926E7343C0007D3CE /* CertificateInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CertificateInfoTableViewController.swift; path = SDKExampleApplication/Sources/CertificateInfoTableViewController.swift; sourceTree = "<group>"; };
+		0A2DD10A26E7343C0007D3CE /* StoredCertificatesListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoredCertificatesListController.swift; path = SDKExampleApplication/Sources/StoredCertificatesListController.swift; sourceTree = "<group>"; };
+		0A2DD11626E9CD7B0007D3CE /* WorkspaceOneLogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceOneLogsViewController.swift; path = SDKExampleApplication/Sources/WorkspaceOneLogsViewController.swift; sourceTree = "<group>"; };
+		0A4EAC4626F85781001C07E7 /* PDF_Extension_check.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PDF_Extension_check.pdf; sourceTree = "<group>"; };
+		0AC40DF626D4C260003F5688 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = SDKExampleApplication/Sources/AlertHelper.swift; sourceTree = "<group>"; };
+		0AC40DF826D4C2BA003F5688 /* AWSDKHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSDKHelper.swift; path = SDKExampleApplication/Sources/AWSDKHelper.swift; sourceTree = "<group>"; };
+		0AC40DF926D4C2BB003F5688 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = SDKExampleApplication/Sources/NotificationHelper.swift; sourceTree = "<group>"; };
+		0AC40E1026D8EA4C003F5688 /* AWSDKHelper+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AWSDKHelper+Delegate.swift"; path = "SDKExampleApplication/Sources/AWSDKHelper+Delegate.swift"; sourceTree = "<group>"; };
+		0AC40E1526DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift"; path = "SDKExampleApplication/Sources/IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift"; sourceTree = "<group>"; };
+		0ADFBD7F26F06CD800F64529 /* EnterpriseBrandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnterpriseBrandingViewController.swift; path = SDKExampleApplication/Sources/EnterpriseBrandingViewController.swift; sourceTree = "<group>"; };
+		0AF60A8226F8550B00B78C6C /* DocumentInteractionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentInteractionViewController.swift; path = SDKExampleApplication/Sources/DocumentInteractionViewController.swift; sourceTree = "<group>"; };
+		923CFD821F6C49670019B05D /* SDKExampleApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKExampleApplicationTests.swift; sourceTree = "<group>"; };
+		923CFD841F6C49670019B05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B518D5C31F856EA000108DAC /* CryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CryptionViewController.swift; path = SDKExampleApplication/Sources/CryptionViewController.swift; sourceTree = "<group>"; };
+		B590C9B21F74377900D0ABE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SDKExampleApplication/Sources/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SDKUseCasesTableViewController.swift; path = SDKExampleApplication/Sources/SDKUseCasesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9B61F74378D00D0ABE8 /* LocalAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalAuthViewController.swift; path = SDKExampleApplication/Sources/LocalAuthViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9B81F74379A00D0ABE8 /* GeneralInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralInformationViewController.swift; path = SDKExampleApplication/Sources/GeneralInformationViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9BA1F7437A400D0ABE8 /* TunnelingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TunnelingViewController.swift; path = SDKExampleApplication/Sources/TunnelingViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9BD1F7437B100D0ABE8 /* IntegratedAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegratedAuthenticationViewController.swift; path = SDKExampleApplication/Sources/IntegratedAuthenticationViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9BE1F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSessionNetworkingHandler.swift; path = SDKExampleApplication/Sources/URLSessionNetworkingHandler.swift; sourceTree = SOURCE_ROOT; };
+		B590C9C21F7437BE00D0ABE8 /* CustomSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSettingsViewController.swift; path = SDKExampleApplication/Sources/CustomSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9C41F7437C700D0ABE8 /* LoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoggingViewController.swift; path = SDKExampleApplication/Sources/LoggingViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9C61F7437D300D0ABE8 /* DataLossPreventionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataLossPreventionViewController.swift; path = SDKExampleApplication/Sources/DataLossPreventionViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9C81F7437E500D0ABE8 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = SDKExampleApplication/Sources/TutorialViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9C91F7437E500D0ABE8 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkThroughViewController.swift; path = SDKExampleApplication/Sources/WalkThroughViewController.swift; sourceTree = SOURCE_ROOT; };
+		B590C9CC1F74380500D0ABE8 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHandler.swift; path = SDKExampleApplication/Sources/AlertHandler.swift; sourceTree = SOURCE_ROOT; };
+		B590C9CD1F74380500D0ABE8 /* GeneralUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralUtils.swift; path = SDKExampleApplication/Sources/GeneralUtils.swift; sourceTree = SOURCE_ROOT; };
+		B590C9CE1F74380500D0ABE8 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingIndicatorView.swift; path = SDKExampleApplication/Sources/LoadingIndicatorView.swift; sourceTree = SOURCE_ROOT; };
+		B590CA061F74392F00D0ABE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SDKExampleApplication/Resources/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		B590CA081F7439B500D0ABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SDKExampleApplication/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		B590CA111F743A7900D0ABE8 /* AWSDKDefaults.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AWSDKDefaults.bundle; path = "SDKExampleApplication/Supporting Files/AWSDKDefaults.bundle"; sourceTree = SOURCE_ROOT; };
+		B590CA121F743A7900D0ABE8 /* DevelopmentExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DevelopmentExportOptions.plist; path = "SDKExampleApplication/Supporting Files/DevelopmentExportOptions.plist"; sourceTree = SOURCE_ROOT; };
+		B590CA141F743A7900D0ABE8 /* SDKExampleApplication.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = SDKExampleApplication.entitlements; path = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements"; sourceTree = SOURCE_ROOT; };
+		B590CA1C1F743CF500D0ABE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SDKExampleApplication/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKExampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7BC0DBE1D93FFB300334C40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A1FE69526F9B9520005B4EF /* Beacon and Compromised Device Status */ = {
+			isa = PBXGroup;
+			children = (
+				0A1FE6CB26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift */,
+			);
+			name = "Beacon and Compromised Device Status";
+			sourceTree = "<group>";
+		};
+		0A2DD10426E7339A0007D3CE /* Stored Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				0A2DD10926E7343C0007D3CE /* CertificateInfoTableViewController.swift */,
+				0A2DD10A26E7343C0007D3CE /* StoredCertificatesListController.swift */,
+			);
+			name = "Stored Certificates";
+			sourceTree = "<group>";
+		};
+		0A4EAC4526F85781001C07E7 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				0A4EAC4626F85781001C07E7 /* PDF_Extension_check.pdf */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		0ADFBD8126F0796800F64529 /* Branding */ = {
+			isa = PBXGroup;
+			children = (
+				0ADFBD7F26F06CD800F64529 /* EnterpriseBrandingViewController.swift */,
+			);
+			name = Branding;
+			sourceTree = "<group>";
+		};
+		923CFD811F6C49670019B05D /* SDKExampleApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				923CFD821F6C49670019B05D /* SDKExampleApplicationTests.swift */,
+				923CFD841F6C49670019B05D /* Info.plist */,
+			);
+			path = SDKExampleApplicationTests;
+			sourceTree = "<group>";
+		};
+		92E98D791F6B19240084445B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B590CA1C1F743CF500D0ABE8 /* Info.plist */,
+				B590CA111F743A7900D0ABE8 /* AWSDKDefaults.bundle */,
+				B590CA121F743A7900D0ABE8 /* DevelopmentExportOptions.plist */,
+				B590CA141F743A7900D0ABE8 /* SDKExampleApplication.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F18DCBB1DB4422900160C4B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9CC1F74380500D0ABE8 /* AlertHandler.swift */,
+				B590C9CD1F74380500D0ABE8 /* GeneralUtils.swift */,
+				B590C9CE1F74380500D0ABE8 /* LoadingIndicatorView.swift */,
+				F78126101E938E84005FB3A5 /* Walkthrough */,
+				0AC40DF626D4C260003F5688 /* AlertHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B518D5C21F856E5100108DAC /* Cryption */ = {
+			isa = PBXGroup;
+			children = (
+				B518D5C31F856EA000108DAC /* CryptionViewController.swift */,
+			);
+			name = Cryption;
+			sourceTree = "<group>";
+		};
+		B590CA0A1F7439D000D0ABE8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0AC40DF826D4C2BA003F5688 /* AWSDKHelper.swift */,
+				0AC40E1026D8EA4C003F5688 /* AWSDKHelper+Delegate.swift */,
+				0AC40DF926D4C2BB003F5688 /* NotificationHelper.swift */,
+				B590C9B21F74377900D0ABE8 /* AppDelegate.swift */,
+				B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */,
+				F7EB82821E924B7900EB5C49 /* Authentication */,
+				F7EB826E1E92413500EB5C49 /* GeneralInformation */,
+				F7EB82741E9242E700EB5C49 /* AppTunneling */,
+				F7EB82771E92438000EB5C49 /* IntegratedAuthentication */,
+				F7EB827E1E924AD500EB5C49 /* RemoteConfiguration */,
+				F7EB827B1E92444500EB5C49 /* Instrumentation */,
+				F7EB82831E924BF000EB5C49 /* DLP */,
+				B518D5C21F856E5100108DAC /* Cryption */,
+				0A2DD10426E7339A0007D3CE /* Stored Certificates */,
+				9F18DCBB1DB4422900160C4B /* Helpers */,
+				0ADFBD8126F0796800F64529 /* Branding */,
+				0A1FE69526F9B9520005B4EF /* Beacon and Compromised Device Status */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		B590CA0B1F7439DC00D0ABE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B590CA081F7439B500D0ABE8 /* Assets.xcassets */,
+				B590CA051F74392F00D0ABE8 /* Main.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F78126101E938E84005FB3A5 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9C81F7437E500D0ABE8 /* TutorialViewController.swift */,
+				B590C9C91F7437E500D0ABE8 /* WalkThroughViewController.swift */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
+		F7BC0DB81D93FFB300334C40 = {
+			isa = PBXGroup;
+			children = (
+				F7BC0DC31D93FFB300334C40 /* SDKExampleApplication */,
+				923CFD811F6C49670019B05D /* SDKExampleApplicationTests */,
+				F7BC0DC21D93FFB300334C40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7BC0DC21D93FFB300334C40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7BC0DC31D93FFB300334C40 /* SDKExampleApplication */ = {
+			isa = PBXGroup;
+			children = (
+				B590CA0A1F7439D000D0ABE8 /* Sources */,
+				B590CA0B1F7439DC00D0ABE8 /* Resources */,
+				0A4EAC4526F85781001C07E7 /* Samples */,
+				92E98D791F6B19240084445B /* Supporting Files */,
+			);
+			name = SDKExampleApplication;
+			sourceTree = "<group>";
+		};
+		F7EB826E1E92413500EB5C49 /* GeneralInformation */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9B81F74379A00D0ABE8 /* GeneralInformationViewController.swift */,
+			);
+			name = GeneralInformation;
+			sourceTree = "<group>";
+		};
+		F7EB82741E9242E700EB5C49 /* AppTunneling */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9BA1F7437A400D0ABE8 /* TunnelingViewController.swift */,
+			);
+			name = AppTunneling;
+			sourceTree = "<group>";
+		};
+		F7EB82771E92438000EB5C49 /* IntegratedAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9BD1F7437B100D0ABE8 /* IntegratedAuthenticationViewController.swift */,
+				B590C9BE1F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift */,
+				0AC40E1526DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift */,
+			);
+			name = IntegratedAuthentication;
+			sourceTree = "<group>";
+		};
+		F7EB827B1E92444500EB5C49 /* Instrumentation */ = {
+			isa = PBXGroup;
+			children = (
+				0A2DD11626E9CD7B0007D3CE /* WorkspaceOneLogsViewController.swift */,
+				B590C9C41F7437C700D0ABE8 /* LoggingViewController.swift */,
+			);
+			name = Instrumentation;
+			sourceTree = "<group>";
+		};
+		F7EB827E1E924AD500EB5C49 /* RemoteConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9C21F7437BE00D0ABE8 /* CustomSettingsViewController.swift */,
+			);
+			name = RemoteConfiguration;
+			sourceTree = "<group>";
+		};
+		F7EB82821E924B7900EB5C49 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B590C9B61F74378D00D0ABE8 /* LocalAuthViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		F7EB82831E924BF000EB5C49 /* DLP */ = {
+			isa = PBXGroup;
+			children = (
+				0AF60A8226F8550B00B78C6C /* DocumentInteractionViewController.swift */,
+				B590C9C61F7437D300D0ABE8 /* DataLossPreventionViewController.swift */,
+			);
+			name = DLP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7BC0DC01D93FFB300334C40 /* SDKExampleApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7BC0DD31D93FFB400334C40 /* Build configuration list for PBXNativeTarget "SDKExampleApplication" */;
+			buildPhases = (
+				F7BC0DBD1D93FFB300334C40 /* Sources */,
+				F7BC0DBE1D93FFB300334C40 /* Frameworks */,
+				F7BC0DBF1D93FFB300334C40 /* Resources */,
+				92E98D811F6B202F0084445B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDKExampleApplication;
+			productName = "iOS Swift Sample App";
+			productReference = F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7BC0DB91D93FFB300334C40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1230;
+				ORGANIZATIONNAME = VMware;
+				TargetAttributes = {
+					F7BC0DC01D93FFB300334C40 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S2ZMFGQM93;
+						LastSwiftMigration = 1230;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = F7BC0DBC1D93FFB300334C40 /* Build configuration list for PBXProject "SDKExampleApplication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7BC0DB81D93FFB300334C40;
+			productRefGroup = F7BC0DC21D93FFB300334C40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7BC0DC01D93FFB300334C40 /* SDKExampleApplication */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7BC0DBF1D93FFB300334C40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B590CA071F74392F00D0ABE8 /* Main.storyboard in Resources */,
+				B590CA091F7439B500D0ABE8 /* Assets.xcassets in Resources */,
+				0A4EAC4726F85781001C07E7 /* PDF_Extension_check.pdf in Resources */,
+				B590CA151F743A7900D0ABE8 /* AWSDKDefaults.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7BC0DBD1D93FFB300334C40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B590C9C71F7437D300D0ABE8 /* DataLossPreventionViewController.swift in Sources */,
+				B590C9C11F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift in Sources */,
+				0ADFBD8026F06CD800F64529 /* EnterpriseBrandingViewController.swift in Sources */,
+				B590C9B91F74379A00D0ABE8 /* GeneralInformationViewController.swift in Sources */,
+				B590C9D01F74380500D0ABE8 /* GeneralUtils.swift in Sources */,
+				B590C9BB1F7437A400D0ABE8 /* TunnelingViewController.swift in Sources */,
+				0AC40E1126D8EA4C003F5688 /* AWSDKHelper+Delegate.swift in Sources */,
+				0AC40DFB26D4C2BB003F5688 /* NotificationHelper.swift in Sources */,
+				B590C9C01F7437B100D0ABE8 /* IntegratedAuthenticationViewController.swift in Sources */,
+				B590C9CA1F7437E500D0ABE8 /* TutorialViewController.swift in Sources */,
+				B518D5C41F856EA000108DAC /* CryptionViewController.swift in Sources */,
+				0AC40DF726D4C260003F5688 /* AlertHelper.swift in Sources */,
+				B590C9B41F74377900D0ABE8 /* AppDelegate.swift in Sources */,
+				B590C9B71F74378D00D0ABE8 /* LocalAuthViewController.swift in Sources */,
+				0A2DD10C26E7343D0007D3CE /* StoredCertificatesListController.swift in Sources */,
+				0A2DD10B26E7343D0007D3CE /* CertificateInfoTableViewController.swift in Sources */,
+				B590C9B51F74377900D0ABE8 /* SDKUseCasesTableViewController.swift in Sources */,
+				0AC40E1626DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift in Sources */,
+				B590C9D11F74380500D0ABE8 /* LoadingIndicatorView.swift in Sources */,
+				B590C9CB1F7437E500D0ABE8 /* WalkThroughViewController.swift in Sources */,
+				B590C9C51F7437C700D0ABE8 /* LoggingViewController.swift in Sources */,
+				0A2DD11726E9CD7B0007D3CE /* WorkspaceOneLogsViewController.swift in Sources */,
+				0AF60A8326F8550B00B78C6C /* DocumentInteractionViewController.swift in Sources */,
+				0A1FE6CC26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift in Sources */,
+				B590C9C31F7437BE00D0ABE8 /* CustomSettingsViewController.swift in Sources */,
+				0AC40DFA26D4C2BB003F5688 /* AWSDKHelper.swift in Sources */,
+				B590C9CF1F74380500D0ABE8 /* AlertHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B590CA051F74392F00D0ABE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B590CA061F74392F00D0ABE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7BC0DD11D93FFB400334C40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 21.10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7BC0DD21D93FFB400334C40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 21.10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7BC0DD41D93FFB400334C40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S2ZMFGQM93;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExampleApplication/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/SDKExampleApplication/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.third.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F7BC0DD51D93FFB400334C40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S2ZMFGQM93;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExampleApplication/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/SDKExampleApplication/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.third.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7BC0DBC1D93FFB300334C40 /* Build configuration list for PBXProject "SDKExampleApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BC0DD11D93FFB400334C40 /* Debug */,
+				F7BC0DD21D93FFB400334C40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7BC0DD31D93FFB400334C40 /* Build configuration list for PBXNativeTarget "SDKExampleApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BC0DD41D93FFB400334C40 /* Debug */,
+				F7BC0DD51D93FFB400334C40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7BC0DB91D93FFB300334C40 /* Project object */;
+}
