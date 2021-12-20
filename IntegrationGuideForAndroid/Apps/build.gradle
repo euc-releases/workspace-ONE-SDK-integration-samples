@@ -40,7 +40,7 @@ task printUserHomeDir {
 }
 
 ext {
-    airwatchVersion = '21.10'
+    airwatchVersion = '21.11'
     privacyVersion = '21.5.1'
 
     // Utility method to generate a path for a file in the directory for

@@ -55,8 +55,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.10
-Workspace ONE management console                 | 2109
+Workspace ONE SDK for Android                    | 21.11
+Workspace ONE management console                 | 2110
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -176,7 +176,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.10', ext:'aar')
+            implementation (name:'AirWatchSDK-21.11', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"FeatureModule-android:2.0.2", ext:'aar')
             implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
@@ -185,12 +185,11 @@ First, update the build configuration and add the required library files.
             implementation 'com.google.code.gson:gson:2.4'
 
             // Third party libraries that are hosted remotely.
-            implementation "androidx.multidex:multidex:2.0.0"
             implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
             implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
             implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
             implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-            annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
+            kapt ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
                 exclude group:'com.google.guava', module:'guava'
             }
             implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
@@ -534,9 +533,9 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.17', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.10', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.10", ext: "aar")
-            implementation(name:'VisionUx-1.5.0.a', ext: 'aar')
+            implementation(name:'AWFramework-21.11', ext: 'aar')
+            implementation(name:"AirWatchSDK-21.11", ext: "aar")
+            implementation(name:'VisionUx-1.9.8.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
             implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
             implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
@@ -599,7 +598,7 @@ Proceed as follows.
             implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
             implementation 'io.insert-koin:koin-core:2.1.6'
             implementation 'io.insert-koin:koin-android:2.1.6'
-            implementation 'net.zetetic:android-database-sqlcipher:4.4.3@aar'
+            implementation 'net.zetetic:android-database-sqlcipher:4.5.0@aar'
             implementation 'androidx.work:work-runtime-ktx:2.3.3'
             implementation 'androidx.biometric:biometric:1.0.1'
             implementation "androidx.room:room-ktx:$room_version"
@@ -1014,14 +1013,13 @@ set. An overview that includes links to all the guides in the set is available
 
 # Appendix: Early Version Support
 The Workspace ONE SDK can be integrated with early versions of Android, by
-following some additional steps. Early versions here means before 5.0 Android,
+following some additional steps. Early versions here means back to 5.0 Android,
 which is API level 21. If your application won't support devices running early
 Android versions, skip the instructions in this section.
 
 To support early versions, change the build configuration to:
 
 -   Enable Multidex explicitly.
--   Use a support library for vector drawables.
 
 To make the changes, proceed as follows.
 
@@ -1036,30 +1034,11 @@ To make the changes, proceed as follows.
             defaultConfig {
                 ...
                 multiDexEnabled true
-                vectorDrawables.useSupportLibrary = true
                 ...
             }
             ...
         }
         ...
-
-2.  Add the required libraries, if not already present.
-
-    A library is required for Multidex support. It can be included in the
-    application build.gradle file, in the `dependencies` block, for example as
-    follows:
-
-        dependencies {
-            ...
-            implementation 'com.android.support:multidex:2.0.0'
-            ...
-        }
-
-    **Note**: At time of writing, the Multidex library is a dependency of the
-    Workspace ONE Client SDK anyway, regardless of the multiDexEnabled setting.
-    This means that the above change is included in the Add Client SDK task,
-    above, and won't need to be made in order to add early Android version
-    support.
 
 This concludes the required changes to support early Android versions. Build the
 application to confirm that no mistakes have been made.
@@ -1078,7 +1057,7 @@ Use this approach in case the first approach doesn't work or isn't suitable for
 your app.
 
     ext {
-        minSdkVersion = 19
+        minSdkVersion = 21
     }
     android {
         defaultConfig {
@@ -1093,7 +1072,7 @@ your app.
     }
     def getMinSDK() {
         if (gradle.startParameter.taskNames.toString().contains("Debug")) {
-            return 21
+            return 23
         } else {
             return minSdkVersion
         }
@@ -1116,8 +1095,6 @@ For background, see these pages on the Android developer website.
 
 -   Multidex:  
     [https://developer.android.com/...multidex#mdex-on-l](https://developer.android.com/studio/build/multidex#mdex-on-l)
--   Vector Drawables:  
-    [https://developer.android.com/...vector-drawable-resources#vector-drawables-backward-solution](https://developer.android.com/guide/topics/graphics/vector-drawable-resources#vector-drawables-backward-solution)
 
 (Some PDF viewers incorrectly escape the hash anchor marker in the above links.
 If that happens, edit the link in the browser address bar.)
@@ -1197,6 +1174,7 @@ This document is available
 |18aug2021|Update for 21.7 SDK for Android.            |
 |15sep2021|Update for 21.8 SDK for Android.            |
 |26oct2021|Update for 21.10 SDK for Android.           |
+|09Dec2021|Update for 21.11 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

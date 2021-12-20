@@ -17,12 +17,6 @@ android {
     }
 }
 
-repositories {
-    maven {
-        url "https://kotlin.bintray.com/kotlinx/"
-    }
-}
-
 def vmwaresaas=secretProperties("vmwaresaas.properties")
 if (vmwaresaas == null) {
     repositories {
