@@ -73,9 +73,13 @@ internal class AWSDKHelper {
     /// - Parameters:
     ///   - token: device token string.
     internal func setDeviceToken(_ token : String) {
-        self.sendBeacon(updatedAPNSToken: token) { success, error in
-            if (success){
-                AWLogInfo("Device token sent successfully")
+        if controller.APNSToken != token {
+            self.sendBeacon(updatedAPNSToken: token) { success, error in
+                guard let err = error else {
+                    AWLogInfo("Device token sent successfully")
+                    return
+                }
+                AWLogError("Update APNS token failed with error: \(err)")
             }
         }
     }

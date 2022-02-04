@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    The next item gets a dark-mode dependent icon set in the code.
+    -->
+    <item
+        android:id="@+id/about"
+        android:title="@string/title_about"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/sdk"
+        android:titleCondensed="@string/menu_sdk_profile"
+        android:title="@string/title_sdk_profile"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/dlp_edittext_views"
+        android:title="@string/title_dlp_edittext_views"
+        />
+    <item
+        android:id="@+id/dlp_text_views"
+        android:title="@string/title_dlp_text_views"
+        />
+    <item
+        android:id="@+id/dlp_watermark"
+        android:title="@string/title_dlp_watermark_views"
+        />
+    <item
+        android:id="@+id/dlp_web_views"
+        android:title="@string/title_dlp_web_views"
+        />
+    <item
+        android:id="@+id/inactivity_countdown"
+        android:title="@string/title_countdown"
+        />
+</menu>

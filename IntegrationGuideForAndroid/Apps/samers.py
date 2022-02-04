@@ -1,4 +1,4 @@
-# Copyright 2021 VMware, Inc.
+# Copyright 2022 VMware, Inc.
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Run with Python 3.7
@@ -58,6 +58,8 @@ from tempfile import NamedTemporaryFile
 import textwrap
 
 def glob_each(path, patterns):
+    matchCount = 0
+    match1 = None
     for pattern in patterns:
         matches = []
         for match in path.glob(pattern):
@@ -66,9 +68,13 @@ def glob_each(path, patterns):
 
         if len(matches) == 0:
             raise ValueError(f'Failed, no match for "{pattern}".')
-        if len(matches) == 1:
-            raise ValueError(
-                f'Failed, only one match for "{pattern}": {matches[0]}.')
+        
+        matchCount += len(matches)
+        match1 = matches[0]
+
+    if matchCount == 1:
+        raise ValueError(
+            f'Failed, only one match for "{patterns}": {match1}.')
 
 class Rules:
 
@@ -179,7 +185,8 @@ class Rules:
             'brandEnterprise*/**/build.gradle'
         ],
         "public Maven framework build.gradle files": [
-            'brandStatic*/**/build.gradle'
+            'brandStatic*/**/build.gradle',
+            'dlp*/**/build.gradle'
         ],
         "framework delegate application.properties files": [
             'frameworkDelegate*/**/application.properties',
@@ -187,7 +194,8 @@ class Rules:
         ],
         "framework extend application.properties files": [
             'frameworkExtend*/**/application.properties',
-            'brandStaticExtend*/**/application.properties'
+            'brandStaticExtend*/**/application.properties',
+            'dlpExtend*/**/application.properties'
         ],
         "base MainActivity.java files": [
             'framework*/**/src/**/MainActivity.java',

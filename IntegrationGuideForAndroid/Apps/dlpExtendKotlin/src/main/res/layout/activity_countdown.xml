@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CountdownActivity"
+    >
+    <TextView
+        android:id="@+id/inactivityExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/countdown_explanation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/policyHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/policy_heading"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        app:layout_constraintTop_toBottomOf="@+id/inactivityExplanation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidePolicy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/guidePolicy"
+        app:layout_constraintBaseline_toBaselineOf="@id/policyPasswordTimeOut"
+        android:text="@string/passcode_time_out"
+        android:labelFor="@+id/policyPasswordTimeOut"
+        />
+    <EditText
+        android:id="@+id/policyPasswordTimeOut"
+        tools:ignore="TextFields"
+        android:layout_width="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        app:layout_constraintLeft_toLeftOf="@id/guidePolicy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/policyHeading"
+        android:importantForAutofill="no"
+        android:inputType="none"
+        />
+    <TextView
+        android:id="@+id/textViewCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/policyPasswordTimeOut"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

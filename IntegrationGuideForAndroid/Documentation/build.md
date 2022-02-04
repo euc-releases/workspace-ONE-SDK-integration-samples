@@ -66,7 +66,7 @@ Follow these instructions to build the applications in this project.
         and configure its build. It might take a minute or two first time.
 
     The applications in the repository should now appear in the Android Studio
-    project navigator. There are 24 at time of writing. The naming convention is
+    project navigator. There are 26 at time of writing. The naming convention is
     as follows, in alphabetic order.
 
     -   `base*`  
@@ -77,6 +77,8 @@ Follow these instructions to build the applications in this project.
     -   `client*`  
         Applications for the Base Integration Guide that demonstrate Client
         level integration.
+    -   `dlpExtendKotlin`  
+        Kotlin Application that demonstrates Workspace ONE Data Loss Prevention features.
     -   `framework*`  
         Applications for the Base Integration Guide that demonstrate Framework
         level integration, either by delegation or by extension.
@@ -105,7 +107,7 @@ You are now ready to install or debug any of the demonstration applications on
 your developer device.
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.  
+Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

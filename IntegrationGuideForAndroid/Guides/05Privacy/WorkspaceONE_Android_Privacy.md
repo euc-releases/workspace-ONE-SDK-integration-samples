@@ -1252,6 +1252,7 @@ This document is available
 |16sep2021|Updated, for 21.8 SDK for Android.            |
 |26oct2021|Updated, for 21.10 SDK for Android.           |
 |09Dec2021|Updated, for 21.11 SDK for Android.           |
+|26Jan2022|Updated, for 22.1 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

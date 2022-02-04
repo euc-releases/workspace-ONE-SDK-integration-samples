@@ -164,7 +164,22 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     See the [applications.md](applications.md) file for a description of the app
     user interface.
 
-8.  **Update, build and run the additional sample applications.**
+8.  **Update, build and run the Data Loss Prevention application.**
+
+    There is one data loss prevention application: `dlpExtendKotlin`.
+    It integrates the SDK at the framework level, and demonstrates a few data loss 
+    prevention features of Workspace ONE for Android.
+
+    This application uses Maven to handle it's WS1 dependencies so there is 
+    no need to update any integration build files in order to run.
+
+    Build and run the app as a test before proceeding.
+
+    See the [applications.md](applications.md) file for a description of the app
+    user interface and how to configure Data Loss Prevention features in the 
+    management console.
+
+9.  **Update, build and run the additional sample applications.**
 
     There is one additional sample application: `identificationDemo`. It
     integrates the SDK at the client level.
@@ -178,7 +193,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
     See the [applications.md](applications.md) file for a description of the app
     user interface and how to configure the management console.
 
-9.  **Run the automated tests.**
+10.  **Run the automated tests.**
 
     The sample applications each have a copy of the same automated test suite.
     See for example the
@@ -206,7 +221,7 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
 When the test passes in all the apps, the update is ready for commit.
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.  
+Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

@@ -136,14 +136,14 @@ overwrite. The prompt looks like this for each file:
     *** 1,6 ****
     <?xml version="1.0" encoding="utf-8"?>
     <!--
-    !     Copyright 2020 VMware, Inc.
+    !     Copyright 2022 VMware, Inc.
         SPDX-License-Identifier: BSD-2-Clause
     -->
     <manifest
     --- 1,6 ----
     <?xml version="1.0" encoding="utf-8"?>
     <!--
-    !     Copyright 2021 VMware, Inc.
+    !     Copyright 2022 VMware, Inc.
         SPDX-License-Identifier: BSD-2-Clause
     -->
     <manifest
@@ -160,7 +160,7 @@ skipped.
 Other tasks are TBD at this time, sorry.
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.  
+Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

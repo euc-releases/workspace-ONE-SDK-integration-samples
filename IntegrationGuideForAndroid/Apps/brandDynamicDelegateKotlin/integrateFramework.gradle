@@ -1,4 +1,4 @@
-// Copyright 2021 VMware, Inc.
+// Copyright 2022 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 
@@ -26,11 +26,20 @@ dependencies {
     implementation(name:"AWFramework-${airwatchVersion}", ext: 'aar')
     implementation(name:'VisionUx-1.9.8.a', ext: 'aar')
     implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
+
+
+    implementation(name:"openssl_fips-1.0.2zaa", ext:'aar')
+    implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar') {
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+        exclude group:'com.vmware.ndkports', module:'openssl_fips'
+    }
     implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
     implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
     implementation(name:"settings-1.4.3.4", ext:'aar')
     implementation(name:"opdata-android-1.7.1.210929135455", ext:'aar'){
         exclude group:'com.vmware.xsw.settings', module:'settings'
+        exclude group:'com.vmware.xsw.chameleon', module:'chameleon-android'
+        exclude group:'com.vmware.xsw.crypto', module:'xsw-crypto-android'
     }
     implementation(name:"attributesprovider-${provider_version}", ext:'aar')
     implementation(name:"encryptedpreferencesprovider-${provider_version}", ext:'aar')
@@ -41,9 +50,7 @@ dependencies {
     implementation(name:"work-hour-access-sdk-android-1.0.4.0", ext:'aar')
     implementation files( sdkVersionFile(
             'Libs', 'AWFramework', 'dependencies', 'awannotations-1.0.jar'))
-    implementation(name:"xsw-crypto-android-2.0.0.210924132218", ext:'aar') {
-        exclude group: 'androidx.appcompat', module: 'appcompat'
-    }
+
     implementation(name:"FeatureModule-android-2.0.2", ext:'aar')
     implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
     implementation(name:"ws1-android-logger-1.2.0", ext:'aar')

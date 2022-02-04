@@ -14,7 +14,7 @@ The code in this repository can be used in the following ways.
     Android Studio, see the [build](../../Documentation/build.md) instructions.
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.
+Copyright 2022 VMware, Inc. All rights reserved.
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

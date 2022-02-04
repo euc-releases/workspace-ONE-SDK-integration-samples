@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.integrationguide">
+
+    <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+
+    <application
+        android:name=".${applicationClass}"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_icon"
+        android:label="@string/app_label"
+        android:roundIcon="@mipmap/ic_roundicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label, android:allowBackup">
+        <activity
+            android:name=".ui.DLPWatermarkActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.DLPTextActivity"
+            android:exported="true" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.SDKProfileActivity" />
+        <activity android:name=".ui.DLPEditTextActivity" />
+        <activity android:name=".ui.DLPWebViewActivity" />
+        <activity android:name=".ui.CountdownActivity" />
+
+        <receiver
+            android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
+            android:permission="com.airwatch.sdk.BROADCAST">
+            <intent-filter>
+                <action android:name=".airwatchsdk.BROADCAST" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.airwatch.intent.action.APPLICATION_CONFIGURATION_CHANGED" />
+
+                <data
+                    android:host="${applicationId}"
+                    android:scheme="app" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".AirWatchSDKIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.airwatch.login.ui.activity.SDKSplashActivity"
+            android:label="@string/app_label">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

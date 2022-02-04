@@ -192,6 +192,41 @@ When the agreement is reverted, the review option changes to an accept option.
 Note that this app doesn't integrate the core SDK, neither at the client nor
 framework level.
 
+# Data Loss Prevention Application
+Demonstration app for Data Loss Prevention Workspace ONE features:
+
+-   [Apps/dlpExtendKotlin](../Apps/dlpExtendKotlin)
+
+This integrates the SDK at the framework level.
+This app utilizes custom Workspace ONE Data Loss Prevention settings and UI components to showcase some features that can be configured from the management console.
+
+To configure these settings proceed as follows:
+
+1.  Log in to your Workspace ONE Unified Endpoint Manager (UEM) console and
+    select the organization group (OG) for your end user.
+
+2.  Navigate to Groups & Settings, All Settings, Settings.
+
+3.  Select Apps: Settings and Policies: Security Policies.
+
+    Here you can enable Data Loss Prevention which will give you the ability to configure different mechanisms that restrict extracting data from the app in an unauthorized manner.
+
+    ![**Screen Capture:** DLP Settings in the Workspace ONE management console](dlpSettingsConsole.png)
+
+The app user interface begins with the main page that can take the user to a variety of demonstration activities from the navigation app bar.
+
+The SDK tab page will take the user to a screen that showcases the policies and settings associated with the device's SDK profile
+This includes information on Passcode Policies, Data Loss Prevention Settings, and much more. This page also has the ability to fetch the latest settings from the console,
+just in case you want to change settings and have them instantly reflected in the app.
+
+Selecting UI titled pages will take you to an activity dedicated to showing the difference between them and their stock counterpart.
+These apps do not show the full extent of what is possible using DLP settings, however they give a quick briefing over some such as:
+- Enable Copy and Paste Out
+- Enable Copy and Paste Into
+- Enable Watermark
+
+Other than the UI pages, the app features an Inactivity Countdown page which can be used to track the app inactivty time needed to lock out the user.
+
 # Additional Sample Applications
 The following applications are additional demonstrations that aren't associated
 with particular integration guides.
@@ -238,7 +273,7 @@ Duplication is managed by the maintainers of the repository. See also the
 [samers.md](samers.md) file.
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.  
+Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

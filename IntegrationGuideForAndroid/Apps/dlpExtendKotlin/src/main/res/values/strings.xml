@@ -1,0 +1,101 @@
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="app_name">Integration Guide</string>
+    <string name="app_label">App+WS1</string>
+    <string name="app_title">Workspace ONE Sample</string>
+    <string name="ui_placeholder">Application User Interface goes here!</string>
+    <string name="sdk_state">SDK state: %1$s</string>
+    <string name="sdk_configuration_unavailable">SDK configuration unavailable.</string>
+
+    <string name="title_about">About</string>
+    <string name="app_logo_content_description">Application Logo</string>
+    <string name="about">VMware Workspace ONE®\nAndroid Sample App</string>
+    <string name="module_label">Module</string>
+    <string name="dark_mode_label">Display</string>
+    <string name="dark_mode_true">Dark mode</string>
+    <string name="dark_mode_false">Not dark mode</string>
+    <string name="about_small_print">This application is part of the VMware Workspace ONE Software
+        Development Kit integration samples. The application code accompanies
+        the Workspace ONE (<b>WS1</b>) Integration Guide (<b>IG</b>) for
+        Android.
+        \nCopyright 2022 VMware, Inc. All rights reserved.
+        \nThe Workspace ONE Software Development Kit integration samples are
+        licensed under a two-clause BSD license.
+        \nSPDX-License-Identifier: BSD-2-Clause
+    </string>
+
+    <string name="title_sdk_profile">SDK Profile</string>
+    <string name="menu_sdk_profile">SDK</string>
+
+    <!--
+    Next string resource is an explanation about DLP on UI elements. It has
+    simple layout, paragraphs and list items. In theory, Android string
+    resources support HTML formatting. In practice, block formatting like
+    paragraphs and lists requires coding, and has some awkward API level
+    restrictions. So the layout here has been done with backslash escapes to
+    include line breaks and list bullets, instead of HTML.
+
+    For a discussion of the HTML approach, see the following SO answer.
+    https://stackoverflow.com/a/6159538/7657675
+    -->
+    <string name="dlp_explanation">User interface elements on this screen demonstrate Data Loss Prevention
+        (<b>DLP</b>) capabilities of Workspace ONE for Android.
+        \n\u2022 Elements labelled <b>WS1</b> are protected, if specified by policy.
+        \n\u2022 Plain elements aren\'t protected.</string>
+    <string name="policy_heading">Relevant Policies</string>
+    <string name="copy_paste_outbound_protection">Copy Paste Outbound Protection</string>
+    <string name="copy_paste_inbound_protection">Copy Paste Inbound Protection</string>
+    <string name="policy_true_active">Active</string>
+    <string name="policy_false_inactive">Inactive</string>
+    <string name="policy_null">null</string>
+    <string name="demonstration_heading">Demonstration Elements</string>
+
+    <string name="title_dlp_edittext_views">DLP Edit Text Views</string>
+    <string name="ws1_edittext">WS1 EditText</string>
+    <string name="plain_edittext">Plain EditText</string>
+    <string name="awedittext_placeholder">AWEditText placeholder</string>
+    <string name="edittext_placeholder">EditText placeholder</string>
+
+    <string name="title_dlp_web_views">DLP Web Views</string>
+    <string name="ws1_webview">WS1 WebView</string>
+    <string name="plain_webview">Plain WebView</string>
+    <string name="web_view_initial_url">https://example.com</string>
+    <string name="web_view_button_label">Go</string>
+
+    <string name="title_countdown">Inactivity Countdown</string>
+    <string name="countdown_explanation">This screen demonstrates the inactivity time out capability of
+        Workspace ONE software development kit (SDK) for Android. The timer
+        counts down the inactivity period, if one is specified by policy. When
+        the timer finishes, the user interface will be blocked by the SDK until
+        the passcode is entered.
+        \nTapping the timer qualifies as activity and will restart the
+        time out. Note that the countdown display doesn\'t read its value from
+        the SDK.</string>
+    <string name="passcode_time_out">Passcode Time Out</string>
+
+    <string name="title_dlp_text_views">DLP Text Views</string>
+    <string name="ws1_textview">WS1 TextView</string>
+    <string name="awtextview_text">This is an AWTextView.</string>
+    <string name="plain_textview">Plain TextView</string>
+    <string name="textview_text">This is a TextView.</string>
+
+    <string name="title_dlp_watermark_views">DLP Watermark</string>
+    <string name="dlp_watermark_explanation">User interface elements on this screen demonstrate Data Loss Prevention
+        (<b>DLP</b>) capabilities of Workspace ONE for Android.
+        \n\u2022 Watermark on the entire page is provided from the console if enabled and set.
+        \n\u2022 The view inserted watermark is an example of how we can insert watermarks programmatically
+        using <b>AWWatermarkView</b>.
+    </string>
+    <string name="default_view_watermark">View Inserted Watermark</string>
+    <string name="dlp_watermark_protection">Watermark Protection</string>
+    <string name="ws1_awautocompletetextview">WS1 AutoCompleteTextView</string>
+    <string name="awautocompletetextview_placeholder">AWAutoCompleteTextView Placeholder</string>
+    <string name="plain_autocompletetextview">Plain AutoCompleteTextView</string>
+    <string name="autocompletetextview_placeholder">AutoCompleteTextView Placeholder</string>
+    <string name="dlp_watermark_text">Watermark Text</string>
+    <string name="sdk_profile_explanation">This screen showcases the policies and settings associated with this device\'s SDK profile.\nThe fetch button below grabs the most recent SDK profile configuration from the console and displays it in the field underneath.</string>
+
+</resources>

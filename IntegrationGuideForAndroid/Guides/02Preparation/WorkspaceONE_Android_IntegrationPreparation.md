@@ -110,8 +110,8 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 21.11        |           |
-Workspace ONE management console                   | 2111         | 2006      |
+Workspace ONE software development kit for Android | 22.1         |           |
+Workspace ONE management console                   | 2111         | 2008      |
 Workspace ONE Intelligent Hub application          | 21.10        | 20.10     |
 Android Operating System                           | Android 12   | Android 5 |
 Android Studio integrated development environment  | 4.1.3        | 4.0.1     |
@@ -270,7 +270,7 @@ example as follows.
 4.  On the download page, select the required options.
 
     -   Select a platform: Android.
-    -   Select an app version: 21.11 or whatever is the latest version.
+    -   Select an app version: 22.1 or whatever is the latest version.
     -   Filter by Console Version: All.
 
     Some resource downloads should now appear below the selection controls.
@@ -622,11 +622,12 @@ This document is available
 |15sep2021|Updated for 21.8 SDK for Android.           |
 |26oct2021|Updated for 21.10 SDK for Android.          |
 |09Dec2021|Updated for 21.11 SDK for Android.          |
+|26Jan2022|Updated for 22.1 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

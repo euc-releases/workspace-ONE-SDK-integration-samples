@@ -55,8 +55,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 21.11
-Workspace ONE management console                 | 2110
+Workspace ONE SDK for Android                    | 22.1
+Workspace ONE management console                 | 2111
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -176,7 +176,7 @@ First, update the build configuration and add the required library files.
             // Following lines are added to integrate Workspace ONE at the Client level ...
 
             // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-21.11', ext:'aar')
+            implementation (name:'AirWatchSDK-22.1', ext:'aar')
             implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
             implementation(name:"FeatureModule-android:2.0.2", ext:'aar')
             implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
@@ -533,8 +533,8 @@ Proceed as follows.
             implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
             implementation(name:'SCEPClient-1.0.17', ext: 'aar')
             implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-21.11', ext: 'aar')
-            implementation(name:"AirWatchSDK-21.11", ext: "aar")
+            implementation(name:'AWFramework-22.1', ext: 'aar')
+            implementation(name:"AirWatchSDK-22.1", ext: "aar")
             implementation(name:'VisionUx-1.9.8.a', ext: 'aar')
             implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
             implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
@@ -552,10 +552,12 @@ Proceed as follows.
             implementation(name:"work-hour-access-sdk-android-1.0.4.0", ext:'aar')
             implementation(name:"FeatureModule-android-2.0.2", ext:'aar')
             implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
-            implementation(name:"xsw-crypto-android-2.0.0.210924132218", ext:'aar'){
-                 exclude group:'androidx.appcompat', module:'appcompat'
+            
+            implementation(name:"openssl_fips-1.0.2zaa", ext:'aar')
+            implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar'){
+                exclude group:'androidx.appcompat', module:'appcompat'
+                exclude group:'com.vmware.ndkports', module:'openssl_fips'
             }
-            implementation(name:"openssl_fips-1.0.2za", ext:'aar')
 
             // The following JAR file is included in the SDK but needn't be added
             // as a specific dependency because it is covered by the
@@ -1175,11 +1177,12 @@ This document is available
 |15sep2021|Update for 21.8 SDK for Android.            |
 |26oct2021|Update for 21.10 SDK for Android.           |
 |09Dec2021|Update for 21.11 SDK for Android.           |
+|26Jan2022|Update for 22.1 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at
