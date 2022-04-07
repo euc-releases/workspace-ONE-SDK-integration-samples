@@ -7,7 +7,23 @@ utilize the branding features of the platform.
 This document is part of the Workspace ONE Integration Guide for Android set.
 
 # Table of Contents
-{{TOC}}
+[Introduction](#introduction)  
+[Integration Tasks](#integration-tasks)  
+[Integration Guides](#integration-guides)  
+[Compatibility](#Compatibility)  
+[Use Cases](#use-cases)  
+[Use Case: Customer Application](#use-case:-customer-application)  
+[Use Case: Branded Partner Application](#use-case:-branded-partner-application)
+[Use Case: Branded Partner Application with Optional Override](#use-case:-branded-partner-application-with-optional-override)  
+[Other Use Cases: Complex Branding Requirements](#other-use-cases:-complex-branding-requirements)  
+[Branding Feature Compatibility](#branding-feature-compatibility)
+[Static application branding and enterprise branding](#static-application-branding-and-enterprise-branding)  
+[Dynamic Branding and Other Types of Branding](#dynamic-branding-and-other-types-of-branding)  
+[Independent Branding Options](#independent-branding-options)  
+[Integration Paths Diagram](#integration-paths-diagram)  
+[Task: Implement Static Application Branding](#task:-implement-static-application-branding)  
+[Add Brand Resources to the Project](#add-brand-resources-to-the-project)  
+[Static Style Configuration](#static-style-configuration)  
 
 # Introduction
 The Workspace ONE platform supports the following types of branding.
@@ -210,7 +226,7 @@ In these cases, the suggested integration is to [Implement Dynamic Branding].
 # Branding Feature Compatibility
 The branding features are compatible with each other as follows.
 
-## Static application branding and enterprise branding
+## Static Application Branding and Enterprise Branding
 Your application can have both its own static branding resources, and support
 enterprise branding as an override. In that case, the SDK will apply one or
 other branding, as follows.
@@ -237,7 +253,7 @@ early stages of registration, but the end user then cancels, or registration
 isn't finalized for some other reason. In that case, enterprise branding will be
 applied next time the application starts.
 
-## Dynamic branding and other types of branding
+## Dynamic Branding and Other Types of Branding
 A dynamic branding implementation can, at run time:
 
 -   Access static application resources.
@@ -252,7 +268,7 @@ directed by the dynamic branding implementation.
 Dynamic branding can be compatible with static branding and with enterprise
 branding, depending on how it is implemented.
 
-## Independent branding options
+## Independent Branding Options
 The independent branding option implementations are compatible with static
 branding, enterprise branding, and dynamic branding.
 
@@ -272,7 +288,7 @@ resources. The configuration can include colors and images. If your application
 has static branding resources, the SDK will render the configured colors and
 images in its own user interface elements.
 
-## Add brand resources to the project
+## Add Brand Resources to the Project
 First, add brand resources for colors and images to your Android Studio project.
 If you don't have final brand resources, you can create placeholders using the
 tools that come with Android Studio.
@@ -297,7 +313,7 @@ tools that come with Android Studio.
 
 After adding your brand resources, you can move on to the next step.
 
-## Static style configuration
+## Static Style Configuration
 Add references to your brand resources to the application styles configuration.
 
 The styles configuration can be opened as follows.

@@ -7,7 +7,39 @@ for feature integration.
 This document is part of the Workspace ONE Integration Guide for Android set.
 
 # Table of Contents
-{{TOC}}
+[Introduction](#introduction)  
+[Integration Guides](#integration-guides) 
+[Compatibility](#compatibility)  
+[Integration Paths Diagram](#integration-paths-diagram)  
+[Client Only Path Task: Add Client SDK](#client-only-path-task:-add-client-sdk)  
+[Project Structure Diagram](#project-structure-diagram)  
+[Software Development Kit Download Structure Diagram](#software-development-kit-download-structure-diagram)  
+[Build Configuration and Files](#build-configuration-and-files)  
+[Service Implementation](#service-implementation)  
+[Next Steps - Client Only Application Code](#next-steps-application-code)  
+[***Task*** Initialize Client SDK](#task-initialize-client-sdk)  
+[SDKManager](#sdkmanager)  
+[Client Initialization](#client-initialization)  
+[Framework Path Task: Add Framework](#framework-path-task-initialize-client-sdk)  
+[Framework Path Build Configuration and Files](#framework-path-build-configuration-and-files)  
+[Framework Path Task: Initialize Framework](#framework-path-task:-initialize-framework)  
+[Select Initialization Class](#select-initialization-class)
+[Initialize by delegation from an Android Application subclass](#initialize-by-delegation-from-an-android-application-subclass)  
+[Initialization by delegation in Java](#initialization-by-delegation-in-java)  
+[Initialization by delegation in Kotlin](#initialization-by-delegation-in-kotlin)  
+[Next - Configure Initialization Class in Manifest](#next-configure-initialization-class-in-manifest)  
+[Create an initialization subclass by extension](#create-an-initialization-subclass-by-extension)  
+[Configure the initialization class in the manifest](#configure-the-initialization-class-in-the-manifest)  
+[Build and Run Application](#build-and-run-application)  
+[Appendix: Early Version Support](#appendix:-early-version-support)  
+[Alternative Early Version Support](#alternative-early-version-support)  
+[Early Version Support Build Error](#early-version-support-build-error)  
+[Background Reading for Early Version Support](#background-reading-for-early-version-support)  
+[Appendix: User Interface Screen Capture Images](#appendix:-user-interface-screen-capture-images)  
+[Document Information](#document-information)  
+[Published Locations](#published-locations)  
+[Revision History](#revision-history)  
+[Legal](#legal)  
 
 # Introduction
 The tasks detailed below represent the basic steps in integrating your Android
@@ -20,7 +52,7 @@ networking.
 
 To integrate at the **Client level**, do the following tasks:
 
-1.  [Add the Client SDK].
+1.  [Client Only Path Task: Add Client SDK](#client-only-path-task:-add-client-sdk).
 2.  [Initialize the Client SDK].
 
 To integrate at the **Framework level**, do the following tasks:
@@ -68,7 +100,7 @@ the framework features, which are covered by other guides.
 
 ![**Diagram 1:** Base Integration paths](IntegrationPathsClientFramework.svg)
 
-# Task: Add Client SDK [Add the Client SDK]
+# Client Only Path Task: Add Client SDK
 Adding the Client SDK is a Workspace ONE platform integration task for Android
 application developers. It applies to all levels of platform integration.
 
@@ -108,7 +140,7 @@ in the following instructions.
 ## Instructions
 Proceed as follows.
 
-### Build Configuration and Files [BuildConfigurationAndFilesClientSDKIntegration]
+### Build Configuration and Files - Client Path
 First, update the build configuration and add the required library files.
 
 1.  Update the Gradle Android plugin version, if necessary.
@@ -385,7 +417,7 @@ then the application under development won't work when installed via the Android
 Debug Bridge (adb). Instructions for installing via Workspace ONE can be found
 in the [Integration Guides] document set, in the Integration Preparation guide.
 
-### Next Steps
+### Next Steps - Application Code
 After completing the above, continue with the next task, which could be either
 of the following.
 
@@ -393,7 +425,7 @@ of the following.
     integration.
 -   [Add the Framework], otherwise.
 
-# Task: Initialize Client SDK [Initialize the Client SDK]
+# ***Task*** Initialize Client SDK
 Client SDK initialization is a Workspace ONE platform integration task for
 Android application developers. It applies only to Client-level integration, not
 to Framework integration.
@@ -483,14 +515,14 @@ this:
 Calling the `init` method completes SDK Manager initialization. Build and run
 the application to verify that no mistakes have been made.
 
-## Next Steps [NextStepsClientSDKInitialization]
+## Client Initialization
 After the SDKManager instance has been received from the init call, its other
 methods can be called. Check the reference documentation for details of the
 programming interface.
 
 This completes Client-level integration.
 
-# Task: Add Framework [Add the Framework]
+# Framework Path Task: Add Framework
 Adding the Framework is a Workspace ONE platform integration task for Android
 application developers. Adding the Framework is necessary if the application
 will make use of platform features such as authentication, single sign-on, data
@@ -499,7 +531,7 @@ encryption, or networking.
 This task is dependent on the [Add the Client SDK] task. The following
 instructions assume that the dependent task is complete already.
 
-## Build Configuration and Files [BuildConfigurationAndFilesFrameworkIntegration]
+## Framework Path Build Configuration and Files
 This task involves changing your application project's build configuration and
 files. These instructions assume that your application has a typical project
 structure, same as the Add Client SDK task, as shown in the
@@ -694,7 +726,7 @@ with the next task, which is to [Initialize the Framework].
 In case you encounter an error, check the [Early Version Support Build Error]
 first.
 
-# Task: Initialize Framework [Initialize the Framework]
+# Framework Path Task: Initialize Framework
 Framework initialization is a Workspace ONE platform integration task for
 Android application developers. It applies to Framework-level integration, not
 to Client-level integration.
@@ -702,7 +734,7 @@ to Client-level integration.
 The Framework initialization task is dependent on the [Add the Framework] task.
 The following instructions assume that the dependent task is complete already.
 
-## Select initialization class
+## Select Initialization Class
 Framework initialization can start from either an Android Application subclass,
 referred to as initialization by *delegation*, or from a Workspace ONE SDK
 AWApplication subclass, referred to as initialization by *extension*.
@@ -845,7 +877,7 @@ In Kotlin, the class could look like this:
         }
     }
 
-### Next
+### Next - Configure Initialization Class in Manifest
 This completes initialization from an Android Application subclass. Now continue
 with the next step, which is to
 [configure the initialization class in the manifest].
@@ -911,7 +943,7 @@ In Kotlin, the class could look like this:
 This completes the creation of an initialization subclass. Now continue with the
 next step, which is to [configure the initialization class in the manifest].
 
-## Configure the initialization class in the manifest [configure the initialization class in the manifest]
+## Configure the initialization class in the manifest
 Follow these instructions to configure your selected initialization class in the
 Android manifest. The initialization class will be either the existing Android
 Application subclass, or a new AWApplication subclass that was just created. See
@@ -990,7 +1022,7 @@ Proceed as follows.
 
 This completes the initialization class configuration.
 
-## Next Steps [NextStepsFrameworkInitialization]
+## Build and Run Application
 Build and run the application to confirm that no mistakes have been made.
 
 The Workspace ONE splash screen should be shown at launch, Other SDK screens

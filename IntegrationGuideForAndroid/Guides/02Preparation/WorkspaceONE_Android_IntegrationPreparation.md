@@ -7,7 +7,28 @@ prepare for integration.
 This document is part of the Workspace ONE Integration Guide for Android set.
 
 # Table of Contents
-{{TOC}}
+[Introduction](#introduction)  
+[Integration Guides](#integration-guides)  
+[Prerequisites \[Prerequisite Conditions\]](#prerequisites-\[prerequisite-conditions\])  
+[Compatibility](#compatibility)  
+[Task: Install application via Workspace ONE](#task:-install-application-via-workspace-one)  
+[Installation Order](#installation-order)  
+[Instructions](#instructions)  
+[Troubleshooting](#troubleshooting)  
+[Task: Obtain software development kit](#task:-obtain-software-development-kit)  
+[SDK Download](#sdk-download)  
+[SDK Contents](#sdk-contents)  
+[Software Development Kit Download Structure Diagram](#software-development-kit-download-structure-diagram)
+[Next Steps](#next-steps)  
+[Appendix: How to generate a signed Android package file once](#appendix:-how-to-generate-a-signed-android-package-file-once)  
+[Appendix: How to generate a signed Android package every build](#appendix:-how-to-generate-a-signed-android-package-every-build)  
+[Appendix: How to verify that an Android package file is signed](#appendix:-how-to-verify-that-an-android-package-file-is-signed)  
+[Appendix: How to upload an Android application to the management console](#appendix:-how-to-upload-an-android-application-to-the-management-console)  
+[Appendix: How to run integrated applications on Huawei devices](#appendix:-how-to-run-integrated-applications-on-huawei-devices)  
+[Document Information](#document-information)  
+[Published Locations](#published-locations)  
+[Revision History](#revision-history)  
+[Legal](#legal)  
 
 # Introduction
 The tasks detailed below should be done first, to prepare for integration of
@@ -24,7 +45,7 @@ overview that includes links to all the guides is available
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
-# Prerequisites [prerequisite conditions]
+# Prerequisites [Prerequisite Conditions]
 Before you begin, you will need the following.
 
 -   Access to a Workspace ONE management console.
@@ -117,7 +138,7 @@ Android Operating System                           | Android 12   | Android 5 |
 Android Studio integrated development environment  | 4.1.3        | 4.0.1     |
 Gradle plugin for Android                          | 4.1.3        | 4.0.1     |
 
-# Task: Install application via Workspace ONE [install your application via Workspace ONE]
+# Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
 Android application developers. It applies to all levels of platform
 integration.
@@ -171,7 +192,7 @@ Proceed as follows.
     must be reset, i.e. have its storage cleared. Removing or resetting the Hub
     may cause removal of any associated applications from the device.
 
-    Check the [Compatibility] table for a recommended version of Hub.
+    Check the [Compatibility](#compatibilty) table for a recommended version of Hub.
 
 2.  Generate a signed package file for your application.
 
@@ -209,7 +230,7 @@ Proceed as follows.
     (adb). Instead, follow the instructions in the 
     [Appendix: How to push installation of an application from the console].
 
-    In case of difficulties, see the [Troubleshooting] tips.
+    In case of difficulties, see the [Troubleshooting](#troubleshooting) tips.
 
 This completes the task.
 
@@ -245,12 +266,12 @@ hoc certificate by default.
     device will recognize the certificate on subsequent installations, even if
     made via adb.
 
-# Task: Obtain software development kit [Obtain software development kit]
+# Task: Obtain software development kit
 Obtaining the Workspace ONE software development kit (SDK) is a platform
 integration task for Android application developers. It applies to all levels of
 platform integration.
 
-## Download
+## SDK Download
 The Workspace ONE mobile SDK for Android can be downloaded from VMware, for
 example as follows.
 
@@ -286,7 +307,7 @@ example as follows.
 
 The SDK download will begin.
 
-## Contents
+## SDK Contents
 Unpack the download and you will see that the SDK has the following principal
 software components.
 
@@ -324,7 +345,7 @@ available
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
-# Appendix: How to generate a signed Android package file once [How to generate a signed Android package file once]
+# Appendix: How to generate a signed Android package file once
 You can generate a signed Android package file (APK) for your application by
 following these instructions. These are provided here for convenience; for
 definitive information, see the Android developer website.
@@ -367,7 +388,7 @@ opened from the Event Log panel, even after the notification has been dismissed.
 
 The .apk file is the one to upload to the management console.
 
-# Appendix: How to generate a signed Android package every build [How to generate a signed Android package every build]
+# Appendix: How to generate a signed Android package every build
 You can configure Gradle to build a signed Android package file (APK) every time
 you build the application by following these instructions. These are provided
 here for convenience; for definitive information, see the Android developer
@@ -447,7 +468,7 @@ The top of the output should be like this:
 
 After that, there could be a large number of warnings. Those can be ignored.
 
-# Appendix: How to upload an Android application to the management console [How to upload an Android application to the management console]
+# Appendix: How to upload an Android application to the management console
 You can upload an APK file to the Workspace ONE management console by following
 these instructions. These are provided here for application developer
 convenience and aren't intended to replace the system administrator user guides
