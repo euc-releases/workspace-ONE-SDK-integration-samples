@@ -47,16 +47,21 @@ An overview that includes links to all the guides is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
+
+** Warning** 
+As of Release 22.2, all apps consuming Workspace One SDK must upgrade their Kotlin language version
+to be compatible with Kotlin v1.5.x
+
 Instructions in this document have been tested with the following software
 versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 22.1
-Workspace ONE management console                 | 2111
+Workspace ONE SDK for Android                    | 22.4
+Workspace ONE management console                 | 2203
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -165,78 +170,23 @@ First, update the build configuration and add the required library files.
 3.  Add the required libraries to the build.
 
     Still in the application build.gradle file, in the `dependencies` block, add
-    references to the required libraries. (The library files will be copied in
-    the next step.) For example:
-
-        dependencies {
-            implementation fileTree(dir: 'libs', include: ['*.jar'])
-            implementation ...
-            implementation ...
-
-            // Following lines are added to integrate Workspace ONE at the Client level ...
-
-            // Workspace ONE libraries that are part of the SDK.
-            implementation (name:'AirWatchSDK-22.1', ext:'aar')
-            implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"FeatureModule-android:2.0.2", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
-
-            // Third party libraries that are distributed with the SDK.
-            implementation 'com.google.code.gson:gson:2.4'
-
-            // Third party libraries that are hosted remotely.
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
-            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
-            implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
-            implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-            kapt ("androidx.lifecycle:lifecycle-compiler:2.2.0") {
-                exclude group:'com.google.guava', module:'guava'
-            }
-            implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
-            implementation("androidx.recyclerview:recyclerview:1.1.0")
-            ...
-        }
-
-    The location of this change is shown in the [Project Structure Diagram].
-
-4.  Copy the required library files.
-
-     The code snippet in the previous step indicates which libraries are:
-
-    -   Workspace ONE libraries that are part of the SDK.
-    -   Third party libraries that are distributed with the SDK.
-    -   Third party libraries that are hosted remotely.
-
-    The files that must be copied are those that are part of the SDK, or are
-    distributed with it.
-
-    All these files can be found in the SDK distribution, under one or other of
-    the `Libs` sub-directories or their `dependencies` sub-directories. See the
-    [Software Development Kit Download Structure Diagram].
-    
-    Copy the files into your project, under the application module
-    sub-directory, in the `libs` sub-directory. The location is shown in the
-    [Project Structure Diagram]. If the sub-directory doesn't exist, create it
-    now.
-
-    The Client SDK library, `AirWatchSDK`, can be added as an AAR or a JAR file.
-    Both are included in the download.
-
-    If you prefer, you can instead take the gson library from its default online
-    location. The version distributed with the SDK isn't customized. It is
-    included for convenience and completeness only.
-
-5.  Add the library files' location to the application build configuration.
-
-    In the application build.gradle file, add a `repositories` block that
-    specifies the location of the library file copies. For example:
+    references to the required libraries. For example:
 
         repositories {
-            flatDir {
-                dirs 'libs'
+            maven {
+                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
             }
         }
-    
+
+        dependencies {
+            // Integrate Workspace ONE at the Client level.
+            //
+            // By integrating this software you accept the VMware Workspace ONE Software
+            // Development Kit License Agreement that is posted here:  
+            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            implementation "com.airwatch.android:AirWatchSDK:22.4"
+        }
+
     The location of this change is shown in the [Project Structure Diagram].
 
 This completes the required changes to the build configuration. Build the
@@ -521,91 +471,19 @@ Proceed as follows.
     references to the required libraries. For example:
     <p class="allow-page-break" />
 
+        repositories {
+            maven {
+                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+            }
+        }
+
         dependencies {
-            def room_version = "2.2.4"
-
-            implementation fileTree(dir: 'libs', include: ['*.jar'])
-            implementation ...
-
-            // Following lines are added to integrate Workspace ONE at the Framework level ...
-
-            // Workspace ONE libraries that are part of the SDK.
-            implementation(name:'ws1-sdk-oauth-api-lib-1.2.0', ext:'aar')
-            implementation(name:'SCEPClient-1.0.17', ext: 'aar')
-            implementation(name:'AWComplianceLibrary-2.3.6', ext: 'aar')
-            implementation(name:'AWFramework-22.1', ext: 'aar')
-            implementation(name:"AirWatchSDK-22.1", ext: "aar")
-            implementation(name:'VisionUx-1.9.8.a', ext: 'aar')
-            implementation(name:'CredentialsExt-102.1.1', ext: 'aar')
-            implementation(name:"chameleon-android-1.3.1.210927150831", ext:'aar')
-            implementation(name:"module-settings-1.2.5.210830210238", ext:'aar')
-            implementation(name:"settings-1.4.3.4", ext:'aar')
-            implementation(name:"opdata-android-1.7.1.210929135455", ext:'aar'){
-                exclude group:'com.vmware.xsw.settings', module:'settings'
-            }
-            implementation(name:"attributesprovider-1.4.3.4", ext:'aar')
-            implementation(name:"ws1-android-logger-1.2.0", ext:'aar')
-            implementation(name:"encryptedpreferencesprovider-1.4.3.4", ext:'aar')
-            implementation(name:"httpprovider-1.4.3.4", ext:'aar')
-            implementation(name:"memoryprovider-1.4.3.4", ext:'aar')
-            implementation(name:"supercollider-1.2.0.1", ext:'aar')
-            implementation(name:"work-hour-access-sdk-android-1.0.4.0", ext:'aar')
-            implementation(name:"FeatureModule-android-2.0.2", ext:'aar')
-            implementation(name:"sdk-fm-extension-android-2.0.2", ext:'aar')
-            
-            implementation(name:"openssl_fips-1.0.2zaa", ext:'aar')
-            implementation(name:"xsw-crypto-android-1.0.1.1", ext:'aar'){
-                exclude group:'androidx.appcompat', module:'appcompat'
-                exclude group:'com.vmware.ndkports', module:'openssl_fips'
-            }
-
-            // The following JAR file is included in the SDK but needn't be added
-            // as a specific dependency because it is covered by the
-            // `implementation fileTree( ... include: ['*.jar'])`, above, after
-            // copying.
-            // awannotations-1.0.jar
-
-            // Third party libraries that are distributed with the SDK.
-            implementation("com.squareup.moshi:moshi-kotlin:1.8.0"){
-                exclude group: 'com.squareup.okio', module: 'okio'
-                exclude group: 'com.squareup.moshi', module: 'moshi'
-            }
-            kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
-            implementation 'com.squareup.moshi:moshi:1.8.0'
-            implementation 'com.squareup.moshi:moshi-adapters:1.8.0'
-            implementation 'com.squareup.okio:okio:1.17.2'
-            implementation 'com.google.zxing:core:3.3.3'
-            implementation 'com.google.code.gson:gson:2.4'
-
-            // Third party libraries that are hosted remotely.
-            implementation 'androidx.security:security-crypto:1.1.0-alpha03'
-            implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
-            implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-            kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
-            implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
-            implementation 'androidx.legacy:legacy-support-v13:1.0.0'
-            implementation 'androidx.appcompat:appcompat:1.1.0'
-            implementation 'androidx.cardview:cardview:1.0.0'
-            implementation 'androidx.recyclerview:recyclerview:1.1.0'
-            implementation 'com.google.android.material:material:1.1.0'
-            implementation 'androidx.appcompat:appcompat:1.1.0'
-            implementation('androidx.legacy:legacy-preference-v14:1.0.0') {
-                exclude group: 'androidx.legacy', module: 'legacy-support-v4'
-                exclude group: 'androidx.appcompat', module: 'appcompat'
-                exclude group: 'androidx.annotation', module: 'annotation'
-                exclude group: 'androidx.recyclerview', module: 'recyclerview'
-            }
-            implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-            implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.71'
-            implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.71'
-            implementation 'io.insert-koin:koin-core:2.1.6'
-            implementation 'io.insert-koin:koin-android:2.1.6'
-            implementation 'net.zetetic:android-database-sqlcipher:4.5.0@aar'
-            implementation 'androidx.work:work-runtime-ktx:2.3.3'
-            implementation 'androidx.biometric:biometric:1.0.1'
-            implementation "androidx.room:room-ktx:$room_version"
-            kapt "androidx.room:room-compiler:$room_version"
-
+            // Integrate Workspace ONE at the Framework level.
+            //
+            // By integrating this software you accept the VMware Workspace ONE Software
+            // Development Kit License Agreement that is posted here:  
+            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            implementation "com.airwatch.android:AWFramework:22.4"
         }
     
     Your application might already require different versions of some of the
@@ -618,29 +496,6 @@ Proceed as follows.
     In principle, the SDK isn't supported with versions other than those given
     in the above. In practice however, problems are unlikely to be encountered
     with later versions.
-
-2.  Copy the required library files.
-
-    The code snippet in the previous step indicates which libraries are:
-
-    -   Workspace ONE libraries that are part of the SDK.
-    -   Third party libraries that are distributed with the SDK.
-    -   Third party libraries that are hosted remotely.
-
-    The files that must be copied are those that are part of the SDK, or are
-    distributed with it.
-
-    All these files can be found in the SDK distribution, under one or other of
-    the `Libs` sub-directories or their `dependencies` sub-directories. See the
-    [Software Development Kit Download Structure Diagram].
-    
-    Copy the files into your project. Put the copies under the application
-    sub-directory, in the `libs` sub-directory. The location is shown in the
-    [Project Structure Diagram].
-
-    If you prefer, you can instead take some of the third party libraries from
-    their default online locations. The versions distributed with the SDK aren't
-    customized. They are included for convenience and completeness only.
 
 3.  Add annotation processor support.
 
@@ -1010,7 +865,7 @@ set. An overview that includes links to all the guides in the set is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 
 # Appendix: Early Version Support
@@ -1116,6 +971,13 @@ console.
 
 # Appendix: Troubleshooting
 
+## Kotlin Compatibility
+Occasionally, one may encounter an exception containing the message "Class 'kotlin.Unit' was compiled with an 
+incompatible version of Kotlin. The binary version of its metadata is 1.5.1, expected version is 
+1.1.16." during compilation. This exception is due to incompatible versions of your app with the 
+Workspace One SDK. As of Release 22.2, all apps consuming WS1 will be required to use Kotlin v1.5.1
+or higher. 
+
 ## Empty Response from AirWatch MDM Service
 Occasionally, one may encounter the message "Empty Response from Airwatch MDM Service" 
 in the adb log during app integration into Workspace ONE. This error message is triggered 
@@ -1153,7 +1015,7 @@ This document is available
     [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+    [https://developer.vmware.com/...BaseIntegration.pdf](https://developer.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
 ## Revision History
 |Date     |Revision                                    |
@@ -1178,6 +1040,9 @@ This document is available
 |26oct2021|Update for 21.10 SDK for Android.           |
 |09Dec2021|Update for 21.11 SDK for Android.           |
 |26Jan2022|Update for 22.1 SDK for Android.            |
+|28Feb2022|Update for 22.2 SDK for Android.            |
+|04Apr2022|Updated for 22.3 SDK for Android.           |
+|29Apr2022|Updated for 22.4 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

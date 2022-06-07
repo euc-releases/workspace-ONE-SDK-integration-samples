@@ -27,7 +27,11 @@ include (
 
     ':dlpExtendKotlin',
     
-    ':identificationDemo'
+    ':identificationDemo',
+    
+    ':tunnel',
+    ':integratedAuth',
+    ':trafficAuthentication'
 )
 
 rootProject.name='Integration Guide'

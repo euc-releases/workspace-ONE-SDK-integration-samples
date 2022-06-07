@@ -6,7 +6,7 @@ repository is an alternative to downloading the software development kit from
 the My Workspace ONE website.
 
 By integrating or downloading the software development kit (SDK) you accept the
-[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf)
+[VMware Workspace ONE SDK License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf)
 This applies however you obtain the software.
 
 # Table of Contents
@@ -23,7 +23,7 @@ The integration guide documents are available
     [https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples)
 
 -   in Portable Document Format (PDF), on the VMware website.  
-    [https://code.vmware.com/web/sdk/Native/airwatch-android](https://code.vmware.com/web/sdk/Native/airwatch-android)
+    [https://developer.vmware.com/web/sdk/Native/airwatch-android](https://developer.vmware.com/web/sdk/Native/airwatch-android)
 
 Most of the instructions apply the same whether the SDK is utilized directly
 from the public Maven repository or by downloading from My Workspace ONE.
@@ -45,7 +45,7 @@ Preparation Guide to utilize the public Maven repository.
 Skip the **Task: Obtain software development kit** instructions.
 
 You should still download and review the 
-[VMware Workspace ONE SDK License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf). If you don't accept the terms, stop 
+[VMware Workspace ONE SDK License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf). If you don't accept the terms, stop 
 here and don't integrate the SDK.
 
 ## Base Integration Guide Changes
@@ -71,7 +71,7 @@ Files** instructions are changed as follows.
             //
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
-            // https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
             implementation "com.airwatch.android:AirWatchSDK:21.3"
         }
 
@@ -99,7 +99,7 @@ Files** instructions are changed as follows.
             //
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
-            // https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
             implementation "com.airwatch.android:AWFramework:21.3"
         }
 
@@ -135,7 +135,7 @@ Each app directory has the following build files.
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

@@ -22,7 +22,7 @@ overview that includes links to all the guides is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Prerequisites [prerequisite conditions]
 Before you begin, you will need the following.
@@ -110,9 +110,9 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 22.1         |           |
-Workspace ONE management console                   | 2111         | 2008      |
-Workspace ONE Intelligent Hub application          | 21.10        | 20.10     |
+Workspace ONE software development kit for Android | 22.4         |           |
+Workspace ONE management console                   | 2203         | 2011      |
+Workspace ONE Intelligent Hub application          | 22.03        | 21.3      |
 Android Operating System                           | Android 12   | Android 5 |
 Android Studio integrated development environment  | 4.1.3        | 4.0.1     |
 Gradle plugin for Android                          | 4.1.3        | 4.0.1     |
@@ -245,69 +245,6 @@ hoc certificate by default.
     device will recognize the certificate on subsequent installations, even if
     made via adb.
 
-# Task: Obtain software development kit [Obtain software development kit]
-Obtaining the Workspace ONE software development kit (SDK) is a platform
-integration task for Android application developers. It applies to all levels of
-platform integration.
-
-## Download
-The Workspace ONE mobile SDK for Android can be downloaded from VMware, for
-example as follows.
-
-1.  Open this page in a browser:  
-    [https://code.vmware.com/web/sdk/Native/airwatch-android](https://code.vmware.com/web/sdk/Native/airwatch-android)
-
-2.  Select the Download option.
-
-    This will open the My Workspace ONE portal.
-    
-    As the warning on the page says: You must have a MyVMware username and
-    password in able to sign in and complete your download.  
-    (There is a special login option for VMware staff.)
-
-3.  Log in to the portal.
-
-4.  On the download page, select the required options.
-
-    -   Select a platform: Android.
-    -   Select an app version: 22.1 or whatever is the latest version.
-    -   Filter by Console Version: All.
-
-    Some resource downloads should now appear below the selection controls.
-
-5.  Select to start the download.
-
-    Select the Installs and Upgrades tab, then, under Software Downloads, select
-    the VMware Workspace ONE SDK version link.
-
-    This opens the End-User License Agreement page.
-
-6.  Read the EULA, select the checkbox, and click Accept.
-
-The SDK download will begin.
-
-## Contents
-Unpack the download and you will see that the SDK has the following principal
-software components.
-
--   Client SDK library.
--   Framework library.
--   Networking library.
--   Privacy library.
-
-The SDK download also includes the following.
-
--   Reference documentation for each of the above libraries.
--   Developer guides.
--   Third party libraries on which the above libraries depend.
-
-See also the [Software Development Kit Download Structure Diagram].
-
-## Software Development Kit Download Structure Diagram
-The following diagram illustrates the directory structure of the SDK download.
-
-![**Diagram 1:** Download structure of the SDK for Android](DownloadStructure.svg)
-
 # Next Steps
 This completes the preparation for integrating your Android application with the
 Workspace ONE platform. You are now ready to start either of the following.
@@ -322,7 +259,7 @@ available
     [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+    [https://developer.vmware.com/...BaseIntegration.pdf](https://developer.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
 # Appendix: How to generate a signed Android package file once [How to generate a signed Android package file once]
 You can generate a signed Android package file (APK) for your application by
@@ -598,7 +535,7 @@ This document is available
     [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+    [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
 |Date     |Revision                                    |
@@ -623,6 +560,9 @@ This document is available
 |26oct2021|Updated for 21.10 SDK for Android.          |
 |09Dec2021|Updated for 21.11 SDK for Android.          |
 |26Jan2022|Updated for 22.1 SDK for Android.           |
+|28Feb2022|Updated for 22.2 SDK for Android.           |
+|04Apr2022|Updated for 22.3 SDK for Android.           |
+|29Apr2022|Updated for 22.4 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

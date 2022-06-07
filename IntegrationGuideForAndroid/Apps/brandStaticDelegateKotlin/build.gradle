@@ -22,8 +22,8 @@ if (integrateFramework.exists()) {
 else {
     // Client integration from the public Maven repository.
     apply from: file("publicMavenClient.gradle")
-    //
-    // Add Framework integration from the public Maven repository.
+
+    // Framework integration from the public Maven repository.
     apply from: file("publicMavenFramework.gradle")
 }
 

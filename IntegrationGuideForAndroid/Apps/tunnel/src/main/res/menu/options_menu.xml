@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/title_about"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/sdk"
+        android:titleCondensed="@string/menu_sdk_profile"
+        android:title="@string/title_sdk_profile"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/tunnel"
+        android:title="@string/tunnel_text"
+        />
+</menu>

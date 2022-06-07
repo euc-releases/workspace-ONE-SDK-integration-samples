@@ -5,7 +5,7 @@ comments are added to the code.
 
 A complete developer guide is published on the VMware Code website, on the SDK
 home page, see:  
-[code.vmware.com/web/sdk/Native/airwatch-ios](https://code.vmware.com/web/sdk/Native/airwatch-ios).
+[developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
 
 These instructions assume that you will use a physical device and the Apple
 Xcode integrated development environment (IDE).
@@ -14,7 +14,7 @@ Xcode integrated development environment (IDE).
 Before downloading, installing or using the VMware Workspace ONE SDK you must:
 
 1.  Review the
-    [VMware Workspace ONE Software Development Kit License Agreement](https://code.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf).
+    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf).
     By downloading, installing, or using the VMware Workspace ONE SDK you agree
     to these license terms.  If you disagree with any of the terms, then do not
     use the software.
@@ -106,7 +106,7 @@ here for completeness.
 
 1.  In a web browser, open the Workspace ONE for iOS home page on the VMware
     Code website:  
-    [code.vmware.com/web/sdk/Native/airwatch-ios](https://code.vmware.com/web/sdk/Native/airwatch-ios).
+    [developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
 
 2.  Follow the instructions for downloading the Workspace ONE SDK for iOS
     archive, which is a DMG file.
@@ -183,14 +183,14 @@ examples of how to utilize Workspace ONE features.
 
 # Developer Resources
 For the developer guide and other documentation, see the Workspace ONE for iOS home page on the VMware Code website, here:  
-[code.vmware.com/web/sdk/Native/airwatch-ios](https://code.vmware.com/web/sdk/Native/airwatch-ios).
+[developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
 
 You can file support requests in VMware Customer Connect. See the following page
 for instructions:  
 [https://kb.vmware.com/s/article/2006985](https://kb.vmware.com/s/article/2006985)
 
 # License
-Copyright 2021 VMware, Inc. All rights reserved.  
+Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

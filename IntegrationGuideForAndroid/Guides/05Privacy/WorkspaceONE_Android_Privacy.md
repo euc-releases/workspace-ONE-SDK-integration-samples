@@ -64,7 +64,7 @@ An overview that includes links to all the guides is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been followed with the Workspace ONE Software
@@ -147,7 +147,7 @@ following.
         [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)  
 
     -   in Portable Document Format (PDF), on the VMware website:  
-        [https://code.vmware.com/...IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)  
+        [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)  
     
     Go to the Task: Obtain software development kit.
 
@@ -1242,7 +1242,7 @@ This document is available
     [https://github.com/vmware-samples/...Privacy.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/05Privacy/WorkspaceONE_Android_Privacy.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...Privacy.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Privacy.pdf)
+    [https://developer.vmware.com/...Privacy.pdf](https://developer.vmware.com/docs/13425/WorkspaceONE_Android_Privacy.pdf)
 
 ## Revision History
 |Date     |Revision                                      |
@@ -1253,11 +1253,14 @@ This document is available
 |26oct2021|Updated, for 21.10 SDK for Android.           |
 |09Dec2021|Updated, for 21.11 SDK for Android.           |
 |26Jan2022|Updated, for 22.1 SDK for Android.            |
+|28Feb2022|Updated, for 22.2 SDK for Android.            |
+|04Apr2022|Updated, for 22.3 SDK for Android.            |
+|29Apr2022|Updated, for 22.4 SDK for Android.            |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

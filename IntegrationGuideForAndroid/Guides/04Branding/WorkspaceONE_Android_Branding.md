@@ -108,7 +108,7 @@ An overview that includes links to all the guides is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been tested with the following software
@@ -1073,7 +1073,7 @@ This document is available
     [https://github.com/vmware-samples/...Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...Branding.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+    [https://developer.vmware.com/...Branding.pdf](https://developer.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
 
 ## Revision History
 |Date     |Revision                                    |
@@ -1098,11 +1098,14 @@ This document is available
 |26oct2021|Update for 21.10 SDK for Android.           |
 |09Dec2021|Update for 21.11 SDK for Android.           |
 |26Jan2022|Update for 22.1 SDK for Android.            |
+|28Feb2022|Update for 22.2 SDK for Android.            |
+|04Apr2022|Updated for 22.3 SDK for Android.           |
+|29Apr2022|Updated for 22.4 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

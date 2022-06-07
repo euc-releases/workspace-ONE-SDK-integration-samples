@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.integrationguide.IntegratedAuthActivity">
+
+
+    <TextView
+        android:id="@+id/policyHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/policy_heading"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/integrated_authentication"/>
+
+        <EditText
+            android:id="@+id/integrated_authentication"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:importantForAutofill="no"
+            android:inputType="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/use_enrollment_cred"/>
+
+        <EditText
+            android:id="@+id/use_enrollment_cred"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:importantForAutofill="no"
+            android:inputType="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/use_certificate"/>
+
+        <EditText
+            android:id="@+id/use_certificate"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:importantForAutofill="no"
+            android:inputType="none" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://uaginteria.ssdevrd.com:6443/" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/httpclient_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AWHttpClient" />
+
+        <Button
+            android:id="@+id/httpurlconnection_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AWUrlConnection" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/okhttp_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AWOkHttpClient" />
+
+        <Button
+            android:id="@+id/webview_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AWWebView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/basicauth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="Basic URLConnection" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/response_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <com.airwatch.gateway.clients.AWWebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

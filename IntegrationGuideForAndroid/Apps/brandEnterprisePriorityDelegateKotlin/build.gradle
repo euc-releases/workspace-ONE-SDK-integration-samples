@@ -20,12 +20,11 @@ if (integrateFramework.exists()) {
     apply from: integrateFramework
 }
 else {
-    // Add the downloaded SDK as a repository, and apply all the dependencies of the
-    // AirWatch Client SDK.
-    apply from: file("integrateClient.gradle")
-    //
-    // And then do the same for Framework integration.
-    apply from: file("integrateFramework.gradle")
+    // Client integration from the public Maven repository.
+    apply from: file("publicMavenClient.gradle")
+
+    // Framework integration from the public Maven repository.
+    apply from: file("publicMavenFramework.gradle")
 }
 
 // TOTH: https://stackoverflow.com/a/37101792/7657675

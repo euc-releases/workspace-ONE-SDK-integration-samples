@@ -1,0 +1,52 @@
+// Copyright 2022 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+android {
+    packagingOptions {
+        pickFirst '**/*.so'
+    }
+    defaultConfig {
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    packagingOptions {
+        exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
+    }
+}
+
+def vmwaresaas=secretProperties("vmwaresaas.properties")
+if (vmwaresaas == null) {
+    repositories {
+        maven {
+            url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+        }
+    }
+}
+else {
+    repositories {
+        maven {
+            url vmwaresaas["url"]
+            credentials {
+                username vmwaresaas["username"]
+                password vmwaresaas["password"]
+            }
+        }
+    }
+}
+
+dependencies {
+    // Integrate Workspace ONE Network library.
+    // By integrating this software you accept the VMware Workspace ONE Software
+    // Development Kit License Agreement that is posted here:
+    // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}")
+
+    implementation 'io.insert-koin:koin-core:3.1.5'
+    implementation 'io.insert-koin:koin-android:3.1.5'
+}

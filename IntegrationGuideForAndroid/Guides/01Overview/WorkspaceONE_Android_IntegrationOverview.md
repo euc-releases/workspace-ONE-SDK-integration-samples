@@ -160,7 +160,7 @@ The integration guides are available
     [https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples)
 
 -   in Portable Document Format (PDF), on the VMware website.  
-    [https://code.vmware.com/web/sdk/Native/airwatch-android](https://code.vmware.com/web/sdk/Native/airwatch-android)
+    [https://developer.vmware.com/web/sdk/Native/airwatch-android](https://developer.vmware.com/web/sdk/Native/airwatch-android)
 
 The VMware website also has links to other integration resources, including
 earlier versions of the Developer Guide documentation, other technical
@@ -173,10 +173,10 @@ locations in different formats.
 
 Document| Markdown | PDF
 --------|----------|----
-Integration Overview (this document) | [IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
-Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://code.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
-Base Integration Guide | [BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://code.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
-Branding Integration Guide | [Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://code.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+Integration Overview (this document) | [IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+Base Integration Guide | [BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://developer.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+Branding Integration Guide | [Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://developer.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
 
 
 
@@ -198,7 +198,7 @@ This document is available
     [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
-    [https://code.vmware.com/...IntegrationOverview.pdf](https://code.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Revision History
 |Date     |Revision                                    |
@@ -210,7 +210,7 @@ This document is available
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2020 VMware, Inc. All rights reserved.
+-   Copyright © 2022 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

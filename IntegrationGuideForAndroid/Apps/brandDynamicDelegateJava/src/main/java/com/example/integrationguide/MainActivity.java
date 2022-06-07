@@ -62,7 +62,6 @@ public class MainActivity extends BaseActivity {
         );
 
         toastHere(configureStatus());
-
         ImageView enterpriseLogoImageView = findViewById(R.id.imageViewEnterpriseLogo);
         enterpriseLogoImageView.post(() -> BrandingManager.getInstance(MainActivity.this).getDefaultBrandingManager()
                 .brandLoadingScreenLogo(bitmap -> enterpriseLogoImageView.setImageBitmap(bitmap),

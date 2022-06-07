@@ -179,14 +179,12 @@ class Rules:
             'framework*/**/src/**/AndroidManifest.xml',
             'brand*/**/src/**/AndroidManifest.xml'
         ],
-        "download framework build.gradle files": [
-            'framework*/**/build.gradle',
-            'brandDynamic*/**/build.gradle',
-            'brandEnterprise*/**/build.gradle'
-        ],
         "public Maven framework build.gradle files": [
+            'brandDynamic*/**/build.gradle',
+            'brandEnterprise*/**/build.gradle',
             'brandStatic*/**/build.gradle',
-            'dlp*/**/build.gradle'
+            'dlp*/**/build.gradle',
+            'framework*/**/build.gradle'
         ],
         "framework delegate application.properties files": [
             'frameworkDelegate*/**/application.properties',
