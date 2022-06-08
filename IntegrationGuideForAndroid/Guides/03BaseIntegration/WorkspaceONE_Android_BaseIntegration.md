@@ -60,8 +60,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 22.4
-Workspace ONE management console                 | 2203
+Workspace ONE SDK for Android                    | 22.5
+Workspace ONE management console                 | 2204
 Android Studio integrated development environment| 4.1.3
 Gradle plugin for Android                        | 4.1.3
 
@@ -147,7 +147,7 @@ First, update the build configuration and add the required library files.
 
         ...
         android {
-            compileSdkVersion 30
+            compileSdkVersion 31
 
             // Following blocks are added.
             compileOptions {
@@ -156,6 +156,9 @@ First, update the build configuration and add the required library files.
             }
             kotlinOptions {
                 jvmTarget = "1.8"
+            }
+            packagingOptions {
+               exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
             }
             // End of added blocks.
 
@@ -184,7 +187,7 @@ First, update the build configuration and add the required library files.
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
             // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AirWatchSDK:22.4"
+            implementation "com.airwatch.android:AirWatchSDK:22.5"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -229,7 +232,7 @@ Proceed as follows.
                 ApplicationProfile awAppProfile) { }
 
             @Override
-            protected void onClearAppDataCommandReceived(
+            public void onClearAppDataCommandReceived(
                 Context context,
                 ClearReasonCode reasonCode) { }
 
@@ -326,6 +329,33 @@ Proceed as follows.
             <service android:name=".AirWatchSDKIntentService"/>
 
         </application>
+    
+4.  Apps targeting API level 30 or below, will see below compile time error. 
+    Note: This should be skipped if app consumes [Framework SDK]
+    
+            The minCompileSdk (31) specified in a 
+            dependency's AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties)
+            is greater than this module's compileSdkVersion (android-30). 
+            Dependency: androidx.work:work-runtime-ktx:2.7.0.
+    
+5.  To resolve the above, add following lines in build.gradle
+    
+            implementation ("com.airwatch.android:AirWatchSDK:22.5") { 
+                exclude group: 'androidx.work', module: 'work-runtime-ktx' 
+            } 
+            implementation ('androidx.work:work-runtime-ktx:2.3.4')
+
+6.  Apps targeting API level 31 or above, need to implement SDKClientConfig in 
+    their Application class and override getEventHandler() 
+    and return WS1AnchorEvents Implementation object.
+   
+            public class AppApplication extends Application implements SDKClientConfig {
+               @NonNull
+               @Override
+               public WS1AnchorEvents getEventHandler() {
+                  return new WS1AnchorAppEventImpl();
+               }
+            }`
 
 This completes the required service implementation. Build the application to
 confirm that no mistakes have been made.
@@ -483,7 +513,7 @@ Proceed as follows.
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
             // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AWFramework:22.4"
+            implementation "com.airwatch.android:AWFramework:22.5"
         }
     
     Your application might already require different versions of some of the
@@ -497,7 +527,7 @@ Proceed as follows.
     in the above. In practice however, problems are unlikely to be encountered
     with later versions.
 
-3.  Add annotation processor support.
+2.  Add annotation processor support.
 
     In the application build.gradle file, add the `kotlin-kapt` plugin. The
     plugin can be added in the plugins block at the start of the file, for
@@ -513,7 +543,7 @@ Proceed as follows.
         }
         ...
 
-4.  Add the required packaging and compile options.
+3.  Add the required packaging and compile options.
 
     Still in the application build.gradle file, in the `android` block, add the
     packaging option shown in the following snippet.
@@ -541,6 +571,43 @@ Proceed as follows.
     and processor architectures isn't required in the application. If support is
     required, also follow the instructions in the
     [Appendix: Early Version Support].
+
+4.  Apps targeting API level 30 or below, will see below compile time error.
+
+           The minCompileSdk (31) specified in a
+           dependency's AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties)
+           is greater than this module's compileSdkVersion (android-30).
+           Dependency: androidx.work:work-runtime-ktx:2.7.0.
+    
+5. To resolve this, add following lines in build.gradle
+
+            implementation ("com.airwatch.android:AWFramework:22.5") {
+               exclude group: 'androidx.work', module: 'work-runtime-ktx'
+               exclude group: 'com.vmware.xsw.crypto', module: 'xsw-crypto-android'
+            }
+            implementation ('androidx.work:work-runtime-ktx:2.3.4')
+            api ("com.vmware.xsw.crypto:xsw-crypto-android:22.5.1.220523124756")
+
+6.  If App is targeting API level 31 or above, add below lines to resolve compile 
+    time error
+
+            implementation ("com.airwatch.android:AWFramework:22.5") {
+               exclude group: 'androidx.work', module: 'work-runtime-ktx'
+               exclude group: 'com.vmware.xsw.crypto', module: 'xsw-crypto-android'
+            }
+            implementation ('androidx.work:work-runtime-ktx:2.7.0')
+            api ("com.vmware.xsw.crypto:xsw-crypto-android:22.5.1.220523124756")
+
+    And, override getEventHandler() in App's Application class to return 
+    WS1AnchorEvents object.
+
+            public class AppApplication extends AWApplication {
+               @NonNull
+               @Override
+               public WS1AnchorEvents getEventHandler() {
+                  return new WS1AnchorAppEventImpl();
+               }
+            }
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
@@ -658,6 +725,8 @@ In Java, the class could look like this:
         public void attachBaseContext(@NotNull android.app.Application application) {
             awDelegate.attachBaseContext(application);
         }
+
+        
 
         // ... Many more overrides here.
     }
@@ -1043,6 +1112,7 @@ This document is available
 |28Feb2022|Update for 22.2 SDK for Android.            |
 |04Apr2022|Updated for 22.3 SDK for Android.           |
 |29Apr2022|Updated for 22.4 SDK for Android.           |
+|06Jun2022|Updated for 22.5 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

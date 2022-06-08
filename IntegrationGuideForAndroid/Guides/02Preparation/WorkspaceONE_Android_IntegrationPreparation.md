@@ -110,9 +110,9 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 22.4         |           |
-Workspace ONE management console                   | 2203         | 2011      |
-Workspace ONE Intelligent Hub application          | 22.03        | 21.3      |
+Workspace ONE software development kit for Android | 22.5         |           |
+Workspace ONE management console                   | 2204         | 2011      |
+Workspace ONE Intelligent Hub application          | 22.04        | 21.3      |
 Android Operating System                           | Android 12   | Android 5 |
 Android Studio integrated development environment  | 4.1.3        | 4.0.1     |
 Gradle plugin for Android                          | 4.1.3        | 4.0.1     |
@@ -563,7 +563,7 @@ This document is available
 |28Feb2022|Updated for 22.2 SDK for Android.           |
 |04Apr2022|Updated for 22.3 SDK for Android.           |
 |29Apr2022|Updated for 22.4 SDK for Android.           |
-
+|06Jun2022|Updated for 22.5 SDK for Android.           |
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com

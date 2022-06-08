@@ -1101,6 +1101,7 @@ This document is available
 |28Feb2022|Update for 22.2 SDK for Android.            |
 |04Apr2022|Updated for 22.3 SDK for Android.           |
 |29Apr2022|Updated for 22.4 SDK for Android.           |
+|06Jun2022|Updated for 22.5 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

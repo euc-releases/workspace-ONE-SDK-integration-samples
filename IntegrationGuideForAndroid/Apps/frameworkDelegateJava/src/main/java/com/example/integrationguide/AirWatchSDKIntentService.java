@@ -26,7 +26,7 @@ public class AirWatchSDKIntentService extends AirWatchSDKBaseIntentService {
     }
 
     @Override
-    protected void onClearAppDataCommandReceived(
+    public void onClearAppDataCommandReceived(
         Context context,
         ClearReasonCode reasonCode
     ) {
