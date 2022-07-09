@@ -47,9 +47,8 @@ dependencies {
     // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
     implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}") {
         exclude group: 'com.google.gson'
+        exclude group: 'androidx.work', module: 'work-runtime-ktx'
     }
-
-    implementation 'io.insert-koin:koin-core:3.1.5'
-    implementation 'io.insert-koin:koin-android:3.1.5'
+    implementation ('androidx.work:work-runtime-ktx:2.3.4')
 }
 

@@ -5,6 +5,7 @@ package com.example.integrationguide;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -19,6 +20,7 @@ import com.airwatch.bizlib.command.chain.CommandProcessor;
 import com.airwatch.certpinning.repository.CertPinRepository;
 import com.airwatch.clipboard.CopyPasteManager;
 import com.airwatch.crypto.MasterKeyManager;
+import com.airwatch.event.WS1AnchorEvents;
 import com.airwatch.keymanagement.unifiedpin.escrow.EscrowKeyManger;
 import com.airwatch.keymanagement.unifiedpin.interfaces.TokenChangeChannel;
 import com.airwatch.keymanagement.unifiedpin.interfaces.TokenChannel;
@@ -32,6 +34,7 @@ import com.airwatch.sdk.configuration.SettingsExtension;
 import com.airwatch.sdk.context.awsdkcontext.SDKContextHelper;
 import com.airwatch.sdk.context.awsdkcontext.handlers.SDKBaseHandler;
 import com.airwatch.sdk.p2p.P2PChannel;
+import com.airwatch.sdk.shareddevice.ClearReasonCode;
 import com.vmware.chameleon.Configuration;
 import com.vmware.chameleon.function.FunctionFactory;
 
@@ -48,6 +51,8 @@ public class Application
         extends android.app.Application
         implements AWSDKApplication
 {
+
+    private final static String TAG = Application.class.getSimpleName();
 
     // SDK Delegate.
     private final AWSDKApplicationDelegate awDelegate = new AWSDKApplicationDelegate();
@@ -476,4 +481,11 @@ public class Application
     public void initialiseOperationalData() {
         awDelegate.initialiseOperationalData();
     }
+
+    @NonNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return awDelegate.getEventHandler();
+    }   
+
 }

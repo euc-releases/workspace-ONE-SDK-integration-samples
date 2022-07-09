@@ -19,6 +19,7 @@ import com.airwatch.bizlib.command.chain.CommandProcessor;
 import com.airwatch.certpinning.repository.CertPinRepository;
 import com.airwatch.clipboard.CopyPasteManager;
 import com.airwatch.crypto.MasterKeyManager;
+import com.airwatch.event.WS1AnchorEvents;
 import com.airwatch.keymanagement.unifiedpin.escrow.EscrowKeyManger;
 import com.airwatch.keymanagement.unifiedpin.interfaces.TokenChangeChannel;
 import com.airwatch.keymanagement.unifiedpin.interfaces.TokenChannel;
@@ -475,5 +476,11 @@ public class Application
     @Override
     public void initialiseOperationalData() {
         awDelegate.initialiseOperationalData();
+    }
+
+    @NonNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return awDelegate.getEventHandler();
     }
 }

@@ -45,8 +45,8 @@ dependencies {
     // By integrating this software you accept the VMware Workspace ONE Software
     // Development Kit License Agreement that is posted here:
     // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}")
-
-    implementation 'io.insert-koin:koin-core:3.1.5'
-    implementation 'io.insert-koin:koin-android:3.1.5'
+    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}") {
+        exclude group: 'androidx.work', module: 'work-runtime-ktx'
+    }
+    implementation ('androidx.work:work-runtime-ktx:2.3.4')
 }
