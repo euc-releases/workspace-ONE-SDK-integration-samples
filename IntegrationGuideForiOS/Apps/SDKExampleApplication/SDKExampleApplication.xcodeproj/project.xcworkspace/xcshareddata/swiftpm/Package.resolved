@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-workspaceone-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK",
+      "state" : {
+        "revision" : "8cbf878984df7b026042248597c31d202f82d447",
+        "version" : "22.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

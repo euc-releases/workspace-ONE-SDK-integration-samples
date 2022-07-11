@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,20 +38,9 @@
 		B590CA071F74392F00D0ABE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B590CA051F74392F00D0ABE8 /* Main.storyboard */; };
 		B590CA091F7439B500D0ABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590CA081F7439B500D0ABE8 /* Assets.xcassets */; };
 		B590CA151F743A7900D0ABE8 /* AWSDKDefaults.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B590CA111F743A7900D0ABE8 /* AWSDKDefaults.bundle */; };
+		C3789F91286D7FB6002ABA69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3789F90286D7FB6002ABA69 /* SceneDelegate.swift */; };
+		C387CCD8287C30810099CB31 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C387CCD7287C30810099CB31 /* AWSDK */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		92E98D811F6B202F0084445B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A1FE6CB26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceCompromisedStatusViewController.swift; path = SDKExampleApplication/Sources/DeviceCompromisedStatusViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +79,8 @@
 		B590CA121F743A7900D0ABE8 /* DevelopmentExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DevelopmentExportOptions.plist; path = "SDKExampleApplication/Supporting Files/DevelopmentExportOptions.plist"; sourceTree = SOURCE_ROOT; };
 		B590CA141F743A7900D0ABE8 /* SDKExampleApplication.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = SDKExampleApplication.entitlements; path = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements"; sourceTree = SOURCE_ROOT; };
 		B590CA1C1F743CF500D0ABE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SDKExampleApplication/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C3789F90286D7FB6002ABA69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDFF8F7F286DC01C009B9FBA /* AWSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AWSDK.xcframework; path = ../../../AWSDK.xcframework; sourceTree = "<group>"; };
 		F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKExampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C387CCD8287C30810099CB31 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +176,7 @@
 				0AC40E1026D8EA4C003F5688 /* AWSDKHelper+Delegate.swift */,
 				0AC40DF926D4C2BB003F5688 /* NotificationHelper.swift */,
 				B590C9B21F74377900D0ABE8 /* AppDelegate.swift */,
+				C3789F90286D7FB6002ABA69 /* SceneDelegate.swift */,
 				B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */,
 				F7EB82821E924B7900EB5C49 /* Authentication */,
 				F7EB826E1E92413500EB5C49 /* GeneralInformation */,
@@ -210,6 +203,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		EDFF8F7E286DC01C009B9FBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDFF8F7F286DC01C009B9FBA /* AWSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F78126101E938E84005FB3A5 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +226,7 @@
 				F7BC0DC31D93FFB300334C40 /* SDKExampleApplication */,
 				923CFD811F6C49670019B05D /* SDKExampleApplicationTests */,
 				F7BC0DC21D93FFB300334C40 /* Products */,
+				EDFF8F7E286DC01C009B9FBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,13 +319,15 @@
 				F7BC0DBD1D93FFB300334C40 /* Sources */,
 				F7BC0DBE1D93FFB300334C40 /* Frameworks */,
 				F7BC0DBF1D93FFB300334C40 /* Resources */,
-				92E98D811F6B202F0084445B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SDKExampleApplication;
+			packageProductDependencies = (
+				C387CCD7287C30810099CB31 /* AWSDK */,
+			);
 			productName = "iOS Swift Sample App";
 			productReference = F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */;
 			productType = "com.apple.product-type.application";
@@ -340,7 +344,6 @@
 				TargetAttributes = {
 					F7BC0DC01D93FFB300334C40 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = S2ZMFGQM93;
 						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -360,6 +363,9 @@
 				Base,
 			);
 			mainGroup = F7BC0DB81D93FFB300334C40;
+			packageReferences = (
+				C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+			);
 			productRefGroup = F7BC0DC21D93FFB300334C40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,6 +409,7 @@
 				B590C9B41F74377900D0ABE8 /* AppDelegate.swift in Sources */,
 				B590C9B71F74378D00D0ABE8 /* LocalAuthViewController.swift in Sources */,
 				0A2DD10C26E7343D0007D3CE /* StoredCertificatesListController.swift in Sources */,
+				C3789F91286D7FB6002ABA69 /* SceneDelegate.swift in Sources */,
 				0A2DD10B26E7343D0007D3CE /* CertificateInfoTableViewController.swift in Sources */,
 				B590C9B51F74377900D0ABE8 /* SDKUseCasesTableViewController.swift in Sources */,
 				0AC40E1626DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift in Sources */,
@@ -482,8 +489,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 22.5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 22.6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -538,11 +545,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 22.5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 22.6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -554,17 +562,20 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = S2ZMFGQM93;
+				DEVELOPMENT_TEAM = MSHSNKV8MD;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExampleApplication/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SDKExampleApplication/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.third.app;
+				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -577,17 +588,20 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = S2ZMFGQM93;
+				DEVELOPMENT_TEAM = MSHSNKV8MD;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExampleApplication/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SDKExampleApplication/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.third.app;
+				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -617,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
+			requirement = {
+				kind = exactVersion;
+				version = 22.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C387CCD7287C30810099CB31 /* AWSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			productName = AWSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7BC0DB91D93FFB300334C40 /* Project object */;
 }
