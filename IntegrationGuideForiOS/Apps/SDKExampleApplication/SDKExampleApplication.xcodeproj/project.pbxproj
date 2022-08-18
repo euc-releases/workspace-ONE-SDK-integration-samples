@@ -19,6 +19,10 @@
 		0AC40E1626DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC40E1526DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift */; };
 		0ADFBD8026F06CD800F64529 /* EnterpriseBrandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFBD7F26F06CD800F64529 /* EnterpriseBrandingViewController.swift */; };
 		0AF60A8326F8550B00B78C6C /* DocumentInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF60A8226F8550B00B78C6C /* DocumentInteractionViewController.swift */; };
+		A413CD302892966900092F3F /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A413CD292892966800092F3F /* CacheStoragePolicy.m */; };
+		A413CD312892966900092F3F /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A413CD2D2892966800092F3F /* QNSURLSessionDemux.m */; };
+		A413CD322892966900092F3F /* CustomHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A413CD2E2892966900092F3F /* CustomHTTPProtocol.m */; };
+		A413CD332892966900092F3F /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A413CD2F2892966900092F3F /* CanonicalRequest.m */; };
 		B518D5C41F856EA000108DAC /* CryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B518D5C31F856EA000108DAC /* CryptionViewController.swift */; };
 		B590C9B41F74377900D0ABE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B21F74377900D0ABE8 /* AppDelegate.swift */; };
 		B590C9B51F74377900D0ABE8 /* SDKUseCasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */; };
@@ -39,8 +43,21 @@
 		B590CA091F7439B500D0ABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590CA081F7439B500D0ABE8 /* Assets.xcassets */; };
 		B590CA151F743A7900D0ABE8 /* AWSDKDefaults.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B590CA111F743A7900D0ABE8 /* AWSDKDefaults.bundle */; };
 		C3789F91286D7FB6002ABA69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3789F90286D7FB6002ABA69 /* SceneDelegate.swift */; };
-		C387CCD8287C30810099CB31 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C387CCD7287C30810099CB31 /* AWSDK */; };
+		C3A1A6E028A4D25700AC389E /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C3A1A6DF28A4D25700AC389E /* AWSDK */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92E98D811F6B202F0084445B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A1FE6CB26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceCompromisedStatusViewController.swift; path = SDKExampleApplication/Sources/DeviceCompromisedStatusViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +74,15 @@
 		0AF60A8226F8550B00B78C6C /* DocumentInteractionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentInteractionViewController.swift; path = SDKExampleApplication/Sources/DocumentInteractionViewController.swift; sourceTree = "<group>"; };
 		923CFD821F6C49670019B05D /* SDKExampleApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKExampleApplicationTests.swift; sourceTree = "<group>"; };
 		923CFD841F6C49670019B05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A413CD272892966700092F3F /* SDKExampleApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKExampleApplication-Bridging-Header.h"; sourceTree = "<group>"; };
+		A413CD282892966800092F3F /* QNSURLSessionDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSURLSessionDemux.h; sourceTree = "<group>"; };
+		A413CD292892966800092F3F /* CacheStoragePolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheStoragePolicy.m; sourceTree = "<group>"; };
+		A413CD2A2892966800092F3F /* CustomHTTPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHTTPProtocol.h; sourceTree = "<group>"; };
+		A413CD2B2892966800092F3F /* CanonicalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanonicalRequest.h; sourceTree = "<group>"; };
+		A413CD2C2892966800092F3F /* CacheStoragePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheStoragePolicy.h; sourceTree = "<group>"; };
+		A413CD2D2892966800092F3F /* QNSURLSessionDemux.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNSURLSessionDemux.m; sourceTree = "<group>"; };
+		A413CD2E2892966900092F3F /* CustomHTTPProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHTTPProtocol.m; sourceTree = "<group>"; };
+		A413CD2F2892966900092F3F /* CanonicalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanonicalRequest.m; sourceTree = "<group>"; };
 		B518D5C31F856EA000108DAC /* CryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CryptionViewController.swift; path = SDKExampleApplication/Sources/CryptionViewController.swift; sourceTree = "<group>"; };
 		B590C9B21F74377900D0ABE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SDKExampleApplication/Sources/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		B590C9B31F74377900D0ABE8 /* SDKUseCasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SDKUseCasesTableViewController.swift; path = SDKExampleApplication/Sources/SDKUseCasesTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -80,7 +106,6 @@
 		B590CA141F743A7900D0ABE8 /* SDKExampleApplication.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = SDKExampleApplication.entitlements; path = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements"; sourceTree = SOURCE_ROOT; };
 		B590CA1C1F743CF500D0ABE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SDKExampleApplication/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C3789F90286D7FB6002ABA69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDFF8F7F286DC01C009B9FBA /* AWSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AWSDK.xcframework; path = ../../../AWSDK.xcframework; sourceTree = "<group>"; };
 		F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKExampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C387CCD8287C30810099CB31 /* AWSDK in Frameworks */,
+				C3A1A6E028A4D25700AC389E /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +186,22 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		A413CD262892964B00092F3F /* CustomHTTPProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				A413CD2C2892966800092F3F /* CacheStoragePolicy.h */,
+				A413CD292892966800092F3F /* CacheStoragePolicy.m */,
+				A413CD2B2892966800092F3F /* CanonicalRequest.h */,
+				A413CD2F2892966900092F3F /* CanonicalRequest.m */,
+				A413CD2A2892966800092F3F /* CustomHTTPProtocol.h */,
+				A413CD2E2892966900092F3F /* CustomHTTPProtocol.m */,
+				A413CD282892966800092F3F /* QNSURLSessionDemux.h */,
+				A413CD2D2892966800092F3F /* QNSURLSessionDemux.m */,
+				A413CD272892966700092F3F /* SDKExampleApplication-Bridging-Header.h */,
+			);
+			path = CustomHTTPProtocol;
+			sourceTree = "<group>";
+		};
 		B518D5C21F856E5100108DAC /* Cryption */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +213,7 @@
 		B590CA0A1F7439D000D0ABE8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A413CD262892964B00092F3F /* CustomHTTPProtocol */,
 				0AC40DF826D4C2BA003F5688 /* AWSDKHelper.swift */,
 				0AC40E1026D8EA4C003F5688 /* AWSDKHelper+Delegate.swift */,
 				0AC40DF926D4C2BB003F5688 /* NotificationHelper.swift */,
@@ -206,7 +248,6 @@
 		EDFF8F7E286DC01C009B9FBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EDFF8F7F286DC01C009B9FBA /* AWSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -319,6 +360,7 @@
 				F7BC0DBD1D93FFB300334C40 /* Sources */,
 				F7BC0DBE1D93FFB300334C40 /* Frameworks */,
 				F7BC0DBF1D93FFB300334C40 /* Resources */,
+				92E98D811F6B202F0084445B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,7 +368,7 @@
 			);
 			name = SDKExampleApplication;
 			packageProductDependencies = (
-				C387CCD7287C30810099CB31 /* AWSDK */,
+				C3A1A6DF28A4D25700AC389E /* AWSDK */,
 			);
 			productName = "iOS Swift Sample App";
 			productReference = F7BC0DC11D93FFB300334C40 /* SDKExampleApplication.app */;
@@ -344,8 +386,8 @@
 				TargetAttributes = {
 					F7BC0DC01D93FFB300334C40 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 1230;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 1330;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -364,7 +406,7 @@
 			);
 			mainGroup = F7BC0DB81D93FFB300334C40;
 			packageReferences = (
-				C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				C3A1A6DE28A4D25700AC389E /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = F7BC0DC21D93FFB300334C40 /* Products */;
 			projectDirPath = "";
@@ -394,9 +436,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A413CD322892966900092F3F /* CustomHTTPProtocol.m in Sources */,
 				B590C9C71F7437D300D0ABE8 /* DataLossPreventionViewController.swift in Sources */,
 				B590C9C11F7437B100D0ABE8 /* URLSessionNetworkingHandler.swift in Sources */,
 				0ADFBD8026F06CD800F64529 /* EnterpriseBrandingViewController.swift in Sources */,
+				A413CD302892966900092F3F /* CacheStoragePolicy.m in Sources */,
 				B590C9B91F74379A00D0ABE8 /* GeneralInformationViewController.swift in Sources */,
 				B590C9D01F74380500D0ABE8 /* GeneralUtils.swift in Sources */,
 				B590C9BB1F7437A400D0ABE8 /* TunnelingViewController.swift in Sources */,
@@ -412,6 +456,7 @@
 				C3789F91286D7FB6002ABA69 /* SceneDelegate.swift in Sources */,
 				0A2DD10B26E7343D0007D3CE /* CertificateInfoTableViewController.swift in Sources */,
 				B590C9B51F74377900D0ABE8 /* SDKUseCasesTableViewController.swift in Sources */,
+				A413CD312892966900092F3F /* QNSURLSessionDemux.m in Sources */,
 				0AC40E1626DA572F003F5688 /* IntegratedAuthenticationVC+URLSessionHandlerDelegate.swift in Sources */,
 				B590C9D11F74380500D0ABE8 /* LoadingIndicatorView.swift in Sources */,
 				B590C9CB1F7437E500D0ABE8 /* WalkThroughViewController.swift in Sources */,
@@ -421,6 +466,7 @@
 				0A1FE6CC26F9BA190005B4EF /* DeviceCompromisedStatusViewController.swift in Sources */,
 				B590C9C31F7437BE00D0ABE8 /* CustomSettingsViewController.swift in Sources */,
 				0AC40DFA26D4C2BB003F5688 /* AWSDKHelper.swift in Sources */,
+				A413CD332892966900092F3F /* CanonicalRequest.m in Sources */,
 				B590C9CF1F74380500D0ABE8 /* AlertHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,7 +536,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 22.6.0;
+				MARKETING_VERSION = 22.7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -546,7 +592,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 22.6.0;
+				MARKETING_VERSION = 22.7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -560,9 +606,12 @@
 		F7BC0DD41D93FFB400334C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-CustomerSDK";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MSHSNKV8MD;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +628,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomHTTPProtocol/SDKExampleApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -586,9 +637,12 @@
 		F7BC0DD51D93FFB400334C40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-CustomerSDK";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "SDKExampleApplication/Supporting Files/SDKExampleApplication.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MSHSNKV8MD;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,6 +659,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomHTTPProtocol/SDKExampleApplication-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -633,20 +688,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		C3A1A6DE28A4D25700AC389E /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 22.6.0;
+				version = 22.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C387CCD7287C30810099CB31 /* AWSDK */ = {
+		C3A1A6DF28A4D25700AC389E /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C387CCD6287C30810099CB31 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = C3A1A6DE28A4D25700AC389E /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

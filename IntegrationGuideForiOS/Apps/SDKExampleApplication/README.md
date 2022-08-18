@@ -189,6 +189,9 @@ You can file support requests in VMware Customer Connect. See the following page
 for instructions:  
 [https://kb.vmware.com/s/article/2006985](https://kb.vmware.com/s/article/2006985)
 
+[Code in this directory](CustomHTTPProtocol/) is based on Apple sample code.
+The original code is published on the Apple website, [Apple sample code] (https://developer.apple.com/library/archive/samplecode/CustomHTTPProtocol/Introduction/Intro.html).
+
 # License
 Copyright 2022 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed

@@ -9,7 +9,8 @@
 
 import AWSDK
 
-internal class AWSDKHelper {
+@objcMembers
+internal class AWSDKHelper: NSObject {
 
     static let shared: AWSDKHelper = .init()
     lazy private var controller = AWController.clientInstance()
@@ -29,7 +30,7 @@ internal class AWSDKHelper {
         return brandingPayload
     }
 
-    private init() { }
+    private override init() { }
 
     /// Intializer for AWSDK
     internal func initializeSDK() {
@@ -227,5 +228,23 @@ extension AWSDKHelper {
             eventValue: "EVENT_VALUE",
             valueType: AWSDK.AnalyticsEventValueType.string
         )
+    }
+}
+
+// MARK: - Integrated Authentication.
+extension AWSDKHelper {
+    func handle(challenge: URLAuthenticationChallenge?, completionHandler: ((URLSession.AuthChallengeDisposition, URLCredential?) -> Void)?) -> Bool {
+
+        do {
+            try AWController.clientInstance().canHandle(protectionSpace: challenge?.protectionSpace)
+            return AWController.clientInstance().handleChallengeForURLSession(challenge: challenge, completionHandler: completionHandler)
+        }
+        catch _ {
+            return false
+        }
+    }
+
+    func validate(serverTrust: SecTrust) -> Bool {
+        return AWController.clientInstance().validate(serverTrust: serverTrust, trustStore: .deviceAndCustom, strictness: .ignore)
     }
 }
