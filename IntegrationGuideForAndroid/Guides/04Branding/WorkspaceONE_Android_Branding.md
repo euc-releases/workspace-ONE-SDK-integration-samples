@@ -115,10 +115,10 @@ Instructions in this document have been tested with the following software
 versions.
 
 Software                                         | Version
--------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 22.6
-Workspace ONE management console                 | 2204
-Android Studio integrated development environment| 4.1.3
+-------------------------------------------------|---------
+Workspace ONE SDK for Android                    | 22.8
+Workspace ONE management console                 | 2206
+Android Studio integrated development environment| 2021.2.1
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -1103,6 +1103,7 @@ This document is available
 |29Apr2022|Updated for 22.4 SDK for Android.           |
 |06Jun2022|Updated for 22.5 SDK for Android.           |
 |05Jul2022|Updated for 22.6 SDK for Android.           |
+|23Aug2022|Updated for 22.8 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

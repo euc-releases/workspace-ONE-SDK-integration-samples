@@ -59,10 +59,10 @@ Instructions in this document have been tested with the following software
 versions.
 
 Software                                         | Version
--------------------------------------------------|--------
-Workspace ONE SDK for Android                    | 22.6
-Workspace ONE management console                 | 2204
-Android Studio integrated development environment| 4.1.3
+-------------------------------------------------|---------
+Workspace ONE SDK for Android                    | 22.8
+Workspace ONE management console                 | 2206
+Android Studio integrated development environment| 2021.2.1
 Gradle plugin for Android                        | 4.1.3
 
 # Integration Paths Diagram
@@ -187,7 +187,7 @@ First, update the build configuration and add the required library files.
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
             // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AirWatchSDK:22.6"
+            implementation "com.airwatch.android:AirWatchSDK:22.8"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -340,7 +340,7 @@ Proceed as follows.
     
 5.  To resolve the above, add following lines in build.gradle
     
-            implementation ("com.airwatch.android:AirWatchSDK:22.6") {
+            implementation ("com.airwatch.android:AirWatchSDK:22.8") {
                 exclude group: 'androidx.work', module: 'work-runtime-ktx' 
             } 
             implementation ('androidx.work:work-runtime-ktx:2.3.4')
@@ -513,7 +513,7 @@ Proceed as follows.
             // By integrating this software you accept the VMware Workspace ONE Software
             // Development Kit License Agreement that is posted here:  
             // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AWFramework:22.6"
+            implementation "com.airwatch.android:AWFramework:22.8"
         }
     
     Your application might already require different versions of some of the
@@ -581,22 +581,18 @@ Proceed as follows.
     
 5. To resolve this, add following lines in build.gradle
 
-            implementation ("com.airwatch.android:AWFramework:22.6") {
+            implementation ("com.airwatch.android:AWFramework:22.8") {
                exclude group: 'androidx.work', module: 'work-runtime-ktx'
-               exclude group: 'com.vmware.xsw.crypto', module: 'xsw-crypto-android'
             }
             implementation ('androidx.work:work-runtime-ktx:2.3.4')
-            api ("com.vmware.xsw.crypto:xsw-crypto-android:22.5.1.220523124756")
 
 6.  If App is targeting API level 31 or above, add below lines to resolve compile 
     time error
 
-            implementation ("com.airwatch.android:AWFramework:22.6") {
+            implementation ("com.airwatch.android:AWFramework:22.8") {
                exclude group: 'androidx.work', module: 'work-runtime-ktx'
-               exclude group: 'com.vmware.xsw.crypto', module: 'xsw-crypto-android'
             }
             implementation ('androidx.work:work-runtime-ktx:2.7.0')
-            api ("com.vmware.xsw.crypto:xsw-crypto-android:22.5.1.220523124756")
 
     And, override getEventHandler() in App's Application class to return 
     WS1AnchorEvents object.
@@ -1114,6 +1110,7 @@ This document is available
 |29Apr2022|Updated for 22.4 SDK for Android.           |
 |06Jun2022|Updated for 22.5 SDK for Android.           |
 |05Jul2022|Updated for 22.6 SDK for Android.           |
+|23Aug2022|Updated for 22.8 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
