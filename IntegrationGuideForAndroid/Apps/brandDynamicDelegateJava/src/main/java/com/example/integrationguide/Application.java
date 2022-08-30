@@ -483,4 +483,32 @@ public class Application
     public WS1AnchorEvents getEventHandler() {
         return awDelegate.getEventHandler();
     }
+
+    @NonNull
+    @Override
+    public Future<Boolean> emitEvent(@NonNull String s, boolean b) {
+        return awDelegate.emitEvent(s, b);
+    }
+
+    @NonNull
+    @Override
+    public Future<Boolean> emitEvent(@NonNull String s, @NonNull byte[] bytes) {
+        return awDelegate.emitEvent(s, bytes);
+    }
+
+    @NonNull
+    @Override
+    public Future<Boolean> emitEvent(@NonNull String s, @NonNull Number number) {
+        return awDelegate.emitEvent(s, number);
+    }
+
+    @Override
+    public boolean loadModule(@NonNull String s) {
+        return awDelegate.loadModule(s);
+    }
+
+    @Override
+    public void registerAsyncFunction(@NonNull String s, @NonNull FunctionFactory functionFactory) {
+        awDelegate.registerAsyncFunction(s, functionFactory);
+    }
 }
