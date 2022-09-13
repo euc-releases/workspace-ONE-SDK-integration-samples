@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{E6B4A1C0-007B-4016-9BAD-362FB5D8ED25}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinSampleApp/Info.plist">
+    <Files>
+      <File FileName="XamarinSampleApp/Info.plist" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamarinSampleApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9EC327D-3A1F-427F-A280-C1A550610366" automaticSigning="False" />
+  <MultiItemStartupConfigurations />
+</Properties>

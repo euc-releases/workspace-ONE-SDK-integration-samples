@@ -1,0 +1,96 @@
+# Copyright 2022 VMware, Inc.
+# SPDX-License-Identifier: BSD-2-Clause
+# OSX
+#
+.DS_Store
+plugins/
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+#iOS
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+.DS_Store
+build/
+
+#Android
+# Non-project-specific build files:
+build.xml
+local.properties
+/gradlew
+/gradlew.bat
+/gradle
+# Ant builds
+ant-build
+ant-gen
+# Eclipse builds
+gen
+out
+# Gradle build artifacts
+.gradle
+.gradletasknamecache
+/build
+/CordovaLib/build
+/app/build
+gradle-app.setting
+# Android Studio
+.idea
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
+
+
+*.keystore 
+
+bin/*
+!/plugins
+!/plugins/android.json
+!/plugins/fetch.json
+plugins/*
+
+node_modules
+www/index.js
+js/**/*.js
+js/**/*.js.map
+bootstrap/**/*.js
+bootstrap/**/*.js.map
+bootstrap/**/*.css
+bootstrap/**/*.css.map
+
+

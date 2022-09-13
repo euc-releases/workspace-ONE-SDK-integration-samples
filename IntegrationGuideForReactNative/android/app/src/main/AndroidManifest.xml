@@ -1,0 +1,64 @@
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" package="com.airwatch.reactapp" tools:overrideLibrary="androidx.security">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize">
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
+      </activity>
+        <activity
+            android:name="com.airwatch.login.ui.activity.SDKSplashActivity" android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" /> </intent-filter>
+        </activity>
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" >
+            <intent-filter>
+            <!--
+            Next line uses the initial dot notation as a shorthand for the package name. -->
+            <action android:name=".airwatchsdk.BROADCAST" />
+            </intent-filter>
+
+            <intent-filter>
+            <action android:name="com.airwatch.intent.action.APPLICATION_CONFIGURATION_CHANGED" />
+            <!--
+            In the host attribute, replace com.your.package with the package name of your application.
+            -->
+            <data android:scheme="app" android:host="com.your.package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.workspaceonesdk.WorkspaceOneSDKIntentService"/>
+    </application>
+    <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+
+
+</manifest>

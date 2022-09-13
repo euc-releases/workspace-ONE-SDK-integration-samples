@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="awsdk_company_name">AirWatch</string>
+  <string name="app_name">Xamarin Android Sample App</string>
+  <string name="sdk_use_case">SDK Use Cases</string>
+</resources>

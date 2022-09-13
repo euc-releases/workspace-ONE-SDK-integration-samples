@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="sdk_usecase_list_items">
+    <item>Information</item>
+    <item>Tunneling</item>
+    <item>Authentication</item>
+    <item>Instrumentation</item>
+    <item>Remote Config</item>
+    <item>DLP</item>
+    <item>Encryption</item>
+  </string-array>
+
+</resources>

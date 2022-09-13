@@ -1,0 +1,64 @@
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools"
+    package="com.vmware.workspaceone_sdk_flutter_example">
+    <!-- io.flutter.app.FlutterApplication is an android.app.Application that
+         calls FlutterMain.startInitialization(this); in its onCreate method.
+         In most cases you can leave this as-is, but you if you want to provide
+         additional functionality it is fine to subclass or reimplement
+         FlutterApplication and put your custom class here. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        tools:replace="android:label"
+        android:name=".MainApplication"
+        android:label="workspaceone_sdk_flutter_example"
+        android:icon="@mipmap/ic_launcher" android:allowBackup="false" >
+        <activity
+            android:name=".MainActivity"
+             android:theme="@style/LaunchTheme"
+            >
+        </activity>
+        <activity
+            android:name="com.airwatch.login.ui.activity.SDKSplashActivity" android:label="workspaceone_sdk_flutter_example" android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" /> </intent-filter>
+        </activity>
+        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" >
+            <intent-filter>
+                <!--
+                Next line uses the initial dot notation as a shorthand for the package name. -->
+                <action android:name=".airwatchsdk.BROADCAST" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.airwatch.intent.action.APPLICATION_CONFIGURATION_CHANGED" />
+                <!--
+                In the host attribute, replace com.your.package with the package name of your application.
+                -->
+                <data android:scheme="app" android:host="com.your.package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.vmware.workspaceone_sdk_flutter.WorkspaceOneSDKIntentService"/>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>

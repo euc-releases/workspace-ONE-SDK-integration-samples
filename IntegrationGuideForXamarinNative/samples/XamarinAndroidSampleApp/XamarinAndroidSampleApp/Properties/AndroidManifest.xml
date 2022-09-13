@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.airwatch.sample.app" android:installLocation="preferExternal" android:versionCode="23" android:versionName="22.1.0">
+	<uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+	<application android:name="SampleApplication" android:theme="@style/AppTheme" tools:replace="android:label" android:allowBackup="false" android:label="Xamarin Android Sample App">
+		<activity android:name="com.airwatch.gateway.ui.GatewaySplashActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".MainActivity" android:label="@string/app_name" />
+		<receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST">
+			<intent-filter>
+				<action android:name="com.airwatch.xamarinsampleapp.airwatchsdk.BROADCAST" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+				<action android:name="android.intent.action.PACKAGE_REPLACED" />
+				<action android:name="android.intent.action.PACKAGE_CHANGED" />
+				<action android:name="android.intent.action.PACKAGE_RESTARTED" />
+				<data android:scheme="package" />
+			</intent-filter>
+		</receiver>
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.airwatch.xamarinsampleapp.provider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths" />
+		</provider>
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+	</application>
+	<uses-sdk android:targetSdkVersion="29" android:minSdkVersion="23" />
+</manifest>

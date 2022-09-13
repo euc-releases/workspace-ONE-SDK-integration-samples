@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.vmware-airwatch-sdk.forms" android:versionCode="2" android:versionName="22.1.0">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
+	<application android:name="WorkspaceOne.Example.Android" tools:replace="android:label,android:allowBackup" android:allowBackup="false" android:label="WorkspaceOne.Example.Android" android:debuggable="false">
+		<receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST">
+			<intent-filter>
+				<action android:name="com.vmware.buildtest.airwatchsdk.BROADCAST" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+				<action android:name="android.intent.action.PACKAGE_REPLACED" />
+				<action android:name="android.intent.action.PACKAGE_CHANGED" />
+				<action android:name="android.intent.action.PACKAGE_RESTARTED" />
+				<data android:scheme="package" />
+			</intent-filter>
+		</receiver>
+		<service android:name=".FirebaseInstanceIDService" android:stopWithTask="false">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<activity android:name="com.airwatch.gateway.ui.GatewaySplashActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".MainActivity" />
+		<meta-data android:name="com.airwatch.certpinning.refresh.interval" android:value="1" />
+		<meta-data android:name="com.airwatch.certpinning.refresh.interval.unit" android:value="DAYS" />
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+</manifest>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="WorkspaceOne.Example.UITestPage"
+             xmlns:controls="clr-namespace:WorkspaceOne.Example.Controls"
+             xmlns:behaviors="clr-namespace:WorkspaceOne.Example.Behaviours"
+			 xmlns:aw="clr-namespace:WorkspaceOne.Forms.UI;assembly=WorkspaceOne.Forms">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="CenterAndExpand"
+					 HorizontalOptions="Fill">
+            <!--<StackLayout Margin="20,5,20,0">
+                    <Label
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        Text="My Custom Renderer below:"
+                         />
+                    <Frame CornerRadius="2" HeightRequest="42" HasShadow="false" Padding="0"
+                           BackgroundColor="#D4D4D4" VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="FillAndExpand" Margin="0,5,0,0">
+                        <Frame CornerRadius="2" HasShadow="false" Padding="0"
+                               BackgroundColor="White" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="FillAndExpand" Margin="1,1,1,1">
+                                <controls:BorderlessEntry TextColor="Black" Keyboard="Numeric" HeightRequest="42" VerticalOptions="CenterAndExpand"
+                                                      HorizontalOptions="FillAndExpand"
+                                                      Margin="10,0,0,0" >
+                                <controls:BorderlessEntry.Behaviors>
+                                    <behaviors:DecimalLengthValidator />
+                                </controls:BorderlessEntry.Behaviors>
+                                </controls:BorderlessEntry>
+
+                        </Frame>
+                    </Frame>
+                </StackLayout>-->
+            <Label Text="Normal Entry"/>
+            <Entry  ReturnType="Default" Keyboard="Numeric">
+                <Entry.Behaviors>
+                     <behaviors:DecimalLengthValidator />
+                </Entry.Behaviors>
+            </Entry>
+            
+			<Label Text="AWEntry:" />
+			<aw:AWEditor  Text="{Binding MyText}" BackgroundColor="White" TextColor="Black"
+						HeightRequest="180" >
+              
+             </aw:AWEditor>
+            
+            <Button Text="Change text" Command="{Binding ChangeTextCmd}"/>
+            <Button Text="Change Pass Type" Command="{Binding ChangePasswordCmd}"/>
+            <Label Text="Password:"/>
+            <aw:AWEntry IsPassword="{Binding IsSecure}" BackgroundColor="White" TextColor="Black"
+						HeightRequest="80" Text="{Binding MyText}" />
+			<Label Text="{Binding MyText}" />
+			<Entry Text="{Binding MyText}" TextColor="White"
+						 HeightRequest="80" />
+			<Label Text="AWCopyEnabledWebView:" />
+			<aw:AWCopyEnabledWebView Source="https://www.google.com"
+									 HorizontalOptions="FillAndExpand"
+									 HeightRequest="200"
+									 WidthRequest="200"
+									 BackgroundColor="Red" />
+			<Button x:Name="openUri"
+					Text="OpenUri" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

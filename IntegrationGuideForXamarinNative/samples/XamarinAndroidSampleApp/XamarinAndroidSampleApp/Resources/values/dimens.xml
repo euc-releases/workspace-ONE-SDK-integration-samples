@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="padding_size">8dp</dimen>
+  <dimen name="layout_padding">16dp</dimen>
+  <dimen name="listview_padding">16dp</dimen>
+</resources>

@@ -1,0 +1,67 @@
+<!--  dlp.html-->
+<!--  WS1 SDK integration with Apache Cordova Sample App-->
+
+<!--  Copyright 2022 VMware, Inc. -->
+<!--  SPDX-License-Identifier: BSD-2-Clause -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/bootstrap/css/bootstrap.min.css">
+    <style>
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+        
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+        
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body onload="loadDLPSettings()">
+    <div class="container-md">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="d-flex flex-row">
+                <div class="p-2"><a href="index.html" class="previous round">&#8249;</a></div>
+                <div class="p-2"></div>
+                <div class="p-2"><a class="navbar-brand" href="#">DLP Settings</a></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-row">
+                <div class="p-2"><label>Enable copy paste :</label></div>
+                <div class="p-2"><label id="enableCopyPaste">...</label></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="p-2"><label>Allow Offline :</label></div>
+                <div class="p-2"><label id="allowOffline">...</label></div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="p-2"><label>Restrict documents to apps :</label></div>
+                <div class="p-2"><label id="restrictDocumentsToApps">...</label></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="../www/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

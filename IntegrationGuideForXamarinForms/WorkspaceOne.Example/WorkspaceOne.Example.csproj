@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xam.Plugin.Hud" Version="1.0.5" />
+    <PackageReference Include="WorkspaceOne.Forms" Version="22.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Converter\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Behaviors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\InformationPage.xaml.cs">
+      <DependentUpon>InformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\DlpPage.xaml.cs">
+      <DependentUpon>DlpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\RemoteConfigPage.xaml.cs">
+      <DependentUpon>RemoteConfigPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\InstrumentationPage.xaml.cs">
+      <DependentUpon>InstrumentationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\10.1.3.7\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pages\InformationPage.xaml" />
+  </ItemGroup>
+</Project>

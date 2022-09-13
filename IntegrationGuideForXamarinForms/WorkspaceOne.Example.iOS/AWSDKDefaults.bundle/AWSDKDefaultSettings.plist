@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Branding</key>
+	<dict>
+		<key>Colors</key>
+		<dict>
+			<key>PrimaryHighlight</key>
+			<dict>
+				<key>Red</key>
+				<integer>55</integer>
+				<key>Green</key>
+				<integer>114</integer>
+				<key>Blue</key>
+				<integer>196</integer>
+				<key>Alpha</key>
+				<integer>255</integer>
+			</dict>
+			<key>EnableBranding</key>
+			<true/>
+		</dict>
+		<key>SplashLogo_2x</key>
+		<string>Splash</string>
+		<key>SplashLogo_1x</key>
+		<string>Splash</string>
+		<key>AppLogo_2x</key>
+		<string>Splash</string>
+		<key>AppLogo_1x</key>
+		<string>Splash</string>
+	</dict>
+	<key>AWMailtoSchemeConfiguration</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>AWURLSchemeConfiguration</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>AWBlockerViewEnableKey</key>
+	<true/>
+	<key>AWClipboardEnabled</key>
+	<true/>
+	<key>EnableSecureDocumentController</key>
+	<true/>
+	<key>DisableActivityViewController</key>
+	<false/>
+</dict>
+</plist>

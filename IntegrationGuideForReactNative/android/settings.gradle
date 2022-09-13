@@ -1,0 +1,8 @@
+// Copyright 2022 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+rootProject.name = 'example'
+include ':react-native-workspace-one-sdk'
+project(':react-native-workspace-one-sdk').projectDir = new File(rootProject.projectDir, '../../../react-native/ws1-react-native-sdk/android')
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'

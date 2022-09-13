@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <style name="SDKBaseTheme" parent="VisionTheme.DayNight">
+            <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
+            <!-- colorPrimary is used for the default action bar background -->
+            <item name="colorPrimary">#2196F3</item>
+            <!-- colorPrimaryDark is used for the status bar -->
+            <item name="colorPrimaryDark">#1976D2</item>
+            <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+            <item name="colorAccent">#FF4081</item>
+            <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight and colorSwitchThumbNormal. -->
+            <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+            <!-- Splash screen icon Branding change -->
+            <item name="splashLogo">@drawable/appicon</item>
+            <!-- Login screen icon Branding change -->
+            <item name="awsdkLoginBrandingIcon">@drawable/appicon</item>
+            <item name="awsdkApplicationColorPrimary">#FF4081</item>
+        </style>
+        <style name="AppTheme.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+        <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        <style name="AppTheme.PopupOverlay" parent="VisionTheme.DayNight"/>
+    </resources>

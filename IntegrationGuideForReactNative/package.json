@@ -1,0 +1,41 @@
+{
+  "name": "example",
+  "version": "22.3.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.8.7",
+    "@react-navigation/stack": "^5.12.4",
+    "install": "^0.13.0",
+    "node-notifier": "^8.0.1",
+    "react": "16.13.1",
+    "react-native": "^0.64.2",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-reanimated": "^1.13.1",
+    "react-native-safe-area-context": "^3.1.8",
+    "react-native-screens": "^2.13.0",
+    "react-native-webview": "^11.0.3",
+    "watchman": "^1.0.0",
+    "ws1-sdk-react-native": "^22.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/runtime": "^7.12.1",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.5.2",
+    "eslint": "^7.11.0",
+    "jest": "^26.5.3",
+    "metro-react-native-babel-preset": "^0.63.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

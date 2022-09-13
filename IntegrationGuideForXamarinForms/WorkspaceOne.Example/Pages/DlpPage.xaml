@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WorkspaceOne.Example.Pages.DlpPage" xmlns:converter="clr-namespace:WorkspaceOne.Example.Converter;assembly=WorkspaceOne.Example" xmlns:ui="clr-namespace:WorkspaceOne.Forms.UI;assembly=WorkspaceOne.Forms" Title="DLP">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ListToBooleanConverter x:Key="listToBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <AbsoluteLayout>
+       <StackLayout>
+         <Label Text="Test Copy Paste" FontSize="Large" />
+        <ui:AWEditor Text="Coy Paste" TextColor="Black" HeightRequest="75"/>
+            <ListView x:Name="MyListView" ItemsSource="{Binding Items}" IsVisible="{Binding Items, Converter={StaticResource listToBool}, ConverterParameter=0}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding .}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="Info" IsVisible="{Binding Items, Converter={StaticResource listToBool}, ConverterParameter=1}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="No DLP data received yet..." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+    </StackLayout>
+    </AbsoluteLayout>
+        
+    
+</ContentPage>

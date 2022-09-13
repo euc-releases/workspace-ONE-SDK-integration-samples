@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+    Copyright 2022 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<widget id="com.vmware.sample.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ExampleApp</name>
+    <description>
+        A sample Apache Cordova application that uses plugin for Workspace ONE SDK
+    </description>
+    <author email="workspace-one-sdk@vmware.com" href="https://vmware.com">
+        Workspace ONE SDK team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

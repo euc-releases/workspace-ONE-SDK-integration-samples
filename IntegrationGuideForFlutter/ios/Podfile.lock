@@ -1,0 +1,28 @@
+PODS:
+  - Flutter (1.0.0)
+  - webview_flutter (0.0.1):
+    - Flutter
+  - workspaceone_sdk_flutter (1.1.0):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
+  - workspaceone_sdk_flutter (from `.symlinks/plugins/workspaceone_sdk_flutter/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  webview_flutter:
+    :path: ".symlinks/plugins/webview_flutter/ios"
+  workspaceone_sdk_flutter:
+    :path: ".symlinks/plugins/workspaceone_sdk_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  webview_flutter: d2b4d6c66968ad042ad94cbb791f5b72b4678a96
+  workspaceone_sdk_flutter: 7b7fdbbae01f56c6af54873b668e59236d03d6b9
+
+PODFILE CHECKSUM: e197ce7144df801ba13be508d2933d8e23fbf6fc
+
+COCOAPODS: 1.11.3

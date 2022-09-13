@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "528255082151",
+    "firebase_url": "https://wsproject-3d873.firebaseio.com",
+    "project_id": "wsproject-3d873",
+    "storage_bucket": "wsproject-3d873.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528255082151:android:2b26f206179d129939c582",
+        "android_client_info": {
+          "package_name": "com.workspaceone.formsApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528255082151-743lo84v6imj4cmjkrgtddd00vo2d6c0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaKrxRByTgkeuo1DHEs5IZpazGeMDzSZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528255082151-743lo84v6imj4cmjkrgtddd00vo2d6c0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
