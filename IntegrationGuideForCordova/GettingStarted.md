@@ -9,8 +9,8 @@ For detailed information about the Workspace ONE SDK and managing internal apps,
 In order to inject Workspace ONE SDK functionality into your Apache Cordova App, integrate the two systems.
 
 ### Requirements
-* iOS 12.0+
-* Visual Studio Code and Xcode 12.1
+* iOS 13.0+ (for iOS SDK component) / Xcode 13.x
+* Visual Studio Code 
 * Workspace ONE-enrolled iOS test device
 * VMware Workspace One SDK Plugin for Apache Cordova from npm.
 
@@ -54,7 +54,8 @@ Include NSFaceIDUsageDescription in the application info.plist file to enable th
 To integrate Workspace ONE SDKs into an existing Apache cordova app follow described steps.
 
 ### Requirements
-* Visual Studio Code and Android Studio
+* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later 
+* Visual Studio Code 
 * VMware Workspace One SDK Plugin for Apache Cordova from npm.
 * Android test device running Lollipop and above.
 * Intelligent Hub for Android from Google Playstore.

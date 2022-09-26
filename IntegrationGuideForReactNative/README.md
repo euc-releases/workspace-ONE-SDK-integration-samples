@@ -4,13 +4,13 @@ Use this document to install the VMware Workspace One SDK Plugin for React-Nativ
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2005 or later
-* Android v8.0+ / API Level 23+ 
-* iOS 12.0+ / Xcode 13/13.1/13.2.1
+* Workspace ONE UEM Console 2102+ (may need to be higher depending on specific features)
+* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
+* iOS 13.0+ (for iOS SDK component) / Xcode 13.x
 
 
 ## Initial Setup
-<medium>Please find the [Prerequisites](https://github.com/vmwareairwatchsdk/vmware-wsone-sdk-reactnative/blob/master/GettingStarted.md) for using the React Native SDK </medium>
+<medium>Please find the [Prerequisites](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForReactNative/GettingStarted.md) for using the React Native SDK </medium>
 
 ## Package installation
 
@@ -143,7 +143,7 @@ Initialization of the SDK adds the listed features to your application, dependin
     * Branding of VMware AirWatch splash screens when SDK application is launched on device
 
  ## Feature Implementation
- Please follow document at [implementation](https://github.com/vmwareairwatchsdk/vmware-wsone-sdk-reactnative/blob/master/GettingStarted.md).
+ Please follow document at [implementation](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForReactNative/GettingStarted.md).
 
 ## Release Notes
 * Updated Version of WorkspaceOne SDKs(22.2.0 for iOS and Android)
