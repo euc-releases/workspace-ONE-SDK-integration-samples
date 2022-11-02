@@ -1,0 +1,174 @@
+
+//Alert title
+"AuthenticationRequired" = "Authentication Required";
+"AuthenticationUnsupported" = "Authentication Unsupported";
+"InvalidURL" = "Invalid URL";
+"FailedFetchInfo" = "Failed to Fetch Info";
+"CredentialsUpdated" = "Credentials Updated";
+"LoginError" = "Login Error";
+"initFail" = "Initialization Failed";
+
+//Alert messages
+"AuthenticationRequiredMessage" = "Tunneling was successfull and we were able to hit the endpoint but this URL requires authentication. Please refer the Integrated Authentication ViewController OR access a URL that does not need authentication.";
+"authenticationUnsupportedMessage" = "Tunneling was successfull and we were able to hit the endpoint but this type of Authentication challenge is not supported by the Workspace ONE SDK.";
+"invalidURLMessage" = "Please confirm the formatting of the URL.";
+"FailedFetchInfoMessage" = "An Error occurred while Workspace ONE SDK was trying to perform Integrated Auth. Please make sure your enrollment credentials have access to this endpoint";
+"TryAgainMessage" = "Credentials Updated successfully, Please try again!";
+"LoginFailedMessage" = "An Error occurred while Workspace ONE SDK was trying to perform Integrated Auth. Please make sure your enrollment credentials have access to this endpoint";
+"initFailMessage" = "An error occured while initializing AW SDK.";
+
+
+"Dismiss" = "Dismiss";
+"Ok" = "OK";
+
+
+//Home screen options
+"GeneralInformation" = "General Information";
+"DLP" = "Data Loss Prevention";
+"Encryption" = "Encryption/Decryption";
+"RemoteConfiguration" = "Remote Configuration";
+"Beacon" = "Send Beacon And Check Compromised Status";
+"Branding" = "Enterprise Branding";
+"IAuthentication" = "Integrated Authentication";
+"AppTunneling" = "Application Tunneling";
+"Logging" = "Logging";
+"StoredCertificates" = "Stored Certificates";
+
+//NavigationBar
+"homeNavigationTitle" = "SDK Features";
+"customNavigationTitle" = "Custom Settings";
+"CompromisedNavigationTitle" = "Device Compromised Status";
+"DLPNavigationTitle" = "DLP";
+"clipBoardNavigationTitle" = "Screenshot";
+"cryptoNavigationTitle" = "Crypto View";
+"tunnelingNavigationTitle" = "Application Tunneling";
+"LoggingNavigationTitle" = "Logging";
+"CertificatesListNavigationTitle" = "Certificates List";
+
+//ToolBar
+"clearKeychainTitle" = "Clear keychain";
+
+
+//GeneralInformation
+"userInfo" = "User Information";
+"userName" = "User Name";
+"groupID" = "Group ID";
+"groupName" = "Group Name";
+"email" = "Email ID";
+"fullName" = "Full Name";
+"domain" = "Domain";
+"userID" = "User ID";
+"appStatusInfo" = "Application Status Information";
+"enrolled" = "Enrolled";
+"isAppSupported" = "Is App supported";
+"isManaged" = "Is Managed";
+"consoleVersion" = "Console Version";
+"deviceInfo" = "Shared Device Information";
+"stagingEnabled" = "Staging Enabled";
+"sharedDeviceStatus" = "CICO Status";
+"userContextID" = "Checked Out User";
+
+//Integrated View
+"urlPlaceholder" = "Enter the url with http/https";
+"goButtonTitle" = "GO";
+"status" = "Http Status";
+"challengeType" = "challenge type is";
+
+//Custom Settings
+"fetchButtonTitle" = "Fetch Custom Settings";
+"CustomSettingsalertTitle" = "Custom Settings";
+"CustomSettingsalertMessage" = "Custom settings payload is either blank or not configured in SDK Profile";
+
+
+//Device compromised
+"compromisedMessage" = "Device is compromised";
+"NotCompromisedMessage" = "Device is not compromised";
+"checkCompromisedTitle" = "Check Device Compromised Status";
+"beaconTitle" = "Device Status Beacon";
+
+//DLP options
+"copyPaste" = "Cut-Copy-Paste";
+"Screenshot" = "Screenshot";
+"email" = "Compose Email";
+"openURL" = "Open URL";
+"customKeyboard" = "Custom Keyboard";
+"documentController" = "Document Interaction Controller";
+"checkDLPSettings" = "Please make sure to define correct bundle settings in your project and enable DLP in the SDK profile on the Workspace ONE console";
+
+//cut copy paste
+"tryCopy" = "Try to copy me";
+"tryPaste" = "Try pasting any text here";
+
+//Screenshot
+"ScreenshotInfo" = "If screenshot restriction is enabled via DLP option in console, then on taking a screenshot, blocker alert is displayed. This is across the app and can be tested on any screen";
+
+//compose Mail
+"sendMail" = "Send mail";
+
+//openURL
+"openURL" = "Open URL";
+
+//Custom Keyboard
+"keyboardInstruction" = "
+By setting the option via UEM, the custom keyboard can be restricted.
+1. Download any keyboard and enable it via settings.
+2. Make sure DLP is enabled and Third Party Keyboards is set to false.
+3. Try choosing new keyboard on textfield below. This will not be possible due to policy set.
+4. Now cross check with any non SDK app eg: Notes. It will allow new keyboard usage.
+";
+"keyboardTextPlaceholder" = "Start editing and try to change keyboard";
+
+//Document Interaction
+"previewPdf" = "Preview Sample PDF";
+"sharePDF" = "Share PDF";
+"openApple" = "Open Apple.com";
+
+//Encryption/Decryption
+"cryptoText" = "Enter multiline text to encrypt/decrypt";
+"cryptoError" = "Unknown error. Please contact admin!!";
+"decryptText" = "To edit text, first decrypt it";
+"encryptText" = "Enter/update text and Click Encrypt to encrypt the text";
+"encryptionWarning" = "Encryption requires user to unlock the container if it locked with a passcode or username/password. Expect to see an error thrown if the container is locked.";
+"cryptoEmptyErrorMessage" = "Enter text to encrypt";
+"Decrypt" = "Decrypt";
+"Encrypt" = "Encrypt";
+"DecryptFailed" = "Decryption Failed";
+"EncryptFailed" = "Encryption Failed";
+"CryptoFailMessage" = "Error occured when trying to";
+
+//Branding
+"Colors" = "Colors";
+"Images" = "Images";
+"invalidValues" = "Strings / Invalid values";
+
+//Tunneling
+"selectNetworkType" = "Select Networking Connection Type";
+"WebViewType" = "Web View";
+"NSURLSession" = "NSURLSession";
+"WKWebView" = "WKWebView";
+
+"tunnelingURLText" = "Enter the Endpoint URL that does NOT need authentication";
+
+//Logging
+"LoggingSectionTitle" = "Log Details";
+"PickerViewFieldTitle" = "Log Level";
+"LogTextFieldPlaceholder" = "Enter log message";
+"AppendLogBtnTitle" = "Append Logs";
+"UploadLogBtnTitle" = "Upload Logs to server";
+"LoggingAlertTitle" = "SDK Log Reporter";
+"LoggingDefaultError" = "Unknown Error";
+"EmptyLogMessage" = "Log message is empty";
+"AppendLogSuccessMessage" = "Logs appended successfully.";
+"SendingLogErrorMessage" = "Error in sending log";
+"SendingLogSuccessMessage" = "Logs sent successfully.";
+
+// Fetch Logs
+"FetchLogsButtonTitle" = "Logs";
+"FetchLogsErrorMessage" = "Failed to get the logs";
+"CopyLogsBtnTitle" = "Copy Logs";
+"FetchLogsNavigationTitle" = "SDK Logs";
+
+//Stored Certificate
+"EmptyCertificateList" = "No Certificates Available";
+"MissingStringValue" = "** Missing **";
+"UnknownName" = "Unknown commonName";

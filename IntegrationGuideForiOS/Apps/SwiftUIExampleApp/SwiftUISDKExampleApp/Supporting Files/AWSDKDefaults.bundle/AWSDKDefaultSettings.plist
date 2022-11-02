@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AWClipboardEnabled</key>
+	<true/>
+	<key>AWBlockerViewEnableKey</key>
+	<false/>
+	<key>AWMailtoSchemeConfiguration</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>AWURLSchemeConfiguration</key>
+	<dict>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<key>EnableSecureDocumentController</key>
+	<false/>
+	<key>DisableActivityViewController</key>
+	<true/>
+</dict>
+</plist>
