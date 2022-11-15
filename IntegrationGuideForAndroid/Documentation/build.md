@@ -14,8 +14,8 @@ The top-level directories in the repository are as follows.
 -   [Secret/](../Secret) is set aside for your signing keystore and
     configuration.
 
--   [Download/](../Download) is set aside for your installation of the Workspace
-    ONE mobile software development kit.
+-   `Download` was set aside for manual installation of the software development
+    kit (SDK) but is no longer used.
 
 # Instructions
 Follow these instructions to build the applications in this project.
@@ -37,19 +37,12 @@ Follow these instructions to build the applications in this project.
     The build configuration of this repository is set up to use the files you
     create at the above locations.
 
-2.  **Install a copy of the Workspace ONE Software Development Kit (SDK) for
-    Android under the Download/ directory.**
-    
-    See the [Workspace ONE for Android Integration Preparation guide](../Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) for how to obtain the SDK
-    for Android.
+2.  **Ensure you have access to the SDK Maven repository.**
 
-    See the [Download](../Download) readme file for details of how to install
-    and specify the version.
+    The repository server is here.  
+    `https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/`
 
-    The build configuration of this repository is set up to work with the SDK
-    you install there.
-
-3.  **Load the project into Android Studio**
+3.  **Load the project into Android Studio.**
 
     Proceed as follows.
 
@@ -92,7 +85,7 @@ Follow these instructions to build the applications in this project.
      The [applications](applications.md) file has a complete list of the
      applications.
 
-4.  **Test that the applications can be built**
+4.  **Test that the applications can be built.**
 
     After the synchronisation has finished, execute the Gradle task:  
     Integration Guide, Tasks, build, assemble
@@ -105,6 +98,13 @@ Follow these instructions to build the applications in this project.
 
 You are now ready to install or debug any of the demonstration applications on
 your developer device.
+
+# Unused Directory
+The [Download/](../Download) directory is now unused but was originally set
+aside for manual download and installation of the Workspace ONE mobile SDK. The
+code project in the Workspace ONE Integration Guide for Android repository was
+configured to use the SDK from that directory but is now configured to build
+with the Maven distribution of the SDK instead.
 
 # License
 Copyright 2022 VMware, Inc. All rights reserved.  

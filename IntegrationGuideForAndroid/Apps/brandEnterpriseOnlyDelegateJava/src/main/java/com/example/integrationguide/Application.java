@@ -5,7 +5,6 @@ package com.example.integrationguide;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -34,7 +33,6 @@ import com.airwatch.sdk.configuration.SettingsExtension;
 import com.airwatch.sdk.context.awsdkcontext.SDKContextHelper;
 import com.airwatch.sdk.context.awsdkcontext.handlers.SDKBaseHandler;
 import com.airwatch.sdk.p2p.P2PChannel;
-import com.airwatch.sdk.shareddevice.ClearReasonCode;
 import com.vmware.chameleon.Configuration;
 import com.vmware.chameleon.function.FunctionFactory;
 
@@ -51,8 +49,6 @@ public class Application
         extends android.app.Application
         implements AWSDKApplication
 {
-
-    private final static String TAG = Application.class.getSimpleName();
 
     // SDK Delegate.
     private final AWSDKApplicationDelegate awDelegate = new AWSDKApplicationDelegate();
@@ -169,7 +165,6 @@ public class Application
             @NonNull String host,
             @androidx.annotation.Nullable X509Certificate serverCACertificate
     ) {
-        awDelegate.onSSLPinningValidationFailure(host, serverCACertificate);
     }
 
     @Override
@@ -177,7 +172,6 @@ public class Application
             @NonNull String host,
             @androidx.annotation.Nullable X509Certificate serverCACertificate
     ) {
-        awDelegate.onSSLPinningRequestFailure(host, serverCACertificate);
     }
 
     @NotNull
@@ -515,5 +509,4 @@ public class Application
     public void registerAsyncFunction(@NonNull String s, @NonNull FunctionFactory functionFactory) {
         awDelegate.registerAsyncFunction(s, functionFactory);
     }
-
 }

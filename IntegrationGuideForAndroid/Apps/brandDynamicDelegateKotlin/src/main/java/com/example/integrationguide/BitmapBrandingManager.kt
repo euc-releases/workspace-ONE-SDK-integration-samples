@@ -65,6 +65,7 @@ open class BitmapBrandingManager private constructor (
         val bitmapDimension = max(specifiedSize, 80)
 
         val bitmap = Bitmap.createBitmap(bitmapDimension, bitmapDimension, Bitmap.Config.ARGB_8888)
+
         val height = bitmap.height.toFloat()
         val width = bitmap.width.toFloat()
         val canvas = Canvas(bitmap)

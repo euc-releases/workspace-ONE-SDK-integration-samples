@@ -116,8 +116,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 22.8
-Workspace ONE management console                 | 2206
+Workspace ONE SDK for Android                    | 22.10
+Workspace ONE management console                 | 2210
 Android Studio integrated development environment| 2021.2.1
 
 # Use Cases
@@ -929,6 +929,30 @@ See the appendix to this document for:
 -   Instructions for [how to reset application state], which could be used to
     force the SDK to replay some interactions in which brand resources appear.
 
+# Task: Configure Android 12 Splashscreen
+
+Android 12, enables a new launch animation with system splashscreen using application launcher icon.
+[https://developer.android.com/develop/ui/views/launch/splash-screen](https://developer.android.com/develop/ui/views/launch/splash-screen)
+
+To replace Android 12 splashscreen icon, override splash logo attribute, in `res/values-v31/styles.xml`.
+Splashscreen icon should be vector drawable, and must be sized as per the adaptive icon
+[guideline](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive) for a smoother
+transition from Android 12 splashscreen to sdk splashscreen.
+
+This snippet illustrates the configuration:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources xmlns:tools="http://schemas.android.com/tools">
+        <style tools:override="true" name="VisionTheme.System.SplashScreen"
+               parent="VisionTheme.System.BaseSplashScreen">
+            <item name="splashLogo">@drawable/ic_splash</item>
+        </style>
+        <!-- Other style definitions here. -->
+    </resources>
+
+Above configuration is used to customize Android 12 splashscreen logo, and application should [Implement Static Application Branding]
+to setup static branding.
+
 # Appendix: How to configure enterprise branding in the management console [how to configure enterprise branding]
 You can configure enterprise branding in the Workspace ONE management console by
 following these instructions. These are provided here for application developer
@@ -1104,6 +1128,7 @@ This document is available
 |06Jun2022|Updated for 22.5 SDK for Android.           |
 |05Jul2022|Updated for 22.6 SDK for Android.           |
 |23Aug2022|Updated for 22.8 SDK for Android.           |
+|04Nov2022|Updated for 22.10 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

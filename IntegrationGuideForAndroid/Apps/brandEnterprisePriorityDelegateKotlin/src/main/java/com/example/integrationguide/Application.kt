@@ -8,6 +8,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatDelegate
 import com.airwatch.app.AWSDKApplication
 import com.airwatch.app.AWSDKApplicationDelegate
+import java.security.cert.X509Certificate
 
 // This class uses Kotlin delegation to implement the AWSDKApplication
 // interface.  
@@ -46,5 +47,11 @@ open class Application:
 
     override fun getNightMode(): Int {
         return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+    }
+
+    override fun onSSLPinningValidationFailure(host: String, serverCACert: X509Certificate?) {
+    }
+
+    override fun onSSLPinningRequestFailure(p0: String, p1: X509Certificate?) {
     }
 }

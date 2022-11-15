@@ -5,9 +5,21 @@ utilized directly from a public Maven repository. Direct utilization from the
 repository is an alternative to downloading the software development kit from
 the My Workspace ONE website.
 
-By integrating or downloading the software development kit (SDK) you accept the
-[VMware Workspace ONE SDK License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf)
-This applies however you obtain the software.
+# Agreement
+Before downloading, installing or using the VMware Workspace ONE SDK you must:
+
+-   Review the
+    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf).
+    By downloading, installing, or using the VMware Workspace ONE SDK you agree
+    to these license terms. If you disagree with any of the terms, then do not
+    use the software.
+
+-   Review the [VMware Privacy Notice](https://www.vmware.com/help/privacy.html)
+    and the
+    [Workspace ONE UEM Privacy Disclosure](https://www.vmware.com/help/privacy/uem-privacy-disclosure.html),
+    for information on applicable privacy policies.
+
+That applies however you obtain or integrate the software.
 
 # Table of Contents
 {{TOC}}
@@ -69,9 +81,21 @@ Files** instructions are changed as follows.
         dependencies {
             // Integrate Workspace ONE at the Client level.
             //
-            // By integrating this software you accept the VMware Workspace ONE Software
-            // Development Kit License Agreement that is posted here:  
-            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            // Before downloading, installing, or using the VMware Workspace ONE
+            // SDK you must:
+            //
+            // -   Review the VMware Workspace ONE Software Development Kit
+            //     License Agreement that is posted here.
+            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+            //
+            //     By downloading, installing, or using the VMware Workspace ONE SDK you
+            //     agree to these license terms. If you disagree with any of the terms, then
+            //     do not use the software.
+            //
+            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies.
+            //     https://www.vmware.com/help/privacy.html
+            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
             implementation "com.airwatch.android:AirWatchSDK:21.3"
         }
 
@@ -97,9 +121,21 @@ Files** instructions are changed as follows.
         dependencies {
             // Integrate Workspace ONE at the Framework level.
             //
-            // By integrating this software you accept the VMware Workspace ONE Software
-            // Development Kit License Agreement that is posted here:  
-            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
+            // Before downloading, installing, or using the VMware Workspace ONE
+            // SDK you must:
+            //
+            // -   Review the VMware Workspace ONE Software Development Kit
+            //     License Agreement that is posted here.
+            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+            //
+            //     By downloading, installing, or using the VMware Workspace ONE SDK you
+            //     agree to these license terms. If you disagree with any of the terms, then
+            //     do not use the software.
+            //
+            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies.
+            //     https://www.vmware.com/help/privacy.html
+            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
             implementation "com.airwatch.android:AWFramework:21.3"
         }
 

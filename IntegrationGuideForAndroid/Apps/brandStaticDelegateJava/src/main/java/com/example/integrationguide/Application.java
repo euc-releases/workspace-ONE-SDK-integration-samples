@@ -165,7 +165,6 @@ public class Application
             @NonNull String host,
             @androidx.annotation.Nullable X509Certificate serverCACertificate
     ) {
-        awDelegate.onSSLPinningValidationFailure(host, serverCACertificate);
     }
 
     @Override
@@ -173,7 +172,6 @@ public class Application
             @NonNull String host,
             @androidx.annotation.Nullable X509Certificate serverCACertificate
     ) {
-        awDelegate.onSSLPinningRequestFailure(host, serverCACertificate);
     }
 
     @NotNull

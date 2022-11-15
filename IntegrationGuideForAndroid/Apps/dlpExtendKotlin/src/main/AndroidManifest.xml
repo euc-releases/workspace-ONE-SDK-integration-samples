@@ -29,7 +29,8 @@
 
         <receiver
             android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
-            android:permission="com.airwatch.sdk.BROADCAST">
+            android:permission="com.airwatch.sdk.BROADCAST"
+            android:exported="true">
             <intent-filter>
                 <action android:name=".airwatchsdk.BROADCAST" />
             </intent-filter>
@@ -57,7 +58,8 @@
 
         <activity
             android:name="com.airwatch.login.ui.activity.SDKSplashActivity"
-            android:label="@string/app_label">
+            android:label="@string/app_label"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

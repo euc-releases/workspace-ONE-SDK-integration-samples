@@ -1,17 +1,27 @@
 # Directory for the Software Development Kit
-This directory is set aside for installation of the Workspace ONE SDK for
-Android. For context, see the instructions in the
+This directory is set aside for legacy installation of the Workspace ONE
+Software Development Kit (SDK) for Android. The legacy installation is based on
+manual download of the SDK.
+
+# Warning
+Manual download of the SDK isn't recommended. Instead, use the SDK distributed
+through the public Maven repository. The build configuration of the Open Source
+sample project now uses the Maven distribution only. See the instructions in the
 [build](../Documentation/build.md) file.
 
-The project build configuration has been set up to facilitate inclusion of the
-SDK from this directory. Follow these instructions.
+# Instructions
+Follow these instructions to use the manual download mechanism to install the
+SDK.
 
-1.  Unzip the SDK download under this directory.
-2.  Set the `airwatchVersion` and `privacyVersion` ext variables in the
-    [Apps/build.gradle](../Apps/build.gradle) file.
+1.  Download the SDK.
 
-# Detailed Instructions
-1.  Copy the root of the SDK to the following location:
+    See the SDK home page
+    [https://developer.vmware.com/web/sdk/Native/airwatch-android](https://developer.vmware.com/web/sdk/Native/airwatch-android)
+    for links to the download portal.
+
+2.  Unzip the SDK download under this directory.
+
+3.  Copy the root of the SDK to the following location:
 
     `/wherever/you/pulled/this/repository/IntegrationGuideForAndroid/Download/Android SDK v*major*.*minor*`
 
@@ -36,7 +46,7 @@ SDK from this directory. Follow these instructions.
         |
         +-- Sample Code/...
 
-2.  Check the version of the privacy agreements module.
+4.  Check the version of the privacy agreements module.
 
     The required version number appears as a suffix to the .aar file in the
     Libs/AWPrivacy/ sub-directory.
@@ -45,7 +55,7 @@ SDK from this directory. Follow these instructions.
     `IntegrationGuideForAndroid/Download/Android SDK v21.7/Libs/AWPrivacy/AWPrivacy-21.5.1.aar`  
     The privacy agreements module has 21.5.1 as its version number.
 
-3.  Set the versions in the build configuration.
+5.  Set the versions in the build configuration.
 
     The project build.gradle file, [Apps/build.gradle](../Apps/build.gradle),
     defines `ext` variables, `airwatchVersion` and `privacyVersion`, with the
@@ -66,8 +76,8 @@ SDK from this directory. Follow these instructions.
 That concludes the installation of the SDK for the repository.
 
 # Notes
-The following notes give some details on how the build configuration picks up
-the SDK from this directory.
+The following notes give some details on how to make the build configuration
+pick up the SDK from this directory.
 
 ## Project Build
 The project build.gradle file, [Apps/build.gradle](../Apps/build.gradle),
@@ -99,22 +109,6 @@ Repository declarations can be based on the above variables, like this:
         flatDir { dirs sdkVersionDir('Libs', 'ClientSDK') }
         flatDir { dirs sdkVersionDir('Libs', 'ClientSDK', 'dependencies') }
     }
-
-See the following files for examples of repository declarations.
-
--   [integrateClient.gradle](../Apps/clientKotlin/integrateClient.gradle)
--   [integrateFramework.gradle](../Apps/frameworkExtendKotlin/integrateFramework.gradle)
-
-Those files are applied as script plugins by the build.gradle files for the
-integrated applications in this repository, either directly or indirectly.
-
-Code to apply is like this:
-
-    apply from: file("integrateFramework.gradle")
-
-See the
-[Apps/frameworkExtendKotlin/build.gradle](../Apps/frameworkExtendKotlin/build.gradle)
-file for an example of applying the script plugins.
 
 # License
 Copyright 2022 VMware, Inc. All rights reserved.

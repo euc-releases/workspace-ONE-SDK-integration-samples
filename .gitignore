@@ -3,3 +3,8 @@
 
 # That macOS file it puts everywhere.
 .DS_Store
+
+# Back-up and temporary files created by diagrams.net tool that sometimes aren't deleted.
+*.svg.bkp
+*.svg.dtmp
+

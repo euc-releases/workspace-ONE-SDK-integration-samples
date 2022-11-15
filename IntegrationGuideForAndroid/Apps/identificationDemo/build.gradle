@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.vmware.workspaceone_example_identification"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 2
         versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -89,13 +89,22 @@ repositories {
 dependencies {
     // Integrate Workspace ONE at the Client level.
     //
-// By integrating this software you accept the VMware Workspace ONE Software
-// Development Kit License Agreement that is posted here:  
-// https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-    implementation ("com.airwatch.android:AirWatchSDK:${airwatchVersion}") {
-        exclude group: 'androidx.work', module: 'work-runtime-ktx'
-    }
-    implementation ('androidx.work:work-runtime-ktx:2.3.4')
+    // Before downloading, installing, or using the VMware Workspace ONE SDK you
+    // must:
+    //
+    // -   Review the VMware Workspace ONE Software Development Kit License
+    //     Agreement that is posted here.
+    //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+    //
+    //     By downloading, installing, or using the VMware Workspace ONE SDK you
+    //     agree to these license terms. If you disagree with any of the terms,
+    //     then do not use the software.
+    //
+    // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+    //     Disclosure for information on applicable privacy policies.
+    //     https://www.vmware.com/help/privacy.html
+    //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+    implementation ("com.airwatch.android:AirWatchSDK:${airwatchVersion}")
 }
 
 // Test task in a separate file.

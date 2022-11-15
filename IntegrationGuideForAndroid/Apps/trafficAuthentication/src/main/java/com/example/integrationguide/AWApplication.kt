@@ -8,20 +8,20 @@ import androidx.appcompat.app.AppCompatDelegate
 import java.security.cert.X509Certificate
 
 // Note the fully qualified base class name.
-open class AWApplication : com.airwatch.app.AWApplication() {
+open class AWApplication: com.airwatch.app.AWApplication() {
     override fun getMainActivityIntent(): Intent {
         return Intent(applicationContext, MainActivity::class.java)
     }
 
     override fun onSSLPinningRequestFailure(
         host: String,
-        serverCACert: X509Certificate?,
+        serverCACert: X509Certificate?
     ) {
     }
 
     override fun onSSLPinningValidationFailure(
         host: String,
-        serverCACert: X509Certificate?,
+        serverCACert: X509Certificate?
     ) {
     }
 

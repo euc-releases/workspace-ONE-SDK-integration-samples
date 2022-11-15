@@ -2,21 +2,21 @@
 // SPDX-License-Identifier: BSD-2-Clause
 
 // The Workspace ONE privacy agreement module is part of the VMware Workspace
-// ONE SDK. Before downloading, installing, integrating or using the VMware
-// Workspace ONE SDK you must:
+// ONE SDK. Before downloading, installing, or using the VMware Workspace ONE
+// SDK you must:
 //
-//-   Review the VMware Workspace ONE Software Development Kit License
-//    Agreement, posted here:
-//    https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
-//    By downloading, installing, or using the VMware Workspace ONE SDK for
-//    Android you agree to these license terms. If you disagree with any of the
-//    terms, then do not use the software.
+// -   Review the VMware Workspace ONE Software Development Kit License
+//     Agreement that is posted here.
+//     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
 //
-//-   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
-//    Disclosure for information on applicable privacy policies. See:
-//    https://www.vmware.com/help/privacy.html and
-//    https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+//     By downloading, installing, or using the VMware Workspace ONE SDK you
+//     agree to these license terms. If you disagree with any of the terms, then
+//     do not use the software.
 //
+// -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+//     Disclosure for information on applicable privacy policies.
+//     https://www.vmware.com/help/privacy.html
+//     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
 
 android {
     defaultConfig {

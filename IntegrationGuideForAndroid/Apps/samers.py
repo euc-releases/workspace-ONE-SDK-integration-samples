@@ -107,7 +107,6 @@ class Rules:
 
         # Files that should be the same everywhere.
         '**/proguard-rules.pro', '**/buildBase.gradle',
-        '**/integrateClient.gradle', '**/integrateFramework.gradle',
         '**/publicMavenClient.gradle', '**/publicMavenFramework.gradle',
         *_java_kt(
             'AirWatchSDKIntentService', 'BaseActivity', 'Application',
@@ -136,7 +135,8 @@ class Rules:
         'brandEnterprise*Extend*/**/application.properties',
 
         # XML files that can have a simple pattern.
-        'brandStatic*/**/styles.xml',
+        'brandStatic*/**/values/styles.xml',
+        'brandStatic*/**/values-v31/styles.xml',
         'brandDynamic*/**/strings.xml', 'brandDynamic*/**/activity_main.xml',
         'base*/**/strings.xml', 'client*/**/strings.xml',
 
@@ -150,10 +150,19 @@ class Rules:
     ]
 
     namedPatternLists = {
-        "unbranded styles.xml files": [
-            'base*/**/styles.xml',
-            'client*/**/styles.xml',
-            'framework*/**/styles.xml'
+        "unbranded values/styles.xml files": [
+            'base*/**/values/styles.xml',
+            'client*/**/values/styles.xml',
+            'framework*/**/values/styles.xml'
+        ],
+
+        "unbranded values-v31/styles.xml files": [
+            # Next two patterns are commented out because they don't match
+            # anything, in turn because the base* apps and client* apps don't
+            # yet have v31 style resources.
+            # 'base*/**/values-v31/styles.xml',
+            # 'client*/**/values-v31/styles.xml',
+            'framework*/**/values-v31/styles.xml'
         ],
 
         "unbranded strings.xml files": [
@@ -259,15 +268,12 @@ class Rules:
 #     False
 
 def diff_each(paths, pathLeft=None):
-
     linesLeft = None
     if pathLeft is not None:
-        with pathLeft.open() as file:
-            linesLeft = file.readlines()
+        linesLeft = tuple(read_diff_lines(pathLeft))
 
     for path in paths:
-        with path.open() as file:
-            lines = file.readlines()
+        lines = tuple(read_diff_lines(path))
 
         if pathLeft is None:
             pathLeft = path
@@ -282,6 +288,21 @@ def diff_each(paths, pathLeft=None):
         )]
         
         yield pathLeft, path, differences if len(differences) > 0 else None
+
+packageRE = re.compile(r'^\s*package\s+(?P<package>[^\s;]+)')
+
+def read_diff_lines(path):
+    with path.open() as file:
+        for line in file.readlines():
+            match = packageRE.match(line)
+            if match is not None:
+                line = "".join((
+                    line[: match.start('package')],
+                    "<package.name.deleted>",
+                    line[ match.end('package') :]
+                ))
+            
+            yield line
 
 class NoticesState(enum.Enum):
     EXEMPT = enum.auto()

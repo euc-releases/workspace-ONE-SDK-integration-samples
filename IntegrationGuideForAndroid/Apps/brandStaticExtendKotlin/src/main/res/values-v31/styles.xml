@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style tools:override="true" name="VisionTheme.System.SplashScreen"
+        parent="VisionTheme.System.BaseSplashScreen">
+        <item name="splashLogo">@drawable/default_splash_logo</item>
+    </style>
+</resources>

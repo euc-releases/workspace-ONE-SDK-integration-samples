@@ -32,6 +32,22 @@ To integrate at the **Framework level**, do the following tasks:
 Note that you don't add Client SDK initialization if you are integrating at the
 Framework level.
 
+## Agreement
+Before downloading, installing or using the VMware Workspace ONE SDK you must:
+
+-   Review the
+    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf).
+    By downloading, installing, or using the VMware Workspace ONE SDK you agree
+    to these license terms. If you disagree with any of the terms, then do not
+    use the software.
+
+-   Review the [VMware Privacy Notice](https://www.vmware.com/help/privacy.html)
+    and the
+    [Workspace ONE UEM Privacy Disclosure](https://www.vmware.com/help/privacy/uem-privacy-disclosure.html),
+    for information on applicable privacy policies.
+
+That applies however you obtain or integrate the software.
+
 ## Integration Guides
 This document is part of the Workspace ONE Integration Guide for Android set.
 
@@ -60,8 +76,8 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 22.8
-Workspace ONE management console                 | 2206
+Workspace ONE SDK for Android                    | 22.10
+Workspace ONE management console                 | 2210
 Android Studio integrated development environment| 2021.2.1
 Gradle plugin for Android                        | 4.1.3
 
@@ -163,6 +179,7 @@ First, update the build configuration and add the required library files.
             // End of added blocks.
 
             defaultConfig {
+                targetSdkVersion 31
                 ...
             }
             buildTypes {
@@ -184,10 +201,22 @@ First, update the build configuration and add the required library files.
         dependencies {
             // Integrate Workspace ONE at the Client level.
             //
-            // By integrating this software you accept the VMware Workspace ONE Software
-            // Development Kit License Agreement that is posted here:  
-            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AirWatchSDK:22.8"
+            // Before downloading, installing, or using the VMware Workspace ONE
+            // SDK you must:
+            //
+            // -   Review the VMware Workspace ONE Software Development Kit License 
+            //     Agreement that is posted here.
+            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+            //
+            //     By downloading, installing, or using the VMware Workspace ONE SDK you 
+            //     agree to these license terms. If you disagree with any of the terms, then
+            //     do not use the software.
+            //
+            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies.
+            //     https://www.vmware.com/help/privacy.html
+            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+            implementation "com.airwatch.android:AirWatchSDK:22.10"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -329,23 +358,8 @@ Proceed as follows.
             <service android:name=".AirWatchSDKIntentService"/>
 
         </application>
-    
-4.  Apps targeting API level 30 or below, will see below compile time error. 
-    Note: This should be skipped if app consumes [Framework SDK]
-    
-            The minCompileSdk (31) specified in a 
-            dependency's AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties)
-            is greater than this module's compileSdkVersion (android-30). 
-            Dependency: androidx.work:work-runtime-ktx:2.7.0.
-    
-5.  To resolve the above, add following lines in build.gradle
-    
-            implementation ("com.airwatch.android:AirWatchSDK:22.8") {
-                exclude group: 'androidx.work', module: 'work-runtime-ktx' 
-            } 
-            implementation ('androidx.work:work-runtime-ktx:2.3.4')
 
-6.  Apps targeting API level 31 or above, need to implement SDKClientConfig in 
+4. Apps targeting API level 31 or above, need to implement SDKClientConfig in 
     their Application class and override getEventHandler() 
     and return WS1AnchorEvents Implementation object.
    
@@ -510,10 +524,22 @@ Proceed as follows.
         dependencies {
             // Integrate Workspace ONE at the Framework level.
             //
-            // By integrating this software you accept the VMware Workspace ONE Software
-            // Development Kit License Agreement that is posted here:  
-            // https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf
-            implementation "com.airwatch.android:AWFramework:22.8"
+            // Before downloading, installing, or using the VMware Workspace ONE
+            // SDK you must:
+            //
+            // -   Review the VMware Workspace ONE Software Development Kit License 
+            //     Agreement that is posted here.
+            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+            //
+            //     By downloading, installing, or using the VMware Workspace ONE SDK you 
+            //     agree to these license terms. If you disagree with any of the terms, then
+            //     do not use the software.
+            //
+            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies.
+            //     https://www.vmware.com/help/privacy.html
+            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+            implementation "com.airwatch.android:AWFramework:22.10"
         }
     
     Your application might already require different versions of some of the
@@ -550,7 +576,7 @@ Proceed as follows.
 
         ...
         android {
-            compileSdkVersion 30
+            compileSdkVersion 31
 
             // Following block is added.
             packagingOptions {
@@ -559,6 +585,7 @@ Proceed as follows.
             // End of added block.
 
             defaultConfig {
+                targetSdkVersion 31
                 ...
             }
             buildTypes {
@@ -572,29 +599,7 @@ Proceed as follows.
     required, also follow the instructions in the
     [Appendix: Early Version Support].
 
-4.  Apps targeting API level 30 or below, will see below compile time error.
-
-           The minCompileSdk (31) specified in a
-           dependency's AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties)
-           is greater than this module's compileSdkVersion (android-30).
-           Dependency: androidx.work:work-runtime-ktx:2.7.0.
-    
-5. To resolve this, add following lines in build.gradle
-
-            implementation ("com.airwatch.android:AWFramework:22.8") {
-               exclude group: 'androidx.work', module: 'work-runtime-ktx'
-            }
-            implementation ('androidx.work:work-runtime-ktx:2.3.4')
-
-6.  If App is targeting API level 31 or above, add below lines to resolve compile 
-    time error
-
-            implementation ("com.airwatch.android:AWFramework:22.8") {
-               exclude group: 'androidx.work', module: 'work-runtime-ktx'
-            }
-            implementation ('androidx.work:work-runtime-ktx:2.7.0')
-
-    And, override getEventHandler() in App's Application class to return 
+4. App targeting API level 31 or above, override getEventHandler() in App's Application class to return 
     WS1AnchorEvents object.
 
             public class AppApplication extends AWApplication {
@@ -1111,6 +1116,7 @@ This document is available
 |06Jun2022|Updated for 22.5 SDK for Android.           |
 |05Jul2022|Updated for 22.6 SDK for Android.           |
 |23Aug2022|Updated for 22.8 SDK for Android.           |
+|04Nov2022|Updated for 22.10 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

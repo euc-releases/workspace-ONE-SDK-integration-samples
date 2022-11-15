@@ -105,10 +105,10 @@ class BitmapBrandingManager
 
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.LTGRAY);
+        paint.setAntiAlias(true);
         canvas.drawRect(0F, 0F, width, height, paint);
 
         paint.setColor(Color.BLACK);
-        paint.setAntiAlias(true);
         paint.setTextSize(height / 4.5F);
         float x = width / 2F;
         float y = getTextHeight(paint);
@@ -128,7 +128,7 @@ class BitmapBrandingManager
             float margin = min(10F, bitmapDimension/15f);
             paint.setStrokeWidth(margin / 2F);
             canvas.drawRect(
-                    margin, margin, width - margin, height - margin, paint);
+                margin, margin, width - margin, height - margin, paint);
         }
 
         return bitmap;
