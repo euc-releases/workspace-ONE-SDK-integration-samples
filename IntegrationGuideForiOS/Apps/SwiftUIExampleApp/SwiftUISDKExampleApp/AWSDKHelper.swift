@@ -46,6 +46,14 @@ class AWSDKHelper: NSObject, AWControllerDelegate, ObservableObject {
         // This string should match with the entry in the info.plist.
         // Replace this with one of your application's supported URL Schemes.
         AWController.clientInstance().callbackScheme = "iosswiftUIsample"
+        // The Apple app attestation service will be used to verify the bundle identifier of custom SDK apps.
+        // `shouldAttestApp` setting the value true to enable app attestation
+        // To disable app attestation set `shouldAttestApp` to `false`, Default value is true.
+        AWController.clientInstance().shouldAttestApp = true
+        // Every app must set the teamID property of the AWController instance before starting the SDK.
+        // Ignored when `shouldAttestApp` is set to false.
+        // Below `3E0YOUR0TEAM0ID0HERE0389` needs to be replaced with actual teamID
+        AWController.clientInstance().teamID = "3E0YOUR0TEAM0ID0HERE0389"
         // Set the delegate for Workspace ONE SDK's Controller. This delegate will receive events from Workspace ONE SDK as callbacks.
         AWController.clientInstance().delegate = self
         // Finally. Start the Workspace ONE SDK.
@@ -166,7 +174,7 @@ extension AWSDKHelper {
     }
 }
 
-// MARK: - Integrated Authentication
+// MARK: - Environment/User details
 extension AWSDKHelper {
     /// API to update the userCredentials with current values after authentication is success full
     /// - Parameter completion: handler that gets invoked when updating the user credential is succeeds or fails. Use NSError object to get the reason for failure
@@ -182,6 +190,16 @@ extension AWSDKHelper {
             return nil
         }
         return account
+    }
+
+    /// API to get ServerURL & Organisation information from SDK.
+    /// - Returns: Environment Info object of type DeviceEnrollmentInfo or nil
+    internal func fetchEnrollmentInfo() -> DeviceEnrollmentInfo? {
+        guard let info = AWController.clientInstance().enrollmentInfo else {
+            AWLogError("EnrollmentInfo is nill")
+            return nil
+        }
+        return info
     }
 
     /// API to fetch userInformation of type UserInformation from UEM console
@@ -256,7 +274,7 @@ extension AWSDKHelper {
 }
 
 // MARK: - Stored certificates
-extension AWSDKHelper{
+extension AWSDKHelper {
 
     /// API to fetch all  the latest SDK certificates with their usage info
     /// - Parameter completion: handler that gets invoked when certificates are retrieved successfully.

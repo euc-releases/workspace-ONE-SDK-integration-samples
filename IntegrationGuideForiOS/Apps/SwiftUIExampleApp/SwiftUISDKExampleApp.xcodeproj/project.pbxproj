@@ -719,7 +719,7 @@
 			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 22.10.0;
+				version = 22.11.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
