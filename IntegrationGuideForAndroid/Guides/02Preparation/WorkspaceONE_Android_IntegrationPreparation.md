@@ -110,8 +110,8 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 22.10         |           |
-Workspace ONE management console                   | 2210         | 2105      |
+Workspace ONE software development kit for Android | 22.11        |           |
+Workspace ONE management console                   | 2212         | 2105      |
 Workspace ONE Intelligent Hub application          | 22.10        | 21.4      |
 Android Operating System                           | Android 13   | Android 5 |
 Android Studio integrated development environment  | 2021.2.1     | 2020.3.1  |
@@ -740,7 +740,7 @@ This document is available
 |23Aug2022|Updated for 22.8 SDK for Android.                  |
 |04Nov2022|Updated for 22.10 SDK for Android.                 |
 |08nov2022|Add instructions and tips for app store in PO mode.|
-
+|13Dec2022|Updated for 22.11 SDK for Android.                 |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
