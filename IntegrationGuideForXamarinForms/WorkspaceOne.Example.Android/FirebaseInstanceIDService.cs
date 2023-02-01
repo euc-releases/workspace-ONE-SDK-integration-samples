@@ -9,7 +9,6 @@ using Firebase.Messaging;
 namespace WorkspaceOne.Example.Droid
 {
     [Service]
-    [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class FirebaseInstanceIDService: FirebaseMessagingService
     {
       

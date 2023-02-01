@@ -13,8 +13,8 @@ In order to inject Workspace ONE SDK functionality into your  Xamarin AWSDK App,
 
 ### Requirements
 
-* iOS 12.0+ / Xcode 13/13.1/13.2.1
-* Visual Studio 2019 (16.10 and above) for Windows / Visual Studio 2019 for Mac (8.10 and above)
+* iOS 13.0+ (for iOS SDK component) / Xcode 13.x
+* Visual Studio 2022 (17.4 and above) for Windows / Visual Studio 2022 for Mac (17.4 and above)
 * Workspace ONE-enrolled iOS test device
 * The Workspace ONE Xamarin SDK (AWSDK) package from the Nuget Store.
 * A Xamarin iOS app to integrate with the Workspace ONE SDK
@@ -219,10 +219,10 @@ To integrate Workspace ONE Android SDK Xamarin components into an existing Xamar
 
 ### Requirements
 
-* Visual Studio 2019 (16.9 and above) for Windows / Visual Studio 2019 for Mac (8.9 and above)
+* Visual Studio 2022 (17.4 and above) for Windows / Visual Studio 2022 for Mac (17.4 and above)
 * Workspace ONE Xamarin Android SDK binaries from the Nuget Store.
 * Android test device running Marshmallow and above.
-* Xamarin Android app to integrate with the Workspace ONE SDK targeting Android 6.0+ / API Level 23+.
+* Android 8.0+ (for Android SDK component) / API level 23 OR above 
 * Intelligent Hub(formerly AirWatch Agent v7.0+) for Android from Google Playstore.
 * Whitelisted Release/Debug signing key as explained below should be used for signing the Xamarin android application.
 
@@ -232,7 +232,12 @@ To integrate Workspace ONE Android SDK Xamarin components into an existing Xamar
 
 1. While integrating **Workspace ONE SDK**, application method count may exceed 64k due to library dependencies. Enable Multi-Dex option for the app in Visual Studio.
 2. Add the VMware Workspace ONE SDK package from the NuGet Gallery.
-3. Add Xamarin.GooglePlayServices.Base (v71.1610.4) and Xamarin.GooglePlayServices.SafetyNet (v71.1600.4)
+3. Add 
+    1. Xamarin.GooglePlayServices.Base (v71.1610.4) 
+    2. Xamarin.GooglePlayServices.SafetyNet (v71.1600.4)
+    3. Xamarin.AndroidX.Core.SplashScreen (v1.0.0) 
+    4. Xamarin.AndroidX.Lifecycle.Process (v2.5.1.2)
+    5. Xamarin.AndroidX.Startup.StartupRuntime (v1.0.0)
 4. Initialize Workspace ONE SDK:
     a) Extend the application class of the Xamarin app from **AWApplication** class of Workspace ONE SDK. Override the **MainActivityIntent** to return application's main landing activity. Move app's `onCreate()` business logic to `onPostCreate()`.
 
@@ -306,14 +311,15 @@ To integrate Workspace ONE Android SDK Xamarin components into an existing Xamar
     **Manifest File**
 
         <application android:name="SampleApplication" android:theme="@style/AppTheme" tools:replace="android:label">
-        <activity android:name="com.airwatch.gateway.ui.GatewaySplashActivity" android:label="@string/app_name">
+        <activity android:name="com.airwatch.gateway.ui.GatewaySplashActivity" android:label="@string/app_name" android:exported="true">
         <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:label="@string/app_name" />
-        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST">
+        <activity android:name=".MainActivity" android:label="@string/app_name" android:exported="true"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:authorities="${applicationId}.androidx-startup" tools:node="remove" />
+        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" android:exported="true">
         <intent-filter>
         <action android:name="com.airwatch.xamarinsampleapp.airwatchsdk.BROADCAST" />
         </intent-filter>
@@ -397,7 +403,7 @@ This solution is available from AWSDK nuget package version 1.4.0. Please refer 
 
 
 # License
-Copyright 2022 VMware, Inc. All rights reserved.  
+Copyright 2023 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

@@ -2,7 +2,7 @@
 
 This documentation will cover the [installation](#installation), [setup](#setup) and [usage](#usage) of the **VM**ware Workspace ONE SDK for Xamarin Forms.
 
-<small>WorkspaceOne SDK for Xamarin Forms is dependent on [AWSDK](https://www.nuget.org/packages/AWSDK/) version 22.3.0 or higher.Please find the [Prerequisites](https://github.com/vmwareairwatchsdk/Xamarin-AWSDK/blob/master/GettingStarted.md) for using the WS1 Forms SDK </small>
+<small>WorkspaceOne SDK for Xamarin Forms is dependent on [AWSDK](https://www.nuget.org/packages/AWSDK/) version 23.01.00 or higher.Please find the [Prerequisites](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForXamarinNative/GettingStarted.md) for using the WS1 Forms SDK </small>
 
 ## Installation
 
@@ -22,6 +22,9 @@ For Android platform along with Workspace SDK Forms package, add the below packa
 2. Xamarin.AndroidX.Browser (v1.0.0.1)
 3. Xamarin.GooglePlayServices.Base (v71.1610.x)
 4. Xamarin.GooglePlayServices.Safetynet (v71.1600.x)
+5. Xamarin.AndroidX.Core.SplashScreen (v1.0.0)
+6. Xamarin.AndroidX.Lifecycle.Process (v2.5.1.2)
+7. Xamarin.AndroidX.Startup.StartupRuntime (v1.0.0)
 
 ### iOS
 ## Procedure
@@ -530,7 +533,7 @@ Use the secure storage API set of functions to store key value pairs in encrypte
 
 
 # License
-Copyright 2022 VMware, Inc. All rights reserved.  
+Copyright 2023 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

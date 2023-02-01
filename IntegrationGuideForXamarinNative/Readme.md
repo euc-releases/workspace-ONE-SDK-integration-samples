@@ -12,7 +12,7 @@ Let us know if you have any questions or feedback by emailing us at support@air-
 
 
 # License
-Copyright 2022 VMware, Inc. All rights reserved.  
+Copyright 2023 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause
