@@ -1,4 +1,4 @@
-// Copyright 2022 VMware, Inc.
+// Copyright 2023 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -40,7 +40,7 @@ task printUserHomeDir {
 }
 
 ext {
-    airwatchVersion = '22.11'
+    airwatchVersion = '23.01'
     privacyVersion = '21.5.1'
 
     // Utility method to generate a path for a file in the directory for

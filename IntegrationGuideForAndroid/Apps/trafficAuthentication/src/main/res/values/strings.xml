@@ -1,5 +1,5 @@
 <!--
-    Copyright 2022 VMware, Inc.
+    Copyright 2023 VMware, Inc.
     SPDX-License-Identifier: BSD-2-Clause
 -->
 <resources>
@@ -21,7 +21,7 @@
         Development Kit integration samples. The application code accompanies
         the Workspace ONE (<b>WS1</b>) Integration Guide (<b>IG</b>) for
         Android.
-        \nCopyright 2022 VMware, Inc. All rights reserved.
+        \nCopyright 2023 VMware, Inc. All rights reserved.
         \nThe Workspace ONE Software Development Kit integration samples are
         licensed under a two-clause BSD license.
         \nSPDX-License-Identifier: BSD-2-Clause

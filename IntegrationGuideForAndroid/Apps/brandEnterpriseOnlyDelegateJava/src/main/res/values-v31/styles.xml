@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2023 VMware, Inc.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style tools:override="true" name="VisionTheme.System.SplashScreen"
         parent="VisionTheme.System.BaseSplashScreen">
