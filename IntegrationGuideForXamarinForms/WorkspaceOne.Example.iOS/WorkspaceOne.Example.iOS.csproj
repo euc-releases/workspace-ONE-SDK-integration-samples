@@ -82,50 +82,11 @@
         <Version>5.0.0.2545</Version>
       </PackageReference>
       <PackageReference Include="WorkspaceOne.Forms">
-        <Version>23.1.0</Version>
+        <Version>23.2.0</Version>
       </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-            <Visible>false</Visible>
-        </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
         <ImageAsset Include="Assets.xcassets\info.imageset\Contents.json" />
@@ -145,6 +106,24 @@
         <ImageAsset Include="Assets.xcassets\Splash.imageset\icon.png" />
         <ImageAsset Include="Assets.xcassets\Splash.imageset\icon-1.png" />
         <ImageAsset Include="Assets.xcassets\Splash.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%403x 1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad Spotlight iOS 7,12%402x-1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%403x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone Spotlight iOS 5,6 &amp; Settings%403x 1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%402x-1 1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad notification iOS 7,12.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad Settings.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%402x 2.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad Settings%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone App Icon iOS 7,12%402x 1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad Spotlight iOS 7,12.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\App Store.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad notification iOS 7,12%402x-1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad App Icon iOS 7,12%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPhone Spotlight iOS 5,6 &amp; Settings%403x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad App Icon iOS 7,12.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iPad Pro Icon iOS 9,12%402x.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />

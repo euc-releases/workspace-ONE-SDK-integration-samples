@@ -3,9 +3,11 @@
 
 package com.example.integrationguide;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,8 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 
 import com.airwatch.sdk.context.SDKContext;
 import com.airwatch.sdk.context.SDKContextManager;
@@ -24,13 +29,14 @@ import java.util.HashMap;
 
 public class MainActivity extends BaseActivity {
     static String channelID = "CHANNEL";
+    private static final int NOTIFICATION_REQ_CODE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         configureTextView();
-
+        setUpPermissions();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             final NotificationChannel channel = new NotificationChannel(
                     channelID,
@@ -66,6 +72,35 @@ public class MainActivity extends BaseActivity {
         enterpriseLogoImageView.post(() -> BrandingManager.getInstance(MainActivity.this).getDefaultBrandingManager()
                 .brandLoadingScreenLogo(bitmap -> enterpriseLogoImageView.setImageBitmap(bitmap),
                         enterpriseLogoImageView.getWidth(), enterpriseLogoImageView.getHeight()));
+    }
+
+    private void setUpPermissions() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            int permission = ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+            );
+
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                        NOTIFICATION_REQ_CODE
+                );
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == NOTIFICATION_REQ_CODE){
+            if (grantResults.length == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                toastHere("Notification Permission has been denied by user");
+            } else {
+                toastHere("Notification Permission has been granted by user");
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void toastHere(final String message) {

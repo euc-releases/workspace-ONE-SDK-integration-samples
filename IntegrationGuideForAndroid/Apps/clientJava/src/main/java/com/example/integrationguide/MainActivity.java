@@ -3,10 +3,17 @@
 
 package com.example.integrationguide;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.airwatch.sdk.SDKManager;
 
@@ -14,6 +21,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends BaseActivity {
     SDKManager sdkManager = null;
+    private static final int NOTIFICATION_REQ_CODE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +29,38 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         configureTextView();
         configureStatus();
+        setUpPermissions();
 
         startSDK();
+    }
+
+    private void setUpPermissions() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            int permission = ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+            );
+
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                        NOTIFICATION_REQ_CODE
+                );
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == NOTIFICATION_REQ_CODE){
+            if (grantResults.length == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                toastHere("Notification Permission has been denied by user");
+            } else {
+                toastHere("Notification Permission has been granted by user");
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void configureStatus() {

@@ -67,19 +67,16 @@ An overview that includes links to all the guides is available
 
 ## Compatibility
 
-**Warning** 
-As of Release 22.2, all apps consuming Workspace One SDK must upgrade their Kotlin language version
-to be compatible with Kotlin v1.5.x
-
 Instructions in this document have been tested with the following software
 versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.01
-Workspace ONE management console                 | 2212
-Android Studio integrated development environment| 2021.2.1
-Gradle plugin for Android                        | 4.1.3
+Workspace ONE SDK for Android                    | 23.03
+Workspace ONE management console                 | 2302
+Android Studio integrated development environment| 2022.2.1
+Gradle plugin for Android                        | 7.2.2
+Kotlin language                                  | 1.7.21
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -144,14 +141,14 @@ First, update the build configuration and add the required library files.
                 ...
             }
             dependencies {
-                classpath 'com.android.tools.build:gradle:4.1.2'
+                classpath 'com.android.tools.build:gradle:7.2.2'
                 ...
             }
         }
     
-    In this example, the Gradle Android plugin version is 4.1.1
+    In this example, the Gradle Android plugin version is 7.2.2
 
-    Ensure that the plugin version is at least 4.0.1
+    Ensure that the plugin version is at least 7.2.1
 
     The location of this change is shown in the [Project Structure Diagram].
 
@@ -163,7 +160,7 @@ First, update the build configuration and add the required library files.
 
         ...
         android {
-            compileSdkVersion 31
+            compileSdk 33
 
             // Following blocks are added.
             compileOptions {
@@ -179,7 +176,7 @@ First, update the build configuration and add the required library files.
             // End of added blocks.
 
             defaultConfig {
-                targetSdkVersion 31
+                targetSdk 33
                 ...
             }
             buildTypes {
@@ -216,7 +213,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:22.10"
+            implementation "com.airwatch.android:AirWatchSDK:23.03"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -539,7 +536,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:22.10"
+            implementation "com.airwatch.android:AWFramework:23.03"
         }
     
     Your application might already require different versions of some of the
@@ -576,7 +573,7 @@ Proceed as follows.
 
         ...
         android {
-            compileSdkVersion 31
+            compileSdk 33
 
             // Following block is added.
             packagingOptions {
@@ -585,7 +582,7 @@ Proceed as follows.
             // End of added block.
 
             defaultConfig {
-                targetSdkVersion 31
+                targetSdk 33
                 ...
             }
             buildTypes {
@@ -913,7 +910,53 @@ Proceed as follows.
                 />
         </application>
 
+5. Declare the required permission.
+
+   If your app targets Android 13 or higher, then in order to see notifications declare the 
+   below permission in your app's manifest file if not present already.
+   [developer.android.com/...13/...#notification-permission](https://developer.android.com/about/versions/13/behavior-changes-all#notification-permission)
+
+       <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
 This completes the initialization class configuration.
+
+## Request the required Permissions 
+If your app targets Android 13 or higher, request the new notification permission from your app's MainActivity if not requested already.
+[developer.android.com/...13/...#notification-permission](https://developer.android.com/about/versions/13/behavior-changes-all#notification-permission)
+
+   Below is the code snippet, for example:
+
+        private void setupPermissions() {
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                int permission = ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                );
+
+                if (permission != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                        NOTIFICATION_REQ_CODE
+                    );
+                }
+            }
+        }
+
+        @Override
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            if (requestCode == NOTIFICATION_REQ_CODE){
+                if (grantResults.length == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                toastHere("Notification Permission has been denied by user");
+                } else {
+                toastHere("Notification Permission has been granted by user");
+                }
+            }
+        }
+
+This completes requesting the required permissions.
 
 ## Next Steps [NextStepsFrameworkInitialization]
 Build and run the application to confirm that no mistakes have been made.
@@ -1043,9 +1086,9 @@ console.
 
 ## Kotlin Compatibility
 Occasionally, one may encounter an exception containing the message "Class 'kotlin.Unit' was compiled with an 
-incompatible version of Kotlin. The binary version of its metadata is 1.5.1, expected version is 
-1.1.16." during compilation. This exception is due to incompatible versions of your app with the 
-Workspace One SDK. As of Release 22.2, all apps consuming WS1 will be required to use Kotlin v1.5.1
+incompatible version of Kotlin. The binary version of its metadata is 1.7.1, expected version is 
+1.5.1." during compilation. This exception is due to incompatible versions of your app with the 
+Workspace One SDK. As of Release 23.03, all apps consuming WS1 will be required to use Kotlin v1.7.1
 or higher. 
 
 ## Empty Response from AirWatch MDM Service
@@ -1119,6 +1162,7 @@ This document is available
 |04Nov2022|Updated for 22.10 SDK for Android.          |
 |13Dec2022|Updated for 22.11 SDK for Android.          |
 |25Jan2023|Updated for 23.01 SDK for Android.          |
+|15Mar2023|Updated for 23.03 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

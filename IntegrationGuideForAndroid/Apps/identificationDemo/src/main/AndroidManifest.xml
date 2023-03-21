@@ -8,6 +8,7 @@
     package="com.vmware.workspaceone_example_identification"
     >
     <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <queries>
         <intent>
             <action android:name="com.airwatch.p2p.intent.action.PULL_DATA" />

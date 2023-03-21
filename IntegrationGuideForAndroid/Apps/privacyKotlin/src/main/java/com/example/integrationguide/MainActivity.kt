@@ -5,10 +5,13 @@ package com.example.integrationguide
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Paint
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.airwatch.privacy.*
 
 // This code is pasted into the Integration Guide with alterations noted in line
@@ -19,6 +22,10 @@ import com.airwatch.privacy.*
 
 // Class in the integration guide inherits from Activity not BaseActivity.
 open class MainActivity : BaseActivity() {
+
+    companion object {
+        private const val NOTIFICATION_REQ_CODE = 101
+    }
 
     // 1. Helper instantiation.................................................
     // Integration guide initial instructions use the helper base class.
@@ -73,6 +80,39 @@ open class MainActivity : BaseActivity() {
             // initializeUserInterface()
             initializeUserInterface(false)
         }
+        setUpPermissions()
+    }
+
+    private fun setUpPermissions() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permission = ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            )
+
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    NOTIFICATION_REQ_CODE
+                )
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            NOTIFICATION_REQ_CODE -> {
+
+                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    toastHere("Notification Permission has been denied by user")
+                } else {
+                    toastHere("Notification Permission has been granted by user")
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     // The `initialized` property isn't used in the integration guide.

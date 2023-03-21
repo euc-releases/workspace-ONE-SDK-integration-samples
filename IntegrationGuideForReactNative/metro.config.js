@@ -10,7 +10,7 @@
 // see also this discussion:
 // https://github.com/brodybits/create-react-native-module/issues/232
 
-// Copyright 2022 VMware, Inc.
+// Copyright 2023 VMware, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
 const path = require('path')

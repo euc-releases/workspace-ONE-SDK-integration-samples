@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "22.8.0",
+  "version": "23.2.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -16,7 +16,7 @@
     "install": "^0.13.0",
     "node-notifier": "^8.0.1",
     "react": "18.1.0",
-    "react-native": "^0.70.1",
+    "react-native": "^0.70.3",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-reanimated": "^3.0.0-rc.1",
     "react-native-safe-area-context": "^3.1.8",

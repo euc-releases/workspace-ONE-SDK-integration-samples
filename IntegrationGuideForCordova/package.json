@@ -1,7 +1,7 @@
 {
     "name": "com.vmware.sample.cordova",
     "displayName": "WS1SDK Sample",
-    "version": "22.8.0",
+    "version": "23.2.0",
     "description": "A sample Apache Cordova application that uses plugin for Workspace ONE SDK.",
     "main": "index.js",
     "scripts": {
@@ -23,7 +23,7 @@
         "platforms": []
     },
     "dependencies": {
-        "airwatch-sdk-plugin": "^22.8.0",
+        "airwatch-sdk-plugin": "^23.2.0",
         "cordova-plugin-android-support-v4-jar": "^23.2.1"
     }
 }

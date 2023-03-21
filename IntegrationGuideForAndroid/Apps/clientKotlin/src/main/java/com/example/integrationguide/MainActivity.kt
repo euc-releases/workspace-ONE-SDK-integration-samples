@@ -3,10 +3,15 @@
 
 package com.example.integrationguide
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.airwatch.sdk.SDKManager
 import org.json.JSONObject
 import kotlin.concurrent.thread
@@ -14,14 +19,49 @@ import kotlin.concurrent.thread
 class MainActivity : BaseActivity() {
 
     private var sdkManager: SDKManager? = null
+    companion object {
+        private const val NOTIFICATION_REQ_CODE = 101
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         configureTextView()
         configureStatus()
-
+        setUpPermissions()
         startSDK()
+    }
+
+    private fun setUpPermissions() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permission = ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            )
+
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    NOTIFICATION_REQ_CODE
+                )
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            NOTIFICATION_REQ_CODE -> {
+
+                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    toastHere("Notification Permission has been denied by user")
+                } else {
+                    toastHere("Notification Permission has been granted by user")
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     private fun configureStatus() {

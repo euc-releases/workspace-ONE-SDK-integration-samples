@@ -294,9 +294,12 @@ class ProxyTestActivity : SDKBaseActivity(), View.OnClickListener, StatusListene
     }
 
     private fun getProxyType(type: ProxySetupType): String{
-        when(type){
-            ProxySetupType.MAG -> return "VMware Tunnel - Proxy"
-            ProxySetupType.TUNNEL -> return "VMware Tunnel"
+        return when(type){
+            ProxySetupType.MAG -> "VMware Tunnel - Proxy"
+            ProxySetupType.TUNNEL -> "VMware Tunnel"
+            ProxySetupType.BASIC_USERNAME_PASSWORD -> "VMware Basic UserName/Password"
+            ProxySetupType.PACV2 -> "VMware PACV2"
+            else -> "Vmware Default"
         }
         return type.toString()
     }

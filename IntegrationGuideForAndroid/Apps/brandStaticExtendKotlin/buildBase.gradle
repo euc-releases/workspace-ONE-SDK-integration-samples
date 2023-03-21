@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: BSD-2-Clause
 
 android {
-    compileSdkVersion 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.integrationguide"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

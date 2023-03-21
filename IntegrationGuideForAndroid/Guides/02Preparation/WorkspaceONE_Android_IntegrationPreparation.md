@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 23.01        |           |
-Workspace ONE management console                   | 2212         | 2107      |
-Workspace ONE Intelligent Hub application          | 22.11        | 21.4      |
+Workspace ONE software development kit for Android | 23.03        |           |
+Workspace ONE management console                   | 2302         | 2109      |
+Workspace ONE Intelligent Hub application          | 23.02        | 22.02     |
 Android Operating System                           | Android 13   | Android 5 |
-Android Studio integrated development environment  | 2021.2.1     | 2020.3.1  |
-Gradle plugin for Android                          | 4.1.3        | 4.0.1     |
+Android Studio integrated development environment  | 2022.1.1     | 2020.3.1  |
+Gradle plugin for Android                          | 7.2.2        | 7.2.1     |
 
 # Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
@@ -349,7 +349,7 @@ website.
 
         android {
             // Existing configuration such as ...
-            compileSdkVersion 30
+            compileSdk 33
             defaultConfig {
                 // ...
             }
@@ -742,6 +742,7 @@ This document is available
 |08nov2022|Add instructions and tips for app store in PO mode.|
 |13Dec2022|Updated for 22.11 SDK for Android.                 |
 |25Jan2023|Updated for 23.01 SDK for Android.                 |
+|15Mar2023|Updated for 23.03 SDK for Android.                 |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

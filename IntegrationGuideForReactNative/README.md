@@ -4,9 +4,9 @@ Use this document to install the VMware Workspace One SDK Plugin for React-Nativ
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2102+ (may need to be higher depending on specific features)
+* Workspace ONE UEM Console 2107+ (may need to be higher depending on specific features)
 * Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
-* iOS 13.0+ (for iOS SDK component) / Xcode 13.x
+* iOS 14.0+ (for iOS SDK component) / Xcode 14.x
 
 
 ## Initial Setup

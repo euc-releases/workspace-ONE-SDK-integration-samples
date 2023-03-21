@@ -57,8 +57,6 @@ dependencies {
     // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
     //     Disclosure for information on applicable privacy policies.
     //     https://www.vmware.com/help/privacy.html
-    //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}") {
-        exclude group: 'com.google.gson'
-    }
+    //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html'
+    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}")
 }
