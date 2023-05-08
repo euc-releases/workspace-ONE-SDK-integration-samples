@@ -5,7 +5,10 @@ package com.example.integrationguide;
 
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.airwatch.event.WS1AnchorEvents;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,5 +37,11 @@ public class AWApplication extends com.airwatch.app.AWApplication {
     @Override
     public int getNightMode() {
         return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+    }
+
+    @NonNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return new AppWS1AnchorEvents();
     }
 }

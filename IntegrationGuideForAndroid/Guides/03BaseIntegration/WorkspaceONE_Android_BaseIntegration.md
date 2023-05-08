@@ -72,7 +72,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.03
+Workspace ONE SDK for Android                    | 23.04
 Workspace ONE management console                 | 2302
 Android Studio integrated development environment| 2022.2.1
 Gradle plugin for Android                        | 7.2.2
@@ -213,14 +213,14 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:23.03"
+            implementation "com.airwatch.android:AirWatchSDK:23.04"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
-with the next step, which is [Service Implementation].
+with the next step, which is [Anchor Event Handler Implementation].
 
 In case you encounter an error, check the [Early Version Support Build Error]
 first.
@@ -230,63 +230,64 @@ then the application under development won't work when installed via the Android
 Debug Bridge (adb). Instructions for installing via Workspace ONE can be found
 in the [Integration Guides] document set, in the Integration Preparation guide.
 
-### Service Implementation
+<p class="always-page-break" />
+### Anchor Event Handler Implementation
 The Workspace ONE Client SDK runtime receives various essential notifications
 from the management console. An implementation of a specific Android broadcast
-receiver and service must be added to your application to support this.
+receiver and action handler must be added to your application to support this.
+From SDK 23.04 onwards, application need not add implementation for 
+AirWatchSDKBaseIntentService, and must be removed.
 
 Proceed as follows.
 
-1.  Implement an AirWatch SDK Service class.
+1.  Implement a Workspace ONE SDK Event handler class.
 
     -   Add a new class to your application.
-    -   Declare the new class as a subclass of the
-        `AirWatchSDKBaseIntentService` class.
-    -   Add dummy implementations of the required methods.
-    
+    -   Declare the new class and implement
+        `WS1AnchorEvents` interface. 
+    -   While upgrading to SDK 23.04 or above, migrate AirWatchSDKBaseIntentService API implementation to WS1AnchorEvents.
+
+
     In Java, the class could look like this:
 
-        public class AirWatchSDKIntentService extends AirWatchSDKBaseIntentService {
+        public class AppWS1AnchorEvents implements WS1AnchorEvents {
             @Override
-            protected void onApplicationConfigurationChange(
-                Bundle applicationConfiguration) { }
+            public void onClearAppDataCommandReceived(Context context, ClearReasonCode reasonCode) {}
 
             @Override
-            protected void onApplicationProfileReceived(
+            public void onApplicationConfigurationChange(Bundle applicationConfiguration, Context context) {}
+
+            @Override
+            public void onApplicationProfileReceived(
                 Context context,
                 String profileId,
-                ApplicationProfile awAppProfile) { }
+                ApplicationProfile awAppProfile) {}
 
             @Override
-            public void onClearAppDataCommandReceived(
-                Context context,
-                ClearReasonCode reasonCode) { }
+            public void onAnchorAppStatusReceived(Context context, AnchorAppStatus awAppStatus) {}
 
             @Override
-            protected void onAnchorAppStatusReceived(
-                Context context,
-                AnchorAppStatus appStatus) { }
-
-            @Override
-            protected void onAnchorAppUpgrade(Context context, boolean isUpgrade) { }
+            public void onAnchorAppUpgrade(Context context, boolean isUpgrade) {}
         }
 
     In Kotlin, the class could look like this:
 
-        class AirWatchSDKIntentService: AirWatchSDKBaseIntentService() {
-            override fun onApplicationConfigurationChange(applicationConfiguration: Bundle) { }
+        class AppWS1AnchorEvents : WS1AnchorEvents {
+            override fun onClearAppDataCommandReceived(context: Context?, reasonCode: ClearReasonCode?) {}
+
+            override fun onApplicationConfigurationChange(
+                applicationConfiguration: Bundle?,
+                context: Context?,
+            ) {}
 
             override fun onApplicationProfileReceived(
-                context: Context,
-                profileId: String,
-                appProfile: ApplicationProfile){ }
+                context: Context?,
+                profileId: String?,
+                awAppProfile: ApplicationProfile?) {}
 
-            override fun onClearAppDataCommandReceived(context: Context, reasonCode: ClearReasonCode)
-            { }
+            override fun onAnchorAppStatusReceived(context: Context?, awAppStatus: AnchorAppStatus?) {}
 
-            override fun onAnchorAppStatusReceived(context: Context, appStatus: AnchorAppStatus) { }
-
-            override fun onAnchorAppUpgrade(context: Context, isUpgrade: Boolean) { }
+            override fun onAnchorAppUpgrade(context: Context?, isUpgrade: Boolean) {}
         }
 
 2.  Declare the permission and interaction filter.
@@ -312,10 +313,11 @@ Proceed as follows.
         <application ...>
         ...
 
-3.  Declare the receiver and service.
+3.  Declare the notification receiver. From SDK 23.04 onwards, 
+    declaration for AirWatchSDKBaseIntentService must be removed from manifest.
 
     In the Android manifest file, inside the `application` block, add
-    `receiver` and `service` declarations like the following.
+    `receiver` declaration like the following.
 
         <application>
 
@@ -352,23 +354,22 @@ Proceed as follows.
                 </intent-filter>
             </receiver>
 
-            <service android:name=".AirWatchSDKIntentService"/>
-
         </application>
 
-4. Apps targeting API level 31 or above, need to implement SDKClientConfig in 
-    their Application class and override getEventHandler() 
-    and return WS1AnchorEvents Implementation object.
-   
+4.  Apps need to implement SDKClientConfig in
+    their Application class and override getEventHandler()
+    and return WS1AnchorEvents Implementation object. 
+    From SDK 23.04 onwards, application need to migrate to SDKClientConfig instead of AirWatchSDKBaseIntentService.
+
             public class AppApplication extends Application implements SDKClientConfig {
                @NonNull
                @Override
                public WS1AnchorEvents getEventHandler() {
-                  return new WS1AnchorAppEventImpl();
+                  return new AppWS1AnchorEvents();
                }
             }`
 
-This completes the required service implementation. Build the application to
+This completes the required anchor event handler implementation. Build the application to
 confirm that no mistakes have been made.
 
 **If you haven't installed your application via Workspace ONE** at least once,
@@ -536,7 +537,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:23.03"
+            implementation "com.airwatch.android:AWFramework:23.04"
         }
     
     Your application might already require different versions of some of the
@@ -596,7 +597,7 @@ Proceed as follows.
     required, also follow the instructions in the
     [Appendix: Early Version Support].
 
-4. App targeting API level 31 or above, override getEventHandler() in App's Application class to return 
+4. App targeting API level 31 or above, override getEventHandler() in App's Application class to return
     WS1AnchorEvents object.
 
             public class AppApplication extends AWApplication {
@@ -892,27 +893,11 @@ Proceed as follows.
             </intent-filter>
         </activity>
 
-4.  Update the AirWatch SDK service declaration.
+4.  From SDK 23.04 onwards, application need not add implementation for AirWatchSDKBaseIntentService, and must be removed while upgrading SDK.
 
-    The AirWatch SDK service was declared and implemented in the 
-    [Service Implementation] task. The declaration will be inside the
-    application block, perhaps after the receiver block for the service. It must
-    now be updated to have the bind-job permission, for example like this:
+5.  Declare the required permission.
 
-        <application>
-            ...
-            <receiver>
-                ...
-            </receiver>
-            <service
-                android:name=".AirWatchSDKIntentService"
-                android:permission="android.permission.BIND_JOB_SERVICE"
-                />
-        </application>
-
-5. Declare the required permission.
-
-   If your app targets Android 13 or higher, then in order to see notifications declare the 
+   If your app targets Android 13 or higher, then in order to see notifications declare the
    below permission in your app's manifest file if not present already.
    [developer.android.com/...13/...#notification-permission](https://developer.android.com/about/versions/13/behavior-changes-all#notification-permission)
 
@@ -1163,6 +1148,7 @@ This document is available
 |13Dec2022|Updated for 22.11 SDK for Android.          |
 |25Jan2023|Updated for 23.01 SDK for Android.          |
 |15Mar2023|Updated for 23.03 SDK for Android.          |
+|27Apr2023|Updated for 23.04 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

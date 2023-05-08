@@ -45,10 +45,6 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name=".AirWatchSDKIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
         <activity
             android:name=".AWClientExampleActivity"
             android:label="@string/traffic_auth" >

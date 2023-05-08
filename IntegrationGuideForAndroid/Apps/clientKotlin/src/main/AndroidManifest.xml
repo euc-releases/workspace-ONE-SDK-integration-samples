@@ -15,6 +15,7 @@
         </intent>
     </queries>
     <application
+        android:name=".Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_icon"
         android:label="@string/app_label"
@@ -51,6 +52,5 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <service android:name=".AirWatchSDKIntentService" />
     </application>
 </manifest>

@@ -8,6 +8,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatDelegate
 import com.airwatch.app.AWSDKApplication
 import com.airwatch.app.AWSDKApplicationDelegate
+import com.airwatch.event.WS1AnchorEvents
 import java.security.cert.X509Certificate
 
 // This class uses Kotlin delegation to implement the AWSDKApplication
@@ -53,5 +54,9 @@ open class Application:
     }
 
     override fun onSSLPinningRequestFailure(p0: String, p1: X509Certificate?) {
+    }
+
+    override fun getEventHandler(): WS1AnchorEvents {
+        return AppWS1AnchorEvents()
     }
 }

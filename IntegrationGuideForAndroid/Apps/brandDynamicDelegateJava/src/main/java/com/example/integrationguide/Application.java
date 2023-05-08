@@ -479,7 +479,7 @@ public class Application
     @NonNull
     @Override
     public WS1AnchorEvents getEventHandler() {
-        return awDelegate.getEventHandler();
+        return new AppWS1AnchorEvents();
     }
 
     @NonNull
