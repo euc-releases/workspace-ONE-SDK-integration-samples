@@ -2,12 +2,12 @@
 Instructions in this document are compatible with the following software
 versions.
 
-Software                             | Version
--------------------------------------|--------------
-Workspace ONE SDK for iOS (Swift)    | 23.3
-Workspace ONE UEM management console | 2102 or later
-Apple iOS and iPadOS                 | 14 or later
-Apple Xcode                          | 14.x
+Software                                       | Version
+-----------------------------------------------|--------------
+Workspace ONE software development kit for iOS | 23.06
+Workspace ONE UEM management console           | 2109 or later
+Apple iOS and iPadOS                           | 14 or later
+Apple Xcode                                    | 14.x
 
 The SDK supports versions of the Swift language that are supported by the above
 Xcode versions.

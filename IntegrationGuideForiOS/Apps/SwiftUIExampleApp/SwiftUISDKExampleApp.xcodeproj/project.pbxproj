@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A759F8329F152640085CE8B /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0A759F8229F152640085CE8B /* AWSDK */; };
 		A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC128917EC7000B7780 /* QNSURLSessionDemux.m */; };
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
 		A4DCDACA28917EC8000B7780 /* CustomHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC528917EC8000B7780 /* CustomHTTPProtocol.m */; };
+		C3198F7528FFE09E00104215 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C3198F7428FFE09E00104215 /* AWSDK */; };
 		DB21706E28928FB100E71A5C /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21706D28928FB100E71A5C /* LoggingView.swift */; };
 		DB355E1E2872B90A0051E6EA /* CustomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E1D2872B90A0051E6EA /* CustomSettings.swift */; };
 		DB355E222872BDC30051E6EA /* DeviceCompromisedStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E212872BDC30051E6EA /* DeviceCompromisedStatusView.swift */; };
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A759F8329F152640085CE8B /* AWSDK in Frameworks */,
+				C3198F7528FFE09E00104215 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +380,7 @@
 			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				0A759F8229F152640085CE8B /* AWSDK */,
+				C3198F7428FFE09E00104215 /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -412,7 +412,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				0A759F8129F152640085CE8B /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				C3198F7328FFE09E00104215 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -644,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.04.0;
+				MARKETING_VERSION = 23.06.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,7 +680,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.04.0;
+				MARKETING_VERSION = 23.06.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -714,20 +714,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0A759F8129F152640085CE8B /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		C3198F7328FFE09E00104215 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK.git";
+			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 23.4.0;
+				version = 23.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A759F8229F152640085CE8B /* AWSDK */ = {
+		C3198F7428FFE09E00104215 /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A759F8129F152640085CE8B /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = C3198F7328FFE09E00104215 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

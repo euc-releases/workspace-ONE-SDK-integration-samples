@@ -36,15 +36,16 @@ This document is part of the Workspace ONE Integration Guide set.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [github.com/vmware-samples/.../IntegrationGuideForiOS/...Preparation/](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/22_Preparation/readme.md)
+    [github.com/vmware-samples/.../IntegrationGuideForiOS/...Preparation/](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/22Preparation/readme.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [developer.vmware.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.vmware.com/docs/18006/WorkspaceONE_iOS_IntegrationPreparation.pdf)
 
 ## Revision History
-|Date     |Revision                                    |
-|---------|--------------------------------------------|
-|NNjan2023|First publication, for 23.01 SDK for iOS.   |
+|Date     |Revision                                          |
+|---------|--------------------------------------------------|
+|19may2023|First correct publication, for 23.04 SDK for iOS. |
+|08jun2023|Publication for 23.06 SDK for iOS. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

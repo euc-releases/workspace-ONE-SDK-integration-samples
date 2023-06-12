@@ -72,7 +72,7 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.04
+Workspace ONE SDK for Android                    | 23.06
 Android Studio integrated development environment| 2022.1.1
 [**Table 1:** Software compatibility versions]
 
@@ -1264,6 +1264,7 @@ This document is available
 |25Jan2023|Updated, for 23.01 SDK for Android.           |
 |15Mar2023|Updated, for 23.03 SDK for Android.           |           
 |27Apr2023|Updated, for 23.04 SDK for Android.           |
+|06Jun2023|Updated, for 23.06 SDK for Android.           |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

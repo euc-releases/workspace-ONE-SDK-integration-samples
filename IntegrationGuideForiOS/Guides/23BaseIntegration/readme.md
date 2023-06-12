@@ -52,10 +52,20 @@ That applies however you obtain or integrate the software.
 # [Appendix: Keychain Clearance Sample Code](23Appendix_Keychain-Clearance-Sample-Code/readme.md)
 
 # Document Information
+## Published Locations
+This document is available
+
+-   in Markdown format, in the repository that also holds the sample code:  
+    [github.com/vmware-samples/.../IntegrationGuideForiOS/...BaseIntegration/](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/readme.md)
+
+-   in Portable Document Format (PDF), on the VMware website:  
+    [developer.vmware.com/docs/.../WorkspaceONE_iOS_BaseIntegration.pdf](https://developer.vmware.com/docs/18424/WorkspaceONE_iOS_BaseIntegration.pdf)
+
 ## Revision History
-|Date     |Revision              |
-|---------|----------------------|
-|02apr2023|Initial version.      |
+|Date     |Revision                                          |
+|---------|--------------------------------------------------|
+|19may2023|First correct publication, for 23.04 SDK for iOS. |
+|08jun2023|Publication for 23.06 SDK for iOS. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
