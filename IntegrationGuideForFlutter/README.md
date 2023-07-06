@@ -2,14 +2,14 @@
 Use this document to install the VMware Workspace One SDK Plugin for Flutter. The plugin helps enterprise app developers add enterprise-grade security, conditional access, and compliance capabilities to mobile applications.
 
 ## Package installation
-Add plugin as dependency to the application pubspec.yaml 
+Add plugin as dependency to the application pubspec.yaml
 
 ```script
 dependencies:
   flutter:
     sdk: flutter
 
-  workspace_one_sdk_flutter:^23.2.0
+  workspaceone_sdk_flutter:^23.05.0
 
 ```
 
@@ -18,9 +18,10 @@ dependencies:
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2107+ (may need to be higher depending on specific features)
-* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
-* iOS 14.0+ (for iOS SDK component) / Xcode 14.x
+* Workspace ONE UEM Console 2109+ (may need to be higher depending on specific features)
+* Android 5.0+ (for Android SDK component) / API level 21 OR above / Android Studio with the Gradle Android Build System (Gradle) 3.3.0 or later / Workspace ONE Intelligent Hub for Android version 21.9 or later
+* iOS 14.0+ (for iOS SDK component) / Xcode 14.0.1 or later
+
 
 
 ## Initial Setup
@@ -30,7 +31,7 @@ This plugin works with the listed component versions.
 ## Additional Setup
 ### iOS
 1. Add the AWSDK through Swift Package Manager.
-Click [here](https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK) for integrating the AWSDK framework through Swift Package Manager
+   Click [here](https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK) for integrating the AWSDK framework through Swift Package Manager
 
 2. Add following code in AppDelegate
 ```objc
@@ -75,18 +76,46 @@ end
         </intent-filter>
     </activity>
 ```
-2. Update your Main Activity 
+2. Update your Main Activity
 ```kotlin
     import com.vmware.workspaceone_sdk_flutter.WorkspaceOneSdkActivity
     class MainActivity: WorkspaceOneSdkActivity() {
     }
 ```
-3. . Update your Android Application subclass as follows 
+3. Add WS1EventImpl
+```kotlin
+import android.content.Context
+import android.os.Bundle
+import android.util.Log
+import com.airwatch.sdk.profile.AnchorAppStatus
+import com.airwatch.sdk.profile.ApplicationProfile
+import com.airwatch.sdk.shareddevice.ClearReasonCode
+import com.airwatch.event.WS1AnchorEvents
+import org.koin.core.component.KoinComponent
+
+class WS1EventImpl : WS1AnchorEvents,KoinComponent {
+override fun onApplicationConfigurationChange(bundle: Bundle?, context: Context) {}
+override fun onApplicationProfileReceived(context: Context, s: String, applicationProfile: ApplicationProfile) {
+Log.d("SDK Init", "onApplicationProfileReceived")
+}
+
+    override fun onClearAppDataCommandReceived(context: Context, clearReasonCode: ClearReasonCode) {
+        Log.d("SDK Init", "onClearAppDataCommandReceived")
+    }
+
+    override fun onAnchorAppStatusReceived(context: Context, anchorAppStatus: AnchorAppStatus) {}
+    override fun onAnchorAppUpgrade(context: Context, b: Boolean) {}
+}
+
+```
+
+4. Update your Android Application subclass as follows
     -  Declare that the class implements the WorkspaceOneSDKApplication interface.
     -  Move the code from the body of your onCreate method, if any, to an override of the AWSDKApplication onPostCreate method.
     -  Override the AWSDKApplication getMainActivityIntent() method to return an Intent for the application’s main Activity.
-    -  Override the following Android Application methods: 
+    -  Override the following Android Application methods:
         - attachBaseContext
+
 
 ```kotlin
     import com.vmware.workspaceone_sdk_flutter.WorkspaceOneSdkApplication
@@ -112,6 +141,10 @@ end
         override fun getMainActivityIntent(): Intent {
             return Intent(this,MainActivity::class.java)
         }
+
+        override fun getEventHandler(): WS1AnchorEvents {
+            return WS1EventImpl()
+        }
     }
 ```
 
@@ -127,21 +160,15 @@ Initialization of the SDK adds the listed features to your application, dependin
     * Restrict access to app when device is offline
     * Branding of VMware AirWatch splash screens when SDK application is launched on device
 
- ## Feature Implementation
- Please follow document at [implementation](https://github.com/vmwareairwatchsdk/vmware-wsone-sdk-flutter/blob/master/GettingStarted.md).
+## Feature Implementation
+Please follow document at [implementation](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md).
 
 ## Release Notes
-First release of Workspace One SDK for Flutter support.
-Latest versions of Workspace One SDKs (22.2 for iOS and Android).
+* First release of Workspace One SDK for Flutter support.
+* Latest versions of Workspace One SDKs (23.4.0 for iOS and 23.04 for Android).
 
 ## Workspace One SDK Documentation
 For further details about the Workspace One SDK, navigate to https://my.workspaceone.com/products/Workspace-ONE-SDK and select the required platform, SDK version and Workspace ONE UEM console version.
 
 ## Questions and Feedback
 For any questions/feedback or to report an issue, please reach out to VMware support teams at https://secure.workspaceone.com/login
-
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

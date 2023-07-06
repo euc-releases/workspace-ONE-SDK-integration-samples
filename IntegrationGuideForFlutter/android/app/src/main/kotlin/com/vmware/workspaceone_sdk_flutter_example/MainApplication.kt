@@ -5,6 +5,7 @@ package com.vmware.workspaceone_sdk_flutter_example
 
 import android.content.Context
 import android.content.Intent
+import com.airwatch.event.WS1AnchorEvents
 import com.vmware.workspaceone_sdk_flutter.WorkspaceOneSdkApplication
 
 class MainApplication : WorkspaceOneSdkApplication() {
@@ -28,5 +29,9 @@ class MainApplication : WorkspaceOneSdkApplication() {
 
     override fun getMainActivityIntent(): Intent {
         return Intent(this,MainActivity::class.java)
+    }
+
+    override fun getEventHandler(): WS1AnchorEvents {
+        return WS1EventImpl()
     }
 }

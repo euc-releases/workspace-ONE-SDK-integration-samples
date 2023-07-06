@@ -13,4 +13,4 @@ Before downloading, installing or using the VMware Workspace ONE SDK you must:
     for information on applicable privacy policies.
 
 # Open Source Link
-[VMWare Open Source Link](+[VMWare Open Source Link](https://www.vmware.com/content/dam/aw-microsites/open-source/assets/open_source_license_AirWatch_SDK_Xamarin_Bindings_23.02_GA.txt))
+[VMWare Open Source Link](+[VMWare Open Source Link](https://www.vmware.com/content/dam/aw-microsites/open-source/assets/open_source_license_VMware_Workspace_ONE_SDK_Xamarin_Plugin_23.05_GA.txt))

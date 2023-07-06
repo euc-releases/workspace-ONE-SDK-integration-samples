@@ -26,12 +26,13 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
+            android:exported="true"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" /> </intent-filter>
         </activity>
-        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" >
+        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" android:exported="true">
             <intent-filter>
                 <!--
                 Next line uses the initial dot notation as a shorthand for the package name. -->
@@ -54,7 +55,6 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <service android:name="com.vmware.workspaceone_sdk_flutter.WorkspaceOneSDKIntentService"/>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

@@ -31,5 +31,15 @@ namespace WorkspaceOne.Example.Droid
         {
             base.OnCreate(this);
         }
+
+        public override void OnSSLPinningRequestFailure(string p0, Java.Security.Cert.X509Certificate p1)
+        {
+            base.OnSSLPinningRequestFailure(p0, p1);
+        }
+
+        public override void OnSSLPinningValidationFailure(string p0, Java.Security.Cert.X509Certificate p1)
+        {
+            base.OnSSLPinningValidationFailure(p0, p1);
+        }
     }
 }

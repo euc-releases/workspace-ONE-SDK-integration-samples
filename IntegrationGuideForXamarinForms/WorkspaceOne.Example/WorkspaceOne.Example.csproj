@@ -11,9 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
     <PackageReference Include="Xam.Plugin.Hud" Version="1.0.5" />
-    <PackageReference Include="WorkspaceOne.Forms" Version="23.2.0" />
+    <PackageReference Include="WorkspaceOne.Forms" Version="23.5.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
