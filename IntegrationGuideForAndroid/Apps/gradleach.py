@@ -45,6 +45,13 @@ class GradleEach:
         self._dryRun = dryRun
 
     @property
+    def one(self):
+        return self._one
+    @one.setter
+    def one(self, one):
+        self._one = one
+
+    @property
     def gradleTask(self):
         return self._gradleTask
     @gradleTask.setter
@@ -58,8 +65,11 @@ class GradleEach:
         # The glob pattern on the next line skips the build.gradle in the
         # project root and includes only build.gradle files from one level down.
         for buildGradle in root.glob("*/build.gradle"):
+            # On the next line, parts[-2] will be the last path segment before
+            # `build.gradle` which will also be the sub-project name. It's a
+            # Python negative array index.
             commandLine = (
-                './gradlew', f':{buildGradle.parent}:{self.gradleTask}'
+                './gradlew', f':{buildGradle.parts[-2]}:{self.gradleTask}'
                 , '--console=plain', '--quiet')
             if self.dryRun:
                 print(" ".join(commandLine))
@@ -67,6 +77,8 @@ class GradleEach:
                 ran = subprocess.run(commandLine, cwd=root)
                 if ran.returncode != 0:
                     break
+            if self.one:
+                break
 
 def main(commandLine):
     defaultTask = "testNoAppUninstall"
@@ -79,6 +91,10 @@ def main(commandLine):
     argumentParser.add_argument(
         '-d', '--dry-run', dest='dryRun', action='store_true', help=
         "Print command lines that would be run but don't run them.")
+    argumentParser.add_argument(
+        '-o', '--one', action='store_true', help=
+        "Test by only processing one sub-project."
+        " Default is to process all sub-projects.")
     argumentParser.parse_args(commandLine[1:], GradleEach())()
     return 0
 

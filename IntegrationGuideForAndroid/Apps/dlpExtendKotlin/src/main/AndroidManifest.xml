@@ -37,7 +37,7 @@
             android:permission="com.airwatch.sdk.BROADCAST"
             android:exported="true">
             <intent-filter>
-                <action android:name=".airwatchsdk.BROADCAST" />
+                <action android:name="${applicationId}.airwatchsdk.BROADCAST" />
             </intent-filter>
             <intent-filter>
                 <action android:name="com.airwatch.intent.action.APPLICATION_CONFIGURATION_CHANGED" />

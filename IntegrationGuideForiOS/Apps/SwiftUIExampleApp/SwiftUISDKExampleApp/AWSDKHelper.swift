@@ -249,21 +249,30 @@ extension AWSDKHelper {
 // MARK: - Logs.
 extension AWSDKHelper {
 
+    public typealias logInfo = (data: Data, suggestedFileName: String)
+
     /// API  to fetch current SDK's log data
     /// - Throws: error of type NSError
     /// - Returns: current SDK's log data of type Data
-    internal  func fetchSDKLogData() throws -> Data {
+    internal  func fetchSDKLogData() throws -> [logInfo] {
         let logProvider = WS1SDKDataProvider()
-        let logData = try logProvider.fetchSDKLogData()
-        return logData
+        var logInfos = [logInfo]()
+        let logChunks = try logProvider.fetchSDKLogChunks()
+
+        /// Use this logData and suggested name to create temporary file to
+        /// either share or email.
+        return try logProvider.fetchSDKLogChunks().map {
+              return logInfo($0.data,$0.suggestedFileName)
+            }
     }
 
+    
     /// API to send existing SDK logs to UEM console
     /// - Parameter completion: handler that gets invoked when sending finishes successfully or fails. Use Bool value to check the status & NSError to get the reason for failure
     internal func sendLogData() -> Future<Bool, Error> {
-            return Future { promise in
-                AWController.clientInstance().sendLogDataWithCompletion { success, error in
-                    if let errorReceived = error  {
+        return Future { promise in
+            AWController.clientInstance().sendLogDataWithCompletion { success, error in
+                if let errorReceived = error  {
                         promise(.failure(errorReceived))
                     } else {
                         promise(.success(success))

@@ -4,8 +4,8 @@ versions.
 
 Software                                       | Version
 -----------------------------------------------|--------------
-Workspace ONE software development kit for iOS | 23.06
-Workspace ONE UEM management console           | 2109 or later
+Workspace ONE software development kit for iOS | 23.07
+Workspace ONE UEM management console           | 2203 or later
 Apple iOS and iPadOS                           | 14 or later
 Apple Xcode                                    | 14.x
 

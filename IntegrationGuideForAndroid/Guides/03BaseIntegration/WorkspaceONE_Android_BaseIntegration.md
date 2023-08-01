@@ -72,7 +72,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.06
+Workspace ONE SDK for Android                    | 23.07
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.2.1
 Gradle plugin for Android                        | 7.2.2
@@ -213,7 +213,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:23.06"
+            implementation "com.airwatch.android:AirWatchSDK:23.07"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -327,10 +327,7 @@ Proceed as follows.
                 android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
                 android:permission="com.airwatch.sdk.BROADCAST" >
                 <intent-filter>
-                    <!-- 
-                    Next line uses the initial dot notation as a shorthand for the package name.
-                    -->
-                    <action android:name=".airwatchsdk.BROADCAST" />
+                    <action android:name="${applicationId}.airwatchsdk.BROADCAST" />
                 </intent-filter>
                 <intent-filter>
                     <action
@@ -537,7 +534,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:23.06"
+            implementation "com.airwatch.android:AWFramework:23.07"
         }
     
     Your application might already require different versions of some of the
@@ -1150,6 +1147,7 @@ This document is available
 |15Mar2023|Updated for 23.03 SDK for Android.          |
 |27Apr2023|Updated for 23.04 SDK for Android.          |
 |06Jun2023|Updated for 23.06 SDK for Android.          |
+|24Jul2023|Updated for 23.07 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

@@ -14,6 +14,7 @@ import Combine
 class LoggingViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     @Published var alert: CustomAlert?
+    @Published var logInfo: [AWSDKHelper.logInfo] = []
     private var alertMessage: String? = nil {
         didSet {
             if let message = alertMessage {
@@ -65,5 +66,14 @@ class LoggingViewModel: ObservableObject {
         }
         alertMessage = String(localized: "AppendLogSuccessMessage")
     }
-}
 
+    /// Fetch SDK Logs and update the logView
+    func fetchSDKLogData() {
+        do {
+            logInfo = try AWSDKHelper.shared.fetchSDKLogData()
+        }
+        catch {
+            AWLogError("Failed to get the SDK Log Data")
+        }
+    }
+}

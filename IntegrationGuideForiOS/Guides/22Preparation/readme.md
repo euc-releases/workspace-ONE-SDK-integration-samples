@@ -46,6 +46,7 @@ This document is available
 |---------|--------------------------------------------------|
 |19may2023|First correct publication, for 23.04 SDK for iOS. |
 |08jun2023|Publication for 23.06 SDK for iOS. |
+|19jul2023|Publication for 23.07 SDK for iOS. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
