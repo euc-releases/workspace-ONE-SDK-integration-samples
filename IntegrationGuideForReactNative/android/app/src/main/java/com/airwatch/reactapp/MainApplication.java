@@ -15,10 +15,10 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.airwatch.event.WS1AnchorEvents;
+import org.jetbrains.annotations.Nullable;
 import com.workspaceonesdk.WorkspaceOneSdkApplication;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -79,6 +79,11 @@ public class MainApplication extends WorkspaceOneSdkApplication implements React
         return new Intent(getApplicationContext(), MainActivity.class);
   }
 
+    @NotNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return new SDKEventImpl();
+    }
 
     /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like

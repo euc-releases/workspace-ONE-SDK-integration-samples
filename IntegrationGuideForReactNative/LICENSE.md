@@ -15,4 +15,4 @@ Before downloading, installing or using the VMware Workspace ONE SDK you must:
 That applies however you obtain or integrate the software.
 
 # Open Source Link
-[VMWare Open Source Link](https://www.vmware.com/content/dam/aw-microsites/open-source/assets/open_source_license_Workspace_ONE_React_Native_SDK_22.08_GA.txt)
+[VMWare Open Source Link](https://www.vmware.com/content/dam/aw-microsites/open-source/assets/open_source_license_VMware_Workspace_ONE_React_23.07_GA.txt)

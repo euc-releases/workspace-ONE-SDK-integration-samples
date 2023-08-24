@@ -20,8 +20,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.air-watch.WorkspaceOne.Example.iOS</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wsoexample</string>
+			</array>
+			<key>URL types</key>
+			<string>Editor</string>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>airwatch</string>
+		<string>workspace</string>
+		<string>wsonesdk</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -53,28 +72,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>AWAppIdentifierPrefix</key>
-  <string>Z7N7QHVWT1.</string>
-  <key>LSApplicationQueriesSchemes</key>
-  <array>
-    <string>airwatch</string>
-    <string>workspace</string>
-    <string>wsonesdk</string>
-  </array>
-  
-  <key>CFBundleURLTypes</key>
-  <array>
-    <dict>
-      <key>CFBundleURLName</key>
-      <string>com.air-watch.WorkspaceOne.Example.iOS</string>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>wsoexample</string>
-      </array>
-      <key>URL types</key>
-      <string>Editor</string>
-    </dict>
-  </array>
 </dict>
-
 </plist>

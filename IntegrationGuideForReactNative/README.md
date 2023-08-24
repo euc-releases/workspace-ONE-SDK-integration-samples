@@ -4,7 +4,7 @@ Use this document to install the VMware Workspace One SDK Plugin for React-Nativ
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2107+ (may need to be higher depending on specific features)
+* Workspace ONE UEM Console 2203+ (may need to be higher depending on specific features)
 * Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
 * iOS 14.0+ (for iOS SDK component) / Xcode 14.x
 
@@ -84,11 +84,58 @@ public class MainActivity extends WorkspaceOneSdkActivity {
   }
 }
 ```
-3. . Update your Android Application subclass as follows 
+
+3. Add SDKEventImplClass as below
+
+```java
+import com.workspaceonesdk.WorkspaceOneSdkApplication;
+public class MainApplication extends WorkspaceOneSdkApplication implements ReactApplication {
+
+    // Application-specific overrides : Comment onCreate() out and move the code to onPostCreate()
+
+    //  @Override
+    //  public void onCreate() {
+    //    super.onCreate();
+    //  }
+
+    // Application-specific overrides : Copy all the code from onCreate() to onPostCreate()
+    @Override
+    public void onPostCreate() {
+        super.onPostCreate();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        preferences.edit().putString("debug_http_host", "localhost:8088").apply();
+        SoLoader.init(this, /* native exopackage */ false);
+        initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+        
+        // Code from the application's original onCreate() would go here
+    }
+    
+    
+    public void attachBaseContext(@NotNull Context base) {
+        super.attachBaseContext(base);
+        attachBaseContext(this);
+    }
+
+    
+    @NotNull
+    @Override
+    public Intent getMainActivityIntent() {
+        // Replace MainActivity with application's original main activity
+        return new Intent(getApplicationContext(), MainActivity.class);
+    }
+
+    @NotNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return new SDKEventImpl();
+    }
+}
+```
+4. Update your Android Application subclass as follows
     -  Declare that the class implements the WorkspaceOneSDKApplication interface.
     -  Move the code from the body of your onCreate method, if any, to an override of the AWSDKApplication onPostCreate method.
     -  Override the AWSDKApplication getMainActivityIntent() method to return an Intent for the application’s main Activity.
-    -  Override the following Android Application methods: 
+    -  Override the following Android Application methods:
         - attachBaseContext
 
 ```java
@@ -127,9 +174,14 @@ public class MainApplication extends WorkspaceOneSdkApplication implements React
         // Replace MainActivity with application's original main activity
         return new Intent(getApplicationContext(), MainActivity.class);
     }
+
+    @NotNull
+    @Override
+    public WS1AnchorEvents getEventHandler() {
+        return new SDKEventImpl();
+    }
 }
 ```
-
 ## Feature Description
 Initialization of the SDK adds the listed features to your application, depending on the configurations set in the SDK profile in the Workspace One UEM Console.
 
@@ -146,7 +198,7 @@ Initialization of the SDK adds the listed features to your application, dependin
  Please follow document at [implementation](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForReactNative/GettingStarted.md).
 
 ## Release Notes
-* Updated Version of WorkspaceOne SDKs(22.2.0 for iOS and Android)
+* Updated Version of WorkspaceOne SDKs(23.7 for iOS and Android)
     * **Change build.gradle for Maven URL as mentioned above in [Android Implementation](#Android)**
 
 ## Workspace One SDK Documentation
@@ -158,7 +210,7 @@ For any questions/feedback or to report an issue, please reach out to [VMware su
 
 
 # License
-Copyright 2022 VMware, Inc. All rights reserved.  
+Copyright 2023 VMware, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

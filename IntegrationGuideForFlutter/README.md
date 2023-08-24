@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  workspaceone_sdk_flutter:^23.05.0
+  workspaceone_sdk_flutter:^23.7.0
 
 ```
 

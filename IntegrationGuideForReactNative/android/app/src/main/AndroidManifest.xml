@@ -26,14 +26,14 @@
 <!--        </intent-filter>-->
       </activity>
         <activity
-            android:name="com.airwatch.login.ui.activity.SDKSplashActivity" android:label="@string/app_name"
+            android:name="com.airwatch.login.ui.activity.SDKSplashActivity" android:label="@string/app_name" android:exported='true'
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" /> </intent-filter>
         </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" >
+        <receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" android:exported='true'>
             <intent-filter>
             <!--
             Next line uses the initial dot notation as a shorthand for the package name. -->
@@ -56,7 +56,6 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <service android:name="com.workspaceonesdk.WorkspaceOneSDKIntentService"/>
     </application>
     <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
 
