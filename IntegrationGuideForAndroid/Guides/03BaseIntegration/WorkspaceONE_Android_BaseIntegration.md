@@ -72,11 +72,11 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.07
+Workspace ONE SDK for Android                    | 23.09
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.2.1
 Gradle plugin for Android                        | 7.2.2
-Kotlin language                                  | 1.7.21
+Kotlin language                                  | 1.8.21
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -1116,24 +1116,7 @@ This document is available
 |Date     |Revision                                    |
 |---------|--------------------------------------------|
 |03jul2020|First publication, for 20.4 SDK for Android.|
-|31jul2020|Update for 20.7 SDK for Android.            |
-|30aug2020|Update for 20.8 SDK for Android.            |
-|03sep2020|Post-release update.                        |
-|01oct2020|Update for 20.9 SDK for Android.            |
-|11oct2020|Post-release update.                        |
-|03nov2020|Update for 20.10 SDK for Android.           |
-|06nov2020|Post-release update.                        |
-|15dec2020|Update for 20.11 SDK for Android.           |
-|18feb2021|Update for 21.1 SDK for Android.            |
-|10mar2021|Update for 21.2 SDK for Android.            |
-|07apr2021|Update for 21.3 SDK for Android.            |
-|17jun2021|Update for 21.5.1 SDK for Android.          |
-|13jul2021|Update for 21.6 SDK for Android.            |
-|29jul2021|Update for 21.6.1 SDK for Android.          |
-|18aug2021|Update for 21.7 SDK for Android.            |
-|15sep2021|Update for 21.8 SDK for Android.            |
-|26oct2021|Update for 21.10 SDK for Android.           |
-|09Dec2021|Update for 21.11 SDK for Android.           |
+|31jul2020 to 09dec2021|Updated for 20.7 to 21.11 SDK for Android releases.|
 |26Jan2022|Update for 22.1 SDK for Android.            |
 |28Feb2022|Update for 22.2 SDK for Android.            |
 |04Apr2022|Updated for 22.3 SDK for Android.           |
@@ -1148,6 +1131,7 @@ This document is available
 |27Apr2023|Updated for 23.04 SDK for Android.          |
 |06Jun2023|Updated for 23.06 SDK for Android.          |
 |24Jul2023|Updated for 23.07 SDK for Android.          |
+|07Sep2023|Updated for 23.09 SDK for Android.          |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
