@@ -162,6 +162,11 @@ By setting the option via UEM, the custom keyboard can be restricted.
 "SendingLogErrorMessage" = "Error in sending log";
 "SendingLogSuccessMessage" = "Logs sent successfully.";
 
+// Setting user prefered log level
+"SDKLogLevelSectionTitle" = "User prefered Log Level for SDK";
+"UserPreferredLoglevelPickerViewFieldTitle" = "User Prefered Log Level";
+"SetUserPreferedLogLevelBtnTitle" = "Set user prefered log level";
+
 // Fetch Logs
 "FetchLogsButtonTitle" = "Logs";
 "FetchLogsErrorMessage" = "Failed to get the logs";

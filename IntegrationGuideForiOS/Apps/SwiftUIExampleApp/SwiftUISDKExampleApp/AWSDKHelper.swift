@@ -2,7 +2,7 @@
 //  AWSDKHelper.swift
 //  SwiftExampleApp
 //
-//  Copyright 2022 VMware, Inc.
+//  Copyright 2023 VMware, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
@@ -266,20 +266,28 @@ extension AWSDKHelper {
             }
     }
 
-    
     /// API to send existing SDK logs to UEM console
     /// - Parameter completion: handler that gets invoked when sending finishes successfully or fails. Use Bool value to check the status & NSError to get the reason for failure
     internal func sendLogData() -> Future<Bool, Error> {
         return Future { promise in
             AWController.clientInstance().sendLogDataWithCompletion { success, error in
                 if let errorReceived = error  {
-                        promise(.failure(errorReceived))
-                    } else {
-                        promise(.success(success))
-                    }
+                    promise(.failure(errorReceived))
+                } else {
+                    promise(.success(success))
                 }
             }
         }
+    }
+
+    internal func setUserPreferedLogLevel(logLevel: AWSDK.SettingLogLevel) {
+         AWController.clientInstance().userPreferedLogLevel = logLevel
+    }
+
+    internal func getUserPreferedLogLevel() -> AWSDK.SettingLogLevel {
+        return AWController.clientInstance().userPreferedLogLevel
+        return AWSDK.SettingLogLevel.debug
+    }
 }
 
 // MARK: - Stored certificates
@@ -290,7 +298,7 @@ extension AWSDKHelper {
     internal func retrieveStoredPublicCertificates(completion : @escaping AWController.RetrieveStoredCertficateCompletionHandler){
         AWController.clientInstance().retrieveStoredPublicCertificates(completion: completion)
     }
-    
+
     /// API to fetch all  the latest SDK stored Identity certificate information.
     /// All valid PKCS12Certificate along with their passwords .
     /// - Parameter completion: handler that gets invoked when certificates are retrieved successfully.

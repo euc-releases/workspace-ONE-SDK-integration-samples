@@ -3,14 +3,20 @@
 //  SwiftUISDKExampleApp
 //
 //
-//  Copyright 2022 VMware, Inc.
+//  Copyright 2023 VMware, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
 import SwiftUI
+import AWSDK
 
 enum LogLevel: String, CaseIterable, Identifiable {
     case verbose, info, warning, error
+    var id: Self { self }
+}
+
+enum UserPreferedLogLevel: String, CaseIterable, Identifiable {
+    case verbose, info, warning, error, off
     var id: Self { self }
 }
 
@@ -19,6 +25,7 @@ struct LoggingView: View {
     @ObservedObject private var viewModel = LoggingViewModel()
     @State private var selectedLogLevel: LogLevel = .info
     @State private var enteredLogMessage: String = ""
+    @State private var selectedUserPreferedLogLevelForSDKLogs: UserPreferedLogLevel = .off
 
     var body: some View {
         VStack{
@@ -26,6 +33,14 @@ struct LoggingView: View {
             btnCollectLog
             btnSendLogs
             Spacer()
+            formSDKLogsLevel
+            btnUserPreferedLogLevel
+            Spacer()
+        }
+        .onAppear{
+            selectedUserPreferedLogLevelForSDKLogs = viewModel.getUserPreferedLogLevelForSDK()
+            selectedLogLevel = .info
+            enteredLogMessage = "Test Message"
         }
         .padding()
         .navigationBarTitle(String(localized: "LoggingNavigationTitle"))
@@ -85,6 +100,32 @@ private extension LoggingView {
             enteredLogMessage = ""
         } label: {
             Text(String(localized: "AppendLogBtnTitle"))
+        }
+        .padding(.all, 12)
+        .background(.blue)
+        .cornerRadius(12)
+        .foregroundColor(.white)
+    }
+    
+    var formSDKLogsLevel: some View {
+        Form {
+            Section(String(localized: "SDKLogLevelSectionTitle")) {
+                Picker(String(localized: "UserPreferredLoglevelPickerViewFieldTitle"), selection: $selectedUserPreferedLogLevelForSDKLogs) {
+                    ForEach(UserPreferedLogLevel.allCases) { loglevel in
+                        Text(loglevel.rawValue.capitalized)
+                            .tag(loglevel)
+                    }
+                }
+            }
+        }
+        .frame( height: 120)
+    }
+    var btnUserPreferedLogLevel: some View {
+        Button{
+            viewModel.setUserPreferedLogLevelForSDK(logLevel: selectedUserPreferedLogLevelForSDKLogs)
+            viewModel.btnCollectAllLogLevelToTest()
+        } label: {
+            Text(String(localized: "SetUserPreferedLogLevelBtnTitle"))
         }
         .padding(.all, 12)
         .background(.blue)

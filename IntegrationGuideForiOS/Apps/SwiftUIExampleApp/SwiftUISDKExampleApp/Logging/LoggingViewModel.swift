@@ -2,7 +2,7 @@
 //  LoggingViewViewModel.swift
 //  SwiftUISDKExampleApp
 //
-//  Copyright 2022 VMware, Inc.
+//  Copyright 2023 VMware, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
@@ -75,5 +75,45 @@ class LoggingViewModel: ObservableObject {
         catch {
             AWLogError("Failed to get the SDK Log Data")
         }
+    }
+
+    /// Fetch SDK Logs and update the logView
+    func setUserPreferedLogLevelForSDK(logLevel: UserPreferedLogLevel) {
+        var logLevelToSet: SettingLogLevel
+        switch logLevel {
+        case .off:
+            logLevelToSet = .off
+        case .verbose:
+            logLevelToSet = .debug
+        case .info:
+            logLevelToSet = .information
+        case .warning:
+            logLevelToSet = .warning
+        case .error:
+            logLevelToSet = .error
+        }
+        AWSDKHelper.shared.setUserPreferedLogLevel(logLevel: logLevelToSet)
+    }
+
+    /// Fetch SDK's user preferend Logs level selected earlier
+    func getUserPreferedLogLevelForSDK() -> UserPreferedLogLevel{
+
+        switch AWSDKHelper.shared.getUserPreferedLogLevel() {
+            case .off:          return .off
+            case .error:        return .error
+            case .warning:      return .warning
+            case .information:  return .info
+            case .debug:        return .verbose
+        }
+    }
+
+    func btnCollectAllLogLevelToTest() {
+        AWLogError("----------------All Log level test message-------------------------")
+        let text = " Test message "
+        AWLogVerbose("verbose " + text)
+        AWLogInfo("infomation " + text)
+        AWLogWarning("warning " + text)
+        AWLogError("error " + text)
+        AWLogError("----------------All Log level test message-------------------------")
     }
 }
