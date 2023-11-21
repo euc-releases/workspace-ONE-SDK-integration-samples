@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK",
       "state" : {
-        "revision" : "2ae5710c94fd7093c4150ec3646da67d14fba19c",
-        "version" : "23.4.0"
+        "revision" : "3f211bb7cd00dbb87acc54cb13ec041bcaa314fc",
+        "version" : "23.9.1"
       }
     }
   ],

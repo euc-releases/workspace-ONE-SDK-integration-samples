@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
     <PackageReference Include="Xam.Plugin.Hud" Version="1.0.5" />
-    <PackageReference Include="WorkspaceOne.Forms" Version="23.7.0" />
+    <PackageReference Include="WorkspaceOne.Forms" Version="23.10.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

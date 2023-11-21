@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/bootstrap/css/bootstrap.min.css">
+    <style>
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-md">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="d-flex flex-row">
+            <div class="p-2"><a href="index.html" class="previous round">&#8249;</a></div>
+            <div class="p-2"><a class="navbar-brand" href="#">Integrated Auth</a></div>
+        </div>
+    </nav>
+    <div id="container">
+        <input type="text" id="url-input" placeholder="Enter URL">
+        <button id="open-button">Authenticate</button>
+    </div>
+    <div class="p-2"><label id="response"></label></div>
+
+    <script>
+        const urlInput = document.getElementById('url-input');
+        const openButton = document.getElementById('open-button');
+
+        openButton.addEventListener('click', () => {
+            const url = urlInput.value.trim();
+
+            if (isValidURL(url)) {
+               loadURL(url);
+            } else {
+                alert('Please enter a valid URL');
+            }
+        });
+        function isValidURL(str) {
+            const pattern = /^(https?:\/\/)?(www\.)?[\w.-]+\.\w{2,}(\/\S*)?$/;
+            return pattern.test(str);
+        }
+    </script>
+    </script>
+    <script src="cordova.js"></script>
+    <script src="airwatch.js"></script>
+    <script src="js/index.js"></script>
+    <script src="../www/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

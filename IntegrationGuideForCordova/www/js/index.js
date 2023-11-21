@@ -50,6 +50,7 @@ function fetchInformation() {
     getUsername();
     getGroupID();
     getServerName();
+    loadURL();
 }
 
 /**
@@ -174,4 +175,24 @@ function fetchCustomSettings() {
         function() {
             console.log("Error while fetching custom settings");
         });
+}
+
+/**
+ *  @function loadURL
+ *  Gets response for the provided url , performs NTLM authentication if required
+ *
+ *  @param {function(event,Object)} Success or Error callback
+ *  @param {String} URL to load
+ */
+function loadURL(url) {
+window.plugins.airwatch.setLoadURLEventListener(function(event, response) {
+                 if (event === "loadSuccess") {
+                          console.log("Load Success");
+                          document.getElementById("response").innerHTML = Object.values(response);
+                          }
+                 else if(event === "loadFailure") {
+                           console.log("Load Failure");
+                           document.getElementById("response").innerHTML = Object.values(response);
+                           }
+          }, url);
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -594,7 +594,7 @@
 			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 23.4.0;
+				version = 23.9.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

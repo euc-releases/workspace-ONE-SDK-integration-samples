@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "23.7.0",
+  "version": "23.10.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -23,7 +23,7 @@
     "react-native-screens": "^2.13.0",
     "react-native-webview": "^11.0.3",
     "watchman": "^1.0.0",
-    "ws1-sdk-react-native": "^23.7.0"
+    "ws1-sdk-react-native": "^23.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
