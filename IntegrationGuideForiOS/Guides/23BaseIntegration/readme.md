@@ -69,6 +69,7 @@ This document is available
 |19jul2023|Publication for 23.07 SDK for iOS. |
 |11sep2023|Publication for 23.09 SDK for iOS. |
 |31oct2023|Publication for 23.10 SDK for iOS. |
+|14Dec2023|Publication for 23.12 SDK for iOS. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA

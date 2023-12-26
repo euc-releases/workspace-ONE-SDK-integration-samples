@@ -644,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.10.0;
+				MARKETING_VERSION = 23.12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,7 +680,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.10.0;
+				MARKETING_VERSION = 23.12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -719,7 +719,7 @@
 			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK.git";
 			requirement = {
 				kind = exactVersion;
-				version = 23.10.0;
+				version = 23.12.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
