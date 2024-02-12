@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2024 VMware LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_roundicon_background"/>
+    <foreground android:drawable="@mipmap/ic_roundicon_foreground"/>
+</adaptive-icon>

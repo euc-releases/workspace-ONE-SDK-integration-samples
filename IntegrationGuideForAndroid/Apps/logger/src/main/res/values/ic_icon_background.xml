@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2024 VMware LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <color name="ic_icon_background">#0091DA</color>
+</resources>

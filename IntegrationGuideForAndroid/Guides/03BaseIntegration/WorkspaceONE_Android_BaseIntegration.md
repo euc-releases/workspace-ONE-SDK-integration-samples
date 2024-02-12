@@ -72,9 +72,9 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 23.12
+Workspace ONE SDK for Android                    | 24.01
 Workspace ONE management console                 | 2306
-Android Studio integrated development environment| 2022.2.1
+Android Studio integrated development environment| 2022.3.1
 Gradle plugin for Android                        | 7.2.2
 Kotlin language                                  | 1.8.21
 
@@ -213,7 +213,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:23.07"
+            implementation "com.airwatch.android:AirWatchSDK:24.01"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -534,7 +534,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:23.07"
+            implementation "com.airwatch.android:AWFramework:24.01"
         }
     
     Your application might already require different versions of some of the
@@ -601,7 +601,7 @@ Proceed as follows.
                @NonNull
                @Override
                public WS1AnchorEvents getEventHandler() {
-                  return new WS1AnchorAppEventImpl();
+                  return new AppWS1AnchorEvents();
                }
             }
 
@@ -1134,16 +1134,17 @@ This document is available
 |07Sep2023|Updated for 23.09 SDK for Android.          |
 |25Oct2023|Updated for 23.10 SDK for Android.          |
 |18Dec2023|Updated for 23.12 SDK for Android.          |
+|25Jan2024|Updated for 24.01 SDK for Android.          |
 
 ## Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
+-   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2023 VMware, Inc. All rights reserved.
+-   Copyright © 2024 VMware LLC All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at
     [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
+    VMware is a registered trademark or trademark of VMware LLC and its
     subsidiaries in the United States and other jurisdictions. All other marks
     and names mentioned herein may be trademarks of their respective companies.
 -   The Workspace ONE Software Development Kit integration samples are

@@ -2,7 +2,7 @@
 //  AWSDKHelper.swift
 //  SwiftExampleApp
 //
-//  Copyright 2023 VMware, Inc.
+//  Copyright 2024 VMware, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
@@ -286,7 +286,6 @@ extension AWSDKHelper {
 
     internal func getUserPreferedLogLevel() -> AWSDK.SettingLogLevel {
         return AWController.clientInstance().userPreferedLogLevel
-        return AWSDK.SettingLogLevel.debug
     }
 }
 

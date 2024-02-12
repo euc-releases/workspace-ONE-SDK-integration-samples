@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2024 VMware LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<manifest
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.integrationguide"
+    >
+    <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_icon"
+        android:label="@string/app_label"
+        android:roundIcon="@mipmap/ic_roundicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="MissingClass"
+        android:name=".${applicationClass}"
+        tools:replace="android:label, android:allowBackup"
+        >
+        <activity android:name=".MainActivity" />
+        <receiver
+            android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
+            android:permission="com.airwatch.sdk.BROADCAST"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="${applicationId}.airwatchsdk.BROADCAST" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="com.airwatch.intent.action.APPLICATION_CONFIGURATION_CHANGED" />
+                <data android:scheme="app" android:host="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="com.airwatch.login.ui.activity.SDKSplashActivity"
+            android:label="@string/app_label"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

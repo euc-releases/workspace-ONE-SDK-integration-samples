@@ -50,11 +50,12 @@ This document is available
 |11sep2023|Publication for 23.09 SDK for iOS. |
 |31oct2023|Publication for 23.10 SDK for iOS. |
 |14Dec2023|Publication for 23.12 SDK for iOS. |
+|29Jan2024|Publication for 24.01 SDK for iOS. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2023 VMware, Inc. All rights reserved.
+-   Copyright © 2024 VMware LLC. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

@@ -31,7 +31,8 @@ include (
     
     ':tunnel',
     ':integratedAuth',
-    ':trafficAuthentication'
+    ':trafficAuthentication',
+    ':logger'
 )
 
 rootProject.name='Integration Guide'

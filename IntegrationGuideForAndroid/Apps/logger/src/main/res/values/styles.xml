@@ -1,0 +1,19 @@
+<!--
+    Copyright 2024 VMware LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <!--
+            Custom values like these would go here but this application uses
+            the vanilla.
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        -->
+    </style>
+
+</resources>

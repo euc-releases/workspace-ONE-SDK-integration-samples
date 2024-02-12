@@ -1,0 +1,40 @@
+// Copyright 2024 VMware LLC.
+// SPDX-License-Identifier: BSD-2-Clause
+
+// This module's build.gradle file is mostly built from other gradle files.
+//
+// The plugins block has to be here because applying a plugins block from another gradle file isn't allowed.
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+// Start with the application.
+apply from: file("buildBase.gradle")
+
+def integrateFramework = secretFile("integrateFramework.gradle")
+
+if (integrateFramework.exists()) {
+    println("Override integrateFramework '${integrateFramework}'.")
+    apply from: integrateFramework
+}
+else {
+    // Client integration from the public Maven repository.
+    apply from: file("publicMavenClient.gradle")
+
+    // Framework integration from the public Maven repository.
+    apply from: file("publicMavenFramework.gradle")
+}
+
+// TOTH: https://stackoverflow.com/a/37101792/7657675
+def properties = new Properties()
+file("application.properties").withInputStream {properties.load(it)}
+
+android {
+    defaultConfig {
+        manifestPlaceholders = [
+            applicationClass: properties.getProperty('applicationClass')
+        ]
+    }
+}

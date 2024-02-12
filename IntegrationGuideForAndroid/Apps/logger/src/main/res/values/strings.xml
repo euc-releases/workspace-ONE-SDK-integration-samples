@@ -1,0 +1,48 @@
+<!--
+    Copyright 2024 VMware LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+    <string name="app_name">Integration Guide</string>
+    <string name="app_label">App+WS1</string>
+    <string name="app_title">Workspace ONE Sample</string>
+    <string name="ui_placeholder">Application User Interface goes here!</string>
+    <string name="sdk_state">SDK state: %1$s</string>
+    <string name="sdk_configuration_unavailable">SDK configuration unavailable.</string>
+
+    <string name="title_about">About</string>
+    <string name="app_logo_content_description">Application Logo</string>
+    <string name="about">VMware Workspace ONE®\nAndroid Sample App</string>
+    <string name="module_label">Module</string>
+    <string name="dark_mode_label">Display</string>
+    <string name="dark_mode_true">Dark mode</string>
+    <string name="dark_mode_false">Not dark mode</string>
+    <string name="about_small_print">This application is part of the VMware Workspace ONE Software
+        Development Kit integration samples. The application code accompanies
+        the Workspace ONE (<b>WS1</b>) Integration Guide (<b>IG</b>) for
+        Android.
+        \nCopyright 2023 VMware, Inc. All rights reserved.
+        \nThe Workspace ONE Software Development Kit integration samples are
+        licensed under a two-clause BSD license.
+        \nSPDX-License-Identifier: BSD-2-Clause
+    </string>
+
+    <string name="title_sdk_profile">SDK Profile</string>
+    <string name="menu_sdk_profile">SDK</string>
+    <string name="sdk_profile_explanation">This screen showcases the policies and settings associated with this device\'s SDK profile.\nThe fetch button below grabs the most recent SDK profile configuration from the console and displays it in the field underneath.</string>
+
+
+    <string name="menu_send_logs">Send logs to console</string>
+    <string name="status">No status available.</string>
+    <string name="sample_url">https://reqres.in/</string>
+    <string name="invalid_selection">Invalid selection</string>
+    <string name="proxy_started">Proxy Started. Enter your url</string>
+    <string name="no_logs">No Logs to display.</string>
+
+    <string name="policy_heading">Relevant Policies</string>
+    <string name="use_enrollment_cred">Use Enrollment Credentials</string>
+    <string name="use_certificate">Use Certificate</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+
+</resources>
