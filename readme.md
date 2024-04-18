@@ -1,4 +1,6 @@
 # Workspace ONE Software Development Kit Integration Samples
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feuc-releases%2Fworkspace-ONE-SDK-integration-samples.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Feuc-releases%2Fworkspace-ONE-SDK-integration-samples?ref=badge_shield)
+
 This repository contains sample code for integration of mobile applications with
 the VMware Workspace ONE® platform.
 
@@ -47,3 +49,6 @@ open-source patch. For more detailed information, refer to
 -   The Workspace ONE Software Development Kit Integration Samples are
     licensed under a two-clause BSD license.  
     SPDX-License-Identifier: BSD-2-Clause
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feuc-releases%2Fworkspace-ONE-SDK-integration-samples.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Feuc-releases%2Fworkspace-ONE-SDK-integration-samples?ref=badge_large)
