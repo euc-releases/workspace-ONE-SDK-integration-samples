@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: BSD-2-Clause
 package com.example.integrationguide
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import com.airwatch.util.Logger.d
 import com.airwatch.util.Logger.e
@@ -162,6 +163,7 @@ class IntegratedAuthActivity : SDKBaseActivity(), View.OnClickListener, StatusLi
         return super.onOptionsItemSelected(item)
     }
 
+    @SuppressLint("Range")
     private fun logCertDetails() {
         try {
             val keyStore = SDKKeyStoreUtils().getPKCS12(

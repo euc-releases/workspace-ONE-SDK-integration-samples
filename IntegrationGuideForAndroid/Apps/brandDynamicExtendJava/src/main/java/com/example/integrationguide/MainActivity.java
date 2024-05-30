@@ -50,19 +50,22 @@ public class MainActivity extends BaseActivity {
         }
 
         findViewById(R.id.toggleView).setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    NotificationCompat.Builder notification =
-                        new NotificationCompat.Builder(
-                            MainActivity.this, channelID)
-                            .setSmallIcon(R.drawable.brand_logo_onecolour)
-                            .setContentTitle("Tapped")
-                            .setContentText("App Logo was tapped.")
-                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                    NotificationManagerCompat manager =
-                        NotificationManagerCompat.from(MainActivity.this);
-                    manager.notify(1, notification.build());
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        NotificationCompat.Builder notification =
+                                new NotificationCompat.Builder(
+                                        MainActivity.this, channelID)
+                                        .setSmallIcon(R.drawable.brand_logo_onecolour)
+                                        .setContentTitle("Tapped")
+                                        .setContentText("App Logo was tapped.")
+                                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                        NotificationManagerCompat manager =
+                                NotificationManagerCompat.from(MainActivity.this);
+                        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                            manager.notify(1, notification.build());
+                        }
+
                 }
             }
         );

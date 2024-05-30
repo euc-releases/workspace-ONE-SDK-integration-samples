@@ -7,12 +7,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
+    namespace = "com.vmware.workspaceone_example_identification"
 
     defaultConfig {
         applicationId "com.vmware.workspaceone_example_identification"
-        minSdk 21
-        targetSdk 33
+        minSdk 24
+        targetSdk 34
         versionCode 2
         versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

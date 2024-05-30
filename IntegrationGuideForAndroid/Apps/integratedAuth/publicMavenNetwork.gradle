@@ -8,13 +8,11 @@ android {
     defaultConfig {
         multiDexEnabled true
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    kotlin {
+        jvmToolchain 17
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+
     packagingOptions {
         exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
     }

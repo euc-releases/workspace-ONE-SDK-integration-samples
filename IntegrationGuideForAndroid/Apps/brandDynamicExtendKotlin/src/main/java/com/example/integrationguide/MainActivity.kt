@@ -51,8 +51,16 @@ class MainActivity : BaseActivity() {
                     .setContentTitle("Tapped")
                     .setContentText("App Logo was tapped.")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                with(NotificationManagerCompat.from(this)) {
-                    notify(1, notification.build())
+
+                with(NotificationManagerCompat.from(this@MainActivity)) {
+                    if (ActivityCompat.checkSelfPermission(
+                            this@MainActivity,
+                            Manifest.permission.POST_NOTIFICATIONS
+                        ) != PackageManager.PERMISSION_GRANTED
+                    ) {
+                        notify(1, notification.build())
+
+                    }
                 }
             }
         }

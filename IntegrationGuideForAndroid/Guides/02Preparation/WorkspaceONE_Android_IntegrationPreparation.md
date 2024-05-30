@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 24.01        |           |
-Workspace ONE management console                   | 2306         | 2206      |
-Workspace ONE Intelligent Hub application          | 24.01        | 22.02     |
-Android Operating System                           | Android 13   | Android 5 |
+Workspace ONE software development kit for Android | 24.04        |           |
+Workspace ONE management console                   | 2402         | 2212      |
+Workspace ONE Intelligent Hub application          | 24.04        | 22.06     |
+Android Operating System                           | Android 14   | Android 7 |
 Android Studio integrated development environment  | 2022.3.1     | 2020.3.1  |
-Gradle plugin for Android                          | 7.2.2        | 7.2.1     |
+Gradle plugin for Android                          | 8.2.2        | 8         |
 
 # Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
@@ -710,29 +710,30 @@ This document is available
     [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
-|Date     |Revision                                           |
-|---------|---------------------------------------------------|
-|03jul2020|First publication, for 20.4 SDK for Android.       |
-|31jul2020 to 09dec2021|Updated for 20.7 to 21.11 SDK for Android releases.|
-|26Jan2022|Updated for 22.1 SDK for Android.                  |
-|28Feb2022|Updated for 22.2 SDK for Android.                  |
-|04Apr2022|Updated for 22.3 SDK for Android.                  |
-|29Apr2022|Updated for 22.4 SDK for Android.                  |
-|06Jun2022|Updated for 22.5 SDK for Android.                  |
-|05Jul2022|Updated for 22.6 SDK for Android.                  |
-|23Aug2022|Updated for 22.8 SDK for Android.                  |
-|04Nov2022|Updated for 22.10 SDK for Android.                 |
-|08nov2022|Add instructions and tips for app store in PO mode.|
-|13Dec2022|Updated for 22.11 SDK for Android.                 |
-|25Jan2023|Updated for 23.01 SDK for Android.                 |
-|15Mar2023|Updated for 23.03 SDK for Android.                 |
-|27Apr2023|Updated for 23.04 SDK for Android.                 |
-|06Jun2023|Updated for 23.06 SDK for Android.                 |
-|24Jul2023|Updated for 23.07 SDK for Android.                 |
-|07Sep2023|Updated for 23.09 SDK for Android.                 |
-|25Oct2023|Updated for 23.10 SDK for Android.                 |
-|18Dec2023|Updated for 23.12 SDK for Android.                 |
-|25Jan2024|Updated for 24.01 SDK for Android.                 |
+| Date                   | Revision                                            |
+|------------------------|-----------------------------------------------------|
+| 03jul2020              | First publication, for 20.4 SDK for Android.        |
+| 31jul2020 to 09dec2021 | Updated for 20.7 to 21.11 SDK for Android releases. |
+| 26Jan2022              | Updated for 22.1 SDK for Android.                   |
+| 28Feb2022              | Updated for 22.2 SDK for Android.                   |
+| 04Apr2022              | Updated for 22.3 SDK for Android.                   |
+| 29Apr2022              | Updated for 22.4 SDK for Android.                   |
+| 06Jun2022              | Updated for 22.5 SDK for Android.                   |
+| 05Jul2022              | Updated for 22.6 SDK for Android.                   |
+| 23Aug2022              | Updated for 22.8 SDK for Android.                   |
+| 04Nov2022              | Updated for 22.10 SDK for Android.                  |
+| 08nov2022              | Add instructions and tips for app store in PO mode. |
+| 13Dec2022              | Updated for 22.11 SDK for Android.                  |
+| 25Jan2023              | Updated for 23.01 SDK for Android.                  |
+| 15Mar2023              | Updated for 23.03 SDK for Android.                  |
+| 27Apr2023              | Updated for 23.04 SDK for Android.                  |
+| 06Jun2023              | Updated for 23.06 SDK for Android.                  |
+| 24Jul2023              | Updated for 23.07 SDK for Android.                  |
+| 07Sep2023              | Updated for 23.09 SDK for Android.                  |
+| 25Oct2023              | Updated for 23.10 SDK for Android.                  |
+| 18Dec2023              | Updated for 23.12 SDK for Android.                  |
+| 25Jan2024              | Updated for 24.01 SDK for Android.                  |
+| 15May2024              | Updated for 24.04 SDK for Android.                  |
 
 ## Legal
 -   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA
