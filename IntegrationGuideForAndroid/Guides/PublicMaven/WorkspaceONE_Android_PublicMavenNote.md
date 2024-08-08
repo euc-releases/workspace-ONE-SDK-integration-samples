@@ -74,7 +74,20 @@ Files** instructions are changed as follows.
 
         repositories {
             maven {
-                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+                url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+                credentials {
+                    /** In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token=GITHUB_ACCESS_TOKEN **/
+                    username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
+            }
+            maven {
+                url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+                credentials {
+                    /** In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token=GITHUB_ACCESS_TOKEN **/
+                    username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
             }
         }
 
@@ -96,7 +109,7 @@ Files** instructions are changed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:21.3"
+            implementation "com.airwatch.android:airwatchsdk:24.06"
         }
 
 -   Skip the step **Copy the required library files**.
@@ -113,8 +126,21 @@ Files** instructions are changed as follows.
     the following.
 
         repositories {
+             maven {
+                url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+                credentials {
+                    /** Create github.properties in root project folder file with github.user=GITHUB_USERNAME  & github.token=GITHUB_ACCESS_TOKEN **/
+                    username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
+            }
             maven {
-                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+                url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+                credentials {
+                    /** Create github.properties in root project folder file with github.user=GITHUB_USERNAME  & github.token=GITHUB_ACCESS_TOKEN **/
+                    username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
             }
         }
 
@@ -136,7 +162,7 @@ Files** instructions are changed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:21.3"
+            implementation "com.airwatch.android:awframework:24.06"
         }
 
 -   Skip the step **Copy the required library files**.
@@ -164,14 +190,15 @@ Each app directory has the following build files.
 
 # Document Information
 ## Revision History
-|Date     |Revision                                    |
-|---------|--------------------------------------------|
-|21apr2021|First publication, for 21.3 SDK for Android.|
+| Date      | Revision                                       |
+|-----------|------------------------------------------------|
+| 21apr2021 | First publication, for 21.3 SDK for Android.   |
+| 05jul2024 | Second publication, for 24.06 SDK for Android. |
 
 ## Legal
 -   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
     Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2022 VMware, Inc. All rights reserved.
+-   Copyright © 2024 VMware, Inc. All rights reserved.
 -   This content is protected by U.S. and international copyright and
     intellectual property laws. VMware products are covered by one
     or more patents listed at

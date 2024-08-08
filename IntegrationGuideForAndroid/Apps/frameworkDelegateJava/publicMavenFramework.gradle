@@ -25,5 +25,5 @@ dependencies {
     //     Disclosure for information on applicable privacy policies.
     //     https://www.vmware.com/help/privacy.html
     //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-    implementation ("com.airwatch.android:AWFramework:${airwatchVersion}")
+    implementation ("com.airwatch.android:awframework:${airwatchVersion}")
 }

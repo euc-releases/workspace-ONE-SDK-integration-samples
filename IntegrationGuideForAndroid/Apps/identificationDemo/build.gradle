@@ -69,13 +69,11 @@ android {
     defaultConfig {
         multiDexEnabled true
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    kotlin {
+        jvmToolchain 17
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+
     packagingOptions {
         exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
     }
@@ -83,7 +81,20 @@ android {
 
 repositories {
     maven {
-        url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+        url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+        credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+            username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+        }
+    }
+    maven {
+        url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+        credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+            username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+        }
     }
 }
 
@@ -105,7 +116,7 @@ dependencies {
     //     Disclosure for information on applicable privacy policies.
     //     https://www.vmware.com/help/privacy.html
     //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-    implementation ("com.airwatch.android:AirWatchSDK:${airwatchVersion}")
+    implementation ("com.airwatch.android:airwatchsdk:${airwatchVersion}")
 }
 
 // Test task in a separate file.

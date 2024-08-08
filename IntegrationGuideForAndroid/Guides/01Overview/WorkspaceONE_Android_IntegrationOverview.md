@@ -79,7 +79,7 @@ VMware collects a limited set of information from the Workspace ONE SDK to
 operate and support the SDK within third-party apps, such as notifying customers
 about feature removal or platform compatibility. This data is anonymized and
 analyzed in aggregate, and cannot be used to identify the application containing
-the SDK or end user. This data is sent to scapi.vmware.com. Please
+the SDK or end user. This data is sent to api.artemis.omnissa.com. Please
 refer to [VMware's Privacy Notices](https://www.vmware.com/help/privacy.html)
 online for more information about VMware data collection and privacy policies.
 

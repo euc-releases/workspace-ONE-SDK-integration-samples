@@ -1,3 +1,33 @@
+## VMware Workspace ONE SDK 24.06 for Android
+
+# What’s new
+* Stability improvements and Bug fixes.
+* Third party library updates.
+
+# Compatibility
+* Android 7.0+ (i.e., API 24)
+* Workspace ONE UEM Console 2212+ 
+* Android Studio with the Gradle Android Build System (Gradle) 7.4+ 
+* JDK version 17 
+* Workspace ONE Intelligent Hub for Android version 24.04
+
+# Integration
+The SDK is accessible from a Maven repository. For integration documentation, refer to the VMware developer website: [VMware Developer Documentation](https://developer.omnissa.com/ws1-sdk-uem-android/)
+
+# Important Update Starting June 2024
+From version 24.06 onwards, the Workspace ONE SDK for Android will no longer be available through the My Workspace ONE portal: ("https://my.workspaceone.com/")
+Instead, it will be distributed exclusively as a Maven GitHub package (“https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/“, “https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/” ).
+
+Developers must follow the instructions in the following link to integrate the Workspace ONE SDK Android package into their applications: [Workspace ONE SDK Integration Guide](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md).
+
+Also, when adding module dependencies, ensure the group and module names are in lowercase.
+Example:
+dependencies {
+    implementation ("com.airwatch.android:airwatchsdk:${airwatchVersion}")
+    implementation ("com.airwatch.android:awframework:${airwatchVersion}")
+    implementation ("com.airwatch.android:awnetworklibrary:${airwatchVersion}")
+}
+
 ## VMware Workspace ONE SDK 24.04 for Android
 
 # What’s new

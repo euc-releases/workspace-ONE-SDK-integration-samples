@@ -72,7 +72,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.04
+Workspace ONE SDK for Android                    | 24.06
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 Gradle plugin for Android                        | 8.2.2
@@ -187,8 +187,21 @@ First, update the build configuration and add the required library files.
 
         repositories {
             maven {
-                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+                 url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+            credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                 username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                 password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                  }
             }
+             maven {
+                 url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+             credentials {
+             /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                 username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                 password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                 }
+             }
         }
 
         dependencies {
@@ -209,7 +222,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AirWatchSDK:24.04"
+            implementation "com.airwatch.android:airwatchsdk:24.06"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -508,7 +521,20 @@ Proceed as follows.
 
         repositories {
             maven {
-                url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+                url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+            credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
+            }
+            maven {
+                url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+            credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
             }
         }
 
@@ -530,7 +556,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:AWFramework:24.04"
+            implementation "com.airwatch.android:awframework:24.06"
         }
     
     Your application might already require different versions of some of the
@@ -1064,9 +1090,9 @@ console.
 
 ## Kotlin Compatibility
 Occasionally, one may encounter an exception containing the message "Class 'kotlin.Unit' was compiled with an 
-incompatible version of Kotlin. The binary version of its metadata is 1.7.1, expected version is 
-1.5.1." during compilation. This exception is due to incompatible versions of your app with the 
-Workspace One SDK. As of Release 23.03, all apps consuming WS1 will be required to use Kotlin v1.7.1
+incompatible version of Kotlin. The binary version of its metadata is 1.*.* version, expected version is 
+1.8.21." during compilation. This exception is due to incompatible versions of your app with the 
+Workspace One SDK. As of Release 23.09, all apps consuming WS1 will be required to use Kotlin v1.8.21
 or higher. 
 
 ## Empty Response from AirWatch MDM Service
@@ -1132,6 +1158,7 @@ This document is available
 | 18Dec2023              | Updated for 23.12 SDK for Android.                  |
 | 25Jan2024              | Updated for 24.01 SDK for Android.                  |
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
+| 05Jul2024              | Updated for 24.06 SDK for Android.                  |
 
 
 ## Legal

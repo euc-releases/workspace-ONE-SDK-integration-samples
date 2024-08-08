@@ -18,22 +18,21 @@ android {
     }
 }
 
-def vmwaresaas=secretProperties("vmwaresaas.properties")
-if (vmwaresaas == null) {
-    repositories {
-        maven {
-            url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+        credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+            username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("github.token") ?: System.getenv("TOKEN")
         }
     }
-}
-else {
-    repositories {
-        maven {
-            url vmwaresaas["url"]
-            credentials {
-                username vmwaresaas["username"]
-                password vmwaresaas["password"]
-            }
+    maven {
+        url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+        credentials {
+            /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+            username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("github.token") ?: System.getenv("TOKEN")
         }
     }
 }
@@ -56,5 +55,5 @@ dependencies {
     //     Disclosure for information on applicable privacy policies.
     //     https://www.vmware.com/help/privacy.html
     //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html'
-    implementation ("com.airwatch.android:AWNetworkLibrary:${airwatchVersion}")
+    implementation ("com.airwatch.android:awnetworklibrary:${airwatchVersion}")
 }

@@ -110,7 +110,7 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 24.04        |           |
+Workspace ONE software development kit for Android | 24.06        |           |
 Workspace ONE management console                   | 2402         | 2212      |
 Workspace ONE Intelligent Hub application          | 24.04        | 22.06     |
 Android Operating System                           | Android 14   | Android 7 |
@@ -734,6 +734,7 @@ This document is available
 | 18Dec2023              | Updated for 23.12 SDK for Android.                  |
 | 25Jan2024              | Updated for 24.01 SDK for Android.                  |
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
+| 05Jul2024              | Updated for 24.06 SDK for Android.                  |
 
 ## Legal
 -   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA

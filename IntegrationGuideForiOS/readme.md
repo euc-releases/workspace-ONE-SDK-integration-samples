@@ -1,5 +1,6 @@
-# VMware Workspace ONE SDK v24.04 for iOS
+# VMware Workspace ONE SDK v24.06 for iOS
 ## What’s new
+* Support for enabling SDK apps to utilize WKWebView for in-app tunneling.
 * Bug fixes and Stability improvements.
 * Third party library updates.
 ## Compatibility
@@ -16,6 +17,6 @@ It will only be distributed as a Swift package and will be available through the
 
 ## License
 Before you integrate the SDK you must
-* Review the VMware Workspace ONE Software Development Kit License Agreement. By downloading, installing, or using the VMware Workspace ONE SDK, you agree to these license terms.
-* Review the VMware Privacy Notice and the Workspace ONE UEM Privacy Disclosure for information on applicable privacy policies.
+* Review the [VMware Workspace ONE Software Development Kit License Agreement](https://developer.omnissa.com). By downloading, installing, or using the VMware Workspace ONE SDK, you agree to these license terms.
+* Review the [VMware Privacy Notice](https://static.omnissa.com/uploads/explore-privacy.pdf) and the [Workspace ONE UEM Privacy Disclosure](https://www.omnissa.com/trust-center/) for information on applicable privacy policies.
  

@@ -72,7 +72,7 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.04
+Workspace ONE SDK for Android                    | 24.06
 Android Studio integrated development environment| 2022.3.1
 [**Table 1:** Software compatibility versions]
 

@@ -69,6 +69,17 @@ struct TunnelingView: View {
 
     func configureWKWebView() {
         wkwebView = WKWebView(frame: .zero, configuration: tunnelingViewModel.getWkWebViewConfig())
+        #if swift(>=5.9)
+        if #available(iOS 17.0,*) {
+            do {
+                // Enabling Tunnel on an instance of WKWebView.
+                // WorkSpace One SDK needs to be intialised before enabling Tunnel.
+                try self.wkwebView.enableTunnel()
+            } catch let error {
+                print("Failed to enable Tunnel - \(error)")
+            }
+        }
+        #endif
     }
 
     func loadWebViews() {

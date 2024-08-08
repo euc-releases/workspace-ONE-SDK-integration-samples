@@ -16,6 +16,10 @@ android {
         resValue("string", "MODULE_NAME", buildscript.sourceFile.parentFile.name)
     }
 
+    kotlin {
+        jvmToolchain 17
+    }
+
     buildTypes {
         release {
             minifyEnabled false
