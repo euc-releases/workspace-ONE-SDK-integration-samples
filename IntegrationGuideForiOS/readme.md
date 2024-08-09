@@ -1,7 +1,6 @@
-# VMware Workspace ONE SDK v24.06 for iOS
+# VMware Workspace ONE SDK v24.07 for iOS
 ## What’s new
-* Support for enabling SDK apps to utilize WKWebView for in-app tunneling.
-* Bug fixes and Stability improvements.
+* Stability improvements.
 * Third party library updates.
 ## Compatibility
 
@@ -9,11 +8,11 @@
 * Workspace ONE UEM Console 2212+
 * Xcode 15.0+
 ## Integration
-The SDK is distributed as a Swift package. Add this URL as the package location in Xcode.[ https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
+The SDK is distributed as a Swift package. Add this URL as the package location in Xcode.[ https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
 Starting April 2024, version 24.04 onwards Workspace ONE SDK for iOS will NOT be distributed through the My Workspace one portal i.e. https://my.workspaceone.com/products/Workspace-ONE-SDK . 
 It will only be distributed as a Swift package and will be available through the following URL. 
-[https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
+[https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
 ## License
 Before you integrate the SDK you must
