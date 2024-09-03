@@ -109,7 +109,7 @@ Files** instructions are changed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:airwatchsdk:24.06"
+            implementation "com.airwatch.android:airwatchsdk:24.07"
         }
 
 -   Skip the step **Copy the required library files**.
@@ -162,7 +162,7 @@ Files** instructions are changed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:awframework:24.06"
+            implementation "com.airwatch.android:awframework:24.07"
         }
 
 -   Skip the step **Copy the required library files**.

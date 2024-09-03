@@ -110,9 +110,9 @@ the minimum supported versions if different.
 
 Software                                           | Instructions | Supported |
 ---------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 24.06        |           |
-Workspace ONE management console                   | 2402         | 2212      |
-Workspace ONE Intelligent Hub application          | 24.04        | 22.06     |
+Workspace ONE software development kit for Android | 24.07        |           |
+Workspace ONE management console                   | 2402         | 2302      |
+Workspace ONE Intelligent Hub application          | 24.07        | 23.02     |
 Android Operating System                           | Android 14   | Android 7 |
 Android Studio integrated development environment  | 2022.3.1     | 2020.3.1  |
 Gradle plugin for Android                          | 8.2.2        | 8         |
@@ -735,6 +735,7 @@ This document is available
 | 25Jan2024              | Updated for 24.01 SDK for Android.                  |
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
 | 05Jul2024              | Updated for 24.06 SDK for Android.                  |
+| 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 
 ## Legal
 -   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA

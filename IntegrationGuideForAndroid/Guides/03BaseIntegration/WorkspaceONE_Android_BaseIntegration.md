@@ -72,7 +72,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.06
+Workspace ONE SDK for Android                    | 24.07
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 Gradle plugin for Android                        | 8.2.2
@@ -222,7 +222,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:airwatchsdk:24.06"
+            implementation "com.airwatch.android:airwatchsdk:24.07"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -556,7 +556,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies.
             //     https://www.vmware.com/help/privacy.html
             //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
-            implementation "com.airwatch.android:awframework:24.06"
+            implementation "com.airwatch.android:awframework:24.07"
         }
     
     Your application might already require different versions of some of the
@@ -1159,6 +1159,8 @@ This document is available
 | 25Jan2024              | Updated for 24.01 SDK for Android.                  |
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
 | 05Jul2024              | Updated for 24.06 SDK for Android.                  |
+| 28Aug2024              | Updated for 24.07 SDK for Android.                  |
+
 
 
 ## Legal
