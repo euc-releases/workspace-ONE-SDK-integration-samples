@@ -168,6 +168,11 @@ public class Application
     }
 
     @Override
+    public boolean showSSLWarning() {
+        return false;
+    }
+
+    @Override
     public void onSSLPinningRequestFailure(
             @NonNull String host,
             @androidx.annotation.Nullable X509Certificate serverCACertificate
