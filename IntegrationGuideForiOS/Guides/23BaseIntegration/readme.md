@@ -1,6 +1,6 @@
 # Base Integration Guide
 ## Workspace ONE for iOS and iPadOS
-Applications for iOS and iPadOS can be integrated with the VMware Workspace ONE®
+Applications for iOS and iPadOS can be integrated with the Omnissa Workspace ONE®
 platform, by using its mobile software development kit. Complete the tasks below
 as a base for feature integration.
 
@@ -8,22 +8,17 @@ This document is part of the Workspace ONE Integration Guide set.
 
 # [Welcome](01Welcome/readme.md)
 
-## Agreement
-Before downloading, installing or using the VMware Workspace ONE Software
-Development Kit (SDK) you must:
+## Downloads
 
--   Review the
-    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf).
-    By downloading, installing, or using the VMware Workspace ONE SDK you agree
-    to these license terms. If you disagree with any of the terms, then do not
-    use the software.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
 
--   Review the [VMware Privacy Notice](https://www.vmware.com/help/privacy.html)
-    and the
-    [Workspace ONE UEM Privacy Disclosure](https://www.vmware.com/help/privacy/uem-privacy-disclosure.html),
-    for information on applicable privacy policies.
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 
-That applies however you obtain or integrate the software.
+## License
+
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## [Compatibility](01Welcome/01Compatibility/readme.md)
 
@@ -58,7 +53,7 @@ This document is available
 -   in Markdown format, in the repository that also holds the sample code:  
     [github.com/euc-releases/.../IntegrationGuideForiOS/...BaseIntegration/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/readme.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
+-   in Portable Document Format (PDF), on the Omnissa website:  
     [developer.omnissa.com/.../WorkspaceONE_iOS_BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-uem-ios/docs/integration/WorkspaceONE_iOS_BaseIntegration.pdf)
 
 ## Revision History
@@ -74,15 +69,3 @@ This document is available
 |15May2024|Publication for 24.04 SDK for iOS. |
 |01Jul2024|Publication for 24.06 SDK for iOS. |
 |06Aug2024|Publication for 24.07 SDK for iOS. |
-
-## Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware LLC. All rights reserved.
--   This product is protected by U.S. and international
-    copyright and intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.

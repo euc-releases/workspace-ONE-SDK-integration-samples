@@ -40,7 +40,7 @@ Follow these instructions to build the applications in this project.
 2.  **Ensure you have access to the SDK Maven repository.**
 
     The repository server is here.  
-    `https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/`
+    `https://omnissa.jfrog.io/artifactory/Workspace-ONE-Android-SDK/`
 
 3.  **Load the project into Android Studio.**
 
@@ -106,8 +106,3 @@ code project in the Workspace ONE Integration Guide for Android repository was
 configured to use the SDK from that directory but is now configured to build
 with the Maven distribution of the SDK instead.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

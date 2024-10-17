@@ -2,7 +2,7 @@
 //  OpenURL.swift
 //  SwiftUISDKExampleApp
 //
-//  Copyright 2022 VMware, Inc.
+//  Copyright 2022 Omnissa, LLC.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
@@ -12,7 +12,7 @@ import SwiftUI
 struct OpenURLView: View {
     @State private var showingAlert = false
     let alertMessageDLP: String = String(localized: "checkDLPSettings")
-    let url = URL(string: "https://www.vmware.com")!
+    let url = URL(string: "https://www.omnissa.com")!
 
     @Environment(\.openURL) private var openURL
 

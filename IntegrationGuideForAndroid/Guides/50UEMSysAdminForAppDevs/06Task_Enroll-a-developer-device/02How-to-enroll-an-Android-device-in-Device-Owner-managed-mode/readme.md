@@ -87,11 +87,6 @@ This completes Android Device Owner managed mode enrollment. The device is now
 ready for developer use.
 
 For instructions with screen captures of every stage, see this tutorial on the
-VMware Tech Zone website:  
-[https://techzone.vmware.com/managing-android-devices-workspace-one-operational-tutorial#_1211546](https://techzone.vmware.com/managing-android-devices-workspace-one-operational-tutorial#_1211546)
+Omnissa Tech Zone website:  
+[https://techzone.omnissa.com/managing-android-devices-workspace-one-operational-tutorial#_1211546](https://techzone.omnissa.com/managing-android-devices-workspace-one-operational-tutorial#_1211546)
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

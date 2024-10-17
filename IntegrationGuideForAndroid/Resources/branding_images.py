@@ -1,9 +1,9 @@
-# Copyright 2022 VMware, Inc.
+# Copyright 2022 Omnissa, LLC.
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Run with Python 3.7
 """\
-Script to generate a set of branding images for upload to a VMware Workspace ONE
+Script to generate a set of branding images for upload to a Omnissa Workspace ONE
 unified endpoint manager (UEM).
 """
 #

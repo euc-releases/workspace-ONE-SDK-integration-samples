@@ -2,7 +2,7 @@
 //  LoggingViewViewModel.swift
 //  SwiftUISDKExampleApp
 //
-//  Copyright 2023 VMware, Inc.
+//  Copyright 2023 Omnissa, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 

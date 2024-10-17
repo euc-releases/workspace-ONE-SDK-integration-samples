@@ -8,7 +8,7 @@
  * https://github.com/facebook/react-native
  */
 
-// Copyright 2022 VMware, Inc.
+// Copyright 2022 Omnissa, LLC.
 // SPDX-License-Identifier: BSD-2-Clause
 
 import 'react-native-gesture-handler';

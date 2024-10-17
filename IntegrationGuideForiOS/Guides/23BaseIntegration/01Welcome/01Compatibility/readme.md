@@ -13,7 +13,7 @@ The SDK supports versions of the Swift language that are supported by the above
 Xcode versions.
 
 # License
-Copyright 2024 VMware LLC. All rights reserved.  
+Copyright 2024 Omnissa LLC. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

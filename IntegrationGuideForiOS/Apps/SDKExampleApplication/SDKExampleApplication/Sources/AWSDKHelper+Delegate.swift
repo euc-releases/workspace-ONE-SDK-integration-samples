@@ -2,7 +2,7 @@
 //  AWSDKHelper+AWControllerDelegate.swift
 //  Workspace-ONE-SDK-iOS-Swift-Sample
 //
-//  Copyright 2021 VMware, Inc.
+//  Copyright 2021 Omnissa, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 

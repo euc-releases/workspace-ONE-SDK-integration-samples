@@ -2,7 +2,7 @@
 //  AWSDKHelper.swift
 //  SwiftExampleApp
 //
-//  Copyright 2024 VMware, Inc.
+//  Copyright 2024 Omnissa, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 

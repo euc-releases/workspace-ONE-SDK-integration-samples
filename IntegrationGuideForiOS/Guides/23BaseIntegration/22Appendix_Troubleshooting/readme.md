@@ -199,7 +199,7 @@ So a reset sequence could be like this.
     [Welcome](../01Welcome/readme.md) section.
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

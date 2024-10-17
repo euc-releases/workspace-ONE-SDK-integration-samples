@@ -26,7 +26,7 @@ Proceed as follows to add the SDK package.
 
 3.  Select the search control and paste in the URL for the Workspace ONE SDK
     Swift Package.  
-    `https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK`
+    `https://github.com/euc-releases/iOS-WorkspaceONE-SDK`
 
     The add package dialog changes to show controls for specifying the package
     version.
@@ -83,7 +83,7 @@ recognize the package's module for import. After that, continue with the next
 [Task: Initialize the software development kit runtime](../04Task_Initialize-the-software-development-kit-runtime/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

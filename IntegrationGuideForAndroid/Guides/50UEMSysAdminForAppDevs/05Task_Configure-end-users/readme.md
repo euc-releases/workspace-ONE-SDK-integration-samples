@@ -14,8 +14,3 @@ guides for the Workspace ONE product for authoritative and complete information.
 See the [Recommended End User Configuration](01Recommended-End-User-Configuration/readme.md)
 for details.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

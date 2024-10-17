@@ -1,49 +1,32 @@
 # Workspace ONE Software Development Kit Integration Samples
-This repository contains sample code for integration of mobile applications with
-the VMware Workspace ONE® platform.
 
-Different sets of sample code will be published to this repository. At time of
-writing, the following set is available.
+This repository contains sample code for integration of mobile applications with the Omnissa Workspace ONE® platform.
+
+Different sets of sample code will be published to this repository. At time of writing, the following set is available.
 
 ## Workspace ONE for Android Integration Guide Code
-Android applications can be integrated with the VMware Workspace ONE® platform,
-by using its mobile software development kit. The Workspace ONE Integration
-Guide for Android is a set of documents that contain instructions for
-integration.
+Android applications can be integrated with the Omnissa Workspace ONE® platform, by using its mobile software development kit. The Workspace ONE Integration Guide for Android is a set of documents that contain instructions for integration.
 
-See:
-[Workspace ONE for Android Integration Guide Code](IntegrationGuideForAndroid)
+See: [Workspace ONE for Android Integration Guide Code](./IntegrationGuideForAndroid/index.md)
 
 ## Workspace ONE for iOS Integration Guide Code
-iOS applications can be integrated with the VMware Workspace ONE® platform,
+iOS applications can be integrated with the Omnissa Workspace ONE® platform,
 by using its mobile software development kit. The Workspace ONE Integration
 Guide for iOS provides a sample application that contain instructions for
 integration and usage.
 
-See:
-[Workspace ONE for iOS Integration Guide Code](IntegrationGuideForiOS)
+See: [Workspace ONE for iOS Integration Guide Code](./IntegrationGuideForiOS/index.md)
 
-# Contributing
-The Workspace ONE SDK integration samples project team welcomes contributions
-from the community. Before you start working with the Workspace ONE SDK
-integration samples, please read our
-[Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions
-to this repository must be signed as described on that page. Your signature
-certifies that you wrote the patch or have the right to pass it on as an
-open-source patch. For more detailed information, refer to
-[CONTRIBUTING.md](CONTRIBUTING.md).
+## Downloads
 
-# Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit Integration Samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
+
+## License
+
+This  is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+This software may also utilize Third-Pary Open Source Software as detailed within the [open_source_licenses.txt](open_source_licenses.txt) file.

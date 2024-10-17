@@ -4,12 +4,12 @@ the code here. The use for keychain clearance is discussed in the
 [Appendix: Troubleshooting](../22Appendix_Troubleshooting/readme.md).
 
 The sample code is also published here.  
-[github.com/vmware-samples/…/KeychainClearance.swift](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/23Appendix_Keychain-Clearance-Sample-Code/KeychainClearance.swift)
+[github.com/euc-releases/…/KeychainClearance.swift](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/23Appendix_Keychain-Clearance-Sample-Code/KeychainClearance.swift)
 
 
 <p class="allow-page-break" />
 
-    //  Copyright 2023 VMware, Inc.
+    //  Copyright 2023 Omnissa, Inc.
     //  SPDX-License-Identifier: BSD-2-Clause
 
     import Foundation
@@ -91,7 +91,7 @@ Acknowledgements
     [github.com/vmware/captive-web-view/…/StoredKey.swift#L184](https://github.com/vmware/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L184)
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

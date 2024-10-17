@@ -2,7 +2,7 @@
 
 This documentation will cover the [installation](#installation), [setup](#setup) and [usage](#usage) of the **VM**ware Workspace ONE SDK for Xamarin Forms.
 
-<small>WorkspaceOne SDK for Xamarin Forms is dependent on [AWSDK](https://www.nuget.org/packages/AWSDK/) version 23.7.00 or higher.Please find the [Prerequisites](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForXamarinNative/GettingStarted.md) for using the WS1 Forms SDK </small>
+<small>WorkspaceOne SDK for Xamarin Forms is dependent on [AWSDK](https://www.nuget.org/packages/AWSDK/) version 23.7.00 or higher.Please find the [Prerequisites](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForXamarinNative/GettingStarted.md) for using the WS1 Forms SDK </small>
 
 ## Installation
 
@@ -67,7 +67,7 @@ For example like this:
     
     
 
-Replace *"wsoexample"* with the name of your iOS app url scheme. See [the documentation for the WorkspaceOne SDK for iOS](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/VMware-Workspace-ONE-SDK-for-iOS-(Swift)/GUID-AWT-INITIALIZESDK.html#GUID-AWT-INITIALIZESDK) about details for the app url scheme.
+Replace *"wsoexample"* with the name of your iOS app url scheme. See [the documentation for the WorkspaceOne SDK for iOS](https://docs.omnissa.com/en/Omnissa-Workspace-ONE-UEM/services/Omnissa-Workspace-ONE-SDK-for-iOS-(Swift)/GUID-AWT-INITIALIZESDK.html#GUID-AWT-INITIALIZESDK) about details for the app url scheme.
 
 2. Ensure WorkspaceOne.OnActivated() is called.
 
@@ -533,7 +533,7 @@ Use the secure storage API set of functions to store key value pairs in encrypte
 
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

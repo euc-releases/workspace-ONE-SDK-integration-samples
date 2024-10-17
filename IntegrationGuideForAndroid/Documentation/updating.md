@@ -220,8 +220,3 @@ version of the Workspace ONE Software Development Kit (SDK) for Android.
 
 When the test passes in all the apps, the update is ready for commit.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

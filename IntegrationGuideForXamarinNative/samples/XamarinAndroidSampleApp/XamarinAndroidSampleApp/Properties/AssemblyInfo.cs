@@ -9,7 +9,7 @@ using Android.App;
 [assembly: AssemblyTitle("XamarinAndroidSampleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("VMware AirWatch")]
+[assembly: AssemblyCompany("Omnissa AirWatch")]
 [assembly: AssemblyProduct("XamarinAndroidSampleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

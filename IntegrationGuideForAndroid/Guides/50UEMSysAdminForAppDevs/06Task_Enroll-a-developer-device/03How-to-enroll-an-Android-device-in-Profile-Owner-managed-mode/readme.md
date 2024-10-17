@@ -13,10 +13,10 @@ but might be required as a test case.
     resetting the Hub may cause removal of any associated applications from the
     device.
 
--   Any VMware productivity apps already installed on an unmanaged developer
+-   Any Omnissa productivity apps already installed on an unmanaged developer
     device might stop working when it is enrolled in PO mode. This applies
     whether the apps were enrolled standalone or through Hub running in
-    registered mode. The VMware productivity apps include the Workspace ONE
+    registered mode. The Omnissa productivity apps include the Workspace ONE
     Boxer email app, and the Workspace ONE Web browser, for example.
 
 **Tip**: Set a device passcode before you begin enrolment. Typical UEM
@@ -90,8 +90,3 @@ Proceed as follows.
 This completes Android Profile Owner mode enrollment. The device is now
 ready for developer use.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

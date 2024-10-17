@@ -16,7 +16,7 @@ SDK.
 1.  Download the SDK.
 
     See the SDK home page
-    [https://developer.vmware.com/web/sdk/Native/airwatch-android](https://developer.vmware.com/web/sdk/Native/airwatch-android)
+    [https://developer.omnissa.com/web/sdk/Native/airwatch-android](https://developer.omnissa.com/web/sdk/Native/airwatch-android)
     for links to the download portal.
 
 2.  Unzip the SDK download under this directory.
@@ -110,8 +110,3 @@ Repository declarations can be based on the above variables, like this:
         flatDir { dirs sdkVersionDir('Libs', 'ClientSDK', 'dependencies') }
     }
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

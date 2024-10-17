@@ -1,23 +1,23 @@
 # Public Maven Repository Integration Note
 ## Workspace ONE for Android
-The VMware Workspace ONE® software development kit for Android can now be
+The Omnissa Workspace ONE® software development kit for Android can now be
 utilized directly from a public Maven repository. Direct utilization from the
 repository is an alternative to downloading the software development kit from
 the My Workspace ONE website.
 
-# Agreement
-Before downloading, installing or using the VMware Workspace ONE SDK you must:
 
--   Review the
-    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf).
-    By downloading, installing, or using the VMware Workspace ONE SDK you agree
-    to these license terms. If you disagree with any of the terms, then do not
-    use the software.
+## Downloads
 
--   Review the [VMware Privacy Notice](https://www.vmware.com/help/privacy.html)
-    and the
-    [Workspace ONE UEM Privacy Disclosure](https://www.vmware.com/help/privacy/uem-privacy-disclosure.html),
-    for information on applicable privacy policies.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
+
+## License
+
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
 
 That applies however you obtain or integrate the software.
 
@@ -29,13 +29,7 @@ Integration of an Android application with the Workspace ONE platform includes a
 number of tasks for the application developer. Instructions for these tasks are
 given in a set of documents: the Workspace ONE Integration Guide for Android.
 
-The integration guide documents are available
-
--   in Markdown format, in the repository that also holds official sample code:  
-    [https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples)
-
--   in Portable Document Format (PDF), on the VMware website.  
-    [https://developer.vmware.com/web/sdk/Native/airwatch-android](https://developer.vmware.com/web/sdk/Native/airwatch-android)
+The integration guide documents are available in the [Workspace ONE Android SDK Overview](https://developer.omnissa.com/ws1-uem-sdk-for-android/).
 
 Most of the instructions apply the same whether the SDK is utilized directly
 from the public Maven repository or by downloading from My Workspace ONE.
@@ -56,9 +50,11 @@ Preparation Guide to utilize the public Maven repository.
 
 Skip the **Task: Obtain software development kit** instructions.
 
-You should still download and review the 
-[VMware Workspace ONE SDK License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf). If you don't accept the terms, stop 
-here and don't integrate the SDK.
+## Downloads
+
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 
 ## Base Integration Guide Changes
 Follow these changed instructions instead of those in the Base Integration
@@ -92,23 +88,20 @@ Files** instructions are changed as follows.
         }
 
         dependencies {
-            // Integrate Workspace ONE at the Client level.
+            // Integrate Omnissa Workspace ONE at the Client level.
             //
-            // Before downloading, installing, or using the VMware Workspace ONE
-            // SDK you must:
+            // -   Omnissa provides this Software Development Kit (the “Software”) to
+            //     you subject to the following terms and conditions. By downloading, 
+            //     installing, or using the Software, you agree to be bound by the terms
+            //     of https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf
+            //     If you disagree with any of the terms, then do not use the Software.
+
+            //    For additional information, please visit the https://www.omnissa.com/legal-center/.
             //
-            // -   Review the VMware Workspace ONE Software Development Kit
-            //     License Agreement that is posted here.
-            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
-            //
-            //     By downloading, installing, or using the VMware Workspace ONE SDK you
-            //     agree to these license terms. If you disagree with any of the terms, then
-            //     do not use the software.
-            //
-            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
-            //     Disclosure for information on applicable privacy policies.
-            //     https://www.vmware.com/help/privacy.html
-            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+            // -   Review the Omnissa Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies, and
+            //     for additional information, please visit the 
+            //     https://www.omnissa.com/legal-center/
             implementation "com.airwatch.android:airwatchsdk:24.07"
         }
 
@@ -145,23 +138,20 @@ Files** instructions are changed as follows.
         }
 
         dependencies {
-            // Integrate Workspace ONE at the Framework level.
+            // Integrate Omnissa Workspace ONE at the Client level.
             //
-            // Before downloading, installing, or using the VMware Workspace ONE
-            // SDK you must:
+            // -   Omnissa provides this Software Development Kit (the “Software”) to
+            //     you subject to the following terms and conditions. By downloading, 
+            //     installing, or using the Software, you agree to be bound by the terms
+            //     of https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf
+            //     If you disagree with any of the terms, then do not use the Software.
+
+            //    For additional information, please visit the https://www.omnissa.com/legal-center/.
             //
-            // -   Review the VMware Workspace ONE Software Development Kit
-            //     License Agreement that is posted here.
-            //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
-            //
-            //     By downloading, installing, or using the VMware Workspace ONE SDK you
-            //     agree to these license terms. If you disagree with any of the terms, then
-            //     do not use the software.
-            //
-            // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
-            //     Disclosure for information on applicable privacy policies.
-            //     https://www.vmware.com/help/privacy.html
-            //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+            // -   Review the Omnissa Privacy Notice and the Workspace ONE UEM Privacy
+            //     Disclosure for information on applicable privacy policies, and
+            //     for additional information, please visit the 
+            //     https://www.omnissa.com/legal-center/
             implementation "com.airwatch.android:awframework:24.07"
         }
 
@@ -174,14 +164,14 @@ applications in the repository have been updated to utilize the public Maven
 repository.
 
 The sample code repository is here:  
-[github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples)
+[github.com/euc-releases/workspace-ONE-SDK-integration-samples](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples)
 
 The following sample apps have updated build files.
 
--   [brandStaticDelegateJava](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticDelegateJava)
--   [brandStaticDelegateKotlin](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticDelegateKotlin)
--   [brandStaticExtendJava](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticExtendJava)
--   [brandStaticExtendKotlin](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticExtendKotlin)
+-   [brandStaticDelegateJava](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticDelegateJava)
+-   [brandStaticDelegateKotlin](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticDelegateKotlin)
+-   [brandStaticExtendJava](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticExtendJava)
+-   [brandStaticExtendKotlin](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/brandStaticExtendKotlin)
 
 Each app directory has the following build files.
 
@@ -194,18 +184,3 @@ Each app directory has the following build files.
 |-----------|------------------------------------------------|
 | 21apr2021 | First publication, for 21.3 SDK for Android.   |
 | 05jul2024 | Second publication, for 24.06 SDK for Android. |
-
-## Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware, Inc. All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

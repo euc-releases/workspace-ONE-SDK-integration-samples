@@ -47,8 +47,3 @@ configuration can support all types of UEM enrollment without being changed. See
 the [Recommended Organization Group Structure](01Recommended-Organization-Group-Structure/readme.md)
 for details and a diagram.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

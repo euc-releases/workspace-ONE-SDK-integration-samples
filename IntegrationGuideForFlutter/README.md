@@ -1,5 +1,5 @@
 # ws1-sdk-flutter
-Use this document to install the VMware Workspace One SDK Plugin for Flutter. The plugin helps enterprise app developers add enterprise-grade security, conditional access, and compliance capabilities to mobile applications.
+Use this document to install the Omnissa Workspace One SDK Plugin for Flutter. The plugin helps enterprise app developers add enterprise-grade security, conditional access, and compliance capabilities to mobile applications.
 
 ## Package installation
 Add plugin as dependency to the application pubspec.yaml
@@ -25,13 +25,13 @@ This plugin works with the listed component versions.
 
 
 ## Initial Setup
-<medium>Please find the [Prerequisites](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md) for using the Flutter SDK </medium>
+<medium>Please find the [Prerequisites](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md) for using the Flutter SDK </medium>
 
 
 ## Additional Setup
 ### iOS
 1. Add the AWSDK through Swift Package Manager.
-   Click [here](https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK) for integrating the AWSDK framework through Swift Package Manager
+   Click [here](https://github.com/euc-releases/iOS-WorkspaceONE-SDK) for integrating the AWSDK framework through Swift Package Manager
 
 2. Add following code in AppDelegate
 ```objc
@@ -78,7 +78,7 @@ end
 ```
 2. Update your Main Activity
 ```kotlin
-    import com.vmware.workspaceone_sdk_flutter.WorkspaceOneSdkActivity
+    import com.omnissa.workspaceone_sdk_flutter.WorkspaceOneSdkActivity
     class MainActivity: WorkspaceOneSdkActivity() {
     }
 ```
@@ -118,7 +118,7 @@ Log.d("SDK Init", "onApplicationProfileReceived")
 
 
 ```kotlin
-    import com.vmware.workspaceone_sdk_flutter.WorkspaceOneSdkApplication
+    import com.omnissa.workspaceone_sdk_flutter.WorkspaceOneSdkApplication
     class MainApplication : WorkspaceOneSdkApplication() {
 
         // Application-specific overrides : Comment onCreate() out and move the code to onPostCreate()
@@ -158,10 +158,10 @@ Initialization of the SDK adds the listed features to your application, dependin
     * Disable Screenshot (Android only)
     * Restrict open-in for documents, web links, and email to approved applications only Restrict copy/paste (SDK provides flag value)
     * Restrict access to app when device is offline
-    * Branding of VMware AirWatch splash screens when SDK application is launched on device
+    * Branding of Omnissa AirWatch splash screens when SDK application is launched on device
 
 ## Feature Implementation
-Please follow document at [implementation](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md).
+Please follow document at [implementation](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md).
 
 ## Release Notes
 * First release of Workspace One SDK for Flutter support.
@@ -171,4 +171,4 @@ Please follow document at [implementation](https://github.com/vmware-samples/wor
 For further details about the Workspace One SDK, navigate to https://my.workspaceone.com/products/Workspace-ONE-SDK and select the required platform, SDK version and Workspace ONE UEM console version.
 
 ## Questions and Feedback
-For any questions/feedback or to report an issue, please reach out to VMware support teams at https://secure.workspaceone.com/login
+For any questions/feedback or to report an issue, please reach out to Omnissa support teams at https://secure.workspaceone.com/login

@@ -49,7 +49,7 @@ step-by-step instructions.
 ## [Add a shared keychain group](03Add-a-shared-keychain-group/readme.md)
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

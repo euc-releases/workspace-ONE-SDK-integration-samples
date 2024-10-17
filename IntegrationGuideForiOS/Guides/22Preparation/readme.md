@@ -1,6 +1,6 @@
 # Integration Preparation Guide
 ## Workspace ONE for iOS and iPadOS
-Applications for iOS and iPadOS can be integrated with the VMware Workspace ONE®
+Applications for iOS and iPadOS can be integrated with the Omnissa Workspace ONE®
 platform, by using its mobile software development kit.
 
 The tasks detailed below should be done first, to prepare for integration of
@@ -38,7 +38,7 @@ This document is available
 -   in Markdown format, in the repository that also holds the sample code:  
     [github.com/euc-releases/.../IntegrationGuideForiOS/...Preparation/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/22Preparation/readme.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
+-   in Portable Document Format (PDF), on the Omnissa website:  
     [developer.omnisaa.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-uem-ios/docs/integration/WorkspaceONE_iOS_IntegrationPreparation.pdf)
 
 ## Revision History
@@ -54,18 +54,3 @@ This document is available
 |15May2024|Publication for 24.04 SDK for iOS. |
 |01Jul2024|Publication for 24.06 SDK for iOS. |
 |06Aug2024|Publication for 24.07 SDK for iOS. |
-
-## Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware LLC. All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

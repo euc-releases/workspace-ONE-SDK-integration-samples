@@ -1,5 +1,5 @@
 # Workspace ONE Integration Guide Documents for Android
-Android applications can be integrated with the VMware Workspace ONE® platform,
+Android applications can be integrated with the Omnissa Workspace ONE® platform,
 by using its mobile software development kit. The Workspace ONE Integration
 Guide for Android is a set of documents that contain instructions for
 integration.
@@ -16,8 +16,3 @@ file.
 
 For the sample code in the guides, see the [parent directory](..) readme file.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

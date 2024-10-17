@@ -6,7 +6,7 @@ standalone enrollment could play a part.
 
 Standalone enrollment is supported by the Workspace ONE Boxer email app, the
 Workspace ONE Web browser, Workspace ONE PIV-D Manager, and other apps in the
-VMware productivity suite. However, these apps won't enroll standalone if
+Omnissa productivity suite. However, these apps won't enroll standalone if
 Workspace ONE Intelligent Hub is already installed on the device.
 
 These instructions refer to some concepts introduced in the
@@ -64,8 +64,3 @@ Proceed as follows.
 
 The app has now been enrolled in standalone mode and is ready for use.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

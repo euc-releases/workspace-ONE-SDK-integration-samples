@@ -21,11 +21,11 @@ Set up the Workspace ONE mobile application catalog as follows.
 2.  Activate Hub Services.
 
     Follow the instructions here:
-    [Activate Hub Services for Existing UEM Customers](https://docs.vmware.com/en/VMware-Workspace-ONE/services/intelligent-hub_IDM/GUID-46439DA0-CD4C-4F2C-A98A-08B1B1B79D08.html)
+    [Activate Hub Services for Existing UEM Customers](https://docs.omnissa.com/en/Omnissa-Workspace-ONE/services/intelligent-hub_IDM/GUID-46439DA0-CD4C-4F2C-A98A-08B1B1B79D08.html)
 
 3.  Create your catalog.
 
-    Follow the instructions here: [Customize the App Catalog in Hub Services](https://docs.vmware.com/en/VMware-Workspace-ONE/services/intelligent-hub_IDM/GUID-C3535277-304A-4A89-8ED6-AC8179A27D37.html)
+    Follow the instructions here: [Customize the App Catalog in Hub Services](https://docs.omnissa.com/en/Omnissa-Workspace-ONE/services/intelligent-hub_IDM/GUID-C3535277-304A-4A89-8ED6-AC8179A27D37.html)
 
 4.  Activate the AirWatch Catalog.
 
@@ -41,8 +41,3 @@ Set up the Workspace ONE mobile application catalog as follows.
 This completes setting up the mobile application catalog. You are now ready to
 continue to the next [Task: Configure end users](../05Task_Configure-end-users/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

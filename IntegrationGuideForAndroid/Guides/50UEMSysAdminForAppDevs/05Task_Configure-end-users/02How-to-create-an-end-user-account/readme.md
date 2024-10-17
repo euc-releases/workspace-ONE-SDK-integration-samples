@@ -49,8 +49,3 @@ proceed as follows.
 This completes end user account creation. The end user can be used for the
 [Task: Enroll a developer device](../../06Task_Enroll-a-developer-device/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

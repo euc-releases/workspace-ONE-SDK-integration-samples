@@ -1,5 +1,5 @@
 {
-    "name": "com.vmware.sample.cordova",
+    "name": "com.omnissa.sample.cordova",
     "displayName": "WS1SDK Sample",
     "version": "23.10.1",
     "description": "A sample Apache Cordova application that uses plugin for Workspace ONE SDK.",

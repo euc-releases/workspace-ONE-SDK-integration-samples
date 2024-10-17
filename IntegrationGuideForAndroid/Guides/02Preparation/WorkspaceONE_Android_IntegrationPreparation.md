@@ -1,6 +1,6 @@
 # Integration Preparation Guide
 ## Workspace ONE for Android
-Android applications can be integrated with the VMware Workspace ONE® platform,
+Android applications can be integrated with the Omnissa Workspace ONE® platform,
 by using its mobile software development kit. Complete the tasks below to
 prepare for integration.
 
@@ -19,10 +19,10 @@ This document is part of the Workspace ONE Integration Guide for Android set. An
 overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Prerequisite Conditions
 Before you begin, you will need the following.
@@ -254,10 +254,10 @@ See the Base Integration guide for instructions. The Base Integration Guide is
 available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [Omnissahttps://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...BaseIntegration.pdf](https://developer.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
 
 # Appendix: How to generate a signed Android package file once
 You can generate a signed Android package file (APK) for your application by
@@ -704,10 +704,10 @@ This completes the additional preparation.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
+    [Omnissahttps://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
 | Date                   | Revision                                            |
@@ -737,17 +737,3 @@ This document is available
 | 05Jul2024              | Updated for 24.06 SDK for Android.                  |
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 
-## Legal
--   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware LLC All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware LLC and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

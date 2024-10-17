@@ -1,9 +1,9 @@
-# VMware Workspace ONE Software Development Kit (SDK)
+# Omnissa Workspace ONE Software Development Kit (SDK)
 
 ## iOS And Android - Getting Started
 This document explains how to integrate the Workspace ONE SDKs into your Apache Cordova apps.
 
-For detailed information about the Workspace ONE SDK and managing internal apps, See the VMware Workspace ONE UEM Mobile Application Management Guide and the VMware Workspace ONE SDK Technical Implementation Guides located on the Workspace ONE Resources Portal at https://my.workspaceone.com/products/Workspace-ONE-SDK
+For detailed information about the Workspace ONE SDK and managing internal apps, See the Omnissa Workspace ONE UEM Mobile Application Management Guide and the Omnissa Workspace ONE SDK Technical Implementation Guides located on the Workspace ONE Resources Portal at https://my.workspaceone.com/products/Workspace-ONE-SDK
 
 ## iOS Overview
 In order to inject Workspace ONE SDK functionality into your Apache Cordova App, integrate the two systems.
@@ -12,7 +12,7 @@ In order to inject Workspace ONE SDK functionality into your Apache Cordova App,
 * iOS 14.0+ (for iOS SDK component) / Xcode 14.x
 * Visual Studio Code 
 * Workspace ONE-enrolled iOS test device
-* VMware Workspace One SDK Plugin for Apache Cordova from npm.
+* Omnissa Workspace One SDK Plugin for Apache Cordova from npm.
 
 ### Add App to the Workspace ONE UEM Console
 Upload your internal app to the Workspace ONE UEM Console to register it with the system. This step enables UEM Console to identify the app and to add functionality to it. The Workspace ONE UEM MAM Guide details how to upload an internal app.
@@ -56,7 +56,7 @@ To integrate Workspace ONE SDKs into an existing Apache cordova app follow descr
 ### Requirements
 * Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later 
 * Visual Studio Code 
-* VMware Workspace One SDK Plugin for Apache Cordova from npm.
+* Omnissa Workspace One SDK Plugin for Apache Cordova from npm.
 * Android test device running Lollipop and above.
 * Intelligent Hub for Android from Google Playstore.
 * Whitelisted Release/Debug signing key as explained below should be used for signing the Apache cordova application.
@@ -217,20 +217,15 @@ Unless there is a specific business requirement to perform operations before the
 ## Feature Implementation
 ### Branding
 ### iOS
-Once the plugin is added to the app, there will be a new bundle (AWSDKDefaults) that is also added to the app. This bundle has AWSDKDefaultSettings.plist that already has few entries in it. To enable branding , new entries has to be added to it. For details on the entries to be added to enable branding in your app, navigate to https://code.vmware.com/web/sdk/Native/airwatch-ios and search for Branding.
+Once the plugin is added to the app, there will be a new bundle (AWSDKDefaults) that is also added to the app. This bundle has AWSDKDefaultSettings.plist that already has few entries in it. To enable branding , new entries has to be added to it. For details on the entries to be added to enable branding in your app, navigate to the [Omnissa Developer Portal](https://developer.omnissa.com/ws1-uem-sdk-for-android/) and search for Branding.
 
 ### Android
-Please follow the steps mentioned in https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
+Please follow the steps mentioned in https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
 
 ### SSO
 ### iOS
-To enable multiple apps built with the plugin share common authentication session and other SDK info, please follow the steps mentioned in the document at https://code.vmware.com/web/sdk/Native/airwatch-ios under section "Keychain Access Group Entitlements".
+To enable multiple apps built with the plugin share common authentication session and other SDK info, please follow the steps mentioned in the document at https://code.omnissa.com/web/sdk/Native/airwatch-ios under section "Keychain Access Group Entitlements".
 
 ### Android 
 Nothing specific coding /configuration to be done on Android.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

@@ -3,7 +3,7 @@ A device that isn't already enrolled with Workspace ONE, and doesn't have any
 standalone enrolled apps installed, can be enrolled in registered mode.
 
 The Workspace ONE Boxer email app, the Workspace ONE Web browser, and other apps
-in the VMware productivity suite support standalone enrollment. Any of those
+in the Omnissa productivity suite support standalone enrollment. Any of those
 apps that are on the device might stop working when the device is enrolled in
 registered mode.
 
@@ -67,8 +67,3 @@ Proceed as follows.
 This completes Registered mode enrollment. The device is now ready for developer
 use.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

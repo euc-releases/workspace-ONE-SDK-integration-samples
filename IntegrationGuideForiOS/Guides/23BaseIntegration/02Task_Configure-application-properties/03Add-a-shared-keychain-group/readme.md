@@ -74,7 +74,7 @@ You are now ready to proceed to the next
 [Task: Add the software development kit package](../../03Task_Add-the-software-development-kit-package/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

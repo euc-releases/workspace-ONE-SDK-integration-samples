@@ -14,7 +14,7 @@ buildscript {
         // }
         //Change to new Maven URL
         maven {
-            url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+            url 'https://omnissa.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
         }
 
         google()
@@ -37,7 +37,7 @@ allprojects {
          }
         //Change to new Maven URL
         maven {
-            url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+            url 'https://omnissa.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
         }
     
         mavenLocal()

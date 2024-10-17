@@ -382,7 +382,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 1230;
-				ORGANIZATIONNAME = VMware;
+				ORGANIZATIONNAME = Omnissa;
 				TargetAttributes = {
 					F7BC0DC01D93FFB300334C40 = {
 						CreatedOnToolsVersion = 8.0;
@@ -690,7 +690,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		C3A1A6DE28A4D25700AC389E /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK";
+			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
 				version = 22.7.0;

@@ -3,29 +3,24 @@ The SwiftUISDKExample app provides an overview of the common use cases of
 the Workspace ONE® software development kit (SDK) for iOS. Where appropriate,
 comments are added to the code.
 
-A complete developer guide is published on the VMware Code website, on the SDK
+A complete developer guide is published on the Omnissa Code website, on the SDK
 home page, see:  
-[developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
+[https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/).
 
 These instructions assume that you will use a physical device and the Apple
 Xcode integrated development environment (IDE).
 
-# Agreement
-Before downloading, installing or using the VMware Workspace ONE SDK you must:
+## Downloads
 
-1.  Review the
-    [VMware Workspace ONE Software Development Kit License Agreement](https://developer.vmware.com/docs/12215/VMwareWorkspaceONESDKLicenseAgreement.pdf).
-    By downloading, installing, or using the VMware Workspace ONE SDK you agree
-    to these license terms.  If you disagree with any of the terms, then do not
-    use the software.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
 
-2.  Review the
-    [VMware Privacy Notice](https://www.vmware.com/help/privacy.html)
-    and the
-    [Workspace ONE UEM Privacy Disclosure](https://www.vmware.com/help/privacy/uem-privacy-disclosure.html),
-    for information on applicable privacy policies.
-        
-This applies however you obtain the software.
+For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
+
+## License
+
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 # Set up the SDK example application
 The Workspace ONE SDK frameworks are excluded from this app. Add them to the
@@ -56,7 +51,7 @@ Proceed as follows.
     This opens the Choose Package Repository screen.
 
 3.  Enter the address of this repository
-    `https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK` and click Next.
+    `https://github.com/euc-releases/iOS-WorkspaceONE-SDK` and click Next.
 
     This opens the Choose Package Options screen.
 
@@ -104,9 +99,9 @@ the Swift Package], above.
 The following instructions apply to earlier releases of the SDK and are included
 here for completeness.
 
-1.  In a web browser, open the Workspace ONE for iOS home page on the VMware
+1.  In a web browser, open the Workspace ONE for iOS home page on the Omnissa
     Code website:  
-    [developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
+    [https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/).
 
 2.  Follow the instructions for downloading the Workspace ONE SDK for iOS
     archive, which is a DMG file.
@@ -182,18 +177,13 @@ own Workspace ONE mobile application. You can also refer to the source code for
 examples of how to utilize Workspace ONE features.
 
 # Developer Resources
-For the developer guide and other documentation, see the Workspace ONE for iOS home page on the VMware Code website, here:  
-[developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
+For the developer guide and other documentation, see the Workspace ONE for iOS home page on the Omnissa Code website, here:  
+[https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/).
 
-You can file support requests in VMware Customer Connect. See the following page
+You can file support requests in Omnissa Customer Connect. See the following page
 for instructions:  
-[https://kb.vmware.com/s/article/2006985](https://kb.vmware.com/s/article/2006985)
+[https://kb.omnissa.com/s/article/2006985](https://kb.omnissa.com/s/article/2006985)
 
 [Code in this directory](SwiftUISDKExampleApp/CustomHTTPProtocol/) is based on Apple sample code.
 The original code is published on the Apple website, [Apple sample code] (https://developer.apple.com/library/archive/samplecode/CustomHTTPProtocol/Introduction/Intro.html).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

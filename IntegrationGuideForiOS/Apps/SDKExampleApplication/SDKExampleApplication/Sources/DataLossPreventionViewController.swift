@@ -2,7 +2,7 @@
 //  DataLossPreventionViewController.swift
 //  Workspace-ONE-SDK-iOS-Swift-Sample
 //
-//  Copyright 2021 VMware, Inc.
+//  Copyright 2021 Omnissa, Inc.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 
@@ -129,7 +129,7 @@ class DataLossPreventionViewController: UIViewController {
     }
 
     @IBAction func didTapRedirectHttpLink(_ sender: AnyObject) {
-        guard let url = URL(string: "https://www.vmware.com") else {
+        guard let url = URL(string: "https://www.omnissa.com") else {
             self.alertUser(withMessage: self.alertMessageDLP)
             return
         }

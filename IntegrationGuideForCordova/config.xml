@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
-    Copyright 2022 VMware, Inc.
+    Copyright 2022 Omnissa, LLC.
     SPDX-License-Identifier: BSD-2-Clause
 -->
-<widget id="com.vmware.sample.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.omnissa.sample.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ExampleApp</name>
     <description>
         A sample Apache Cordova application that uses plugin for Workspace ONE SDK
     </description>
-    <author email="workspace-one-sdk@vmware.com" href="https://vmware.com">
+    <author email="workspace-one-sdk@omnissa.com" href="https://omnissa.com">
         Workspace ONE SDK team
     </author>
     <content src="index.html" />

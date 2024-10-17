@@ -69,8 +69,3 @@ This completes registration for Android Enterprise Mobility Management. You are
 now ready to continue with the next
 [Task: Configure management console enrollment](../03Task_Configure-management-console-enrollment/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

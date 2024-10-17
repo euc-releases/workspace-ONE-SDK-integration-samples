@@ -1,7 +1,7 @@
-// Copyright 2023 VMware, Inc.
+// Copyright 2023 Omnissa, Inc.
 // SPDX-License-Identifier: BSD-2-Clause
 
-package com.vmware.workspaceone_sdk_flutter_example
+package com.omnissa.workspaceone_sdk_flutter_example
 import android.content.Context
 import android.os.Bundle
 import android.util.Log

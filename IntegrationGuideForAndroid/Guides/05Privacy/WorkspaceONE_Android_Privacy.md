@@ -1,6 +1,6 @@
 # Privacy Agreement Module Integration Guide
 ## Workspace ONE for Android
-VMware Workspace ONE® for Android can be used to present privacy agreements and
+Omnissa Workspace ONE® for Android can be used to present privacy agreements and
 track their acceptance by the end user. Presentation and tracking of agreements
 is handled by a separate privacy module in the software development kit for
 Android. Use of the module in an app isn't dependent on integration with the
@@ -16,7 +16,7 @@ Privacy agreements are commonplace for enterprise applications on mobile
 devices. Enterprise end users typically must agree to some data collection and
 app permissions in order to make use of mobile apps.
 
-The VMware Workspace ONE privacy module for Android can be used to present
+The Omnissa Workspace ONE privacy module for Android can be used to present
 privacy agreements and track their acceptance by the end user. Note that the
 privacy module doesn't itself collect data, protect the privacy of the user, nor
 protect application data.
@@ -61,10 +61,10 @@ Workspace ONE platform.
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been followed with the Workspace ONE Software
@@ -83,11 +83,11 @@ the sample application as a starting point for your own implementation.
 
 The application is published in the Workspace ONE Software Development Kit
 Integration Samples repository. See:  
-[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
+[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
 
 You can download the application, or clone the whole repository. Build
 instructions are in the repository here:  
-[github.com/.../workspace-ONE-SDK-integration-samples/.../build.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Documentation/build.md)
+[github.com/.../workspace-ONE-SDK-integration-samples/.../build.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Documentation/build.md)
 
 # Preparation
 Before you begin integration of the privacy agreements module, you will need the
@@ -137,17 +137,17 @@ following.
     
     Instructions for obtaining the SDK are given in the Workspace ONE for
     Android Integration Preparation Guide, starting here:  
-    [https://github.com/vmware-samples/...obtain-software-development-kit](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-obtain-software-development-kit-obtain-software-development-kit)  
+    [Omnissahttps://github.com/euc-releases/...obtain-software-development-kit](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-obtain-software-development-kit-obtain-software-development-kit)  
     (Some PDF viewers incorrectly escape the hash anchor marker in the above
     link. If that happens, edit the link in the browser address bar.)
 
     The whole guide is available
 
     -   in Markdown format, in the repository that also holds the sample code:  
-        [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)  
+        [Omnissahttps://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)  
 
-    -   in Portable Document Format (PDF), on the VMware website:  
-        [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)  
+    -   in Portable Document Format (PDF), on the Omnissa website:  
+        [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)  
     
     Go to the Task: Obtain software development kit.
 
@@ -316,7 +316,7 @@ assume that the dependent task is complete already.
 The code snippets in this section are taken from an Open Source sample
 application. The application is published in the Workspace ONE Software
 Development Kit Integration Samples repository. See:  
-[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
+[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
 
 ### Privacy Helper Class
 First, create a privacy helper class. Requirements for the class are illustrated
@@ -555,7 +555,7 @@ assume that the dependent task is complete already.
 The code snippets in this section are taken from an Open Source sample
 application. The application is published in the Workspace ONE Software
 Development Kit Integration Samples repository. See:  
-[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
+[github.com/.../workspace-ONE-SDK-integration-samples/.../privacyKotlin](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/tree/main/IntegrationGuideForAndroid/Apps/privacyKotlin)
 
 ## Instructions
 Proceed as follows.
@@ -1239,10 +1239,10 @@ have been reverted.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...Privacy.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/05Privacy/WorkspaceONE_Android_Privacy.md)
+    [Omnissahttps://github.com/euc-releases/...Privacy.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/05Privacy/WorkspaceONE_Android_Privacy.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...Privacy.pdf](https://developer.vmware.com/docs/13425/WorkspaceONE_Android_Privacy.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...Privacy.pdf](https://developer.omnissa.com/docs/13425/WorkspaceONE_Android_Privacy.pdf)
 
 ## Revision History
 | Date                   | Revision                                             |
@@ -1272,17 +1272,3 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                   |
 
 
-## Legal
--   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware LLC All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware LLC and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

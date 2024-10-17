@@ -48,8 +48,3 @@ the [contributing](contributing.md) file.
     -   https://stackoverflow.com/questions/13599553/how-to-a-apply-style-to-all-the-textviews-i-have#13599666
     -   https://stackoverflow.com/questions/41779934/how-is-staticlayout-used-in-android#41779935
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

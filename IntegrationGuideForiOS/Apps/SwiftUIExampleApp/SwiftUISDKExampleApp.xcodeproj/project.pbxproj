@@ -710,7 +710,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		0A37FFCA2C662CC8003843D3 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vmwareairwatchsdk/iOS-WorkspaceONE-SDK.git";
+			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK.git";
 			requirement = {
 				kind = exactVersion;
 				version = 24.7.0;

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.vmware-airwatch-sdk.forms" android:versionCode="2" android:versionName="22.1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.omnissa-airwatch-sdk.forms" android:versionCode="2" android:versionName="22.1.0">
 	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="31" />
 	<application android:name="WorkspaceOne.Example.Android" tools:replace="android:label,android:allowBackup" android:allowBackup="false" android:label="WorkspaceOne.Example.Android" android:debuggable="false">
 		<receiver android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver" android:permission="com.airwatch.sdk.BROADCAST" android:exported="true">
 			<intent-filter>
-				<action android:name="com.vmware.buildtest.airwatchsdk.BROADCAST" />
+				<action android:name="com.omnissa.buildtest.airwatchsdk.BROADCAST" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.PACKAGE_ADDED" />

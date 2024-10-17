@@ -103,7 +103,7 @@ account. You are now ready to continue with the next
 [Task: Add the application to the management console](../../05Task_Add-the-application-to-the-management-console/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

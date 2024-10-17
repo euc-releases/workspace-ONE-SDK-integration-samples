@@ -29,8 +29,3 @@ depending on which type of enrollment you are using.
 -   [How to enroll an Android device in Profile Owner managed mode](../03How-to-enroll-an-Android-device-in-Profile-Owner-managed-mode/readme.md)
 -   [How to enroll an Android device in Registered mode](../04How-to-enroll-an-Android-device-in-Registered-mode/readme.md)
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

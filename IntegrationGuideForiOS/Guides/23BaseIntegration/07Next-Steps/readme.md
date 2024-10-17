@@ -18,10 +18,10 @@ require code changes.
 
 See the home page of the Workspace ONE SDK for iOS and iPadOS for links to other
 developer guides and resources.  
-[https://developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios)
+[https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/)
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

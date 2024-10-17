@@ -1,11 +1,11 @@
 
-# VMware Workspace ONE Software Development Kit (SDK)
+# Omnissa Workspace ONE Software Development Kit (SDK)
 
 ## iOS And Android - Getting Started
 
 This document explains how to integrate the Workspace ONE SDKs into your Flutter-built apps.
 
- For detailed information about the Workspace ONE SDK and managing internal apps, See the **VMware Workspace ONE UEM Mobile Application Management Guide** and the **VMware Workspace ONE SDK Technical Implementation Guides** located on the Workspace ONE Resources Portal at <https://my.workspaceone.com/products/Workspace-ONE-SDK>
+ For detailed information about the Workspace ONE SDK and managing internal apps, See the **Omnissa Workspace ONE UEM Mobile Application Management Guide** and the **Omnissa Workspace ONE SDK Technical Implementation Guides** located on the Workspace ONE Resources Portal at <https://my.workspaceone.com/products/Workspace-ONE-SDK>
 
 ## iOS Overview
 
@@ -276,21 +276,15 @@ Gets any custom settings provided in the app's profile. The value will be return
 ## Feature Implementation
 ### Branding
 ### iOS
-To enable brancding add AWSDKDefaultSettings.plist to app bundle and add new entries to the plist. For details on the entries to be added to enable branding in your app, navigate to https://code.vmware.com/web/sdk/Native/airwatch-ios and search for Branding.
+To enable brancding add AWSDKDefaultSettings.plist to app bundle and add new entries to the plist. For details on the entries to be added to enable branding in your app, navigate to https://code.omnissa.com/web/sdk/Native/airwatch-ios and search for Branding.
 
 ### Android
-Please follow the steps mentioned in https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
+Please follow the steps mentioned in https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
 
 ### SSO
 ### iOS
-To enable multiple apps built with the plugin share common authentication session and other SDK info, please follow the steps mentioned in the document at https://code.vmware.com/web/sdk/Native/airwatch-ios under section "Keychain Access Group Entitlements".
+To enable multiple apps built with the plugin share common authentication session and other SDK info, please follow the steps mentioned in the document at https://code.omnissa.com/web/sdk/Native/airwatch-ios under section "Keychain Access Group Entitlements".
 
 ### Android
 Nothing specific coding /configuration to be done on Android.
 
-
-# License
-Copyright 2023 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

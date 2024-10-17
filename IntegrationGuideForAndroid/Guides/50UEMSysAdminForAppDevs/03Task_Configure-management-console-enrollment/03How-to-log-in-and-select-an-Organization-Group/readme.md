@@ -8,13 +8,13 @@ Proceed as follows.
 
 1.  Get the administrator login credentials.
 
-    If you are using a VMware TestDrive UEM, you can get the default credentials
+    If you are using a Omnissa TestDrive UEM, you can get the default credentials
     from the service home page. Note that if you change your login credentials,
     the TestDrive home page won't be updated and will still show the default
     credentials.
     
     Navigate to this address in a web browser:
-    [https://testdrive.vmware.com](https://testdrive.vmware.com)
+    [https://testdrive.omnissa.com](https://testdrive.Omnissa.com)
 
     When you open the above link, your browser will be redirected to the service
     home page. Log in to TestDrive using the credentials with which you
@@ -23,7 +23,7 @@ Proceed as follows.
     (If you haven't registered and don't have access to another UEM, see the
     [Task: Set up a management console](../../01Task_Set-up-a-management-console/readme.md) for instructions.)
 
-    Navigate to My Products, Digital Workspace, Sandbox Experiences, VMware
+    Navigate to My Products, Digital Workspace, Sandbox Experiences, Omnissa
     Workspace ONE UEM. The credentials you will need can be found as follows.
 
     -   In list mode, click the expand control.
@@ -43,7 +43,7 @@ Proceed as follows.
 2.  Open the UEM console login page.
 
     If you are using TestDrive, navigate to My Products, Digital Workspace,
-    Sandbox Experiences, VMware Workspace ONE UEM, and click Launch.
+    Sandbox Experiences, Omnissa Workspace ONE UEM, and click Launch.
 
     The UEM login page will open, in a new browser tab or window.
 
@@ -80,8 +80,3 @@ This completes logging in to the console and selecting an OG.
 If you haven't already done so, you are now ready to continue to the next
 [Task: Set up the mobile application catalog](../../04Task_Set-up-the-mobile-application-catalog/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

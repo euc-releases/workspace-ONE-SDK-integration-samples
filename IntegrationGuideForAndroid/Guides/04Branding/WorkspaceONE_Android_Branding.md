@@ -1,6 +1,6 @@
 # Branding Integration Guide
 ## Workspace ONE for Android
-Android applications can be integrated with the VMware Workspace ONE® platform,
+Android applications can be integrated with the Omnissa Workspace ONE® platform,
 by using its mobile software development kit. Complete the tasks below to
 utilize the branding features of the platform.
 
@@ -105,10 +105,10 @@ See other guides in the set for
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been tested with the following software
@@ -1094,10 +1094,10 @@ Save the file and the color will have been added to the application resources.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...Branding.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
+    [Omnissahttps://github.com/euc-releases/...Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...Branding.pdf](https://developer.vmware.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...Branding.pdf](https://developer.omnissa.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
 
 ## Revision History
 | Date                   | Revision                                            |
@@ -1127,17 +1127,3 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 
 
-## Legal
--   **VMware LLC** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2024 VMware LLC All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware LLC and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

@@ -11,7 +11,7 @@ The following recommendations are also made.
 -   Use longer, descriptive texts for OG names.
 -   Add a separate child OG for standalone enrollment. Standalone enrollment is
     supported by the Workspace ONE Boxer email app, the Workspace ONE Web
-    browser, Workspace ONE PIV-D Manager, and other apps in the VMware
+    browser, Workspace ONE PIV-D Manager, and other apps in the Omnissa
     productivity suite.
 
 <p class="always-page-break" />
@@ -22,8 +22,3 @@ This diagram represents a recommended OG structure, as a UML Object Diagram.
 Follow the [How to set up the recommended Organization Group structure](../02How-to-set-up-the-recommended-Organization-Group-structure/readme.md)
 instructions to set up the above OG structure.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

@@ -55,8 +55,3 @@ Proceed as follows.
 Continue with the instructions
 [Configure and publish the application](../02Configure-and-publish-the-application/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

@@ -35,7 +35,7 @@ general recommendations.
 -   Registered mode can be used on any device that isn't already enrolled
     against a Workspace ONE UEM console, and doesn't have any standalone
     enrolled apps. (The Workspace ONE Boxer email app, the Workspace ONE Web
-    browser, and other apps in the VMware productivity suite support standalone
+    browser, and other apps in the Omnissa productivity suite support standalone
     enrollment.) No device data will be lost.
 
 The enrollment instructions for different modes are substantially but not
@@ -44,8 +44,3 @@ subsection can be followed independently.
 
 In any mode, you will first need to know [How to find out the enrollment server address](01How-to-find-out-the-enrollment-server-address/readme.md).
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

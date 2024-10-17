@@ -98,7 +98,7 @@ This screen capture shows how the tab might appear.
 ![**Screen Capture:** Xcode Settings for Accounts](Screen_XcodeAccounts.png)
 
 In this screen capture there are two Apple accounts, of which the first is
-selected. The Apple ID of the selected account is a vmware.com email
+selected. The Apple ID of the selected account is a omnissa.com email
 address. The Apple ID of the second begins sj and is an email address. The
 selected Apple ID is a member of an organization whose name begins Ai.
 
@@ -134,7 +134,7 @@ For instructions and background, see the
 [Task: Generate an application installer file](../04Task_Generate-an-application-installer-file/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

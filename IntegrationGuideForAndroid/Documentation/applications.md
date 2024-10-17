@@ -272,8 +272,3 @@ easy to understand for prospective application developers.
 Duplication is managed by the maintainers of the repository. See also the
 [samers.md](samers.md) file.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

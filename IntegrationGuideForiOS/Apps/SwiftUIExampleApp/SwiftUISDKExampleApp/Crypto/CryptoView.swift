@@ -2,7 +2,7 @@
 //  CryptoView.swift
 //  SwiftUISDKExampleApp
 //
-//  Copyright 2022 VMware, Inc.
+//  Copyright 2022 Omnissa, LLC.
 //  SPDX-License-Identifier: BSD-2-Clause
 //
 

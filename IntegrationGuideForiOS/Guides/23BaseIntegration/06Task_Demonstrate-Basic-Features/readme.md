@@ -35,7 +35,7 @@ Notes on this feature.
     option is selected then the end user can authenticate by entering the
     passcode that they use to unlock their device. See the Require Device
     Passcode Technical Brief, here
-    [developer.vmware.com/docs/17711/RequireDevicePasscode.pdf](https://developer.vmware.com/docs/17711/RequireDevicePasscode.pdf)
+    [developer.omnissa.com/docs/17711/RequireDevicePasscode.pdf](https://developer.omnissa.com/docs/17711/RequireDevicePasscode.pdf)
     for details.
 
 -   There is an additional option for Biometric Mode authentication. If this
@@ -187,7 +187,7 @@ Those are some basic feature that can be demonstrated already. For further
 integrations, see the [Next Steps](../07Next-Steps/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

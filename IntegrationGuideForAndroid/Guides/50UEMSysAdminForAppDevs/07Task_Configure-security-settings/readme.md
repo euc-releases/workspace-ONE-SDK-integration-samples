@@ -177,8 +177,3 @@ This concludes overriding data loss prevention configuration for a specific app.
 Test the DLP settings in your app, or in one of the sample apps from the Open
 Source repository.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

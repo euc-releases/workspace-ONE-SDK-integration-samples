@@ -28,8 +28,3 @@ This screen capture shows the expanded controls.
 If you, for example, set the Status filter to All then the expected app might
 appear.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

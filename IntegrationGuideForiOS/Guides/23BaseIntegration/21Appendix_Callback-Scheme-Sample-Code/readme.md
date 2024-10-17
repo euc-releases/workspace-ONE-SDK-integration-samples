@@ -7,11 +7,11 @@ code, see either of these sets of instructions.
 -   [Initialize from Storyboard](../04Task_Initialize-the-software-development-kit-runtime/02Initialize-from-Storyboard/readme.md).
 
 The sample code is also published here.  
-[github.com/vmware-samples/…/SchemeCheck.swift](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/21Appendix_Callback-Scheme-Sample-Code/SchemeCheck.swift)
+[github.com/euc-releases/…/SchemeCheck.swift](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/21Appendix_Callback-Scheme-Sample-Code/SchemeCheck.swift)
 
 <p class="allow-page-break" />
 
-    //  Copyright 2023 VMware, Inc.
+    //  Copyright 2023 Omnissa, Inc.
     //  SPDX-License-Identifier: BSD-2-Clause
 
     import Foundation
@@ -135,7 +135,7 @@ The sample code is also published here.
     }
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

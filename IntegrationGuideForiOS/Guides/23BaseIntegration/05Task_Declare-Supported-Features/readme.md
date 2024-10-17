@@ -101,7 +101,7 @@ application to confirm that no mistakes have been made. You are now ready to
 continue with the [Task: Demonstrate Basic Features](../06Task_Demonstrate-Basic-Features/readme.md).
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

@@ -12,7 +12,7 @@ for Android code. For an introduction to the repository, see the
 
 -   `brand_logo_onecolour_small.xcf`  
     GIMP file for a smaller version of the previous application logo. Used as an
-    override of the VMware logo in the brandStaticExtend sample applications.
+    override of the Omnissa logo in the brandStaticExtend sample applications.
 
 -   `privacy_placeholder_2_dark.xcf` and `privacy_placeholder_2_light.xcf`  
     GIMP files for a custom icon used to represent a privacy data collection
@@ -34,8 +34,3 @@ See also:
 -   The home page of the GIMP project:
     [https://www.gimp.org/](https://www.gimp.org/)
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause

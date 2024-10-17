@@ -1,6 +1,6 @@
 # UEM System Administration for Application Developers
 ## Workspace ONE for Android
-Android applications can be integrated with the VMware Workspace ONE® platform.
+Android applications can be integrated with the Omnissa Workspace ONE® platform.
 Integration work will require access to a Workspace ONE Unified Endpoint Manager
 console, and the completion of administrative tasks there. Follow the
 instructions below to set up and administer a Workspace ONE console that
@@ -38,8 +38,8 @@ Personally Enabled (COPE), but these aren't in scope of this guide.
 Best practice is to have a separate console instance, tenant, or organisation
 group, set aside for software development.
 
-## VMware TestDrive service
-VMware operates a service, VMware TestDrive, that can be used to host a
+## Omnissa TestDrive service
+Omnissa operates a service, Omnissa TestDrive, that can be used to host a
 management console instance for application development support. The service is
 free, doesn't need system administrator expertise to utilize, and doesn't
 require the installation of any client nor server software.
@@ -101,27 +101,13 @@ this guide.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...UEMSysAdminForAppDevs/](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/50UEMSysAdminForAppDevs/readme.md)
+    [Omnissahttps://github.com/euc-releases/...UEMSysAdminForAppDevs/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/50UEMSysAdminForAppDevs/readme.md)
 
--   in Portable Document Format (PDF), on the VMware website:  
-    [https://developer.vmware.com/...UEMSysAdminForAppDevs.pdf](https://developer.vmware.com/docs/17139/WorkspaceONE_Android_UEMSysAdminForAppDevs.pdf)
+-   in Portable Document Format (PDF), on the Omnissa website:  
+    [https://developer.omnissa.com/...UEMSysAdminForAppDevs.pdf](https://developer.omnissa.com/docs/17139/WorkspaceONE_Android_UEMSysAdminForAppDevs.pdf)
 
 ## Revision History
 |Date     |Revision          |
 |---------|------------------|
 |09nov2022|First publication.|
 
-## Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2022 VMware, Inc. All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit integration samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause

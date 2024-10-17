@@ -10,11 +10,11 @@ Integration Preparation Guide for iOS and iPadOS are already complete.
 The Integration Preparation Guide is available
 
 -   in Markdown format, in the repository that also holds this guide:  
-    [github.com/vmware-samples/workspace-ONE-SDK-integration-samples](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples).
+    [github.com/euc-releases/workspace-ONE-SDK-integration-samples](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples).
 
--   in Portable Document Format (PDF), from the SDK home page on the VMware
+-   in Portable Document Format (PDF), from the SDK home page on the Omnissa
     developer website:  
-    [developer.vmware.com/web/sdk/Native/airwatch-ios](https://developer.vmware.com/web/sdk/Native/airwatch-ios).
+    [https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/).
 
 **Warning: Don't change the bundle identifier.** Your app must have the same
 bundle identifier as it did when the Integration Preparation Guide was being
@@ -26,7 +26,7 @@ The Integration Preparation Guide has some discussion of Apple accounts as they
 pertain to Workspace ONE integration work, in an appendix.
 
 # License
-Copyright 2023 VMware, Inc. All rights reserved.  
+Copyright 2023 Omnissa, Inc. All rights reserved.  
 The Workspace ONE Software Development Kit integration samples are licensed
 under a two-clause BSD license.  
 SPDX-License-Identifier: BSD-2-Clause

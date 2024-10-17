@@ -32,8 +32,3 @@ the above recommendations. In that case, add a new user that does comply.
 
 Follow the [How to create an end user account](../02How-to-create-an-end-user-account/readme.md) instructions to create an end user with the above configuration.
 
-# License
-Copyright 2022 VMware, Inc. All rights reserved.  
-The Workspace ONE Software Development Kit integration samples are licensed
-under a two-clause BSD license.  
-SPDX-License-Identifier: BSD-2-Clause
