@@ -1094,7 +1094,7 @@ Save the file and the color will have been added to the application resources.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
+    [https://github.com/euc-releases/...Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
     [https://developer.omnissa.com/...Branding.pdf](https://developer.omnissa.com/docs/12357/WorkspaceONE_Android_Branding.pdf)

@@ -25,7 +25,7 @@ This plugin works with the listed component versions.
 
 
 ## Initial Setup
-<medium>Please find the [Prerequisites](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForFlutter/GettingStarted.md) for using the Flutter SDK </medium>
+<medium>Please find the [Prerequisites](./GettingStarted.md) for using the Flutter SDK </medium>
 
 
 ## Additional Setup

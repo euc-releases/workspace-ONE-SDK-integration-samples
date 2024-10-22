@@ -220,7 +220,7 @@ Unless there is a specific business requirement to perform operations before the
 Once the plugin is added to the app, there will be a new bundle (AWSDKDefaults) that is also added to the app. This bundle has AWSDKDefaultSettings.plist that already has few entries in it. To enable branding , new entries has to be added to it. For details on the entries to be added to enable branding in your app, navigate to the [Omnissa Developer Portal](https://developer.omnissa.com/ws1-uem-sdk-for-android/) and search for Branding.
 
 ### Android
-Please follow the steps mentioned in https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
+Please follow the steps mentioned in [Workspace ONE Android Branding Guide](../IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) to brand the splash screen, the app logo gets branded as per the images from the WS1 UEM console branding payload.
 
 ### SSO
 ### iOS

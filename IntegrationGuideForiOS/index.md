@@ -7,16 +7,14 @@
 * iOS and iPad OS 15+
 * Workspace ONE UEM Console 2212+
 * Xcode 15.0+
-## Integration
-The SDK is distributed as a Swift package. Add this URL as the package location in Xcode.[ https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
-Starting April 2024, version 24.04 onwards Workspace ONE SDK for iOS will NOT be distributed through the My Workspace one portal i.e. https://my.workspaceone.com/products/Workspace-ONE-SDK . 
-It will only be distributed as a Swift package and will be available through the following URL. 
-[https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
+## Integration
+
+The SDK is provided as either a [Package](https://github.com/orgs/euc-releases/packages?repo_name=iOS-WorkspaceONE-SDK) or [Release](https://github.com/euc-releases/iOS-WorkspaceONE-SDK/releases). Please download the software from the appropriate location.
 
 ## Downloads
 
-Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [Omnissa SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
 
 For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 

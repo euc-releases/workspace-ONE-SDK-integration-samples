@@ -5,7 +5,7 @@
 
 This document explains how to integrate the Workspace ONE SDKs into your Flutter-built apps.
 
- For detailed information about the Workspace ONE SDK and managing internal apps, See the **Omnissa Workspace ONE UEM Mobile Application Management Guide** and the **Omnissa Workspace ONE SDK Technical Implementation Guides** located on the Workspace ONE Resources Portal at <https://my.workspaceone.com/products/Workspace-ONE-SDK>
+For detailed information about the Workspace ONE SDK and managing internal apps, See the **Omnissa Workspace ONE UEM Mobile Application Management Guide** and the **Omnissa Workspace ONE SDK Technical Implementation Guides** located on the [Workspace ONE Developer Portal](https://developer.omnissa.com/dev-centre/ws1/).
 
 ## iOS Overview
 
