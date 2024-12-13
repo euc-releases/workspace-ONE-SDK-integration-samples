@@ -13,7 +13,6 @@ struct CertificatesEntryView: View {
 
     static let keys = [
         CertificateUsageKey.integratedAuthIdentity : "Integrated Authentication",
-        CertificateUsageKey.magSigning : "Proxy Signing",
         CertificateUsageKey.tunnelSigning : "Tunnel Signing",
         CertificateUsageKey.selfSignedSSLCerts : "Self Signed SSL Certificates",
         CertificateUsageKey.customTrustedAnchorCerts: "Custom Trusted Anchors",

@@ -5,7 +5,7 @@
 	<key>AWClipboardEnabled</key>
 	<true/>
 	<key>AWBlockerViewEnableKey</key>
-	<false/>
+	<true/>
 	<key>AWMailtoSchemeConfiguration</key>
 	<dict>
 		<key>enabled</key>

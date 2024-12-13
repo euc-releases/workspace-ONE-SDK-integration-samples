@@ -1,16 +1,12 @@
-# Omnissa Workspace ONE SDK v24.07 for iOS
-## What’s new
-* Stability improvements.
-* Third party library updates.
-## Compatibility
-
-* iOS and iPad OS 15+
-* Workspace ONE UEM Console 2212+
-* Xcode 15.0+
+## Release Notes
+https://developer.omnissa.com/ws1-uem-sdk-for-ios/release-notes/
 
 ## Integration
+The SDK is distributed as a Swift package. Add this URL as the package location in Xcode.[ https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
-The SDK is provided as either a [Package](https://github.com/orgs/euc-releases/packages?repo_name=iOS-WorkspaceONE-SDK) or [Release](https://github.com/euc-releases/iOS-WorkspaceONE-SDK/releases). Please download the software from the appropriate location.
+Starting April 2024, version 24.04 onwards Workspace ONE SDK for iOS will NOT be distributed through the My Workspace one portal i.e. https://my.workspaceone.com/products/Workspace-ONE-SDK . 
+It will only be distributed as a Swift package and will be available through the following URL. 
+[https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
 ## Downloads
 

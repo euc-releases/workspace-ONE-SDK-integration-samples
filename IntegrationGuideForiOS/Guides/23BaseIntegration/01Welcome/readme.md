@@ -10,11 +10,11 @@ Integration Preparation Guide for iOS and iPadOS are already complete.
 The Integration Preparation Guide is available
 
 -   in Markdown format, in the repository that also holds this guide:  
-    [github.com/euc-releases/workspace-ONE-SDK-integration-samples](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples).
+    [github.com/euc-uem/ws1-sdk-integration-samples](https://github.com/euc-uem/ws1-sdk-integration-samples).
 
 -   in Portable Document Format (PDF), from the SDK home page on the Omnissa
     developer website:  
-    [https://developer.omnissa.com/ws1-uem-sdk-for-ios/](https://developer.omnissa.com/ws1-uem-sdk-for-ios/).
+    [developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_BaseIntegration](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_BaseIntegration.pdf).
 
 **Warning: Don't change the bundle identifier.** Your app must have the same
 bundle identifier as it did when the Integration Preparation Guide was being

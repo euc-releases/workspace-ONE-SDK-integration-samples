@@ -38,8 +38,8 @@ This document is available
 -   in Markdown format, in the repository that also holds the sample code:  
     [github.com/euc-releases/.../IntegrationGuideForiOS/...Preparation/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/22Preparation/readme.md)
 
--   in Portable Document Format (PDF), on the Omnissa website:  
-    [developer.omnisaa.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-uem-ios/docs/integration/WorkspaceONE_iOS_IntegrationPreparation.pdf)
+-   in Portable Document Format (PDF), on the website:  
+    [developer.omnisaa.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_IntegrationPreparation.pdf)
 
 ## Revision History
 |Date     |Revision                                          |
@@ -54,3 +54,11 @@ This document is available
 |15May2024|Publication for 24.04 SDK for iOS. |
 |01Jul2024|Publication for 24.06 SDK for iOS. |
 |06Aug2024|Publication for 24.07 SDK for iOS. |
+|30Sep2024|Publication for 24.09 SDK for iOS. |
+|28Nov2024|Publication for 24.11 SDK for iOS. |
+
+## License
+
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language 
