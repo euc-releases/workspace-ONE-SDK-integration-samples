@@ -10,7 +10,7 @@ Integration Preparation Guide for iOS and iPadOS are already complete.
 The Integration Preparation Guide is available
 
 -   in Markdown format, in the repository that also holds this guide:  
-    [github.com/euc-uem/ws1-sdk-integration-samples](https://github.com/euc-uem/ws1-sdk-integration-samples).
+    [github.com/euc-releases/ws1-sdk-integration-samples](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples).
 
 -   in Portable Document Format (PDF), from the SDK home page on the Omnissa
     developer website:  
