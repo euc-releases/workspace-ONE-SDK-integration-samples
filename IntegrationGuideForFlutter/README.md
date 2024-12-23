@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  workspaceone_sdk_flutter:^23.10.0
+  workspaceone_sdk_flutter:^24.12.0
 
 ```
 
@@ -18,9 +18,9 @@ dependencies:
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2109+ (may need to be higher depending on specific features)
-* Android 5.0+ (for Android SDK component) / API level 21 OR above / Android Studio with the Gradle Android Build System (Gradle) 3.3.0 or later / Workspace ONE Intelligent Hub for Android version 21.9 or later
-* iOS 14.0+ (for iOS SDK component) / Xcode 14.0.1 or later
+* Workspace ONE UEM Console 2306+ (may need to be higher depending on specific features)
+* Android 5.0+ (for Android SDK component) / API level 24 OR above / Android Studio with the Gradle Android Build System (Gradle) 7.4+ or later / Workspace ONE Intelligent Hub for Android version 224.11 or later
+* iOS 15.0.1+ (for iOS SDK component) / Xcode 15.0.1 or later
 
 
 
@@ -59,7 +59,11 @@ end
 
 ### Android
 
-1. Modify AndroidManifest.xml for Main Launcher
+1. Add 24.12 AWSDK
+
+Please add Airwatch sdk following [AWSDK Maven Public](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/PublicMaven/WorkspaceONE_Android_PublicMavenNote.md)
+
+2. Modify AndroidManifest.xml for Main Launcher
 ```xml
      <activity
         android:name=".MainActivity"
@@ -76,13 +80,13 @@ end
         </intent-filter>
     </activity>
 ```
-2. Update your Main Activity
+3. Update your Main Activity
 ```kotlin
     import com.omnissa.workspaceone_sdk_flutter.WorkspaceOneSdkActivity
     class MainActivity: WorkspaceOneSdkActivity() {
     }
 ```
-3. Add WS1EventImpl
+4. Add WS1EventImpl
 ```kotlin
 import android.content.Context
 import android.os.Bundle
@@ -109,7 +113,7 @@ Log.d("SDK Init", "onApplicationProfileReceived")
 
 ```
 
-4. Update your Android Application subclass as follows
+5. Update your Android Application subclass as follows
     -  Declare that the class implements the WorkspaceOneSDKApplication interface.
     -  Move the code from the body of your onCreate method, if any, to an override of the AWSDKApplication onPostCreate method.
     -  Override the AWSDKApplication getMainActivityIntent() method to return an Intent for the application’s main Activity.

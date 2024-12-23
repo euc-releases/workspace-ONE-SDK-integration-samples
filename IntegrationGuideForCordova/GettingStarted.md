@@ -8,8 +8,11 @@ For detailed information about the Workspace ONE SDK and managing internal apps,
 ## iOS Overview
 In order to inject Workspace ONE SDK functionality into your Apache Cordova App, integrate the two systems.
 
+## Android Overview
+Please add Airwatch sdk following [AWSDK Maven Public](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/PublicMaven/WorkspaceONE_Android_PublicMavenNote.md)
+
 ### Requirements
-* iOS 14.0+ (for iOS SDK component) / Xcode 14.x
+* iOS 15.0.1+ (for iOS SDK component) / Xcode 15.0.1+
 * Visual Studio Code 
 * Workspace ONE-enrolled iOS test device
 * Omnissa Workspace One SDK Plugin for Apache Cordova from npm.
