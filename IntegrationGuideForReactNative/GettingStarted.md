@@ -69,6 +69,8 @@ Provide a description that devices prompt users to allow the application to enab
 
 To integrate Workspace ONE Android SDK React-Native components into an existing React-Native Android app follow described steps.
 
+Please add Airwatch sdk following [AWSDK Maven Public](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/PublicMaven/WorkspaceONE_Android_PublicMavenNote.md)
+
 ### Requirements
 
 * Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later 
@@ -241,4 +243,4 @@ This software is licensed under the [Omnissa Software Development Kit (SDK) Lice
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-This software may also utilize Third-Pary Open Source Software as detailed within the [open_source_licenses.txt](open_source_licenses.txt) file.
+This software may also utilize Third-Pary Open Source Software as detailed within the [open_source_licenses.txt](https://github.com/euc-releases/wsone-sdk-reactnative/blob/master/open_source_license_WS1_ReactNative_24.12_GA.txt) file.

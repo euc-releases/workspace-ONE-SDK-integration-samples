@@ -4,9 +4,9 @@ Use this document to install the Omnissa Workspace One SDK Plugin for React-Nati
 ## Supported Components
 This plugin works with the listed component versions.
 
-* Workspace ONE UEM Console 2203+ (may need to be higher depending on specific features)
-* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later
-* iOS 14.0+ (for iOS SDK component) / Xcode 14.x
+* Workspace ONE UEM Console 2306+ (may need to be higher depending on specific features)
+* Android 8.0+ (for Android SDK component) / API level 24 OR above / Android Studio with the Gradle Android Build System (Gradle) 7.4+ or later
+* iOS 15.0.1+ (for iOS SDK component) / Xcode 15.0.1+
 
 
 ## Initial Setup
