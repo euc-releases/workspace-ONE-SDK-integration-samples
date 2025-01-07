@@ -1,10 +1,10 @@
-// Copyright 2023 VMware, Inc.
+// Copyright 2023 Omnissa, LLC.
 // SPDX-License-Identifier: BSD-2-Clause
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.8.21'
+    ext.kotlin_version = '1.9.25'
 
     repositories {
         google()
@@ -40,7 +40,7 @@ task printUserHomeDir {
 }
 
 ext {
-    airwatchVersion = '24.07'
+    airwatchVersion = '24.11'
     privacyVersion = '21.5.1'
 
     // Utility method to generate a path for a file in the directory for

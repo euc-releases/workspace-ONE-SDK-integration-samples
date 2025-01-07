@@ -1,4 +1,4 @@
-// Copyright 2023 VMware, Inc.
+// Copyright 2023 Omnissa, LLC.
 // SPDX-License-Identifier: BSD-2-Clause
 
 android {
@@ -6,7 +6,7 @@ android {
     namespace = "com.example.integrationguide"
 
     defaultConfig {
-        applicationId "com.example.integrationguide"
+        applicationId "com.omnissa.integrationguide.tunnel"
         minSdk 24
         targetSdk 34
         versionCode 1

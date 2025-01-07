@@ -1,4 +1,4 @@
-// Copyright 2023 VMware, Inc.
+// Copyright 2023 Omnissa, LLC.
 // SPDX-License-Identifier: BSD-2-Clause
 
 package com.example.integrationguide
@@ -295,11 +295,9 @@ class ProxyTestActivity : SDKBaseActivity(), View.OnClickListener, StatusListene
 
     private fun getProxyType(type: ProxySetupType): String{
         return when(type){
-            ProxySetupType.MAG -> "VMware Tunnel - Proxy"
-            ProxySetupType.TUNNEL -> "VMware Tunnel"
-            ProxySetupType.BASIC_USERNAME_PASSWORD -> "VMware Basic UserName/Password"
-            ProxySetupType.PACV2 -> "VMware PACV2"
-            else -> "Vmware Default"
+            ProxySetupType.TUNNEL -> "Workspace ONE Tunnel"
+            ProxySetupType.PACV2 -> "Workspace ONE PACV2"
+            else -> "Workspace ONE Default"
         }
         return type.toString()
     }

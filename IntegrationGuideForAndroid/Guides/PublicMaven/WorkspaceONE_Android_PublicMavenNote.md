@@ -102,7 +102,7 @@ Files** instructions are changed as follows.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:airwatchsdk:24.07"
+            implementation "com.airwatch.android:airwatchsdk:24.10"
         }
 
 -   Skip the step **Copy the required library files**.

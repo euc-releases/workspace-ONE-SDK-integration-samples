@@ -1,4 +1,4 @@
-# Copyright 2024 VMware LLC.
+# Copyright 2024 Omnissa, LLC.
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Add project specific ProGuard rules here.

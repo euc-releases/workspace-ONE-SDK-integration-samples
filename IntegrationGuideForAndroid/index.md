@@ -1,3 +1,33 @@
+## Workspace ONE SDK 24.11 for Android
+
+# What's new
+- Branding Update: SDK now features a new logo and splash screens as part of our transition to Omnissa.
+- Enhancements in Multi part log improvements.
+- Disabled Shift Based Access feature.
+
+# Compatibility
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2302+
+- Android Studio with the Gradle Android Build System (Gradle) 7.4+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 24.10
+
+
+## Workspace ONE SDK 24.10 for Android
+
+# What's new
+- Support for POST requests for sending SCEP (Simple Certificate Enrollment Protocol) requests
+- Decommissioning of MAG and Standard Proxy
+- Stability improvements and Bug fixes.
+
+# Compatibility
+
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2302+
+- Android Studio with the Gradle Android Build System (Gradle) 7.4+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 24.07
+
 ## Omnissa Workspace ONE SDK 24.07 for Android
 
 # What's new

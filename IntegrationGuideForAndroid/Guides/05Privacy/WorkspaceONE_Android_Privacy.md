@@ -72,7 +72,7 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.07
+Workspace ONE SDK for Android                    | 24.11
 Android Studio integrated development environment| 2022.3.1
 [**Table 1:** Software compatibility versions]
 
@@ -203,7 +203,7 @@ Proceed as follows.
 
             // Workspace ONE libraries that are part of the SDK.
             implementation(name: "AWPrivacy-21.5.1", ext: 'aar')
-            implementation(name: 'VisionUx-1.5.0.a', ext: 'aar')
+            implementation(name: 'VisionUx-2.3.0', ext: 'aar')
 
             // Third party libraries that are hosted remotely.
             implementation 'com.google.android.material:material:1.1.0'
@@ -1270,5 +1270,8 @@ This document is available
 | 15May2024              | Updated, for 24.04 SDK for Android.                  |
 | 05Jul2024              | Updated for 24.06 SDK for Android.                   |
 | 28Aug2024              | Updated for 24.07 SDK for Android.                   |
+| 29Oct2024              | Updated for 24.10 SDK for Android.                   |
+| 20Dec2024              | Updated for 24.11 SDK for Android.                   |
+
 
 

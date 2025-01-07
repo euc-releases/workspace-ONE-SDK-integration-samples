@@ -70,11 +70,11 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.07
+Workspace ONE SDK for Android                    | 24.11
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 Gradle plugin for Android                        | 8.2.2
-Kotlin language                                  | 1.8.21
+Kotlin language                                  | 1.9.25
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -213,11 +213,12 @@ First, update the build configuration and add the required library files.
 
             //    For additional information, please visit the https://www.omnissa.com/legal-center/.
             //
+
             // -   Review the Omnissa Privacy Notice and the Workspace ONE UEM Privacy
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:airwatchsdk:24.07"
+            implementation "com.airwatch.android:airwatchsdk:24.10"
         }
 
     The location of this change is shown in the [Project Structure Diagram].
@@ -976,95 +977,6 @@ set. An overview that includes links to all the guides in the set is available
 -   in Portable Document Format (PDF), on the Omnissa website:  
     [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
 
-
-# Appendix: Early Version Support
-The Workspace ONE SDK can be integrated with early versions of Android, by
-following some additional steps. Early versions here means back to 5.0 Android,
-which is API level 21. If your application won't support devices running early
-Android versions, skip the instructions in this section.
-
-To support early versions, change the build configuration to:
-
--   Enable Multidex explicitly.
-
-To make the changes, proceed as follows.
-
-1.  Configure the build.
-
-    In the application build.gradle file, in the `android` block, within the
-    `defaultConfig` block, add the required settings, for example:
-
-        ...
-        android {
-            ...
-            defaultConfig {
-                ...
-                multiDexEnabled true
-                ...
-            }
-            ...
-        }
-        ...
-
-This concludes the required changes to support early Android versions. Build the
-application to confirm that no mistakes have been made.
-
-In case the above changes don't seem to work, you can instead try the changes in
-the [Alternative Early Version Support] section, below.
-
-All being well, continue with other integration tasks.
-
-## Alternative Early Version Support
-The following code snippet shows an alternative approach to early version
-support to the above build configuration change. The alternative is to specify a
-conditional minimum SDK version, dependent on the build type.
-
-Use this approach in case the first approach doesn't work or isn't suitable for
-your app.
-
-    ext {
-        minSdkVersion = 24
-    }
-    android {
-        defaultConfig {
-            minSdkVersion getMinSDK()
-        }
-    }
-    buildTypes {
-        release {
-            minifyEnabled true
-            signingConfig signingConfigs.debug
-        }
-    }
-    def getMinSDK() {
-        if (gradle.startParameter.taskNames.toString().contains("Debug")) {
-            return 23
-        } else {
-            return minSdkVersion
-        }
-    }
-
-## Early Version Support Build Error
-If early version support is required but hasn't been implemented, error messages
-like the following will be shown at build time.
-
-    Caused by: com.android.tools.r8.utils.AbortException: Error: null, 
-    Cannot fit requested classes in the main-dex file (# methods: 66121 > 65536)
-    Caused by: java.lang.RuntimeException:
-    com.android.builder.dexing.DexArchiveMergerException: Error while merging dex archives
-
-To resolve the error, make the build configuration changes at the start of this
-[Appendix: Early Version Support].
-
-## Background Reading for Early Version Support
-For background, see these pages on the Android developer website.
-
--   Multidex:  
-    [https://developer.android.com/...multidex#mdex-on-l](https://developer.android.com/studio/build/multidex#mdex-on-l)
-
-(Some PDF viewers incorrectly escape the hash anchor marker in the above links.
-If that happens, edit the link in the browser address bar.)
-
 # Appendix: User Interface Screen Capture Images
 The following images show screens that are part of the Workspace ONE SDK user
 interface.
@@ -1152,6 +1064,9 @@ This document is available
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
 | 05Jul2024              | Updated for 24.06 SDK for Android.                  |
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
+| 29Oct2024              | Updated for 24.10 SDK for Android.                  |
+| 10Dec2024              | Updated for 24.11 SDK for Android.                  |
+
 
 
 

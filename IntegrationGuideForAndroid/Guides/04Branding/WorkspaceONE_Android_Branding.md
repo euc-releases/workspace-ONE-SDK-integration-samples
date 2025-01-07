@@ -116,7 +116,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.07
+Workspace ONE SDK for Android                    | 24.11
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 
@@ -1125,5 +1125,8 @@ This document is available
 | 15May2024              | Updated for 24.04 SDK for Android.                  |
 | 05Jul2024              | Updated for 24.06 SDK for Android.                  |
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
+| 28Oct2024              | Updated for 24.10 SDK for Android.                  |
+| 20Dec2024              | Updated for 24.11 SDK for Android.                  |
+
 
 
