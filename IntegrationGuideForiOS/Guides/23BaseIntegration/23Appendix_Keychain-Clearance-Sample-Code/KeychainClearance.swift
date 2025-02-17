@@ -6,7 +6,7 @@ import UIKit
 import SwiftUI
 
 // Handy extension to get an error message from an OSStatus.
-// TOTH https://github.com/vmware/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L37
+// TOTH https://github.com/omnissa-archive/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L37
 extension OSStatus {
     var secErrorMessage: String {
         return (SecCopyErrorMessageString(self, nil) as String?) ?? "\(self)"
@@ -22,7 +22,7 @@ func clearAppKeyChain() {
         kSecClassKey,
         kSecClassIdentity
     ].forEach {secClass in
-        // TOTH  https://github.com/vmware/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L184
+        // TOTH  https://github.com/omnissa-archive/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L184
 
         // Query to find all items of this security class.
         let query: [CFString: Any] = [kSecClass: secClass]

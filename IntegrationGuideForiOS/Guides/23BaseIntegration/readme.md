@@ -65,6 +65,7 @@ This document is available
 |06Aug2024|Publication for 24.07 SDK for iOS. |
 |30Sep2024|Publication for 24.09 SDK for iOS. |
 |28Nov2024|Publication for 24.11 SDK for iOS. |
+|11Feb2025|Publication for 25.02 SDK for iOS. |
 
 ## License
 

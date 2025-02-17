@@ -11,6 +11,7 @@
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
 		A4DCDACA28917EC8000B7780 /* CustomHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC528917EC8000B7780 /* CustomHTTPProtocol.m */; };
+		C3559EE22D63259A005D9087 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C3559EE12D63259A005D9087 /* AWSDK */; };
 		DB21706E28928FB100E71A5C /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21706D28928FB100E71A5C /* LoggingView.swift */; };
 		DB355E1E2872B90A0051E6EA /* CustomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E1D2872B90A0051E6EA /* CustomSettings.swift */; };
 		DB355E222872BDC30051E6EA /* DeviceCompromisedStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E212872BDC30051E6EA /* DeviceCompromisedStatusView.swift */; };
@@ -40,7 +41,6 @@
 		EDE67DA72885561700F49A30 /* IntegratedAuthViewModel+URLSessionHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE67DA42885561700F49A30 /* IntegratedAuthViewModel+URLSessionHandlerDelegate.swift */; };
 		EDE67DA82885561700F49A30 /* IntegratedAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE67DA52885561700F49A30 /* IntegratedAuthViewModel.swift */; };
 		EDE67DB2288576B100F49A30 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE67DB1288576B100F49A30 /* AlertHandler.swift */; };
-		EDF438E42CDA0BFD004C3FB4 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = EDF438E32CDA0BFD004C3FB4 /* AWSDK */; };
 		EDFC45E0288A6735008E467F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDFC45E2288A6735008E467F /* Localizable.strings */; };
 		EDFC45E4288A81A0008E467F /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC45E3288A81A0008E467F /* KeychainHelper.swift */; };
 		EDFC45F1288EACA5008E467F /* TunnelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC45F0288EACA5008E467F /* TunnelingView.swift */; };
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF438E42CDA0BFD004C3FB4 /* AWSDK in Frameworks */,
+				C3559EE22D63259A005D9087 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +372,7 @@
 			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				EDF438E32CDA0BFD004C3FB4 /* AWSDK */,
+				C3559EE12D63259A005D9087 /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -404,7 +404,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				EDF438E22CDA0BFD004C3FB4 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -546,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 24.09.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -602,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 24.09.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -633,12 +633,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 24.09.0;
+				MARKETING_VERSION = 25.02.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -669,12 +669,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 24.09.0;
+				MARKETING_VERSION = 25.02.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -708,20 +708,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDF438E22CDA0BFD004C3FB4 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
+			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK.git";
 			requirement = {
-				kind = exactVersion;
-				version = 24.11.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 25.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDF438E32CDA0BFD004C3FB4 /* AWSDK */ = {
+		C3559EE12D63259A005D9087 /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDF438E22CDA0BFD004C3FB4 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

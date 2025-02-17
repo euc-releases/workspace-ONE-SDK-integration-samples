@@ -82,13 +82,13 @@ The sample code is also published here.
 Acknowledgements
 
 -   Code for the extension to get an error message from an OSStatus.  
-    [github.com/vmware/captive-web-view/…/StoredKey.swift#L37](https://github.com/vmware/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L37)
+    [github.com/omnissa-archive/captive-web-view/…/StoredKey.swift#L37](https://github.com/omnissa-archive/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L37)
 
 -   Reference documentation for `kSecClass` constants.  
     [developer.apple.com/…/keychain_items/…](https://developer.apple.com/documentation/security/keychain_services/keychain_items/item_class_keys_and_values#1678477)
 
 -   Query to find all items in a security class.  
-    [github.com/vmware/captive-web-view/…/StoredKey.swift#L184](https://github.com/vmware/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L184)
+    [github.com/omnissa-archive/captive-web-view/…/StoredKey.swift#L184](https://github.com/omnissa-archive/captive-web-view/blob/061c9140fc16f88e3ab44cc170eb0d1f057adc0b/forApple/CaptiveCrypto/CaptiveCrypto/StoredKey.swift#L184)
 
 ## License
 
