@@ -49,5 +49,5 @@ repositories {
 dependencies {
     // Integrate the Workspace ONE privacy agreement module.
     implementation "com.airwatch.android:awprivacy:${privacyVersion}"
-    implementation "com.airwatch.android:visionux:2.2.6"
+    implementation "com.airwatch.android:visionux:2.3.0"
 }

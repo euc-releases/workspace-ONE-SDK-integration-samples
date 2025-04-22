@@ -11,13 +11,5 @@ plugins {
 
 apply from: file("buildBase.gradle")
 
-def integrateClient = secretFile("integrateClient.gradle")
-
-if (integrateClient.exists()) {
-    println("Override integrateClient '${integrateClient}'.")
-    apply from: integrateClient
-}
-else {
-    // Client integration from the public Maven repository.
-    apply from: file("publicMavenClient.gradle")
-}
+// Client integration from the public Maven repository.
+apply from: file("publicMavenClient.gradle")

@@ -13,19 +13,11 @@ plugins {
 // Start with the application.
 apply from: file("buildBase.gradle")
 
-def integrateFramework = secretFile("integrateFramework.gradle")
+// Client integration from the public Maven repository.
+apply from: file("publicMavenClient.gradle")
 
-if (integrateFramework.exists()) {
-    println("Override integrateFramework '${integrateFramework}'.")
-    apply from: integrateFramework
-}
-else {
-    // Client integration from the public Maven repository.
-    apply from: file("publicMavenClient.gradle")
-
-    // Framework integration from the public Maven repository.
-    apply from: file("publicMavenFramework.gradle")
-}
+// Framework integration from the public Maven repository.
+apply from: file("publicMavenFramework.gradle")
 
 // TOTH: https://stackoverflow.com/a/37101792/7657675
 def properties = new Properties()

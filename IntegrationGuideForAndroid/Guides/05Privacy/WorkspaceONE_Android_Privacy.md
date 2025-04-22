@@ -61,10 +61,10 @@ Workspace ONE platform.
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been followed with the Workspace ONE Software
@@ -72,7 +72,7 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.11
+Workspace ONE SDK for Android                    | 25.02
 Android Studio integrated development environment| 2022.3.1
 [**Table 1:** Software compatibility versions]
 
@@ -135,21 +135,20 @@ following.
     The privacy agreements module is distributed with the Workspace ONE SDK for
     Android.
     
-    Instructions for obtaining the SDK are given in the Workspace ONE for
+    Instructions for integrating the SDK are given in the Workspace ONE for
     Android Integration Preparation Guide, starting here:  
-    [Omnissahttps://github.com/euc-releases/...obtain-software-development-kit](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-obtain-software-development-kit-obtain-software-development-kit)  
+    [https://github.com/euc-releases/...obtain-software-development-kit](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-obtain-software-development-kit-obtain-software-development-kit)  
     (Some PDF viewers incorrectly escape the hash anchor marker in the above
     link. If that happens, edit the link in the browser address bar.)
 
     The whole guide is available
 
     -   in Markdown format, in the repository that also holds the sample code:  
-        [Omnissahttps://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)  
+        [https://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)  
 
     -   in Portable Document Format (PDF), on the Omnissa website:  
-        [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)  
-    
-    Go to the Task: Obtain software development kit.
+        [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)  
+
 
 This completes the preparation for integrating your Android application with the
 Workspace ONE privacy module. You are now ready to start the first
@@ -166,24 +165,6 @@ as follows:
 -   *Application* module in a sub-directory.
 -   Separate `build.gradle` files for the project and application.
 
-## Project Structure Diagram
-The following diagram illustrates the expected project directory structure, and
-the locations of changes to be made.
-
-![**Diagram 1:** Project structure and locations of changes](ProjectStructureForPrivacy.svg)
-
-**Tip**: It might be easier to see the structure, and identify which Gradle file
-is which, in the Android Studio project navigator if you select the Project
-view, instead of the Android view.
-
-## Software Development Kit Download Structure Diagram
-The following diagram illustrates the directory structure of the SDK download. 
-
-![**Diagram 2:** Download structure of the SDK for Android](../02Preparation/DownloadStructure.svg)
-
-Files from within the above structure are copied under your application project
-in the following instructions.
-
 <p class="always-page-break" />
 ## Instructions
 Proceed as follows.
@@ -191,54 +172,32 @@ Proceed as follows.
 1.  Add the required libraries to the build.
 
     In the application build.gradle file, in the `dependencies` block, add
-    references to the required libraries. (The library files will be copied in
-    the next step.) For example:
-
-        dependencies {
-            implementation fileTree(dir: 'libs', include: ['*.jar'])
-            implementation ...
-            implementation ...
-
-            // Following lines are added to integrate the Workspace ONE privacy agreement module ...
-
-            // Workspace ONE libraries that are part of the SDK.
-            implementation(name: "AWPrivacy-21.5.1", ext: 'aar')
-            implementation(name: 'VisionUx-2.3.0', ext: 'aar')
-
-            // Third party libraries that are hosted remotely.
-            implementation 'com.google.android.material:material:1.1.0'
-
-            ...
-        }
-
-    The location of this change is shown in the [Project Structure Diagram].
-
-2.  Copy the required library files.
-
-    The code snippet in the previous step indicates which libraries are part of
-    the SDK.
-
-    Files for those libraries can be found in the SDK distribution, under one or
-    other of the `Libs` sub-directories or their `dependencies` sub-directories.
-    See the [Software Development Kit Download Structure Diagram].
-    
-    Copy the files into your project, under the application module
-    sub-directory, in the `libs` sub-directory. The location is shown in the
-    [Project Structure Diagram]. If the sub-directory doesn't exist, create it
-    now.
-
-3.  Add the library files' location to the application build configuration.
-
-    In the application build.gradle file, add a `repositories` block that
-    specifies the location of the library file copies. For example:
+    references to the required libraries. For example:
 
         repositories {
-            flatDir {
-                dirs 'libs'
+            maven {
+                url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+                credentials {
+                /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
+            }
+            maven {
+                url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+                credentials {
+                /**In gradle.properties file of root project folder, add github.user=GITHUB_USERNAME  & github.token =GITHUB_ACCESS_TOKEN**/
+                username = project.findProperty("github.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("github.token") ?: System.getenv("TOKEN")
+                }
             }
         }
-    
-    The location of this change is shown in the [Project Structure Diagram].
+
+        dependencies {
+            // Integrate the Workspace ONE privacy agreement module.
+            implementation "com.airwatch.android:awprivacy:25.01"
+            implementation "com.airwatch.android:visionux:2.4.2"
+        }
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
@@ -255,7 +214,7 @@ troubleshooting tips.
         Unable to instantiate activity ComponentInfo{.../...MainActivity}:
         java.lang.ClassNotFoundException: Didn't find class "...MainActivity"
 
-    This might be resolved by specifying Java version 8 language features. You
+    This might be resolved by specifying Java version 17 language features. You
     can do this by adding code like the following to the application
     build.gradle file.
 
@@ -264,12 +223,12 @@ troubleshooting tips.
             // ...
 
             compileOptions {
-                sourceCompatibility JavaVersion.VERSION_1_8
-                targetCompatibility JavaVersion.VERSION_1_8
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
             }
 
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "17"
             }
 
             // ...
@@ -736,8 +695,8 @@ Proceed as follows.
                 // ... Other companion object code here and previous factory function.
 
                 fun privacyContent(
-                    title: String, summary: String, id: Int
-                ) : AWPrivacyContent = privacyContent(title, summary).apply { this.id = id }
+                    title: String, summary: String, id: Int , permissionType: AWPrivacyPermissionType, contentType: Int
+                ) : AWPrivacyContent = privacyContent(title, summary, permissionType, contentType).apply { setPermissionType(AWPrivacyPermissionType.PERMISSION_NOTIFICATION) }
             }
         }
 
@@ -749,7 +708,7 @@ Proceed as follows.
         appPermissionItems = ArrayList( listOf(
             privacyContent(
                 "Another Permission", "Another permission with a custom icon goes here.",
-                R./* mipmap or drawable for example */ . /* resource name */
+           "AWPrivacyPermissionType" , /* resource name */
             ),
             // ... Existing custom permission here.
         ) )
@@ -787,7 +746,7 @@ Proceed as follows.
                 fun privacyContent(
                     title: String, summary: String, id: AWPrivacyPermissionType
                 ) : AWPrivacyContent = privacyContent(
-                    title, summary, AWPrivacyController.getPermissionResource(id)
+                    title, summary, id
                 )
             }
         }
@@ -885,7 +844,7 @@ images.
 ### Notes on content configuration
 The following notes apply to agreement content configuration.
 
--   The privacy module has a built-in default list of data collection items.
+-   The privacy module has a built-in default list of data collection items and same as to be used by consuming apps.
 
     A mutable copy of the built-in list can be created by calling the
     AWPrivacyConfig dataCollectionDefaultItems static method. An Android Context
@@ -893,20 +852,6 @@ The following notes apply to agreement content configuration.
     following.
 
         val items = AWPrivacyConfig.dataCollectionDefaultItems(context)
-
--   The privacy module user interfaces support Android night mode, also known as
-    dark mode. The built-in app permission icons and data collection items come
-    with light- and dark-mode versions of their graphics.
-    
-    You can provide night-mode versions of custom icons in your agreement
-    configuration. Use the Android alternative resources mechanism with the
-    "night" suffix.
-
-    The following screen capture shows a night-mode alternative for the
-    `privacy_placeholder_2.png` resource in the Android Studio project view of
-    the Open Source privacy module sample application.
-
-    ![**Screen Capture 3:** Alternative resources for night mode](ScreenCapture_IDE_AlternativeResources.png)
 
     For details, see the Android developer website, for example:  
     [https://developer.android.com/.../providing-resources#AlternativeResources](https://developer.android.com/guide/topics/resources/providing-resources#AlternativeResources)
@@ -1239,10 +1184,10 @@ have been reverted.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...Privacy.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/05Privacy/WorkspaceONE_Android_Privacy.md)
+    [https://github.com/euc-releases/...Privacy.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/05Privacy/WorkspaceONE_Android_Privacy.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...Privacy.pdf](https://developer.omnissa.com/docs/13425/WorkspaceONE_Android_Privacy.pdf)
+    [https://developer.omnissa.com/...Privacy.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Privacy.pdf)
 
 ## Revision History
 | Date                   | Revision                                             |
@@ -1272,6 +1217,8 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                   |
 | 29Oct2024              | Updated for 24.10 SDK for Android.                   |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                   |
+| 04mar2025              | Documentation update for Android.                    |
+| 12Mar2025              | Updated for  Android SDK 25.02.                      |
 
 
 

@@ -32,7 +32,7 @@ class PrivacyXML(
         data class AppPermissionList(
             val body: AWPrivacyList, override val parent: Config) : Node()
         data class Item(
-            val body: AWPrivacyContent, override val parent: Node) : Node()
+            var body: AWPrivacyContent, override val parent: Node) : Node()
 
         abstract val parent:Node?
     }
@@ -179,7 +179,7 @@ class PrivacyXML(
             override fun start(node: Node, state: State): Node = when(node) {
                 is Node.Item -> node.apply {
                     Attribute.resource.get(state)?.also {
-                        body.id = state.context.resources.getIdentifier(
+                        state.context.resources.getIdentifier(
                             it, "mipmap", state.context.packageName)
                     }
                     Attribute.contentType.get(state)?.also {
@@ -191,8 +191,7 @@ class PrivacyXML(
                                 "Unknown ", Attribute.contentType.name,
                                 " value \"", it, "\".")
                         }.also { permissionType ->
-                            body.id = AWPrivacyController
-                                .getPermissionResource(permissionType)
+                            body = AWPrivacyContent()
                         }
                     }
                 }

@@ -39,6 +39,7 @@
 "customNavigationTitle" = "Custom Settings";
 "CompromisedNavigationTitle" = "Device Compromised Status";
 "DLPNavigationTitle" = "DLP";
+"ScreenshotNavigationTitle" = "Screenshot Restriction";
 "clipBoardNavigationTitle" = "Screenshot";
 "cryptoNavigationTitle" = "Crypto View";
 "tunnelingNavigationTitle" = "Application Tunneling";

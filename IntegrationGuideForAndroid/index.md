@@ -1,3 +1,17 @@
+## Workspace ONE SDK 25.02 for Android
+
+# What's new
+- Target Android API 35. Refer [Branding Guide for OptOutEdgeToEdgeEnforcement for apps targeting API 35 ](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Branding.pdf#page=11)
+- Support for Dense QR Code
+- Bug fixes and stability improvements
+
+# Compatibility
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2306+
+- Android Studio with the Gradle Android Build System (AGP) 8.2.2+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 25.02
+
 ## Workspace ONE SDK 24.11 for Android
 
 # What's new
@@ -42,7 +56,7 @@
 * Workspace ONE Intelligent Hub for Android version 24.07
 
 # Integration
-The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-uem-android/) and KB article: [https://kb.omnissa.com/s/article/6000158](https://kb.omnissa.com/s/article/6000158)
+The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-android/) and KB article: [https://kb.omnissa.com/s/article/6000158](https://kb.omnissa.com/s/article/6000158)
 
 ## Downloads
 
@@ -75,7 +89,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 * Workspace ONE Intelligent Hub for Android version 24.04
 
 # Integration
-The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-uem-android/)
+The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-android/)
 
 # Important Update Starting June 2024
 From version 24.06 onwards, the Workspace ONE SDK for Android will no longer be available through the My Workspace ONE portal: ("https://my.workspaceone.com/")
@@ -110,7 +124,7 @@ dependencies {
 
 ## Integration
 
-The SDK is available from a Maven repository. Check the integration documentation on the Omnissa Developer website. https://developer.omnissa.com/ws1-sdk-uem-android
+The SDK is available from a Maven repository. Check the integration documentation on the Omnissa Developer website. https://developer.omnissa.com/ws1-sdk-android
 
 Starting June 2024, version 24.06 onwards Workspace ONE SDK for Android will NOT be distributed through the My Workspace one portal i.e. https://my.workspaceone.com/products/Workspace-ONE-SDK 
 It will only be distributed as a maven package; developers need to follow the instructions provided in the below-mentioned link to integrate the Workspace ONE SDK Android package into their applications.

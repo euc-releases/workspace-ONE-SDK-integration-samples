@@ -160,23 +160,21 @@ The integration guides are available
     [https://github.com/euc-releases/workspace-ONE-SDK-integration-samples](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples)
 
 -   in Portable Document Format (PDF), on the Omnissa website.  
-    [https://developer.omnissa.com/web/sdk/Native/airwatch-android](https://developer.omnissa.com/web/sdk/Native/airwatch-android)
+    [https://developer.omnissa.com/ws1-sdk-for-android/](https://developer.omnissa.com/ws1-sdk-for-android/)
 
 The Omnissa website also has links to other integration resources, including
-earlier versions of the Developer Guide documentation, other technical
-documentation, and the SDK itself. You will require a My Workspace One login in
-order to download the SDK. Speak with your Workspace ONE representative for
-access.
+earlier versions of the Developer Guide documentation, and the technical
+documentation.
 
 The following table lists the guides and gives links to their published
 locations in different formats.
 
 Document| Markdown | PDF
 --------|----------|----
-Integration Overview (this document) | [IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
-Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://developer.omnissa.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
-Base Integration Guide | [BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://developer.omnissa.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
-Branding Integration Guide | [Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://developer.omnissa.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
+Integration Overview (this document) | [IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
+Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)
+Base Integration Guide | [BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_BaseIntegration.pdf)
+Branding Integration Guide | [Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Branding.pdf)
 
 
 
@@ -195,10 +193,10 @@ The Privacy Module is independent of the Client, Framework, Networking path.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Revision History
 |Date     |Revision                                    |
@@ -206,5 +204,7 @@ This document is available
 |03jul2020|First publication, for 20.4 SDK for Android.|
 |22jul2020|Updated for 20.7 SDK for Android.           |
 |11oct2020|Updated URL paths to default branch main.   |
+|04mar2025| Documentation update for Android.          |
+|12Mar2025| Updated for  Android SDK 25.02.            |
 
 

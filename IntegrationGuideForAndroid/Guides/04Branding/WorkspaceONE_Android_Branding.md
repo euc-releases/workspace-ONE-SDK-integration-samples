@@ -105,10 +105,10 @@ See other guides in the set for
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 Instructions in this document have been tested with the following software
@@ -116,7 +116,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.11
+Workspace ONE SDK for Android                    | 25.02
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 
@@ -329,6 +329,29 @@ Note the following:
 See also the [Splash Screen] and [Login Screen] images in the appendix to this
 document. The images are annotated to show brand elements in the SDK user
 interface.
+
+# For apps targeting API 35, modifications Required in styles.xml
+
+To override styles for Android API 35, create a file named styles.xml in the directory res/values-v35.
+Override your themes with added attribute <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+Teams that have already overridden SDKBaseTheme, SimplifiedEnrollmentDialogTheme, or SimplifiedEnrollmentDialogTheme.
+Base are required to update their themes in the res/values-35/styles.xml file with above added attribute .
+
+Example :-
+     Adding as we are opting out of edge to edge support
+
+     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+
+        <!--
+            Custom values like these would go here but this application uses
+            the vanilla.
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        -->
+    </style>
 
 ### Static style configuration item tags
 Item tags within the base theme with the following names are relevant to the
@@ -1127,6 +1150,7 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 | 28Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                  |
+| 12Mar2025              | Updated for  Android SDK 25.02.                     |
 
 
 

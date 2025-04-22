@@ -101,7 +101,7 @@ this guide.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...UEMSysAdminForAppDevs/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/50UEMSysAdminForAppDevs/readme.md)
+    [https://github.com/euc-releases/...UEMSysAdminForAppDevs/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/50UEMSysAdminForAppDevs/readme.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
     [https://developer.omnissa.com/...UEMSysAdminForAppDevs.pdf](https://developer.omnissa.com/docs/17139/WorkspaceONE_Android_UEMSysAdminForAppDevs.pdf)

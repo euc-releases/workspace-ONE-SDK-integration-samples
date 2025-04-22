@@ -1,9 +1,5 @@
-/*
- * Copyright (c) 2025 Omnissa, LLC. All rights reserved.
- * This product is protected by copyright and intellectual property laws in the
- * United States and other countries as well as by international treaties.
- * -- Omnissa Public
- */
+  #  Copyright 2025 Omnissa, LLC.
+  #  SPDX-License-Identifier: BSD-2-Clause
 
 # Run with Python 3.7
 """Script to run a Gradle task in each sub-project, one at a time."""

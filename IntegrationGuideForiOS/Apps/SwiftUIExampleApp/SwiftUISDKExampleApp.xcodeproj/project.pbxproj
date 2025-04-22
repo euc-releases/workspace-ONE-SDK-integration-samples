@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6693D02DB78A7800E18E60 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6693CF2DB78A7800E18E60 /* AWSDK */; };
 		A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC128917EC7000B7780 /* QNSURLSessionDemux.m */; };
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
 		A4DCDACA28917EC8000B7780 /* CustomHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC528917EC8000B7780 /* CustomHTTPProtocol.m */; };
-		C3559EE22D63259A005D9087 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C3559EE12D63259A005D9087 /* AWSDK */; };
 		DB21706E28928FB100E71A5C /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21706D28928FB100E71A5C /* LoggingView.swift */; };
 		DB355E1E2872B90A0051E6EA /* CustomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E1D2872B90A0051E6EA /* CustomSettings.swift */; };
 		DB355E222872BDC30051E6EA /* DeviceCompromisedStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB355E212872BDC30051E6EA /* DeviceCompromisedStatusView.swift */; };
@@ -59,7 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DB932543286DB24F00C8EF21 /* Embed Frameworks */ = {
+		331FEF802D6DB640009EAE66 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -129,12 +129,16 @@
 		EDFF8F82286EE75E009B9FBA /* KeyboardRestrictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRestrictionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		331FEF4B2D689F65009EAE66 /* Screenshot */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Screenshot; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		ED5051B6286AE8C800141273 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3559EE22D63259A005D9087 /* AWSDK in Frameworks */,
+				0A6693D02DB78A7800E18E60 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +272,7 @@
 				DBA5A5752874911800E38854 /* EnterpriseBranding */,
 				DB21706C28928F9B00E71A5C /* Logging */,
 				DB3D04652899026500A20AA4 /* Stored Certificates */,
+				331FEF4B2D689F65009EAE66 /* Screenshot */,
 				ED5051C0286AE8CA00141273 /* Assets.xcassets */,
 				ED5051C2286AE8CA00141273 /* Preview Content */,
 			);
@@ -364,15 +369,18 @@
 				ED5051B5286AE8C800141273 /* Sources */,
 				ED5051B6286AE8C800141273 /* Frameworks */,
 				ED5051B7286AE8C800141273 /* Resources */,
-				DB932543286DB24F00C8EF21 /* Embed Frameworks */,
+				331FEF802D6DB640009EAE66 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				331FEF4B2D689F65009EAE66 /* Screenshot */,
+			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				C3559EE12D63259A005D9087 /* AWSDK */,
+				0A6693CF2DB78A7800E18E60 /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -404,7 +412,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				0A6693CE2DB78A7800E18E60 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -638,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 25.02.0;
+				MARKETING_VERSION = 25.04;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -674,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 25.02.0;
+				MARKETING_VERSION = 25.04;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -708,20 +716,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		0A6693CE2DB78A7800E18E60 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK.git";
+			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 25.2.0;
+				kind = exactVersion;
+				version = 25.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C3559EE12D63259A005D9087 /* AWSDK */ = {
+		0A6693CF2DB78A7800E18E60 /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C3559EE02D63259A005D9087 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = 0A6693CE2DB78A7800E18E60 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

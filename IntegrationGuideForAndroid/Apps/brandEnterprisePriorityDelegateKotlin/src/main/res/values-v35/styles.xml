@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2025 Omnissa, LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        // Adding as we are opting out of edge to edge support
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+
+        <!--
+            Custom values like these would go here but this application uses
+            the vanilla.
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        -->
+    </style>
+</resources>

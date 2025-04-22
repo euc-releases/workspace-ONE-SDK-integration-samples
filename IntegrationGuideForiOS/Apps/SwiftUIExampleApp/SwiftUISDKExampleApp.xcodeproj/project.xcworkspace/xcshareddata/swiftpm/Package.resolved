@@ -1,13 +1,13 @@
 {
-  "originHash" : "d65107cf13c44963b4bfc2de3ab23993ae52c05186e8088650757faeae943fa5",
+  "originHash" : "61d410919d93477d452ba66c9ba380c903e8ecf157498a0ab56ae4660ea05e9b",
   "pins" : [
     {
       "identity" : "ios-workspaceone-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/euc-releases/iOS-WorkspaceONE-SDK.git",
+      "location" : "https://github.com/euc-releases/iOS-WorkspaceONE-SDK",
       "state" : {
-        "revision" : "210ceda59f3e8d337a5d435d4fed184fb8069370",
-        "version" : "25.2.0"
+        "revision" : "58bf68c63bc350d20a3bddffc7526753004420ff",
+        "version" : "25.4.0"
       }
     }
   ],

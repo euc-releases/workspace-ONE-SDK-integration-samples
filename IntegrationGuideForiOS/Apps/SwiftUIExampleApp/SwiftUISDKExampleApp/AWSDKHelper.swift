@@ -14,6 +14,9 @@ class AWSDKHelper: NSObject, AWControllerDelegate, ObservableObject {
     @Published var alert: CustomAlert?
     var checkDoneErrorCode: Int?
     static let shared: AWSDKHelper = .init()
+    let refreshSecureViewNotification: Notification.Name = {
+        NSNotification.Name.refreshSecureView
+    }()
 
     // This method gets called when Workspace ONE SDK finishes its setup.
     // At this point, Workspace ONE SDK has verified the enrollment, sets up Tunnel (if configured)
@@ -303,6 +306,14 @@ extension AWSDKHelper {
     /// - Parameter completion: handler that gets invoked when certificates are retrieved successfully.
     internal func exportIdentityCertificates(completion : @escaping AWController.IdentityCertificatesCompletionHandler){
         AWController.clientInstance().exportIdentityCertificates(completion: completion)
+    }
+}
+
+extension AWSDKHelper {
+    //API to get the secure view from SDK
+    //The returned view can be used to secure views during screenshots/Video
+    func getSDKSecureView() -> UIView {
+        return AWSDKSecureViewManager.sharedInstance.getSecureViewForScreenshotProtection()
     }
 }
 

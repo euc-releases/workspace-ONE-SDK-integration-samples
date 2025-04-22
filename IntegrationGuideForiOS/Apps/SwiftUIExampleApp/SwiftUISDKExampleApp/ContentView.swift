@@ -26,7 +26,8 @@ struct ContentView: View {
                         Feature(name: String(localized: "IAuthentication"), destination: AnyView(IntegratedAuthenticationView())),
                         Feature(name: String(localized: "AppTunneling"), destination: AnyView(TunnelingView())),
                         Feature(name: String(localized: "Logging"), destination: AnyView(LoggingView())),
-                        Feature(name: String(localized: "Certificates"), destination: AnyView(CertificatesEntryView()))
+                        Feature(name: String(localized: "Certificates"), destination: AnyView(CertificatesEntryView())),
+                        Feature(name: String(localized: "Screenshot Restriction"), destination: AnyView(ScreenshotEntryView()))
                       ]
 
     var body: some View {

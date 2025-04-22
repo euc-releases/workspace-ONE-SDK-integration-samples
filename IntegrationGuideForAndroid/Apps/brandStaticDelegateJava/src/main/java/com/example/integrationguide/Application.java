@@ -33,8 +33,8 @@ import com.airwatch.sdk.configuration.SettingsExtension;
 import com.airwatch.sdk.context.awsdkcontext.SDKContextHelper;
 import com.airwatch.sdk.context.awsdkcontext.handlers.SDKBaseHandler;
 import com.airwatch.sdk.p2p.P2PChannel;
-import com.vmware.chameleon.Configuration;
-import com.vmware.chameleon.function.FunctionFactory;
+import com.ws1.chameleon.Configuration;
+import com.ws1.chameleon.function.FunctionFactory;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -321,11 +321,6 @@ public class Application
     @Override
     public void onConfigurationChanged(@androidx.annotation.Nullable Set<String> keySet) {
         awDelegate.onConfigurationChanged(keySet);
-    }
-
-    @Override
-    public boolean getMagCertificateEnable() {
-        return awDelegate.getMagCertificateEnable();
     }
 
     @androidx.annotation.Nullable

@@ -19,10 +19,10 @@ This document is part of the Workspace ONE Integration Guide for Android set. An
 overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Prerequisite Conditions
 Before you begin, you will need the following.
@@ -105,17 +105,17 @@ When the prerequisite conditions are met, you can start the first
 Instructions in this document have been followed with the Workspace ONE Software
 Development Kit (SDK) for Android and other software, to confirm compatibility.
 
-The following table shows the software versions used for the instructions, and
+The following table shows the software versions used for the Latest supported version, and
 the minimum supported versions if different.
 
-Software                                           | Instructions | Supported |
----------------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for Android | 24.11        |           |
-Workspace ONE management console                   | 2406         | 2302      |
-Workspace ONE Intelligent Hub application          | 24.11         | 23.06     |
-Android Operating System                           | Android 15   | Android 7 |
-Android Studio integrated development environment  | 2022.3.1     | 2020.3.1  |
-Gradle plugin for Android                          | 8.2.2        | 8         |
+Software                                           | Latest supported | Minimum supported |
+---------------------------------------------------|------------------|-------------------|
+Workspace ONE software development kit for Android | 25.02            | 24.01             |
+Workspace ONE management console                   | 2410             | 2306              |
+Workspace ONE Intelligent Hub application          | 25.02            | 23.06             |
+Android Operating System                           | Android 15       | Android 7         |
+Android Studio integrated development environment  | 2024.3.1         | 2020.3.1          |
+Gradle plugin for Android                          | 8.7.1            | 8.2.2             |
 
 # Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
@@ -254,10 +254,10 @@ See the Base Integration guide for instructions. The Base Integration Guide is
 available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [https://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 # Appendix: How to generate a signed Android package file once
 You can generate a signed Android package file (APK) for your application by
@@ -704,10 +704,10 @@ This completes the additional preparation.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
+    [https://github.com/euc-releases/...IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)
+    [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
 | Date                   | Revision                                            |
@@ -738,6 +738,7 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 | 29Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                  |
+| 12Mar2025              | Updated for  Android SDK 25.02.                     |
 
 
 

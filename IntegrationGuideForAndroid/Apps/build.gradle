@@ -40,8 +40,8 @@ task printUserHomeDir {
 }
 
 ext {
-    airwatchVersion = '24.11'
-    privacyVersion = '21.5.1'
+    airwatchVersion = '25.02'
+    privacyVersion = '25.01'
 
     // Utility method to generate a path for a file in the directory for
     // secrets. Secrets are stored outside the Android Studio project, hence

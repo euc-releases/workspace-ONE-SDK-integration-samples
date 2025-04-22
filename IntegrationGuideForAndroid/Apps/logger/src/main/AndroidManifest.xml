@@ -6,7 +6,6 @@
 <manifest
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.integrationguide"
     >
     <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>

@@ -143,7 +143,7 @@ def main(commandLine):
         description=textwrap.dedent(__doc__))
     argumentParser.add_argument(
         '-c', '--cache', action='store_true', help=
-        "Delete Gradle cached downloads of VMware Workspace ONE mobile SDK"
+        "Delete Gradle cached downloads of Omnissa Workspace ONE mobile SDK"
         " dependencies and all the Gradle cache metadata. Useful for forcing"
         " download or testing secret override properties.  Default is to delete"
         " Gradle build files instead.")

@@ -58,10 +58,10 @@ See other guides in the set for
 An overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Compatibility
 
@@ -70,7 +70,7 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 24.11
+Workspace ONE SDK for Android                    | 25.02
 Workspace ONE management console                 | 2306
 Android Studio integrated development environment| 2022.3.1
 Gradle plugin for Android                        | 8.2.2
@@ -102,24 +102,6 @@ follows:
 -   *Application* module in a sub-directory.
 -   Separate `build.gradle` files for the project and application.
 
-## Project Structure Diagram
-The following diagram illustrates the expected project directory structure, and
-the locations of changes to be made.
-
-![**Diagram 2:** Project structure and locations of changes](ProjectStructure.svg)
-
-**Tip**: It might be easier to see the structure, and identify which Gradle file
-is which, in the Android Studio project navigator if you select the Project
-view, instead of the Android view.
-
-## Software Development Kit Download Structure Diagram
-The following diagram illustrates the directory structure of the SDK download. 
-
-![**Diagram 3:** Download structure of the SDK for Android](../02Preparation/DownloadStructure.svg)
-
-Files from within the above structure are copied under your application project
-in the following instructions.
-
 <p class="always-page-break" />
 ## Instructions
 Proceed as follows.
@@ -148,9 +130,6 @@ First, update the build configuration and add the required library files.
 
     Ensure that the Gradle version is at least 8.2
 
-    The location of this change is shown in the [Project Structure Diagram].
-
-
 2.  Add the required packaging and compile options.
 
     In the application build.gradle file, in the `android` block, add the Java
@@ -158,7 +137,7 @@ First, update the build configuration and add the required library files.
 
         ...
         android {
-            compileSdk 34
+            compileSdk 35
 
             // Following blocks are added.
              kotlin {
@@ -170,7 +149,7 @@ First, update the build configuration and add the required library files.
             // End of added blocks.
 
             defaultConfig {
-                targetSdk 34
+                targetSdk 35
                 ...
             }
             buildTypes {
@@ -218,17 +197,12 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:airwatchsdk:24.10"
+            implementation "com.airwatch.android:airwatchsdk:25.02"
         }
-
-    The location of this change is shown in the [Project Structure Diagram].
 
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
 with the next step, which is [Anchor Event Handler Implementation].
-
-In case you encounter an error, check the [Early Version Support Build Error]
-first.
 
 **If you haven't installed your application via Workspace ONE** at least once,
 then the application under development won't work when installed via the Android
@@ -496,16 +470,7 @@ instructions assume that the dependent task is complete already.
 ## Build Configuration and Files [BuildConfigurationAndFilesFrameworkIntegration]
 This task involves changing your application project's build configuration and
 files. These instructions assume that your application has a typical project
-structure, same as the Add Client SDK task, as shown in the
-[Project Structure Diagram].
-
-A number of libraries will be added to the project. These can be divided into
-the following categories.
-
--   Workspace ONE libraries that are part of the SDK.
--   Third party libraries that are distributed with the SDK.
--   Third party libraries that are hosted remotely, for example in a Maven
-    repository, and included via Gradle.
+structure, same as the Add Client SDK task.
 
 Proceed as follows.
 <p class="allow-page-break" />
@@ -549,18 +514,18 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:awframework:24.07"
+            implementation "com.airwatch.android:awframework:25.02"
         }
     
     Your application might already require different versions of some of the
     same libraries required by the SDK. Warning messages will be generated in
     the build output in that case, for example stating that there are
-    incompatible JAR files in the classpath.
+    more then one version available in the classpath.
     
     You can resolve this by selecting one or other version, either the SDK
     requirement or your app's original requirement.  
-    In principle, the SDK isn't supported with versions other than those given
-    in the above. In practice however, problems are unlikely to be encountered
+    In principle, the SDK isn't supported with versions other than those which 
+    gets imported via maven. In practice however, problems are unlikely to be encountered
     with later versions.
 
 2.  Add annotation processor support.
@@ -586,16 +551,18 @@ Proceed as follows.
 
         ...
         android {
-            compileSdk 34
+            compileSdk 35
 
             // Following block is added.
             packagingOptions {
                 pickFirst '**/*.so'
+                exclude 'META-INF/LICENSE.txt' 
+                exclude 'META-INF/NOTICE.txt' 
             }
             // End of added block.
 
             defaultConfig {
-                targetSdk 34
+                targetSdk 35
                 ...
             }
             buildTypes {
@@ -605,9 +572,7 @@ Proceed as follows.
         ...
 
     The above assumes that support for earlier Android operating system versions
-    and processor architectures isn't required in the application. If support is
-    required, also follow the instructions in the
-    [Appendix: Early Version Support].
+    and processor architectures isn't required in the application.
 
 4. App targeting API level 31 or above, override getEventHandler() in App's Application class to return
     WS1AnchorEvents object.
@@ -623,9 +588,6 @@ Proceed as follows.
 This completes the required changes to the build configuration. Build the
 application to confirm that no mistakes have been made. After that, continue
 with the next task, which is to [Initialize the Framework].
-
-In case you encounter an error, check the [Early Version Support Build Error]
-first.
 
 # Task: Initialize Framework [Initialize the Framework]
 Framework initialization is a Workspace ONE platform integration task for
@@ -737,7 +699,11 @@ In Java, the class could look like this:
             awDelegate.attachBaseContext(application);
         }
 
-        
+        @Override
+        public Intent getMainLauncherIntent() {
+            return awDelegate.getMainLauncherIntent();
+        }
+
 
         // ... Many more overrides here.
     }
@@ -778,6 +744,10 @@ In Kotlin, the class could look like this:
             // Replace MainActivity with application's original main activity.
             return Intent(applicationContext, MainActivity::class.java)
         }
+
+        override fun getMainLauncherIntent(): Intent {
+            return super.getMainLauncherIntent();
+        }
     }
 
 ### Next
@@ -797,6 +767,8 @@ Add to your application code a new class that:
 -   Overrides the getMainActivityIntent() method to return an Intent for the
     application's main Activity.
 -   Implements the other required methods with dummies.
+-   Overrides the getMainLauncherIntent() method so that the SDK knows which 
+    Activity to give control to during initialization.
 
 In Java, the class could look like this:
 
@@ -819,6 +791,11 @@ In Java, the class could look like this:
                 @NotNull String host, X509Certificate x509Certificate
         ) {
         }
+
+        @Override
+        public Intent getMainLauncherIntent() {
+            return new Intent(getApplicationContext(), SDKSplashActivity.class);
+        }
     }
 
 In Kotlin, the class could look like this:
@@ -839,6 +816,10 @@ In Kotlin, the class could look like this:
             host: String,
             serverCACert: X509Certificate?
         ) {
+        }
+
+        override fun getMainLauncherIntent(): Intent {
+            return Intent(applicationContext, SDKSplashActivity::class.java)
         }
 
     }
@@ -972,10 +953,10 @@ See the respective documents in the Workspace ONE Integration Guide for Android
 set. An overview that includes links to all the guides in the set is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/euc-releases/...IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
+    [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 # Appendix: User Interface Screen Capture Images
 The following images show screens that are part of the Workspace ONE SDK user
@@ -1007,36 +988,36 @@ when the app was not installed via Intelligent Hub.
 To resolve this error, it is recommended to upload the APK to the UEM once, then install the 
 app through Intelligent Hub. 
 
-For detailed instructions please refer to the Integration Preperation Guide, specifically 
+For detailed instructions please refer to the Integration Preparation Guide, specifically 
 
 Appendix: How to upload an Android application to the management console 
 - as Markdown: [Preperation Guide - Appendix: How to upload an Android application to the management console](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#appendix-how-to-upload-an-android-application-to-the-management-console-how-to-upload-an-android-application-to-the-management-console) 
-- as PDF: [Preperation Guide - Appendix: How to upload an Android application to the management console](https://vdc-download.omnissa.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=15) 
+- as PDF: [Preperation Guide - Appendix: How to upload an Android application to the management console](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf#page=13) 
 
 and 
 
 Task: Install application via Workspace ONE 
 - as Markdown: [Preparation Guide - Task: Install application via Workspace ONE](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#task-install-application-via-workspace-one-install-your-application-via-workspace-one) 
-- as PDF: [Preparation Guide - Task: Install application via Workspace ONE](https://vdc-download.omnissa.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=5) 
+- as PDF: [Preparation Guide - Task: Install application via Workspace ONE](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf#page=5) 
 
 Once the APK has been uploaded to the UEM and installed via Workspace ONE, the app can then 
-be subsequently side-loaded by the ABD provided the side load is signed by the same developer 
+be subsequently side-loaded by the ADB provided the side load is signed by the same developer 
 key as the original upload. To ensure your APK is signed on every build please refer to the 
-Preperation Guide, specifically 
+Preparation Guide, specifically 
 
 Appendix: How to generate a signed Android package every build 
 - as Markdown [Preparation Guide - How to generate a signed Android package every build](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md#appendix-how-to-generate-a-signed-android-package-every-build-how-to-generate-a-signed-android-package-every-build) 
-- as PDF: [Preparation Guide - How to generate a signed Android package every build](https://vdc-download.omnissa.com/vmwb-repository/dcr-public/5c29b39f-3090-49aa-8fa6-1fd0d9fd0020/a5fe6014-4fe6-4ac7-9290-c67343d1f27d/WorkspaceONE_Android_IntegrationPreparation.pdf#page=13) 
+- as PDF: [Preparation Guide - How to generate a signed Android package every build](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf#page=10) 
 
 # Document Information
 ## Published Locations
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [Omnissahttps://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [https://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the Omnissa website:  
-    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
+    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_BaseIntegration.pdf)
 
 ## Revision History
 | Date                   | Revision                                            |
@@ -1066,6 +1047,8 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 | 29Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 10Dec2024              | Updated for 24.11 SDK for Android.                  |
+| 04mar2025              | Documentation update for Android.                   |
+| 12Mar2025              | Updated for  Android SDK 25.02.                     |
 
 
 

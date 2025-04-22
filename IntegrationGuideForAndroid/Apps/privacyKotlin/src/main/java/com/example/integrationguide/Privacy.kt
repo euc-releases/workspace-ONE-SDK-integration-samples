@@ -89,17 +89,12 @@ open class PrivacyBase(
             this.summary = summary
         }
         fun privacyContent(
-            title: String, summary: String, id: Int
-        ) : AWPrivacyContent = privacyContent(title, summary).apply {
-            this.id = id
-        }
-        fun privacyContent(
             title: String, summary: String, id: AWPrivacyPermissionType
         ) : AWPrivacyContent = privacyContent(
-            title, summary, AWPrivacyController.getPermissionResource(id)
+            title, summary, id
         )
         fun privacyContent(
-            context: Context, titleID: Int, summaryID: Int, iconID: Int
+            context: Context, titleID: Int, summaryID: Int, iconID: AWPrivacyPermissionType
         ) : AWPrivacyContent = privacyContent(
             context.getString(titleID),
             context.getString(summaryID),
@@ -169,7 +164,7 @@ class Privacy(
                         context,
                         R.string.privacy_content_browsingHistory_title,
                         R.string.privacy_content_browsingHistory_summary,
-                        R.drawable.privacy_placeholder_2
+                        AWPrivacyPermissionType.PERMISSION_NETWORK
                     )
                 )
 
@@ -209,12 +204,6 @@ class Privacy(
             privacyContent(
                 "Network", "Connect to sample services on the internet.",
                 AWPrivacyPermissionType.PERMISSION_NETWORK
-            ),
-            privacyContent(
-                "AN Other Permission",
-                "Another permission with a custom icon goes here.",
-                //R./* mipmap or drawable for example */ . /* resource name */
-                R.mipmap.privacy_placeholder_1
             ),
             privacyContent(
                 "Custom permission",
@@ -298,7 +287,7 @@ class PrivacyTellTale(
             // resource with the name is found.
 
             customContentItems.add(AWPrivacyContent().apply {
-                id = resourceID
+                setPermissionType(AWPrivacyPermissionType.PERMISSION_PHONE)
                 title = resourceType
             })
 
@@ -309,7 +298,7 @@ class PrivacyTellTale(
         fun customCopy(prefix: String): List<AWPrivacyContent> {
             return customContentItems.mapIndexed { index, custom ->
                 AWPrivacyContent().apply {
-                    id = custom.id
+                    setPermissionType(AWPrivacyPermissionType.PERMISSION_PHONE)
                     title = "$prefix[${index + 1}].title".ig()
                     summary = "${custom.title} ".plus(
                         "$prefix[${index + 1}].summary".igd(4)
@@ -332,7 +321,7 @@ class PrivacyTellTale(
         appPermissionsAll = ArrayList(customCopy("appPermission").plus(
             AWPrivacyPermissionType.values().map {
                 AWPrivacyContent().apply {
-                    id = AWPrivacyController.getPermissionResource(it)
+                    setPermissionType(AWPrivacyPermissionType.PERMISSION_PHONE)
                     title = it.name
                     val summaryStub = it.name
                         .lowercase(Locale.ROOT)
@@ -398,7 +387,7 @@ class PrivacyGallery(context: Context)
         appPermissionItems = ArrayList(
             AWPrivacyPermissionType.values().map {
                 AWPrivacyContent().apply {
-                    id = AWPrivacyController.getPermissionResource(it)
+                    setPermissionType(AWPrivacyPermissionType.PERMISSION_PHONE)
                     title = it.name
                 }
             }

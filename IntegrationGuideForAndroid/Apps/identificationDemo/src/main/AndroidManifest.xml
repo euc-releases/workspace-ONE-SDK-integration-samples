@@ -5,7 +5,6 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vmware.workspaceone_example_identification"
     >
     <uses-permission android:name="com.airwatch.sdk.BROADCAST" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -16,7 +15,7 @@
     </queries>
     <application
         android:allowBackup="true"
-        android:name=".Application"
+        android:name="com.ws1.workspaceone_example_identification.Application"
         android:icon="@mipmap/ic_icon"
         android:label="@string/app_label"
         android:roundIcon="@mipmap/ic_roundicon"
@@ -24,7 +23,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".MainActivity"
+            android:name="com.ws1.workspaceone_example_identification.MainActivity"
             android:exported="true"
             >
             <intent-filter>
