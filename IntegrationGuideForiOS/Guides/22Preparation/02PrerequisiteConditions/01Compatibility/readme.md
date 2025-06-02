@@ -7,7 +7,7 @@ the minimum supported versions if different.
 
 Software                                       | Instructions | Supported |
 -----------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for iOS | 25.04        |           |
+Workspace ONE software development kit for iOS | 25.04.1        |           |
 Workspace ONE management console               | 2410         | 2306      |
 Workspace ONE Intelligent Hub application      | 25.01        |           |
 Apple iOS or iPadOS Operating System           | 18.0         | 16        |
