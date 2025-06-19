@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AWAppIdentifierPrefix</key>
-	<string>Z7N7QHVWT1.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -26,7 +24,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.airwatch.sdk</string>
+			<string>com.air-watch.WorkspaceOne.Example.iOS</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wsoexample</string>
@@ -64,11 +62,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>Want to use internet</string>
-	<key>NSBonjourServices</key>
-	<array>
-		<string>_dartobservatory._tcp</string>
-	</array>
+	<key>AWAppIdentifierPrefix</key>
+	<string>L7N7QHVWT1.</string>
 </dict>
 </plist>

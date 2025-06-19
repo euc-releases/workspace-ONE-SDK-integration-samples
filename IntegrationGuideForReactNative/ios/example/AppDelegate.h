@@ -1,6 +1,3 @@
-// Copyright 2022 Omnissa, LLC.
-// SPDX-License-Identifier: BSD-2-Clause
-
 #import <React/RCTBridgeDelegate.h>
 #import <UIKit/UIKit.h>
 

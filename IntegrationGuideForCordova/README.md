@@ -5,8 +5,8 @@ Use this document to install the Omnissa Workspace One SDK Plugin for Apache Cor
 ## Supported Components 
 This plugin works with the listed component versions.
 * Workspace ONE UEM Console 2306+ (may need to be higher depending on specific features)
-* Android 8.0+ (for Android SDK component) / API level 24 OR above / Android Studio with the Gradle Android Build System (Gradle)  7.4+ or later
-* iOS 15.0.1+ (for iOS SDK component) / Xcode 15.0.1
+* Android 7.0+ (for Android SDK component) / API level 26 OR above / Android Studio with the Gradle Android Build System (Gradle) 8.2.2+ or later / Workspace ONE Intelligent Hub for Android version 25.02 or later
+* iOS & iPadOS 16+ or later (for iOS SDK component) / Xcode 16+ or later
 
 ## Build Example Application
 Please refer following steps to run the example app.
@@ -43,7 +43,7 @@ Initialization of the SDK adds the listed features to your application, dependin
 Please follow document at implementation [GettingStarted.md](GettingStarted.md).
 
 ## Release Notes
-1. Latest versions of Workspace ONE SDKs (23.7.0 for iOS and 23.07 for Android).
+1. Latest versions of Workspace ONE SDKs (25.2.1 for iOS and 25.02.1 for Android).
 
 ## Workspace One SDK Documentation
 For further details about the Workspace One SDK, navigate to https://my.workspaceone.com/products/Workspace-ONE-SDK and select the required platform, SDK version and Workspace ONE UEM console version.
