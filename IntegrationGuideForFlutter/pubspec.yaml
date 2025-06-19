@@ -15,7 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  workspaceone_sdk_flutter: ^24.12.0
+  workspaceone_sdk_flutter: ^25.6.1
     # When depending on this package from a real application you should use:
     #   workspaceone_sdk_flutter: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints

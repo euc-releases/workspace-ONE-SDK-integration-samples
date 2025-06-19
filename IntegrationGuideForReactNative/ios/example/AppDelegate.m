@@ -1,6 +1,3 @@
-// Copyright 2022 Omnissa, LLC.
-// SPDX-License-Identifier: BSD-2-Clause
-
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
@@ -51,11 +48,9 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
-#else
+
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+
 }
 
 

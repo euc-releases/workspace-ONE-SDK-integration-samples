@@ -13,7 +13,7 @@ In order to inject Workspace ONE SDK functionality into your  React-Native AWSDK
 
 ### Requirements
 
-* iOS 14.0+ (for iOS SDK component) / Xcode 14.x
+* iOS & iPadOS 16+ or later (for iOS SDK component) / Xcode 16+ or later
 * Visual Studio Code 
 * Workspace ONE-enrolled iOS test device
 * The Workspace ONE React-Native SDK  package from npm.
@@ -73,7 +73,7 @@ Please add Airwatch sdk following [AWSDK Maven Public](https://github.com/euc-re
 
 ### Requirements
 
-* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later 
+* Android 7.0+ (for Android SDK component) / API level 26 OR above / Android Studio with the Gradle Android Build System (Gradle) 8.2.2+ or later / Workspace ONE Intelligent Hub for Android version 25.02 or later 
 * Visual Studio Code
 * The Workspace ONE React-Native SDK  package from npm
 * Android test device running Lollipop and above.

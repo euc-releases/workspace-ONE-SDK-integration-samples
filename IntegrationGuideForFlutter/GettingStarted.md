@@ -13,7 +13,7 @@ In order to inject Workspace ONE SDK functionality into your  Flutter AWSDK App,
 
 ### Requirements
 
-* iOS 15.0+ (for iOS SDK component) / Xcode 15.0.1+
+* iOS & iPadOS 16+ or later (for iOS SDK component) / Xcode 16+ or later
 * Visual Studio Code 
 * Workspace ONE-enrolled iOS test device
 * The Workspace ONE Flutter SDK  package from pub.dev.
@@ -71,7 +71,7 @@ To integrate Workspace ONE Android SDK Flutter components into an existing Flutt
 
 ### Requirements
 
-* Android 8.0+ (for Android SDK component) / API level 23 OR above / Android Studio with the Gradle Android Build System (Gradle) 4.1.3 or later 
+* Android 7.0+ (for Android SDK component) / API level 26 OR above / Android Studio with the Gradle Android Build System (Gradle) 8.2.2+ or later / Workspace ONE Intelligent Hub for Android version 25.02 or later 
 * Visual Studio Code 
 * Android test device running Lollipop and above.
 * Intelligent Hub for Android from Google Playstore.

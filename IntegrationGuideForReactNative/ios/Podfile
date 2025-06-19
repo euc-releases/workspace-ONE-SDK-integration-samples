@@ -20,6 +20,7 @@ target 'example' do
   #  use_flipper!({'Flipper' => '0.75.1'})
 end
 
+
 post_install do |installer|
     installer.generated_projects.each do |project|
         project.targets.each do |target|
@@ -32,13 +33,21 @@ post_install do |installer|
     end
   $WSRN.post_install(installer)
   react_native_post_install(installer)
-  __apply_Xcode_12_5_M1_post_install_workaround(installer)
-  installer.pods_project.targets.each do |target|
-    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
-      target.build_configurations.each do |config|
-          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
-          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.4'
-      end
-    end
+#   __apply_Xcode_12_5_M1_post_install_workaround(installer)
+#   installer.pods_project.targets.each do |target|
+#     if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+#       target.build_configurations.each do |config|
+#           config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+#           config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+#       end
+#     end
+#   end
+end
+target 'example-tvOS' do
+  # Pods for example-tvOS
+
+  target 'example-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
   end
 end
