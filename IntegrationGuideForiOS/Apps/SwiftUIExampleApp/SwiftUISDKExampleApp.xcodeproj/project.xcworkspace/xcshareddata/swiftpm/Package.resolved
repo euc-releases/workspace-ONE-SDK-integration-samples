@@ -6,8 +6,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/euc-releases/iOS-WorkspaceONE-SDK",
       "state" : {
-        "revision" : "9ca1d03c34622623fe0df023a5f0f73dbdc8a20b",
-        "version" : "25.4.1"
+        "revision" : "7ba64aafa4e87c37d10be5a01e0129a45ee318a4",
+        "version" : "25.6.0"
+      }
+    },
+    {
+      "identity" : "ws1-crypto-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/euc-releases/ws1-crypto-sdk.git",
+      "state" : {
+        "revision" : "04b73f9b30ae0868fe5cbe30def0510c58771d04",
+        "version" : "25.6.0"
       }
     }
   ],
