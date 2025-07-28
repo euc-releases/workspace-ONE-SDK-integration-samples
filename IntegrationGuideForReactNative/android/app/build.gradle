@@ -82,8 +82,9 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+        enableHermes: false,  // clean and rebuild if changing
 ]
+
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -123,23 +124,27 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
+
+    namespace 'com.airwatch.reactapp'
+    testNamespace = 'com.airwatch.reactapp.tests'
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     dexOptions {
         javaMaxHeapSize "4g"
     }
 
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
         applicationId 'com.example.reactnativeawsdkmodule'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 24080
+        versionName "25.6.0"
         multiDexEnabled true
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
@@ -190,23 +195,6 @@ android {
 
         }
     }
-//    packagingOptions {
-//        pickFirst "lib/armeabi-v7a/libc++_shared.so"
-//        pickFirst "lib/arm64-v8a/libc++_shared.so"
-//        pickFirst "lib/x86/libc++_shared.so"
-//        pickFirst "lib/x86_64/libc++_shared.so"
-////        exclude 'okhttp3/internal/publicsuffix/NOTICE'
-////        exclude 'okhttp3/internal/publicsuffix/publicsuffix.gz'
-//        exclude 'lib/armeabi-v7a/libssl.1.0.2.so'
-//        exclude 'lib/x86_64/libssl.1.0.2.so'
-//        exclude 'lib/arm64-v8a/libssl.1.0.2.so'
-//        exclude 'lib/x86/libcrypto.1.0.2.so'
-//        exclude 'lib/x86/libssl.1.0.2.so'
-//        exclude 'lib/armeabi-v7a/libcrypto.1.0.2.so'
-//        exclude 'lib/x86_64/libcrypto.1.0.2.so'
-//        exclude 'lib/arm64-v8a/libcrypto.1.0.2.so'
-//    }
-
 
     packagingOptions {
         pickFirst 'lib/**/libc++_shared.so'
@@ -223,32 +211,41 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        exclude group:'com.intellij' , module:'annotations'
+        force 'org.jetbrains:annotations:23.0.0'
+    }
+}
+
 dependencies {
-//    implementation project(":react-native-workspace-one-sdk")
+//    implementation project(":ws1-react-native-sdk")
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //runtimeOnly fileTree('libs') { include '../../node_modules/react-native-workspace-one-sdk/android/libs/*.*' }
-//    implementation fileTree(dir: "../../node_modules/react-native-workspace-one-sdk/android/libs/", include: ["*.*"])
+    //runtimeOnly fileTree('libs') { include '../../node_modules/ws1-react-native-sdk/android/libs/*.*' }
+//    implementation fileTree(dir: "../../node_modules/ws1-react-native-sdk/android/libs/", include: ["*.*"])
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation("com.facebook.react:react-android:+"){
+    }
+    api 'com.facebook.react:react-native:+'
+    // From node_modules
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation "androidx.multidex:multidex:2.0.0"
-    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation("com.facebook.react:react-android:0.72.3")
+    implementation fileTree(dir: "lib", include: ["*.aar"])
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
-        exclude group:'org.jetbrains.kotlinx'
         exclude group:'com.facebook.fbjni'
     }
 
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
-        exclude group:'org.jetbrains.kotlinx'
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'
     }
 
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
-        exclude group:'org.jetbrains.kotlinx'
         exclude group:'com.facebook.flipper'
     }
-//    ?mplementation files("../../node_modules/react-native-workspace-one-sdk/android/libs/*.*")
+//    ?mplementation files("../../node_modules/ws1-react-native-sdk/android/libs/*.*")
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
@@ -257,12 +254,6 @@ dependencies {
         implementation jscFlavor
     }
 }
-
-//configurations.all {
-//    resolutionStrategy {
-//        force ("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.4.1")
-//    }
-//}
 
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use

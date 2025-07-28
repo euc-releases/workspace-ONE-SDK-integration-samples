@@ -3,7 +3,6 @@
 
 package com.airwatch.reactapp;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +12,7 @@ import com.airwatch.sdk.profile.ApplicationProfile;
 import com.airwatch.sdk.shareddevice.ClearReasonCode;
 import com.airwatch.event.WS1AnchorEvents;
 import org.koin.core.Koin;
+import org.koin.core.component.KoinComponent;
 import org.koin.mp.KoinPlatformTools;
 
 public class SDKEventImpl implements WS1AnchorEvents, KoinComponent {
