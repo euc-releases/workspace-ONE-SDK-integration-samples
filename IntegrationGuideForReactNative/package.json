@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "25.12.0",
+  "version": "25.6.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -23,7 +23,7 @@
     "react-native-webview": "^13.12.2",
     "react-native-svg-transformer": "^1.5.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "ws1-react-native-sdk": "25.6.0",
+    "ws1-react-native-sdk": "^25.6.0",
     "watchman": "^1.0.0"
   },
   "devDependencies": {

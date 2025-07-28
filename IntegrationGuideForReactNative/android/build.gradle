@@ -1,5 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+//android {
+//    namespace 'com.airwatch.reactapp'
+//}
 buildscript {
     ext {
         buildToolsVersion = "29.0.2"
@@ -8,15 +10,6 @@ buildscript {
         targetSdkVersion = 35
     }
     repositories {
-        //Old implementation
-        // flatDir {
-        //     dirs "$rootDir/../node_modules/ws1-sdk-react-native/android/libs"
-        // }
-        //Change to new Maven URL
-        maven {
-            url 'https://omnissa.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
-        }
-
         google()
         jcenter()
         mavenCentral()
@@ -31,16 +24,14 @@ buildscript {
 
 allprojects {
     repositories {
-        //Old implementation
-         flatDir {
-             dirs "$rootDir/../node_modules/ws1-sdk-react-native/android/lib"
-         }
-        //Change to new Maven URL
-        maven {
-            url 'https://omnissa.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+        flatDir {
+            dirs "lib"
         }
-    
+        flatDir {
+            dirs "$rootDir/../node_modules/ws1-react-native-sdk/android/lib"
+        }
         mavenLocal()
+        mavenCentral()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
@@ -49,11 +40,24 @@ allprojects {
             // Android JSC is installed from npm
             url("$rootDir/../node_modules/jsc-android/dist")
         }
-
+        maven {
+            url = uri("https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/")
+            credentials {
+                username=AWSDKUSER
+                password=AWSDKPASSWORD
+            }
+        }
+        maven {
+            url = uri("https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/")
+            credentials {
+                username=AWSDKUSER
+                password=AWSDKPASSWORD
+            }
+        }
         google()
         jcenter()
-        mavenCentral()
         maven { url 'https://www.jitpack.io' }
         maven{ url 'https://mvnrepository.com/artifact/com.facebook.react/react-android'}
     }
+
 }

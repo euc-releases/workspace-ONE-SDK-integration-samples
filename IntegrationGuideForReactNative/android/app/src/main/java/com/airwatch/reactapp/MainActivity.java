@@ -3,7 +3,6 @@
 
 package com.airwatch.reactapp;
 
-import com.facebook.react.ReactActivity;
 import com.workspaceonesdk.WorkspaceOneSdkActivity;
 
 public class MainActivity extends WorkspaceOneSdkActivity {
