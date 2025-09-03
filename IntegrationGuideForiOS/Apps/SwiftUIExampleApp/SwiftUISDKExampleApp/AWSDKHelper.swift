@@ -315,6 +315,15 @@ extension AWSDKHelper {
     func getSDKSecureView() -> UIView {
         return AWSDKSecureViewManager.sharedInstance.getSecureViewForScreenshotProtection()
     }
+    
+    /// API to get the secured view from SDK
+    /// - Parameters:
+    /// - view: UIView that needs to be secured
+    /// - shouldShowRestrictionMessage: Bool value to indicate if the restriction message needs to be shown or not.
+    /// - Returns: Secured UIView that can be used to secure views during screenshots/Video
+    func getSecuredView(for view: UIView, shouldShowRestrictionMessage: Bool = true) -> UIView {
+        return AWSDKSecureViewManager.sharedInstance.getSecuredView(view, shouldShowRestrictionMessage: shouldShowRestrictionMessage)
+    }
 }
 
 // MARK: - Delegates

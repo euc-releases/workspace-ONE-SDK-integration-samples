@@ -4,10 +4,10 @@ versions.
 
 Software                                       | Version
 -----------------------------------------------|--------------
-Workspace ONE software development kit for iOS | 25.06
-Workspace ONE UEM management console           | 2310 or later
+Workspace ONE software development kit for iOS | 25.08
+Workspace ONE UEM management console           | 2402 or later
 Apple iOS and iPadOS                           | 16 or later
-Apple Xcode                                    | 16.x
+Apple Xcode                                    | 16.3 or later
 
 The SDK supports versions of the Swift language that are supported by the above
 Xcode versions.

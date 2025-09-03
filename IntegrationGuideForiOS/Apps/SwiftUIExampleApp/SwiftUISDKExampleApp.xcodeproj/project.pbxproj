@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A15FF462E0C2F710081253A /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0A15FF452E0C2F710081253A /* AWSDK */; };
+		0A931E4E2E68168B0075E515 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0A931E4D2E68168B0075E515 /* AWSDK */; };
 		A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC128917EC7000B7780 /* QNSURLSessionDemux.m */; };
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
@@ -59,7 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		331FEF802D6DB640009EAE66 /* Embed Frameworks */ = {
+		337B7DB12E3CA3F5002AF463 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A15FF462E0C2F710081253A /* AWSDK in Frameworks */,
+				0A931E4E2E68168B0075E515 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +369,7 @@
 				ED5051B5286AE8C800141273 /* Sources */,
 				ED5051B6286AE8C800141273 /* Frameworks */,
 				ED5051B7286AE8C800141273 /* Resources */,
-				331FEF802D6DB640009EAE66 /* Embed Frameworks */,
+				337B7DB12E3CA3F5002AF463 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,7 +380,7 @@
 			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				0A15FF452E0C2F710081253A /* AWSDK */,
+				0A931E4D2E68168B0075E515 /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -412,7 +412,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				0A15FF442E0C2F710081253A /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				0A931E4C2E68168A0075E515 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -646,8 +646,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
-				MARKETING_VERSION = 25.06;
+				MARKETING_VERSION = 25.08.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.air-watch.siththird1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftUISDKExampleApp/CustomHTTPProtocol/SwiftUISDKExampleApp-Bridging-Header.h";
@@ -682,8 +682,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
-				MARKETING_VERSION = 25.06;
+				MARKETING_VERSION = 25.08.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.air-watch.siththird1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftUISDKExampleApp/CustomHTTPProtocol/SwiftUISDKExampleApp-Bridging-Header.h";
@@ -716,20 +716,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0A15FF442E0C2F710081253A /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		0A931E4C2E68168A0075E515 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 25.6.0;
+				version = 25.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A15FF452E0C2F710081253A /* AWSDK */ = {
+		0A931E4D2E68168B0075E515 /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A15FF442E0C2F710081253A /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = 0A931E4C2E68168A0075E515 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
