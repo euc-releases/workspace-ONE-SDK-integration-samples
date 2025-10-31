@@ -70,11 +70,11 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 25.02
-Workspace ONE management console                 | 2306
-Android Studio integrated development environment| 2022.3.1
+Workspace ONE SDK for Android                    | 25.02.4
+Workspace ONE management console                 | 25.06
+Android Studio integrated development environment| 2025.1.3
 Gradle plugin for Android                        | 8.2.2
-Kotlin language                                  | 1.9.25
+Kotlin language                                  | 2.2.0
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -197,7 +197,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:airwatchsdk:25.02"
+            implementation "com.airwatch.android:airwatchsdk:25.02.4"
         }
 
 This completes the required changes to the build configuration. Build the
@@ -514,7 +514,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:awframework:25.02"
+            implementation "com.airwatch.android:awframework:25.02.4"
         }
     
     Your application might already require different versions of some of the
@@ -557,7 +557,10 @@ Proceed as follows.
             packagingOptions {
                 pickFirst '**/*.so'
                 exclude 'META-INF/LICENSE.txt' 
-                exclude 'META-INF/NOTICE.txt' 
+                exclude 'META-INF/NOTICE.txt'
+                jniLibs {
+                 useLegacyPackaging true
+                }
             }
             // End of added block.
 
@@ -1020,6 +1023,8 @@ This document is available
     [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_BaseIntegration.pdf)
 
 ## Revision History
+The following table shows the revision history of this document.
+
 | Date                   | Revision                                            |
 |------------------------|-----------------------------------------------------|
 | 03jul2020              | First publication, for 20.4 SDK for Android.        |
@@ -1048,8 +1053,9 @@ This document is available
 | 29Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 10Dec2024              | Updated for 24.11 SDK for Android.                  |
 | 04mar2025              | Documentation update for Android.                   |
-| 12Mar2025              | Updated for  Android SDK 25.02.                     |
-
-
+| 12Mar2025              | Updated for Android SDK 25.02.                      |
+| 26May2025              | Updated for Android SDK 25.02.1.                    |
+| 04Aug2025              | Updated for Android SDK 25.02.3.                    |
+| 24Sep2025              | Updated for Android SDK 25.02.4.                    |
 
 

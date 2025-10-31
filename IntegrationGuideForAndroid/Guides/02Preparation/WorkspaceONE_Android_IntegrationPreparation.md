@@ -108,14 +108,14 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 The following table shows the software versions used for the Latest supported version, and
 the minimum supported versions if different.
 
-Software                                           | Latest supported | Minimum supported |
----------------------------------------------------|------------------|-------------------|
-Workspace ONE software development kit for Android | 25.02            | 24.01             |
-Workspace ONE management console                   | 2410             | 2306              |
-Workspace ONE Intelligent Hub application          | 25.02            | 23.06             |
-Android Operating System                           | Android 15       | Android 7         |
-Android Studio integrated development environment  | 2024.3.1         | 2020.3.1          |
-Gradle plugin for Android                          | 8.7.1            | 8.2.2             |
+| Software                                           | Latest supported | Minimum supported |
+|----------------------------------------------------|------------------|-------------------|
+| Workspace ONE software development kit for Android | 25.02.4          | 24.01             |
+| Workspace ONE management console                   | 2506             | 2402              |
+| Workspace ONE Intelligent Hub application          | 25.08            | 24.02             |
+| Android Operating System                           | Android 15       | Android 7         |
+| Android Studio integrated development environment  | 2025.1.3         | 2020.3.1          |
+| Gradle plugin for Android                          | 8.13             | 8.2.2             |
 
 # Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
@@ -710,6 +710,8 @@ This document is available
     [https://developer.omnissa.com/...IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)
 
 ## Revision History
+The following table shows the revision history of this document.
+
 | Date                   | Revision                                            |
 |------------------------|-----------------------------------------------------|
 | 03jul2020              | First publication, for 20.4 SDK for Android.        |
@@ -739,6 +741,9 @@ This document is available
 | 29Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                  |
 | 12Mar2025              | Updated for  Android SDK 25.02.                     |
+| 26May2025              | Updated for  Android SDK 25.02.1.                   |
+| 04Aug2025              | Updated for  Android SDK 25.02.3.                   |
+| 24Sep2025              | Updated for  Android SDK 25.02.4.                   |
 
 
 

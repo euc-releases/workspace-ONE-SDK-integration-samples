@@ -1,3 +1,51 @@
+## Workspace ONE SDK 25.02.4 for Android
+
+# What's new
+- Upgraded to Android Gradle Plugin (AGP) 8.12.1 and Kotlin 2.2.0.
+- Support for Android 16 KB page size. 
+- Security enhancements 
+- Troubleshooting enhancements
+
+# References
+- [Android Gradle Plugin 8.12.1 (July 2025)](https://developer.android.com/build/releases/past-releases/agp-8-12-0-release-notes#android-gradle-plugin-8.12.1)
+- [What's new in Kotlin 2.2.0 | Kotlin](https://kotlinlang.org/docs/whatsnew22.html#)
+- [Support 16 KB page sizes | Compatibility](https://developer.android.com/guide/practices/page-sizes)
+
+# Compatibility
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2402+
+- Android Studio with the Gradle Android Build System (AGP) 8.2.2+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 25.08
+
+## Workspace ONE SDK 25.02.3 for Android
+
+# What's new
+- Enhancements in sending logs via email.
+- Security enhancements.
+- Software currency upgrades.
+- Log upload enhancements.
+
+# Compatibility
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2310+
+- Android Studio with the Gradle Android Build System (AGP) 8.2.2+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 25.05
+
+## Workspace ONE SDK 25.02.1 for Android
+
+# What's new
+- Updated web domain to align with Omnissa branding. Refer [Update Workspace ONE SDK for iOS and Android with new Workspace ONE domain](https://kb.omnissa.com/s/article/6000872)
+- Bug fixes and stability improvements
+
+# Compatibility
+- Android 7.0+ (i.e., API 24)
+- Workspace ONE UEM Console 2306+
+- Android Studio with the Gradle Android Build System (AGP) 8.2.2+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 25.02
+
 ## Workspace ONE SDK 25.02 for Android
 
 # What's new

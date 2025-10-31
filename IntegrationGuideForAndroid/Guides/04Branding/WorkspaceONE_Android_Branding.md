@@ -114,11 +114,11 @@ An overview that includes links to all the guides is available
 Instructions in this document have been tested with the following software
 versions.
 
-Software                                         | Version
--------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 25.02
-Workspace ONE management console                 | 2306
-Android Studio integrated development environment| 2022.3.1
+| Software                                          | Version  |
+|---------------------------------------------------|----------|
+| Workspace ONE SDK for Android                     | 25.02.4  |
+| Workspace ONE management console                  | 2402     |
+| Android Studio integrated development environment | 2025.1.3 |
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -1123,6 +1123,8 @@ This document is available
     [https://developer.omnissa.com/...Branding.pdf](https://developer.omnissa.com/docs/12357/WorkspaceONE_Android_Branding.pdf)
 
 ## Revision History
+The following table shows the revision history of this document.
+
 | Date                   | Revision                                            |
 |------------------------|-----------------------------------------------------|
 | 03jul2020              | First publication, for 20.4 SDK for Android.        |
@@ -1150,7 +1152,9 @@ This document is available
 | 28Aug2024              | Updated for 24.07 SDK for Android.                  |
 | 28Oct2024              | Updated for 24.10 SDK for Android.                  |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                  |
-| 12Mar2025              | Updated for  Android SDK 25.02.                     |
-
+| 12Mar2025              | Updated for Android SDK 25.02.                      |
+| 26May2025              | Updated for Android SDK 25.02.1.                    |
+| 04Aug2025              | Updated for Android SDK 25.02.3.                    |
+| 24Sep2025              | Updated for Android SDK 25.02.4.                    |
 
 

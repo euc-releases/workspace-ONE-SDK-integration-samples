@@ -44,9 +44,12 @@ Each app directory has the following build files.
 
 # Document Information
 ## Revision History
-| Date      | Revision                                       |
-|-----------|------------------------------------------------|
-| 21apr2021 | First publication, for 21.3 SDK for Android.   |
-| 05jul2024 | Second publication, for 24.06 SDK for Android. |
-| 04mar2025 | Documentation update for Android.              |
-| 12Mar2025 | Updated for  Android SDK 25.02.                |
+The following table shows the revision history of this document.
+
+| Date        | Revision                                       |
+|-------------|------------------------------------------------|
+| 21 Apr 2021 | First publication, for 21.3 SDK for Android.   |
+| 05 Jul 2024 | Second publication, for 24.06 SDK for Android. |
+| 04 Mar 2025 | Documentation update for Android.              |
+| 12 Mar 2025 | Updated for  Android SDK 25.02.                |
+| 04 Aug 2025 | Updated the revision history format.           |   

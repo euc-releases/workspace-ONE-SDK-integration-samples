@@ -4,7 +4,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.9.25'
+    ext.kotlin_version = '2.2.0'
 
     repositories {
         google()
@@ -12,8 +12,9 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'com.android.tools.build:gradle:8.12.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.2.0-2.0.2"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -40,7 +41,7 @@ task printUserHomeDir {
 }
 
 ext {
-    airwatchVersion = '25.02'
+    airwatchVersion = '25.02.4'
     privacyVersion = '25.01'
 
     // Utility method to generate a path for a file in the directory for

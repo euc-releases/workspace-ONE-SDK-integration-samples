@@ -70,10 +70,11 @@ An overview that includes links to all the guides is available
 Instructions in this document have been followed with the Workspace ONE Software
 Development Kit (SDK) for Android and other software, to confirm compatibility.
 
-Software                                         | Version
--------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 25.02
-Android Studio integrated development environment| 2022.3.1
+| Software                                          | Version  |
+|---------------------------------------------------|----------|
+| Workspace ONE SDK for Android                     | 25.02.4  |
+| Android Studio integrated development environment | 2025.1.3 |
+
 [**Table 1:** Software compatibility versions]
 
 # Open Source Sample Code
@@ -1001,11 +1002,11 @@ properties of an instance of one of those classes.
 
 The following table lists all the configuration properties.
 
-AWPrivacyConfig property     | Type    | Note
------------------------------|---------|------------------------
-Banner that appears at the top of the privacy details screen:|||
-`aboutPrivacyTitle`          |`String` |Heading.
-`aboutPrivacyDescription`    |`String` |Statement.
+| AWPrivacyConfig property                                      | Type     | Note       |
+|---------------------------------------------------------------|----------|------------|
+| Banner that appears at the top of the privacy details screen: |          |            |
+| `aboutPrivacyTitle`                                           | `String` | Heading.   |
+| `aboutPrivacyDescription`                                     | `String` | Statement. |
 
 Data collection section:               |||
 `dataCollectionTitle`        |`String` |Section heading.
@@ -1190,6 +1191,8 @@ This document is available
     [https://developer.omnissa.com/...Privacy.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Privacy.pdf)
 
 ## Revision History
+The following table shows the revision history of this document.
+
 | Date                   | Revision                                             |
 |------------------------|------------------------------------------------------|
 | 12jul2021              | First publication, for 21.5.1 SDK for Android.       |
@@ -1218,7 +1221,9 @@ This document is available
 | 29Oct2024              | Updated for 24.10 SDK for Android.                   |
 | 20Dec2024              | Updated for 24.11 SDK for Android.                   |
 | 04mar2025              | Documentation update for Android.                    |
-| 12Mar2025              | Updated for  Android SDK 25.02.                      |
-
+| 12Mar2025              | Updated for Android SDK 25.02.                       |
+| 26May2025              | Updated for Android SDK 25.02.1.                     |
+| 04Aug2025              | Updated for Android SDK 25.02.3.                     |
+| 24Sep2025              | Updated for Android SDK 25.02.4.                     |
 
 

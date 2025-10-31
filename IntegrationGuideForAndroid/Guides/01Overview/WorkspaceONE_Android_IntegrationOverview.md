@@ -169,14 +169,12 @@ documentation.
 The following table lists the guides and gives links to their published
 locations in different formats.
 
-Document| Markdown | PDF
---------|----------|----
-Integration Overview (this document) | [IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md) | [IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
-Integration Preparation Guide | [IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf)
-Base Integration Guide | [BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md) | [BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_BaseIntegration.pdf)
-Branding Integration Guide | [Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md) | [Branding.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Branding.pdf)
-
-
+| Document                             | Markdown                                                                                                                                                                                                    | PDF                                                                                                                                    |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Overview (this document) | [IntegrationOverview.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)          | [IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)       |
+| Integration Preparation Guide        | [IntegrationPreparation.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md) | [IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationPreparation.pdf) |
+| Base Integration Guide               | [BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)           | [BaseIntegration.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_BaseIntegration.pdf)               |
+| Branding Integration Guide           | [Branding.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/04Branding/WorkspaceONE_Android_Branding.md)                                | [Branding.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Branding.pdf)                             |
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in integrating an Android
@@ -199,12 +197,15 @@ This document is available
     [https://developer.omnissa.com/...IntegrationOverview.pdf](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_IntegrationOverview.pdf)
 
 ## Revision History
-|Date     |Revision                                    |
-|---------|--------------------------------------------|
-|03jul2020|First publication, for 20.4 SDK for Android.|
-|22jul2020|Updated for 20.7 SDK for Android.           |
-|11oct2020|Updated URL paths to default branch main.   |
-|04mar2025| Documentation update for Android.          |
-|12Mar2025| Updated for  Android SDK 25.02.            |
+The following table shows the revision history of this document.
+
+| Date        | Revision                                     |
+|-------------|----------------------------------------------|
+| 03 Jul 2020 | First publication, for 20.4 SDK for Android. |
+| 22 Jul 2020 | Updated for 20.7 SDK for Android.            |
+| 11 Oct 2020 | Updated URL paths to default branch main.    |
+| 04 Mar 2025 | Documentation update for Android.            |
+| 12 Mar 2025 | Updated for  Android SDK 25.02.              |
+| 04 Aug 2025 | Updated the revision history format.         |        
 
 
