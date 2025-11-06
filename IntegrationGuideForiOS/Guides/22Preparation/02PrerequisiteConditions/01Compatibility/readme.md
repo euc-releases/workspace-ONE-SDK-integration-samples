@@ -7,11 +7,11 @@ the minimum supported versions if different.
 
 Software                                       | Instructions | Supported |
 -----------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for iOS | 25.08        |           |
-Workspace ONE management console               | 2410         | 2406,2402 |
-Workspace ONE Intelligent Hub application      | 25.07        |           |
-Apple iOS or iPadOS Operating System           | 18.0         | 16        |
-Apple Xcode integrated development environment | 16.3         | 16        |
+Workspace ONE software development kit for iOS | 25.11        |           |
+Workspace ONE management console               | 2506         | 2410,2406,2402 |
+Workspace ONE Intelligent Hub application      | 25.09        |           |
+Apple iOS or iPadOS Operating System           | 26.1         | 16        |
+Apple Xcode integrated development environment | 16.4         | 16        |
 
 The SDK supports versions of the Swift language that are supported by the above
 Xcode versions.

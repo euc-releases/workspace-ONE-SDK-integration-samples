@@ -10,6 +10,7 @@ can now integrate further Workspace ONE features, such as these.
     -   User interface watermarking.
     -   Printing blocking.
     -   Data backup blocking.
+    -   Writing tools blocking.
 -   Networking.
 -   Branding.
 
