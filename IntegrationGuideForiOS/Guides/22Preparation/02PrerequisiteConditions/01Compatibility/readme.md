@@ -7,9 +7,9 @@ the minimum supported versions if different.
 
 Software                                       | Instructions | Supported |
 -----------------------------------------------|--------------|-----------|
-Workspace ONE software development kit for iOS | 25.11        |           |
-Workspace ONE management console               | 2506         | 2410,2406,2402 |
-Workspace ONE Intelligent Hub application      | 25.09        |           |
+Workspace ONE software development kit for iOS | 26.01        |           |
+Workspace ONE management console               | 2509         | 2509, 2506, 2410, 2406, 2402|
+Workspace ONE Intelligent Hub application      | 25.11        |           |
 Apple iOS or iPadOS Operating System           | 26.1         | 16        |
 Apple Xcode integrated development environment | 16.4         | 16        |
 

@@ -62,6 +62,8 @@ This document is available
 |18Jun2025|Publication for 25.06 SDK for iOS. |
 |29Aug2025|Publication for 25.08 SDK for iOS. |
 |10Nov2025|Publication for 25.11 SDK for iOS. |
+|20Jan2026|Publication for 26.01 SDK for iOS. |
+
 
 ## License
 

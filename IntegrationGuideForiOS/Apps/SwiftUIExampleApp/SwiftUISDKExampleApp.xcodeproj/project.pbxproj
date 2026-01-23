@@ -721,7 +721,7 @@
 			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 25.11.0;
+				version = 26.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
