@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33C055792EBCC74700ABA217 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 33C055782EBCC74700ABA217 /* AWSDK */; };
+		33CB47142F458DCF0093E135 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 33CB47132F458DCF0093E135 /* AWSDK */; };
 		A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC128917EC7000B7780 /* QNSURLSessionDemux.m */; };
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C055792EBCC74700ABA217 /* AWSDK in Frameworks */,
+				33CB47142F458DCF0093E135 /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +380,7 @@
 			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				33C055782EBCC74700ABA217 /* AWSDK */,
+				33CB47132F458DCF0093E135 /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -412,7 +412,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				33C055772EBCC74700ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				33CB47122F458DCF0093E135 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -555,7 +555,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 25.11.0;
+				MARKETING_VERSION = 26.02.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -611,7 +611,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 25.11.0;
+				MARKETING_VERSION = 26.02.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -646,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 25.11.0;
+				MARKETING_VERSION = 26.02.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -682,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 25.11.0;
+				MARKETING_VERSION = 26.02.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -716,20 +716,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		33C055772EBCC74700ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		33CB47122F458DCF0093E135 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 26.1.0;
+				version = 26.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		33C055782EBCC74700ABA217 /* AWSDK */ = {
+		33CB47132F458DCF0093E135 /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 33C055772EBCC74700ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = 33CB47122F458DCF0093E135 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
