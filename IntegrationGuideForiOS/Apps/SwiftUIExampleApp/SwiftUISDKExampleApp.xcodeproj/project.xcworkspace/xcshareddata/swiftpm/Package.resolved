@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/euc-releases/iOS-WorkspaceONE-SDK",
       "state" : {
-        "revision" : "3b66564cb941036d056c18e6135306e046d3a7a3",
-        "version" : "26.2.0"
+        "revision" : "fb8d203accc267d5285dcb877e16ca5665598180",
+        "version" : "26.3.0"
       }
     },
     {
