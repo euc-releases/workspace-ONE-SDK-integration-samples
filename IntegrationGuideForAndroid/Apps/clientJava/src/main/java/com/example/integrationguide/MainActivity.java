@@ -102,7 +102,9 @@ public class MainActivity extends BaseActivity {
                             "deviceUid: ", initSDKManager.getDeviceUid(),
                             "\ndeviceSerialId: ",
                             initSDKManager.getDeviceSerialId(),
-                            "\n", profileMessage
+                            "\n", profileMessage,
+                            "\n enrollmentUsername: ", initSDKManager.getEnrollmentUsername(),
+                            "\n customSettings: ", initSDKManager.getCustomSettings()
                     );
                     showStatus(shortMessage, longMessage);
                 } catch (Exception exception) {

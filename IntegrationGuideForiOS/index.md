@@ -2,7 +2,7 @@
 https://developer.omnissa.com/ws1-uem-sdk-for-ios/release-notes/
 
 ## Integration
-The SDK is distributed as a Swift package. Add this URL as the package location in Xcode.[ https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
+The SDK is distributed as a Swift package. Add this URL as the package location in Xcode. [https://github.com/euc-releases/iOS-WorkspaceONE-SDK](https://github.com/euc-releases/iOS-WorkspaceONE-SDK)
 
 Starting April 2024, version 24.04 onwards Workspace ONE SDK for iOS is NOT being distributed through the My Workspace one portal i.e. https://my.workspaceone.com/products/Workspace-ONE-SDK . 
 It is only distributed as a Swift package and is available through the following URL. 

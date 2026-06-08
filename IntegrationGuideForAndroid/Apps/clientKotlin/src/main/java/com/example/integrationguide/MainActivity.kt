@@ -94,6 +94,7 @@ class MainActivity : BaseActivity() {
                         "deviceUid: ", initSDKManager.deviceUid,
                         "\ndeviceSerialId: ", initSDKManager.deviceSerialId,
                         "\n\ncustomSettings: ", initSDKManager.customSettings,
+                        "\n enrollmentUsername: ", initSDKManager.getEnrollmentUsername(),
                         "\n\n", initSDKManager.sdkProfileJSONString?.run {
                             JSONObject(this).toString(4)
                         } ?: getString(R.string.null_sdk_profile_json)

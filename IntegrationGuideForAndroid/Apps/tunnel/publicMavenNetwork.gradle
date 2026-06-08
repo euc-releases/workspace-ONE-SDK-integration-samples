@@ -2,9 +2,6 @@
 // SPDX-License-Identifier: BSD-2-Clause
 
 android {
-    packagingOptions {
-        pickFirst '**/*.so'
-    }
     defaultConfig {
         multiDexEnabled true
     }
@@ -14,7 +11,13 @@ android {
     }
     
     packagingOptions {
+        pickFirst '**/*.so'
+        pickFirst 'META-INF/native-image/io.netty/netty-codec-native-quic/*'
         exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
+        exclude 'META-INF/license/*'
+        jniLibs {
+            useLegacyPackaging true
+        }
     }
 }
 

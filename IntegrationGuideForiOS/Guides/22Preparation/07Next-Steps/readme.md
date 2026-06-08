@@ -7,10 +7,10 @@ See the Base Integration guide for instructions. The Base Integration Guide is
 available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/euc-releases/...BaseIntegration.md TBD](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/readme.md)
+    [https://github.com/euc-releases/...BaseIntegration.md](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/23BaseIntegration/readme.md)
 
 -   in Portable Document Format (PDF), on the website:  
-    [https://developer.omnissa.com/...BaseIntegration.pdf TBD](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_BaseIntegration.pdf)
+    [https://developer.omnissa.com/...BaseIntegration.pdf](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_BaseIntegration.pdf)
 
 ## License
 

@@ -31,7 +31,7 @@ Proceed as follows to add the SDK package.
     The add package dialog changes to show controls for specifying the package
     version.
 
-4.  Select Dependency Rule: Exact Version and 23.3.0 as the parameter, or other
+4.  Select Dependency Rule: Exact Version and 26.03.0 as the parameter, or other
     values if preferred.
 
     You can check the latest version by opening the package URL and then opening

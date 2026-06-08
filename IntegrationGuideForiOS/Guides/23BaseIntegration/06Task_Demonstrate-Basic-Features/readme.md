@@ -35,7 +35,7 @@ Notes on this feature.
     option is selected then the end user can authenticate by entering the
     passcode that they use to unlock their device. See the Require Device
     Passcode Technical Brief, here
-    [developer.omnissa.com/docs/17711/RequireDevicePasscode.pdf](https://developer.omnissa.com/docs/17711/RequireDevicePasscode.pdf)
+    [developer.omnissa.com/ws1-uem-sdk-for-ios/technical/RequireDevicePasscode.pdf](https://developer.omnissa.com/ws1-uem-sdk-for-ios/technical/RequireDevicePasscode.pdf)
     for details.
 
 -   There is an additional option for Biometric Mode authentication. If this

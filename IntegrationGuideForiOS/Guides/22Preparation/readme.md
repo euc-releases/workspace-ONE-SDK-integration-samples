@@ -39,7 +39,7 @@ This document is available
     [github.com/euc-releases/.../IntegrationGuideForiOS/...Preparation/](https://github.com/euc-releases/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForiOS/Guides/22Preparation/readme.md)
 
 -   in Portable Document Format (PDF), on the website:  
-    [developer.omnisaa.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_IntegrationPreparation.pdf)
+    [developer.omnissa.com/.../WorkspaceONE_iOS_IntegrationPreparation.pdf](https://developer.omnissa.com/ws1-uem-sdk-for-ios/integration/WorkspaceONE_iOS_IntegrationPreparation.pdf)
 
 ## Revision History
 |Date     |Revision                                          |

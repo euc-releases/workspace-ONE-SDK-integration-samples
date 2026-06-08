@@ -46,23 +46,24 @@ Proceed as follows.
 
 1.  Open your app project in Xcode.
 
-2.  Navigate to File, Swift Packages, Add Package Dependency...
+2.  In the Xcode menu select File, Add Package Dependencies...
 
-    This opens the Choose Package Repository screen.
+    This opens a package search dialog.
 
-3.  Enter the address of this repository
-    `https://github.com/euc-releases/iOS-WorkspaceONE-SDK` and click Next.
+3.  Enter the address of this repository in the search field and press Return.
+    `https://github.com/euc-releases/iOS-WorkspaceONE-SDK`
 
-    This opens the Choose Package Options screen.
+    Xcode will locate and display the package.
 
-4.  Select the rule Branch, leave the default value for branch name, and click
-    Next.
+4.  Select Dependency Rule: Branch, leave the default branch name, and click
+    Add Package.
 
     Xcode will resolve the package dependency, which might take some time.
 
-    When resolution finishes, an Add Package screen opens.
+    When resolution finishes, a package product selection dialog is displayed.
 
-5.  Select to add the AWSDK package product to your app target and click Finish.
+5.  Select to add the AWSDK package product to your app target and click
+    Add Package.
 
 6.  Check that the package has been added.
 
@@ -185,5 +186,5 @@ for instructions:
 [https://kb.omnissa.com/s/article/2006985](https://kb.omnissa.com/s/article/2006985)
 
 [Code in this directory](SwiftUISDKExampleApp/CustomHTTPProtocol/) is based on Apple sample code.
-The original code is published on the Apple website, [Apple sample code] (https://developer.apple.com/library/archive/samplecode/CustomHTTPProtocol/Introduction/Intro.html).
+The original code is published on the Apple website, [Apple sample code](https://developer.apple.com/library/archive/samplecode/CustomHTTPProtocol/Introduction/Intro.html).
 

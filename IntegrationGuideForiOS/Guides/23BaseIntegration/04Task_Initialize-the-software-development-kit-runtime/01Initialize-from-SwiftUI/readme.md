@@ -194,8 +194,8 @@ Proceed as follows.
 
         ContentView(sdkHelper: WorkspaceONEHelper.shared)
             .onOpenURL { url in
-                if WorkspaceONEHelper.shared.handleOpenURL(
-                    url: url, sourceApplication: nil
+                if WorkspaceONEHelper.shared.handleOpen(
+                    url: url, fromApplication: nil
                 ) { return }
                 
                 print("URL not handled by WS1 \(url)")

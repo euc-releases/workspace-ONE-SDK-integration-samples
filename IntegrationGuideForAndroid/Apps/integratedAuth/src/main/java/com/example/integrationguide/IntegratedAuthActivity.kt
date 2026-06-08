@@ -4,23 +4,22 @@ package com.example.integrationguide
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import com.airwatch.util.Logger.d
-import com.airwatch.util.Logger.e
-import android.widget.TextView
-import android.widget.EditText
-import com.airwatch.gateway.clients.AWWebView
-import android.webkit.WebView
-import android.widget.LinearLayout
-import android.os.Bundle
-import com.airwatch.gateway.clients.AWWebViewClient
-import android.webkit.SslErrorHandler
-import android.net.http.SslError
 import android.content.DialogInterface
+import android.net.http.SslError
+import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.webkit.SslErrorHandler
+import android.webkit.WebView
 import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
+
+import com.airwatch.gateway.clients.AWWebView
+import com.airwatch.gateway.clients.AWWebViewClient
 import com.airwatch.login.SDKBaseActivity
 import com.airwatch.sdk.AirWatchSDKException
 import com.airwatch.sdk.SDKManager
@@ -28,22 +27,34 @@ import com.airwatch.sdk.certificate.CertificateFetchResult
 import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.CERT_FETCH_EXCEPTION
 import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.INVALID_SCEP_STATUS
 import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.MAX_RETRY_COUNT_EXCEEDED
+import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.NO_ERROR
 import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.RETRY_TIMEOUT_NOT_ELAPSED_RETRY_SCHEDULED
 import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.SCEP_INSTRUCTIONS_UNAVAILABLE
-import com.airwatch.sdk.certificate.CertificateFetchResult.Companion.NO_ERROR
 import com.airwatch.sdk.certificate.SCEPCertificateFetchListener
 import com.airwatch.sdk.certificate.SCEPCertificateFetcher
 import com.airwatch.sdk.certificate.SCEPContext
 import com.airwatch.sdk.configuration.SDKConfigurationKeys
 import com.airwatch.sdk.context.SDKContextManager
+import com.airwatch.storage.SDKKeyStore
 import com.airwatch.storage.SDKKeyStoreUtils
 import com.airwatch.storage.SDKSecurePreferencesKeys.IA_CERT_ALIAS
+import com.airwatch.util.Logger
+import com.airwatch.util.Logger.d
+import com.airwatch.util.Logger.e
 import com.example.integrationguide.interfaces.StatusListener
-import com.example.integrationguide.nw.*
+import com.example.integrationguide.nw.AwBasicAuthHandler
+import com.example.integrationguide.nw.AwHttpClientHandler
+import com.example.integrationguide.nw.AwOkHttpClientHandler
+import com.example.integrationguide.nw.AwUrlConnectionHandler
+import com.example.integrationguide.nw.AwWebViewHandler
 import com.google.android.material.snackbar.Snackbar
-import java.lang.Exception
-import java.lang.StringBuilder
+
+import java.security.Key
 import java.security.KeyStore
+import java.security.KeyStoreException
+import java.security.NoSuchAlgorithmException
+import java.security.UnrecoverableKeyException
+import java.security.cert.Certificate
 import java.security.cert.X509Certificate
 
 /**
@@ -146,6 +157,7 @@ class IntegratedAuthActivity : SDKBaseActivity(), View.OnClickListener, StatusLi
         menu.add(SCEP_SETTINGS_MENU)
         menu.add(SCEP_PAUSE_POLLING)
         menu.add(LOG_CERT_DETAILS)
+        menu.add(EXTRACT_CERTIFICATES)
         return true
     }
 
@@ -158,6 +170,9 @@ class IntegratedAuthActivity : SDKBaseActivity(), View.OnClickListener, StatusLi
             return true
         } else if (item.title == LOG_CERT_DETAILS) {
             logCertDetails()
+            return true
+        } else if (item.title == EXTRACT_CERTIFICATES) {
+            extractCertificates()
             return true
         }
         return super.onOptionsItemSelected(item)
@@ -207,6 +222,50 @@ class IntegratedAuthActivity : SDKBaseActivity(), View.OnClickListener, StatusLi
             e(TAG, "Error retrieving cert details", ex)
             showSnackbar("Error retrieving cert details: " + ex.message)
         }
+    }
+
+    private fun extractCertificates() {
+        val caCertDetails = getCertDetails(
+            SDKContextManager.getSDKContext().keyStore.getKeyStoreByUsage(
+                SDKKeyStore.CertificateUsage.CA_CERTIFICATE))
+        val authCertDetails = getCertDetails(
+            SDKContextManager.getSDKContext().keyStore.getKeyStoreByUsage(
+                SDKKeyStore.CertificateUsage.AUTHENTICATION_CERTIFICATE))
+        val signingCertDetails = getCertDetails(
+            SDKContextManager.getSDKContext().keyStore.getKeyStoreByUsage(
+                SDKKeyStore.CertificateUsage.SIGNING_CERTIFICATE))
+        val encryptionCertDetails = getCertDetails(
+            SDKContextManager.getSDKContext().keyStore.getKeyStoreByUsage(
+                SDKKeyStore.CertificateUsage.ENCRYPTION_CERTIFICATE))
+        showSnackbar("CA Certificates=" + caCertDetails.size +
+                "\nAuth Certificates=" + authCertDetails.size +
+                "\nSigning Certificates=" + signingCertDetails.size +
+                "\nEncryption Certificates=" + encryptionCertDetails.size)
+    }
+
+    private fun getCertDetails(certKeyStore : KeyStore?) : List<Pair<Certificate?, Key?>> {
+        val certDetails : ArrayList<Pair<Certificate?, Key?>> = arrayListOf()
+        if (certKeyStore == null) {
+            Logger.e(TAG, "Given key store is invalid!")
+            return certDetails
+        }
+        try {
+            for (keyStoreAlias in certKeyStore.aliases()) {
+                try {
+                    certDetails.add(Pair(certKeyStore.getCertificate(keyStoreAlias),
+                            certKeyStore.getKey(keyStoreAlias, null)))
+                } catch (keyStoreException : KeyStoreException) {
+                    Logger.e(TAG, "KeyStoreException " + keyStoreException.message)
+                } catch (noSuchAlgorithmException : NoSuchAlgorithmException) {
+                    Logger.e(TAG, "NoSuchAlgorithmException " + noSuchAlgorithmException.message)
+                } catch (unrecoverableKeyException : UnrecoverableKeyException) {
+                    Logger.e(TAG, "UnrecoverableKeyException " + unrecoverableKeyException.message)
+                }
+            }
+        } catch (keyStoreException : KeyStoreException) {
+            Logger.e(TAG, "Alias KeyStoreException " + keyStoreException.message)
+        }
+        return certDetails
     }
 
     private fun showSCEPSettings() {
@@ -365,5 +424,6 @@ class IntegratedAuthActivity : SDKBaseActivity(), View.OnClickListener, StatusLi
         private const val LOG_CERT_DETAILS = "Log Cert Details"
         private const val SCEP_MAX_COUNT_KEY = "max_count"
         private const val SCEP_RETRY_INTERVAL_KEY = "retry_interval"
+        private const val EXTRACT_CERTIFICATES = "Extract Certificates"
     }
 }
