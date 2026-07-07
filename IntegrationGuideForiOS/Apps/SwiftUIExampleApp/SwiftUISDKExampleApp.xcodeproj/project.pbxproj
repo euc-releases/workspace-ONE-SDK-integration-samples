@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33C055902EC1C5B400ABA217 /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 33C0558F2EC1C5B400ABA217 /* AWSDK */; };
+		1F084B7E2FE433E3007E637F /* WatermarkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B7A2FE433E3007E637F /* WatermarkImageView.swift */; };
+		1F084B7F2FE433E3007E637F /* WatermarkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B7B2FE433E3007E637F /* WatermarkTextView.swift */; };
+		1F084B802FE433E3007E637F /* WatermarkEntireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B782FE433E3007E637F /* WatermarkEntireView.swift */; };
+		1F084B812FE433E3007E637F /* WatermarkEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B792FE433E3007E637F /* WatermarkEntryView.swift */; };
+		1F084B822FE433E3007E637F /* WatermarkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B772FE433E3007E637F /* WatermarkButtonView.swift */; };
+		1F084B832FE433E3007E637F /* WatermarkWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B7C2FE433E3007E637F /* WatermarkWebView.swift */; };
+		1F084BA62FE5027C007E637F /* AWSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1F084BA52FE5027C007E637F /* AWSDK */; };
 		A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC128917EC7000B7780 /* QNSURLSessionDemux.m */; };
 		A4DCDAC828917EC8000B7780 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC228917EC8000B7780 /* CanonicalRequest.m */; };
 		A4DCDAC928917EC8000B7780 /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DCDAC328917EC8000B7780 /* CacheStoragePolicy.m */; };
@@ -58,20 +64,13 @@
 		EDFF8F83286EE75E009B9FBA /* KeyboardRestrictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFF8F82286EE75E009B9FBA /* KeyboardRestrictionView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		337B7DB12E3CA3F5002AF463 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		1F084B772FE433E3007E637F /* WatermarkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkButtonView.swift; sourceTree = "<group>"; };
+		1F084B782FE433E3007E637F /* WatermarkEntireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkEntireView.swift; sourceTree = "<group>"; };
+		1F084B792FE433E3007E637F /* WatermarkEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkEntryView.swift; sourceTree = "<group>"; };
+		1F084B7A2FE433E3007E637F /* WatermarkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkImageView.swift; sourceTree = "<group>"; };
+		1F084B7B2FE433E3007E637F /* WatermarkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkTextView.swift; sourceTree = "<group>"; };
+		1F084B7C2FE433E3007E637F /* WatermarkWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkWebView.swift; sourceTree = "<group>"; };
 		A4DCDABE28917EC7000B7780 /* SwiftUISDKExampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftUISDKExampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4DCDABF28917EC7000B7780 /* CustomHTTPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHTTPProtocol.h; sourceTree = "<group>"; };
 		A4DCDAC028917EC7000B7780 /* QNSURLSessionDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSURLSessionDemux.h; sourceTree = "<group>"; };
@@ -138,13 +137,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C055902EC1C5B400ABA217 /* AWSDK in Frameworks */,
+				1F084BA62FE5027C007E637F /* AWSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F084B7D2FE433E3007E637F /* Watermark */ = {
+			isa = PBXGroup;
+			children = (
+				1F084B772FE433E3007E637F /* WatermarkButtonView.swift */,
+				1F084B782FE433E3007E637F /* WatermarkEntireView.swift */,
+				1F084B792FE433E3007E637F /* WatermarkEntryView.swift */,
+				1F084B7A2FE433E3007E637F /* WatermarkImageView.swift */,
+				1F084B7B2FE433E3007E637F /* WatermarkTextView.swift */,
+				1F084B7C2FE433E3007E637F /* WatermarkWebView.swift */,
+			);
+			path = Watermark;
+			sourceTree = "<group>";
+		};
+		331FFFCB2D671F83009AF1E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A4DCDABD28917EA3000B7780 /* CustomHTTPProtocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +258,7 @@
 			children = (
 				ED5051BB286AE8C800141273 /* SwiftUISDKExampleApp */,
 				ED5051BA286AE8C800141273 /* Products */,
+				331FFFCB2D671F83009AF1E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,6 +291,7 @@
 				DB93254A286DEFB600C8EF21 /* Crypto */,
 				DBA5A5752874911800E38854 /* EnterpriseBranding */,
 				DB21706C28928F9B00E71A5C /* Logging */,
+				1F084B7D2FE433E3007E637F /* Watermark */,
 				DB3D04652899026500A20AA4 /* Stored Certificates */,
 				331FEF4B2D689F65009EAE66 /* Screenshot */,
 				ED5051C0286AE8CA00141273 /* Assets.xcassets */,
@@ -369,7 +390,6 @@
 				ED5051B5286AE8C800141273 /* Sources */,
 				ED5051B6286AE8C800141273 /* Frameworks */,
 				ED5051B7286AE8C800141273 /* Resources */,
-				337B7DB12E3CA3F5002AF463 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,7 +400,7 @@
 			);
 			name = SwiftUISDKExampleApp;
 			packageProductDependencies = (
-				33C0558F2EC1C5B400ABA217 /* AWSDK */,
+				1F084BA52FE5027C007E637F /* AWSDK */,
 			);
 			productName = SwiftExampleApp;
 			productReference = ED5051B9286AE8C800141273 /* SwiftUISDKExampleApp.app */;
@@ -412,7 +432,7 @@
 			);
 			mainGroup = ED5051B0286AE8C800141273;
 			packageReferences = (
-				33C0558E2EC1C5B400ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
+				1F084BA42FE5027C007E637F /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */,
 			);
 			productRefGroup = ED5051BA286AE8C800141273 /* Products */;
 			projectDirPath = "";
@@ -481,6 +501,12 @@
 				A4DCDAC728917EC8000B7780 /* QNSURLSessionDemux.m in Sources */,
 				ED56373A28C8C9970045BA4D /* LoggingViewModel.swift in Sources */,
 				EDFC45F3288EACB3008E467F /* TunnelingViewModel.swift in Sources */,
+				1F084B7E2FE433E3007E637F /* WatermarkImageView.swift in Sources */,
+				1F084B7F2FE433E3007E637F /* WatermarkTextView.swift in Sources */,
+				1F084B802FE433E3007E637F /* WatermarkEntireView.swift in Sources */,
+				1F084B812FE433E3007E637F /* WatermarkEntryView.swift in Sources */,
+				1F084B822FE433E3007E637F /* WatermarkButtonView.swift in Sources */,
+				1F084B832FE433E3007E637F /* WatermarkWebView.swift in Sources */,
 				DBA5A57D2874911800E38854 /* BrandingModel.swift in Sources */,
 				DB932549286DBC9E00C8EF21 /* CryptoView.swift in Sources */,
 				EDFF8F83286EE75E009B9FBA /* KeyboardRestrictionView.swift in Sources */,
@@ -555,7 +581,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 26.03.0;
+				MARKETING_VERSION = 26.06.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -611,7 +637,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 26.03.0;
+				MARKETING_VERSION = 26.06.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -641,12 +667,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 26.03.0;
+				MARKETING_VERSION = 26.06.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -677,12 +703,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 26.03.0;
+				MARKETING_VERSION = 26.06.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SwiftUISDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -716,20 +742,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		33C0558E2EC1C5B400ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
+		1F084BA42FE5027C007E637F /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/euc-releases/iOS-WorkspaceONE-SDK";
 			requirement = {
 				kind = exactVersion;
-				version = 26.3.0;
+				version = 26.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		33C0558F2EC1C5B400ABA217 /* AWSDK */ = {
+		1F084BA52FE5027C007E637F /* AWSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 33C0558E2EC1C5B400ABA217 /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
+			package = 1F084BA42FE5027C007E637F /* XCRemoteSwiftPackageReference "iOS-WorkspaceONE-SDK" */;
 			productName = AWSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
