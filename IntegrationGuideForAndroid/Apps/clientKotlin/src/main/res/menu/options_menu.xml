@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Omnissa, LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/send_logs"
+        android:title="@string/menu_send_logs"
+        />
+    <item
+        android:id="@+id/custom_attributes"
+        android:title="@string/menu_custom_attributes"
+        />
+
+    <item
+        android:id="@+id/show_certificate_details"
+        android:title="@string/title_show_certificate_details"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Omnissa, LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="kvp_count"
+        android:title="@string/pref_kvp_count_title"
+        android:summary="@string/pref_kvp_count_summary"
+        android:entries="@array/kvp_count_entries"
+        android:entryValues="@array/kvp_count_values"
+        android:defaultValue="10" />
+    <Preference
+        android:key="read_attributes"
+        android:title="@string/pref_read_attributes_title" />
+    <Preference
+        android:key="write_attributes"
+        android:title="@string/pref_write_attributes_title" />
+    <Preference
+        android:key="delete_attributes"
+        android:title="@string/pref_delete_attributes_title" />
+</PreferenceScreen>
+
+

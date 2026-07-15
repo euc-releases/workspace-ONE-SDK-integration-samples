@@ -5,8 +5,10 @@
 <resources>
     <string name="app_name">Integration Guide</string>
     <string name="app_label">App+WS1</string>
+    <string name="app_title">Workspace ONE Sample</string>
     <string name="ui_placeholder">Application User Interface goes here!</string>
     <string name="sdk_state">SDK state: %1$s</string>
     <string name="sdk_configuration_unavailable"
         >"SDK configuration unavailable."</string>
+    <string name="ws1_diagnostics_tool">WS1 Diagnostics</string>
 </resources>

@@ -28,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CustomAttributeDemoActivity"
+            android:exported="false" />
         <receiver
             android:name="com.airwatch.sdk.AirWatchSDKBroadcastReceiver"
             android:permission="com.airwatch.sdk.BROADCAST"

@@ -116,9 +116,9 @@ versions.
 
 | Software                                          | Version  |
 |---------------------------------------------------|----------|
-| Workspace ONE SDK for Android                     | 25.02.4  |
+| Workspace ONE SDK for Android                     | 26.06    |
 | Workspace ONE management console                  | 2402     |
-| Android Studio integrated development environment | 2025.1.3 |
+| Android Studio integrated development environment | 2026.1.1 |
 
 # Use Cases
 The following use cases can be read as a starting point for requirements
@@ -1156,5 +1156,7 @@ The following table shows the revision history of this document.
 | 26May2025              | Updated for Android SDK 25.02.1.                    |
 | 04Aug2025              | Updated for Android SDK 25.02.3.                    |
 | 24Sep2025              | Updated for Android SDK 25.02.4.                    |
+| 01Feb2026              | Updated for Android SDK 25.07.4.                    |
+| 30June2026             | Updated for  Android SDK 26.06.                     |
 
 

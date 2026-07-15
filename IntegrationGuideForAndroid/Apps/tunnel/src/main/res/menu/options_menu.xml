@@ -24,4 +24,9 @@
         android:id="@+id/tunnel"
         android:title="@string/tunnel_text"
         />
+
+    <item
+        android:id="@+id/sdk_diagnostics"
+        android:title="@string/ws1_diagnostics_tool"
+        />
 </menu>

@@ -7,6 +7,8 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -15,6 +17,7 @@ import androidx.core.content.ContextCompat
 import com.airwatch.sdk.SDKManager
 import com.airwatch.sdk.context.SDKContext
 import com.airwatch.sdk.context.SDKContextManager
+import com.ws1.diagnostic.ui.DiagnosticLauncher
 
 class MainActivity : BaseActivity() {
 
@@ -25,6 +28,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.subtitle = getString(R.string.app_title)
         configureTextView()
         toastHere(configureStatus())
         setUpPermissions()
@@ -105,4 +109,21 @@ class MainActivity : BaseActivity() {
 
     private fun toastHere(message: String) { runOnUiThread {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show() }}
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.options_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.sdk_diagnostics-> {
+                DiagnosticLauncher.launch(this)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

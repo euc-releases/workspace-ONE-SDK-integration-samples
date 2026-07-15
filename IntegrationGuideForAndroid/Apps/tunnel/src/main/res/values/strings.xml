@@ -46,4 +46,5 @@
     <string name="proxy_type">App Tunnel Mode</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
+    <string name="ws1_diagnostics_tool">WS1 Diagnostics</string>
 </resources>

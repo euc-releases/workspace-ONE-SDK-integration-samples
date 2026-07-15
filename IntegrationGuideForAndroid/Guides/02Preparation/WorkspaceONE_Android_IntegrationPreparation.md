@@ -110,12 +110,12 @@ the minimum supported versions if different.
 
 | Software                                           | Latest supported | Minimum supported |
 |----------------------------------------------------|------------------|-------------------|
-| Workspace ONE software development kit for Android | 25.02.4          | 24.01             |
-| Workspace ONE management console                   | 2506             | 2402              |
-| Workspace ONE Intelligent Hub application          | 25.08            | 24.02             |
-| Android Operating System                           | Android 15       | Android 7         |
-| Android Studio integrated development environment  | 2025.1.3         | 2020.3.1          |
-| Gradle plugin for Android                          | 8.13             | 8.2.2             |
+| Workspace ONE software development kit for Android | 26.06            | 24.07             |
+| Workspace ONE management console                   | 2604             | 2402              |
+| Workspace ONE Intelligent Hub application          | 26.05            | 25.05             |
+| Android Operating System                           | Android 17       | Android 8         |
+| Android Studio integrated development environment  | 2026.1.1         | 2024.3.1          |
+| Gradle plugin for Android                          | 8.13.0           | 8.9.1             |
 
 # Task: Install application via Workspace ONE
 Installing the application via Workspace ONE is a platform integration task for
@@ -744,6 +744,8 @@ The following table shows the revision history of this document.
 | 26May2025              | Updated for  Android SDK 25.02.1.                   |
 | 04Aug2025              | Updated for  Android SDK 25.02.3.                   |
 | 24Sep2025              | Updated for  Android SDK 25.02.4.                   |
+| 01Feb2026              | Updated for  Android SDK 25.07.4.                   |
+| 30June2026             | Updated for  Android SDK 26.06.                     |
 
 
 

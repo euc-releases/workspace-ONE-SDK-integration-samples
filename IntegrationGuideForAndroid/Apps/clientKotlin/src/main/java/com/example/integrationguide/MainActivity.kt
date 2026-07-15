@@ -4,9 +4,12 @@
 package com.example.integrationguide
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +21,7 @@ import kotlin.concurrent.thread
 
 class MainActivity : BaseActivity() {
 
+    @Volatile
     private var sdkManager: SDKManager? = null
     companion object {
         private const val NOTIFICATION_REQ_CODE = 101
@@ -26,6 +30,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.subtitle = getString(R.string.app_title)
         configureTextView()
         configureStatus()
         setUpPermissions()
@@ -62,6 +67,31 @@ class MainActivity : BaseActivity() {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.options_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.send_logs-> {
+                sdkManager?.uploadApplicationLogs()
+                toastHere("Sending Logs...")
+                true
+            }
+            R.id.custom_attributes -> {
+                startActivity(Intent(this, CustomAttributeDemoActivity::class.java))
+                true
+            }
+            R.id.show_certificate_details -> {
+                showCertificateDetails()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun configureStatus() {
@@ -124,4 +154,31 @@ class MainActivity : BaseActivity() {
 
     private fun toastHere(message: String) { runOnUiThread {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show() }}
+
+    /**
+     * Displays the details of the certificates returned by the SDKManager.
+     * If no certificates are returned, a message indicating that is shown instead.
+     */
+    private fun showCertificateDetails() {
+        val manager = sdkManager ?: run {
+            findViewById<TextView>(R.id.textViewIntegration).text = getString(R.string.sdk_not_initialized_error)
+            return
+        }
+        thread {
+            manager.requestCertificates { certDefinitionList ->
+                val message = if (certDefinitionList.isNullOrEmpty()) {
+                    getString(R.string.certificate_not_found_message)
+                } else {
+                    certDefinitionList.mapIndexed { index, certificate ->
+                        listOf("Certificate #${index + 1}", "Id: ${certificate.id}",
+                            "Name: ${certificate.name}", "Type: ${certificate.type}",
+                            "Thumbprint: ${certificate.thumbprint}").joinToString(separator = "\n")
+                    }.joinToString(separator = "\n\n")
+                }
+                runOnUiThread {
+                    findViewById<TextView>(R.id.textViewIntegration).text = message
+                }
+            }
+        }
+    }
 }

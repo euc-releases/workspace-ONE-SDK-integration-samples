@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Omnissa, LLC.
+    SPDX-License-Identifier: BSD-2-Clause
+-->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sdk_diagnostics"
+        android:title="@string/ws1_diagnostics_tool"
+        />
+</menu>

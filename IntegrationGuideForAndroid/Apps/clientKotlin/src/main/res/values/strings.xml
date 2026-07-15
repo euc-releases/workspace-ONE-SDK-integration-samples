@@ -10,4 +10,32 @@
     <string name="status_ok">Workspace ONE console version: %1$s</string>
     <string name="status_ng">Workspace ONE failed.</string>
     <string name="null_sdk_profile_json">sdkProfileJSONString null</string>
+    <string name="menu_send_logs">Send logs to console</string>
+    <string name="menu_custom_attributes">Custom Attributes</string>
+    <string name="app_title">Workspace ONE Client SDK Sample</string>
+    <string name="pref_kvp_count_title">Number of Custom Attributes</string>
+    <string name="pref_kvp_count_summary">Set count</string>
+    <string name="pref_kvp_count_summary_format">%1$d item(s) will be manipulated</string>
+    <string name="pref_read_attributes_title">Read Attributes</string>
+    <string name="pref_write_attributes_title">Write Attributes</string>
+    <string name="pref_delete_attributes_title">Delete Attributes</string>
+    <string-array name="kvp_count_entries">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="kvp_count_values">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+    <string name="title_show_certificate_details">Show Certificate Details</string>
+    <string name="sdk_not_initialized_error">SDK is not initialized!</string>
+    <string name="certificate_not_found_message">No certificates were returned!</string>
 </resources>

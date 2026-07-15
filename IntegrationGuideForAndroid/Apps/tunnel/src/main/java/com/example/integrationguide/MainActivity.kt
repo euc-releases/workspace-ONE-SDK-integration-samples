@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.integrationguide.ui.AboutActivity
 import com.example.integrationguide.ui.SDKProfileActivity
+import com.ws1.diagnostic.ui.DiagnosticLauncher
 
 class MainActivity : BaseActivity() {
 
@@ -91,6 +92,10 @@ class MainActivity : BaseActivity() {
             }
             R.id.tunnel -> {
                 startActivity( Intent(this, ProxyTestActivity::class.java))
+                true
+            }
+            R.id.sdk_diagnostics-> {
+                DiagnosticLauncher.launch(this)
                 true
             }
             else -> super.onOptionsItemSelected(item)

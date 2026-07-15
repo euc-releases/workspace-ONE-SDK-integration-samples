@@ -34,13 +34,13 @@ Framework level.
 
 ## Downloads
 
-Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://www.omnissa.com/omnissa-sdk-agreement/). If you disagree with any of the terms, then do not use the Software.
 
 For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 
 ## License
 
-This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://www.omnissa.com/omnissa-sdk-agreement/); you may not use this software except in compliance with the License.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
@@ -70,11 +70,11 @@ versions.
 
 Software                                         | Version
 -------------------------------------------------|---------
-Workspace ONE SDK for Android                    | 25.02.4
-Workspace ONE management console                 | 25.06
-Android Studio integrated development environment| 2025.1.3
-Gradle plugin for Android                        | 8.2.2
-Kotlin language                                  | 2.2.0
+Workspace ONE SDK for Android                    | 26.06
+Workspace ONE management console                 | 26.04
+Android Studio integrated development environment| 2026.1.1
+Gradle plugin for Android                        | 8.13.0
+Kotlin language                                  | 2.3.21
 
 # Integration Paths Diagram
 The following diagram shows the tasks involved in base integration and the order
@@ -121,14 +121,14 @@ First, update the build configuration and add the required library files.
                 ...
             }
             dependencies {
-                classpath 'com.android.tools.build:gradle:8.2.2'
+                classpath 'com.android.tools.build:gradle:8.13.0'
                 ...
             }
         }
     
-    In this example, the Gradle Android plugin version is 8.2.2
+    In this example, the Gradle Android plugin version is 8.13.0
 
-    Ensure that the Gradle version is at least 8.2
+    Ensure that the Gradle version is at least 8.6.0
 
 2.  Add the required packaging and compile options.
 
@@ -149,7 +149,7 @@ First, update the build configuration and add the required library files.
             // End of added blocks.
 
             defaultConfig {
-                targetSdk 35
+                targetSdk 36
                 ...
             }
             buildTypes {
@@ -187,7 +187,7 @@ First, update the build configuration and add the required library files.
             // -   Omnissa provides this Software Development Kit (the “Software”) to
             //     you subject to the following terms and conditions. By downloading, 
             //     installing, or using the Software, you agree to be bound by the terms
-            //     of https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf
+            //     of https://www.omnissa.com/omnissa-sdk-agreement/
             //     If you disagree with any of the terms, then do not use the Software.
 
             //    For additional information, please visit the https://www.omnissa.com/legal-center/.
@@ -197,7 +197,7 @@ First, update the build configuration and add the required library files.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:airwatchsdk:25.02.4"
+            implementation "com.airwatch.android:airwatchsdk:26.06"
         }
 
 This completes the required changes to the build configuration. Build the
@@ -225,6 +225,8 @@ Proceed as follows.
     -   Declare the new class and implement
         `WS1AnchorEvents` interface. 
     -   While upgrading to SDK 23.04 or above, migrate AirWatchSDKBaseIntentService API implementation to WS1AnchorEvents.
+    -   `onLauncherEvent` handles and processes broadcast events sent by the Workspace ONE launcher, including check‑in/check‑out 
+        errors and state changes.
 
 
     In Java, the class could look like this:
@@ -247,6 +249,31 @@ Proceed as follows.
 
             @Override
             public void onAnchorAppUpgrade(Context context, boolean isUpgrade) {}
+
+            @Override
+            public void onLauncherEvent(String eventType, Bundle bundle) {
+                if (eventType != null) {
+                    Logger.i(TAG, "Launcher event received: " + eventType);
+                    switch (eventType) {
+                        case AirWatchSDKConstants.ANCHOR_APP_CHECK_IN_ERROR:
+                            int checkInErrorCode = bundle != null ? bundle.getInt(AirWatchSDKConstants.STATUS_CODE, -1) : -1;
+                            String checkInErrorMessage = bundle != null ? bundle.getString(AirWatchSDKConstants.FAILURE_MESSAGE) : null;
+                            Logger.i(TAG, "ANCHOR_APP_CHECK_IN_ERROR: " + $checkInErrorCode + ", Message: " + $checkInErrorMessage);
+                            break;
+                        case AirWatchSDKConstants.ANCHOR_APP_CHECK_OUT_ERROR:
+                            int checkOutErrorCode = bundle != null ? bundle.getInt(AirWatchSDKConstants.STATUS_CODE, -1) : -1;
+                            String checkOutErrorMessage = bundle != null ? bundle.getString(AirWatchSDKConstants.FAILURE_MESSAGE) : null;
+                            Logger.i(TAG, "ANCHOR_APP_CHECK_OUT_ERROR: " + $checkOutErrorCode + ", Message: " + $checkOutErrorMessage);
+                            break;
+                        case AirWatchSDKConstants.LAUNCHER_STATE:
+                            String state = bundle != null ? bundle.getString(AirWatchSDKConstants.LAUNCHER_STATE) : null;
+                            Logger.i(TAG, "LAUNCHER_STATE changed to: " + state);
+                            break;
+                    }
+                } else {
+                    Logger.i(TAG, "Invalid event type received");
+                }
+            }
         }
 
     In Kotlin, the class could look like this:
@@ -267,6 +294,28 @@ Proceed as follows.
             override fun onAnchorAppStatusReceived(context: Context?, awAppStatus: AnchorAppStatus?) {}
 
             override fun onAnchorAppUpgrade(context: Context?, isUpgrade: Boolean) {}
+
+            override fun onLauncherEvent(eventType: String?, bundle: Bundle?) {
+                eventType?.run {
+                    Logger.i(TAG, "Launcher event received: $eventType")
+                    when (eventType) {
+                        AirWatchSDKConstants.ANCHOR_APP_CHECK_IN_ERROR -> {
+                            val checkInErrorCode = bundle?.getInt(AirWatchSDKConstants.STATUS_CODE, -1)
+                            val checkInErrorMessage = bundle?.getString(AirWatchSDKConstants.FAILURE_MESSAGE)
+                            Logger.i(TAG, "ANCHOR_APP_CHECK_IN_ERROR: $checkInErrorCode, Message: $checkInErrorMessage")
+                        }
+                        AirWatchSDKConstants.ANCHOR_APP_CHECK_OUT_ERROR -> {
+                            val checkOutErrorCode = bundle?.getInt(AirWatchSDKConstants.STATUS_CODE, -1)
+                            val checkOutErrorMessage = bundle?.getString(AirWatchSDKConstants.FAILURE_MESSAGE)
+                            Logger.i(TAG, "ANCHOR_APP_CHECK_OUT_ERROR: $checkOutErrorCode, Message: $checkOutErrorMessage")
+                        }
+                        AirWatchSDKConstants.LAUNCHER_STATE -> {
+                            val state = bundle?.getString(AirWatchSDKConstants.LAUNCHER_STATE)
+                            Logger.i(TAG, "LAUNCHER_STATE changed to: $state")
+                        }
+                    }
+                } ?: Logger.i(TAG, "Invalid event type received")
+            }
         }
 
 2.  Declare the permission and interaction filter.
@@ -505,7 +554,7 @@ Proceed as follows.
             // -   Omnissa provides this Software Development Kit (the “Software”) to
             //     you subject to the following terms and conditions. By downloading, 
             //     installing, or using the Software, you agree to be bound by the terms
-            //     of https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf
+            //     of https://www.omnissa.com/omnissa-sdk-agreement/
             //     If you disagree with any of the terms, then do not use the Software.
 
             //    For additional information, please visit the https://www.omnissa.com/legal-center/.
@@ -514,7 +563,7 @@ Proceed as follows.
             //     Disclosure for information on applicable privacy policies, and
             //     for additional information, please visit the 
             //     https://www.omnissa.com/legal-center/
-            implementation "com.airwatch.android:awframework:25.02.4"
+            implementation "com.airwatch.android:awframework:25.07.4"
         }
     
     Your application might already require different versions of some of the
@@ -1057,5 +1106,7 @@ The following table shows the revision history of this document.
 | 26May2025              | Updated for Android SDK 25.02.1.                    |
 | 04Aug2025              | Updated for Android SDK 25.02.3.                    |
 | 24Sep2025              | Updated for Android SDK 25.02.4.                    |
+| 01Feb2026              | Updated for Android SDK 25.07.4.                    |
+| 30June2026             | Updated for  Android SDK 26.06.                     |
 
 

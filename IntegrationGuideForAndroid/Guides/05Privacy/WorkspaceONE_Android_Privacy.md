@@ -72,8 +72,8 @@ Development Kit (SDK) for Android and other software, to confirm compatibility.
 
 | Software                                          | Version  |
 |---------------------------------------------------|----------|
-| Workspace ONE SDK for Android                     | 25.02.4  |
-| Android Studio integrated development environment | 2025.1.3 |
+| Workspace ONE SDK for Android                     | 26.06    |
+| Android Studio integrated development environment | 2026.1.1 |
 
 [**Table 1:** Software compatibility versions]
 
@@ -1225,5 +1225,7 @@ The following table shows the revision history of this document.
 | 26May2025              | Updated for Android SDK 25.02.1.                     |
 | 04Aug2025              | Updated for Android SDK 25.02.3.                     |
 | 24Sep2025              | Updated for Android SDK 25.02.4.                     |
+| 01Feb2026              | Updated for Android SDK 25.07.4.                     |
+| 30June2026             | Updated for  Android SDK 26.06.                      |
 
 

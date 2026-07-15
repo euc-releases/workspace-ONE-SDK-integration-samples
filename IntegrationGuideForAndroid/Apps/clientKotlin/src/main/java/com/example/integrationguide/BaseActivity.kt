@@ -4,13 +4,13 @@
 package com.example.integrationguide
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.res.Configuration
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 // This class is for subclass creation only.
 @SuppressLint("Registered")
-open class BaseActivity : Activity() {
+open class BaseActivity : AppCompatActivity() {
 
     private val uiTexts by lazy {generateUITexts()}
 

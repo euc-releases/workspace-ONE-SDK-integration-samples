@@ -1,17 +1,58 @@
+## Workspace ONE SDK 26.06 for Android
+
+### What's New
+- Upgraded OpenSSL to 3.5.7 LTS and OpenSSL FIPS to 3.1.2 LTS for enhanced security and compliance.
+- Upgraded Android Gradle Plugin (AGP) to 8.13 and Kotlin to 2.3.21.
+- Added support for Android API 36 and Edge-to-Edge display experiences.
+- Added support for Custom Attributes processing.
+- Introduced the SDK Diagnostic Module to simplify troubleshooting and speed up issue resolution.
+- Improved log upload reliability for SDK Client Mode applications through multipart log uploads.
+- Replaced the legacy QR code scanner with a CameraX-based implementation for improved reliability.
+
+### Known Issues
+- For apps targeting API 37, there is a known app crash issue. See [KB 6001484](https://ikb.omnissa.com/s/article/6001484) for details.
+
+### References
+- [Edge-to-edge Information](https://developer.android.com/develop/ui/views/layout/edge-to-edge)
+
+### Compatibility
+- Android 8.0+ (i.e., API 26)
+- Workspace ONE UEM Console 2402+
+- Android Studio with the Gradle Android Build System (AGP) 8.9.1+
+- JDK version 17
+
+## Workspace ONE SDK 25.07.4 for Android
+
+### What's new
+- Integration of OpenSSL 3.4.4 with improved security and enhanced FIPS support.
+- Security enhancements.
+- Software currency upgrades.
+- Bug fixes and Stability improvements.
+
+### References
+- [Netty Upgrade Information](https://developer.omnissa.com/ws1-sdk-for-android/guides/WS1AndroidDeveloperGuideNetworking.pdf#page=3)
+
+### Compatibility
+- Android 8.0+ (i.e., API 26)
+- Workspace ONE UEM Console 2402+
+- Android Studio with the Gradle Android Build System (AGP) 8.6.0+
+- JDK version 17
+- Workspace ONE Intelligent Hub for Android version 25.11
+
 ## Workspace ONE SDK 25.02.4 for Android
 
-# What's new
+### What's new
 - Upgraded to Android Gradle Plugin (AGP) 8.12.1 and Kotlin 2.2.0.
 - Support for Android 16 KB page size. 
 - Security enhancements 
 - Troubleshooting enhancements
 
-# References
+### References
 - [Android Gradle Plugin 8.12.1 (July 2025)](https://developer.android.com/build/releases/past-releases/agp-8-12-0-release-notes#android-gradle-plugin-8.12.1)
 - [What's new in Kotlin 2.2.0 | Kotlin](https://kotlinlang.org/docs/whatsnew22.html#)
 - [Support 16 KB page sizes | Compatibility](https://developer.android.com/guide/practices/page-sizes)
 
-# Compatibility
+### Compatibility
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2402+
 - Android Studio with the Gradle Android Build System (AGP) 8.2.2+
@@ -20,13 +61,13 @@
 
 ## Workspace ONE SDK 25.02.3 for Android
 
-# What's new
+### What's new
 - Enhancements in sending logs via email.
 - Security enhancements.
 - Software currency upgrades.
 - Log upload enhancements.
 
-# Compatibility
+### Compatibility
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2310+
 - Android Studio with the Gradle Android Build System (AGP) 8.2.2+
@@ -35,11 +76,11 @@
 
 ## Workspace ONE SDK 25.02.1 for Android
 
-# What's new
+### What's new
 - Updated web domain to align with Omnissa branding. Refer [Update Workspace ONE SDK for iOS and Android with new Workspace ONE domain](https://kb.omnissa.com/s/article/6000872)
 - Bug fixes and stability improvements
 
-# Compatibility
+### Compatibility
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2306+
 - Android Studio with the Gradle Android Build System (AGP) 8.2.2+
@@ -48,12 +89,12 @@
 
 ## Workspace ONE SDK 25.02 for Android
 
-# What's new
+### What's new
 - Target Android API 35. Refer [Branding Guide for OptOutEdgeToEdgeEnforcement for apps targeting API 35 ](https://developer.omnissa.com/ws1-sdk-for-android/guides/WorkspaceONE_Android_Branding.pdf#page=11)
 - Support for Dense QR Code
 - Bug fixes and stability improvements
 
-# Compatibility
+### Compatibility
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2306+
 - Android Studio with the Gradle Android Build System (AGP) 8.2.2+
@@ -62,12 +103,12 @@
 
 ## Workspace ONE SDK 24.11 for Android
 
-# What's new
+### What's new
 - Branding Update: SDK now features a new logo and splash screens as part of our transition to Omnissa.
 - Enhancements in Multi part log improvements.
 - Disabled Shift Based Access feature.
 
-# Compatibility
+### Compatibility
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2302+
 - Android Studio with the Gradle Android Build System (Gradle) 7.4+
@@ -77,12 +118,12 @@
 
 ## Workspace ONE SDK 24.10 for Android
 
-# What's new
+### What's new
 - Support for POST requests for sending SCEP (Simple Certificate Enrollment Protocol) requests
 - Decommissioning of MAG and Standard Proxy
 - Stability improvements and Bug fixes.
 
-# Compatibility
+### Compatibility
 
 - Android 7.0+ (i.e., API 24)
 - Workspace ONE UEM Console 2302+
@@ -92,54 +133,54 @@
 
 ## Omnissa Workspace ONE SDK 24.07 for Android
 
-# What's new
+### What's new
 * Stability improvements and Bug fixes.
 * Third party library updates.
 
-# Compatibility
+### Compatibility
 * Android 7.0+ (i.e., API 24)
 * Workspace ONE UEM Console 2302+
 * Android Studio with the Gradle Android Build System (Gradle) 7.4+
 * JDK version 17
 * Workspace ONE Intelligent Hub for Android version 24.07
 
-# Integration
+### Integration
 The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-android/) and KB article: [https://kb.omnissa.com/s/article/6000158](https://kb.omnissa.com/s/article/6000158)
 
-## Downloads
+### Downloads
 
-Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf). If you disagree with any of the terms, then do not use the Software.
+Omnissa provides this Software Development Kit (the “Software”) to you subject to the following terms and conditions. By downloading, installing, or using the Software, you agree to be bound by the terms of [SDK License Agreement](https://www.omnissa.com/omnissa-sdk-agreement/). If you disagree with any of the terms, then do not use the Software.
 
 For additional information, please visit the [Omnissa Legal Center](https://www.omnissa.com/legal-center/).
 
-## License
+### License
 
-This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://static.omnissa.com/sites/default/files/omnissa-sdk-agreement.pdf); you may not use this software except in compliance with the License.
+This software is licensed under the [Omnissa Software Development Kit (SDK) License Agreement](https://www.omnissa.com/omnissa-sdk-agreement/); you may not use this software except in compliance with the License.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## Omnissa Workspace ONE SDK 24.06.1 for Android
 
-# What's new
+### What's new
 * Migrated play core library to target Android API 34
 
 ## Omnissa Workspace ONE SDK 24.06 for Android
 
-# What’s new
+### What's new
 * Stability improvements and Bug fixes.
 * Third party library updates.
 
-# Compatibility
+### Compatibility
 * Android 7.0+ (i.e., API 24)
 * Workspace ONE UEM Console 2212+ 
 * Android Studio with the Gradle Android Build System (Gradle) 7.4+ 
 * JDK version 17 
 * Workspace ONE Intelligent Hub for Android version 24.04
 
-# Integration
+### Integration
 The SDK is accessible from a Maven repository. For integration documentation, refer to the Omnissa Developer website: [Omnissa Developer Documentation](https://developer.omnissa.com/ws1-sdk-android/)
 
-# Important Update Starting June 2024
+### Important Update Starting June 2024
 From version 24.06 onwards, the Workspace ONE SDK for Android will no longer be available through the My Workspace ONE portal: ("https://my.workspaceone.com/")
 Instead, it will be distributed exclusively as a Maven GitHub package (“https://maven.pkg.github.com/euc-releases/Android-WorkspaceONE-SDK/“, “https://maven.pkg.github.com/euc-releases/ws1-intelligencesdk-sdk-android/” ).
 
@@ -155,14 +196,14 @@ dependencies {
 
 ## Omnissa Workspace ONE SDK 24.04 for Android
 
-# What’s new
+### What's new
 
 * Compatibility updates for targeting Android 14 (i.e., API 34)
 * Support for Android 5 and 6 has been discontinued.
 * Bug fixes and stability improvements.
 * Third party library updates.
 
-## Compatibility
+### Compatibility
 
 * Android 7.0 + (i.e., API 24)
 * Workspace ONE UEM Console 2212+
@@ -170,7 +211,7 @@ dependencies {
 * JDK version 17
 * Workspace ONE Intelligent Hub for Android version 24.01
 
-## Integration
+### Integration
 
 The SDK is available from a Maven repository. Check the integration documentation on the Omnissa Developer website. https://developer.omnissa.com/ws1-sdk-android
 
