@@ -110,9 +110,9 @@ the minimum supported versions if different.
 
 | Software                                           | Latest supported | Minimum supported |
 |----------------------------------------------------|------------------|-------------------|
-| Workspace ONE software development kit for Android | 26.06            | 24.07             |
+| Workspace ONE software development kit for Android | 26.06.1          | 24.11             |
 | Workspace ONE management console                   | 2604             | 2402              |
-| Workspace ONE Intelligent Hub application          | 26.05            | 25.05             |
+| Workspace ONE Intelligent Hub application          | 26.08            | 25.05             |
 | Android Operating System                           | Android 17       | Android 8         |
 | Android Studio integrated development environment  | 2026.1.1         | 2024.3.1          |
 | Gradle plugin for Android                          | 8.13.0           | 8.9.1             |
@@ -746,6 +746,7 @@ The following table shows the revision history of this document.
 | 24Sep2025              | Updated for  Android SDK 25.02.4.                   |
 | 01Feb2026              | Updated for  Android SDK 25.07.4.                   |
 | 30June2026             | Updated for  Android SDK 26.06.                     |
+| 18Sep2026              | Updated for  Android SDK 26.06.1.                   |
 
 
 

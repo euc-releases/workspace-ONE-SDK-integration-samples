@@ -57,7 +57,7 @@ ext {
     appMinSdk = 26
     appTargetSdk = 36
 
-    airwatchVersion = '26.06'
+    airwatchVersion = '26.06.1'
     privacyVersion = '25.01'
 
     // Utility method to generate a path for a file in the directory for

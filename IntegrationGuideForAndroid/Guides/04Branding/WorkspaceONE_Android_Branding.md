@@ -116,7 +116,7 @@ versions.
 
 | Software                                          | Version  |
 |---------------------------------------------------|----------|
-| Workspace ONE SDK for Android                     | 26.06    |
+| Workspace ONE SDK for Android                     | 26.06.1  |
 | Workspace ONE management console                  | 2402     |
 | Android Studio integrated development environment | 2026.1.1 |
 
@@ -1158,5 +1158,6 @@ The following table shows the revision history of this document.
 | 24Sep2025              | Updated for Android SDK 25.02.4.                    |
 | 01Feb2026              | Updated for Android SDK 25.07.4.                    |
 | 30June2026             | Updated for  Android SDK 26.06.                     |
+| 18Sep2026              | Updated for  Android SDK 26.06.1.                   |
 
 

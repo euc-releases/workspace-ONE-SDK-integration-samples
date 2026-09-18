@@ -1,3 +1,18 @@
+## Workspace ONE SDK 26.06.1 for Android
+
+### What's New
+- Resolved certificate retrieval via SDKManager's application profile.
+- Bug fixes and Stability improvements.
+
+### Known Issues
+- For apps targeting API 37, there is a known app crash issue. See [KB 6001484](https://ikb.omnissa.com/s/article/6001484) for details.
+
+### Compatibility
+- Android 8.0+ (i.e., API 26)
+- Workspace ONE UEM Console 2402+
+- Android Studio with the Gradle Android Build System (AGP) 8.9.1+
+- JDK version 17
+
 ## Workspace ONE SDK 26.06 for Android
 
 ### What's New
@@ -11,6 +26,7 @@
 
 ### Known Issues
 - For apps targeting API 37, there is a known app crash issue. See [KB 6001484](https://ikb.omnissa.com/s/article/6001484) for details.
+- Workspace ONE SDK 26.06 for Android contains a known failure in the certificate retrieval flow. Older SDK versions are not affected; upgrade to 26.06.1 or later to resolve.
 
 ### References
 - [Edge-to-edge Information](https://developer.android.com/develop/ui/views/layout/edge-to-edge)

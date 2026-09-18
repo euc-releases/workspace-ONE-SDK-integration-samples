@@ -111,28 +111,61 @@ class MainActivity : BaseActivity() {
             if (visible) View.VISIBLE else View.GONE
     }
 
+    /**
+     * Reads a single SDK attribute without letting a failure prevent the other
+     * attributes from being displayed.
+     */
+    private fun attribute(getter: () -> String?): String = try {
+        getter()?.run { if (isEmpty()) "empty" else this } ?: "null"
+    }
+    catch (exception: Exception) {
+        "unavailable: $exception"
+    }
+
+    /**
+     * Describes the application profile first, then the certificates it carries,
+     * so that an empty or partly populated profile is still reported.
+     */
+    private fun applicationProfileReport(manager: SDKManager): String {
+        val profile = try {
+            manager.applicationProfile
+        }
+        catch (exception: Exception) {
+            return "appProfile: unavailable: $exception"
+        } ?: return "appProfile: null"
+
+        val lines = mutableListOf(
+            "appProfile id: ${attribute { profile.profileId }}",
+            "appProfile name: ${attribute { profile.name }}"
+        )
+
+        val certificates = try {
+            profile.certificates
+        }
+        catch (exception: Exception) {
+            lines.add("appProfile certificates: unavailable: $exception")
+            return lines.joinToString(separator = "\n")
+        }
+
+        if (certificates.isNullOrEmpty()) {
+            lines.add("appProfile certificates: none")
+            return lines.joinToString(separator = "\n")
+        }
+
+        lines.add("appProfile certificates: ${certificates.size}")
+        certificates.forEachIndexed { index, certificate ->
+            lines.add("\n  certificate #${index + 1}")
+            lines.add("  thumbprint: ${attribute { certificate.thumbprint }}")
+            lines.add("  type: ${attribute { certificate.type }}")
+            lines.add("  name: ${attribute { certificate.name }}")
+            lines.add("  certificate String: ${attribute { certificate.certificateString }}")
+        }
+        return lines.joinToString(separator = "\n")
+    }
+
     private fun startSDK() { thread {
-        try {
-            val initSDKManager = SDKManager.init(this)
-            sdkManager = initSDKManager
-            getString(
-                R.string.status_ok, initSDKManager.consoleVersion.toString()
-            ).let {
-                toastHere(it)
-                showStatus(
-                    it, listOf(
-                        "deviceUid: ", initSDKManager.deviceUid,
-                        "\ndeviceSerialId: ", initSDKManager.deviceSerialId,
-                        "\n\ncustomSettings: ", initSDKManager.customSettings,
-                        "\n enrollmentUsername: ", initSDKManager.getEnrollmentUsername(),
-                        "\n\n", initSDKManager.sdkProfileJSONString?.run {
-                            JSONObject(this).toString(4)
-                        } ?: getString(R.string.null_sdk_profile_json)
-                    ).map {
-                        it?.run { if (it.isEmpty()) "empty" else it } ?: "null"
-                    }.joinToString(separator = "")
-                )
-            }
+        val initSDKManager = try {
+            SDKManager.init(this)
         }
         catch (exception: Exception) {
             sdkManager = null
@@ -140,6 +173,28 @@ class MainActivity : BaseActivity() {
                 toastHere(it)
                 showStatus(it, exception.toString())
             }
+            return@thread
+        }
+
+        sdkManager = initSDKManager
+        getString(
+            R.string.status_ok, attribute { initSDKManager.consoleVersion.toString() }
+        ).let {
+            toastHere(it)
+            showStatus(
+                it, listOf(
+                    "deviceUid: ", attribute { initSDKManager.deviceUid },
+                    "\ndeviceSerialId: ", attribute { initSDKManager.deviceSerialId },
+                    "\n\n", applicationProfileReport(initSDKManager),
+                    "\n\ncustomSettings: ", attribute { initSDKManager.customSettings },
+                    "\n enrollmentUsername: ", attribute { initSDKManager.getEnrollmentUsername() },
+                    "\n\n", attribute {
+                        initSDKManager.sdkProfileJSONString?.run {
+                            JSONObject(this).toString(4)
+                        } ?: getString(R.string.null_sdk_profile_json)
+                    }
+                ).joinToString(separator = "")
+            )
         }
     }}
 
